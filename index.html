@@ -1,0 +1,2219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystical Fortune Cards - Enhanced Edition</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:wght@300;400;600&family=Poiret+One:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0618;
+            --primary-color: #9969ff;
+            --secondary-color: #ff69a1;
+            --tertiary-color: #69b4ff;
+            --accent-color: #ffeb3b;
+            --text-color: #ffffff;
+            --card-back: linear-gradient(45deg, #4a0e77, #650d6d, #7b1fa2);
+            --card-front: linear-gradient(135deg, #2b2f66, #1c1647, #3f2a5c);
+            --card-hover: #764ba2;
+            --glitter-color: rgba(255, 235, 59, 0.9);
+            --shine-color: hsla(280, 95%, 85%, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Cormorant Garamond", serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            cursor: move;
+        }
+
+        /* Shine Canvas */
+        #shine-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Mystical Background Elements */
+        .mystical-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-symbol {
+            position: absolute;
+            font-size: 2.5rem;
+            opacity: 0.4;
+            animation: float 8s ease-in-out infinite;
+            text-shadow: 0 0 15px var(--shine-color);
+            filter: drop-shadow(0 0 10px var(--shine-color));
+        }
+
+        .floating-symbol:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-symbol:nth-child(2) {
+            top: 20%;
+            right: 15%;
+            animation-delay: -2s;
+        }
+
+        .floating-symbol:nth-child(3) {
+            bottom: 30%;
+            left: 20%;
+            animation-delay: -4s;
+        }
+
+        .floating-symbol:nth-child(4) {
+            bottom: 20%;
+            right: 10%;
+            animation-delay: -1s;
+        }
+
+        .floating-symbol:nth-child(5) {
+            top: 50%;
+            left: 5%;
+            animation-delay: -3s;
+        }
+
+        .floating-symbol:nth-child(6) {
+            top: 70%;
+            right: 25%;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg) scale(1); 
+                opacity: 0.3;
+                text-shadow: 0 0 15px var(--shine-color);
+            }
+            33% { 
+                transform: translateY(-30px) rotate(120deg) scale(1.1); 
+                opacity: 0.6;
+                text-shadow: 0 0 25px var(--shine-color);
+            }
+            66% { 
+                transform: translateY(-10px) rotate(240deg) scale(0.9); 
+                opacity: 0.4;
+                text-shadow: 0 0 20px var(--shine-color);
+            }
+        }
+
+        /* Enhanced Header */
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        .magical-title {
+            font-family: "Cinzel", serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--tertiary-color), var(--accent-color));
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite, titlePulse 2s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(153, 105, 255, 0.6);
+            position: relative;
+            filter: drop-shadow(0 0 20px var(--shine-color));
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { filter: brightness(1) drop-shadow(0 0 20px var(--shine-color)); }
+            50% { filter: brightness(1.3) drop-shadow(0 0 30px var(--shine-color)); }
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            animation: subtitleGlow 3s ease-in-out infinite;
+            text-shadow: 0 0 10px var(--shine-color);
+        }
+
+        @keyframes subtitleGlow {
+            0%, 100% { 
+                opacity: 0.8; 
+                text-shadow: 0 0 10px var(--shine-color); 
+            }
+            50% { 
+                opacity: 1; 
+                text-shadow: 0 0 20px var(--shine-color); 
+            }
+        }
+
+        .energy-orb {
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, var(--shine-color) 0%, rgba(255, 105, 161, 0.2) 50%, transparent 70%);
+            border-radius: 50%;
+            animation: energyPulse 5s ease-in-out infinite;
+            filter: blur(2px);
+        }
+
+        @keyframes energyPulse {
+            0%, 100% { 
+                transform: translateX(-50%) scale(1); 
+                opacity: 0.4; 
+                filter: blur(2px);
+            }
+            50% { 
+                transform: translateX(-50%) scale(1.8); 
+                opacity: 0.8; 
+                filter: blur(1px);
+            }
+        }
+
+        /* Card Selection Area */
+        .card-selection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            z-index: 3;
+            position: relative;
+        }
+
+        .mystical-btn {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 1.2rem 2.5rem;
+            font-family: "Cinzel", serif;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 20px rgba(153, 105, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mystical-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, var(--shine-color), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s;
+            opacity: 0;
+        }
+
+        .mystical-btn:hover::before {
+            animation: shimmer 1s ease-in-out;
+        }
+
+        .mystical-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(153, 105, 255, 0.7);
+            filter: drop-shadow(0 0 15px var(--shine-color));
+        }
+
+        .mystical-btn.secondary {
+            background: linear-gradient(45deg, var(--tertiary-color), var(--accent-color));
+            box-shadow: 0 8px 20px rgba(105, 180, 255, 0.4);
+        }
+
+        .mystical-btn.secondary:hover {
+            box-shadow: 0 15px 30px rgba(105, 180, 255, 0.7);
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-200%) translateY(-200%) rotate(45deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(200%) translateY(200%) rotate(45deg); opacity: 0; }
+        }
+
+        .card-count {
+            font-family: "Cinzel", serif;
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            text-shadow: 0 0 15px var(--shine-color);
+            animation: countGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes countGlow {
+            0%, 100% { 
+                filter: brightness(1);
+                text-shadow: 0 0 15px var(--shine-color);
+            }
+            50% { 
+                filter: brightness(1.5);
+                text-shadow: 0 0 25px var(--shine-color);
+            }
+        }
+
+        /* Enhanced Card Table */
+        .card-table {
+            perspective: 1500px;
+            margin-bottom: 3rem;
+            min-height: 500px;
+            z-index: 3;
+            position: relative;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .card {
+            width: 180px;
+            height: 320px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            filter: brightness(0.9);
+            justify-self: center;
+        }
+
+        .card:hover {
+            filter: brightness(1.4) drop-shadow(0 0 25px var(--shine-color));
+            transform: translateY(-25px) rotateY(20deg) scale(1.1);
+        }
+
+        .card.common {
+            --card-rarity-color: rgba(200, 200, 200, 0.3);
+        }
+
+        .card.uncommon {
+            --card-rarity-color: rgba(76, 175, 80, 0.4);
+        }
+
+        .card.rare {
+            --card-rarity-color: rgba(63, 81, 181, 0.5);
+        }
+
+        .card.legendary {
+            --card-rarity-color: var(--shine-color);
+        }
+
+        .card-face {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .card-back {
+            background: var(--card-back);
+            border: 3px solid var(--card-rarity-color, rgba(255, 255, 255, 0.2));
+            position: relative;
+        }
+
+        .card-back::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 90%;
+            background: radial-gradient(circle, var(--card-rarity-color, var(--shine-color)) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: innerGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes innerGlow {
+            0%, 100% { 
+                opacity: 0.4; 
+                transform: translate(-50%, -50%) scale(1); 
+            }
+            50% { 
+                opacity: 0.8; 
+                transform: translate(-50%, -50%) scale(1.3); 
+            }
+        }
+
+        .card-back::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(45deg, var(--shine-color) 0, var(--shine-color) 1px, transparent 1px, transparent 15px),
+                repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.03) 0, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 15px);
+            border-radius: 25px;
+            animation: patternShift 10s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes patternShift {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 30px 30px, -30px -30px; }
+        }
+
+        .card-front {
+            background: var(--card-front);
+            transform: rotateY(180deg);
+            padding: 2rem;
+            text-align: center;
+            border: 3px solid var(--card-rarity-color, rgba(153, 105, 255, 0.4));
+        }
+
+                .card-symbol {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+            animation: symbolGlow 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px var(--shine-color));
+        }
+
+        @keyframes symbolGlow {
+            0%, 100% { 
+                text-shadow: 0 0 15px var(--shine-color); 
+                transform: scale(1);
+                filter: drop-shadow(0 0 15px var(--shine-color));
+            }
+            50% { 
+                text-shadow: 0 0 30px var(--shine-color); 
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 25px var(--shine-color));
+            }
+        }
+
+        .card-title {
+            font-family: "Cinzel", serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleShimmer 2s ease-in-out infinite;
+            text-shadow: 0 0 10px var(--shine-color);
+        }
+
+        @keyframes titleShimmer {
+            0%, 100% { 
+                filter: brightness(1);
+                text-shadow: 0 0 10px var(--shine-color);
+            }
+            50% { 
+                filter: brightness(1.4);
+                text-shadow: 0 0 20px var(--shine-color);
+            }
+        }
+
+        .card-desc {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.5;
+            font-style: italic;
+            text-shadow: 0 0 5px var(--shine-color);
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+            pointer-events: none;
+        }
+
+        .card.selected {
+            transform: scale(1.2) translateY(-30px);
+            z-index: 10;
+            filter: drop-shadow(0 0 30px var(--shine-color)) brightness(1.3);
+        }
+
+        /* Enhanced Message Container */
+        .message-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(15px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.6s ease;
+            z-index: 1000;
+        }
+
+        .message-container.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .message-card {
+            width: 90%;
+            max-width: 700px;
+            background: rgba(15, 10, 30, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 4rem;
+            border-radius: 30px;
+            border: 2px solid var(--shine-color);
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+            transform: translateY(60px) scale(0.8);
+            opacity: 0;
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .message-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--shine-color) 0%, transparent 70%);
+            animation: cardAura 5s ease-in-out infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes cardAura {
+            0%, 100% { opacity: 0.1; transform: rotate(0deg); }
+            50% { opacity: 0.3; transform: rotate(180deg); }
+        }
+
+        .message-container.visible .message-card {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .card-reveal-animation {
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 120px;
+            z-index: 1;
+        }
+
+        .cosmic-circle {
+            width: 100%;
+            height: 100%;
+            border: 4px solid var(--shine-color);
+            border-radius: 50%;
+            animation: cosmicSpin 4s linear infinite;
+            position: relative;
+            box-shadow: 0 0 20px var(--shine-color);
+        }
+
+        .cosmic-circle::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid rgba(255, 105, 161, 0.5);
+            border-radius: 50%;
+            animation: cosmicSpin 3s linear infinite reverse;
+        }
+
+        .rotating-runes {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 90%;
+            background: radial-gradient(circle, var(--shine-color) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: runeRotate 6s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes cosmicSpin {
+            0% { transform: translateX(-50%) rotate(0deg); }
+            100% { transform: translateX(-50%) rotate(360deg); }
+        }
+
+        @keyframes runeRotate {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(-360deg); }
+        }
+
+        .message-content {
+            margin-top: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .message-title {
+            font-family: "Cinzel", serif;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--tertiary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleShimmer 2s ease-in-out infinite;
+            text-shadow: 0 0 20px var(--shine-color);
+            filter: drop-shadow(0 0 15px var(--shine-color));
+        }
+
+        .message-text {
+            font-size: 1.8rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: textGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            0%, 100% { text-shadow: 0 0 10px var(--shine-color); }
+            50% { text-shadow: 0 0 20px var(--shine-color); }
+        }
+
+        .fortune-details {
+            font-size: 1.3rem;
+            opacity: 0.8;
+            margin-bottom: 3rem;
+            font-style: italic;
+            color: var(--accent-color);
+            animation: detailsPulse 4s ease-in-out infinite;
+            text-shadow: 0 0 8px var(--shine-color);
+        }
+
+        @keyframes detailsPulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .message-actions {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Enhanced Footer */
+        footer {
+            text-align: center;
+            margin-top: 5rem;
+            opacity: 0.8;
+            font-size: 1.1rem;
+            z-index: 3;
+            position: relative;
+        }
+
+        .mystical-quote {
+            font-family: "Poiret One", cursive;
+            font-style: italic;
+            margin-top: 1.5rem;
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            opacity: 0.9;
+            animation: quoteFade 5s ease-in-out infinite;
+            text-shadow: 0 0 15px var(--shine-color);
+        }
+
+        @keyframes quoteFade {
+            0%, 100% { 
+                opacity: 0.7;
+                text-shadow: 0 0 10px var(--shine-color);
+            }
+            50% { 
+                opacity: 1;
+                text-shadow: 0 0 25px var(--shine-color);
+            }
+        }
+
+        /* Canvas Elements */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        #particle-canvas {
+            z-index: 1;
+        }
+
+        #glitter-canvas {
+            z-index: 2;
+        }
+
+        /* Enhanced Glitter Effects */
+        .glitter-particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--shine-color);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 50;
+            animation: glitterTwinkle 2s ease-in-out infinite;
+            box-shadow: 0 0 15px var(--shine-color);
+        }
+
+        @keyframes glitterTwinkle {
+            0%, 100% { 
+                opacity: 0; 
+                transform: scale(0) rotate(0deg); 
+                box-shadow: 0 0 0 var(--shine-color);
+            }
+            50% { 
+                opacity: 1; 
+                transform: scale(2) rotate(180deg); 
+                box-shadow: 0 0 30px var(--shine-color);
+            }
+        }
+
+        /* Enhanced Magical Sparkles */
+        .magical-sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--shine-color);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 100;
+            animation: enhancedSparkle 3s forwards;
+        }
+
+        @keyframes enhancedSparkle {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+                box-shadow: 0 0 0 var(--shine-color);
+            }
+            25% {
+                transform: scale(1.5) rotate(90deg);
+                opacity: 0.9;
+                box-shadow: 0 0 20px var(--shine-color);
+            }
+            50% {
+                transform: scale(2.5) rotate(180deg);
+                opacity: 0.7;
+                box-shadow: 0 0 35px var(--shine-color);
+            }
+            75% {
+                transform: scale(1.8) rotate(270deg);
+                opacity: 0.5;
+                box-shadow: 0 0 45px var(--shine-color);
+            }
+            100% {
+                transform: scale(0.5) rotate(360deg);
+                opacity: 0;
+                box-shadow: 0 0 50px var(--shine-color);
+            }
+        }
+
+        /* Loading Animation */
+        .loading-animation {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+            display: none;
+        }
+
+        .loading-spinner {
+            width: 80px;
+            height: 80px;
+            border: 5px solid rgba(153, 105, 255, 0.3);
+            border-top: 5px solid var(--shine-color);
+            border-radius: 50%;
+            animation: spin 1.5s linear infinite;
+            box-shadow: 0 0 30px var(--shine-color);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Rarity-specific enhancements */
+        .card.legendary {
+            animation: legendaryAura 4s ease-in-out infinite;
+        }
+
+        @keyframes legendaryAura {
+            0%, 100% { box-shadow: 0 0 20px var(--shine-color); }
+            50% { box-shadow: 0 0 50px var(--shine-color); }
+        }
+
+        .card.rare {
+            animation: rareGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes rareGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(63, 81, 181, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(63, 81, 181, 0.6); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .magical-title {
+                font-size: 2.5rem;
+            }
+            
+            .cards-container {
+                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+                gap: 1.5rem;
+                padding: 2rem 1rem;
+            }
+            
+            .card {
+                width: 130px;
+                height: 220px;
+            }
+            
+            .card-symbol {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="shine-canvas"></canvas>
+    <canvas id="particle-canvas"></canvas>
+    <canvas id="glitter-canvas"></canvas>
+    
+    <div class="loading-animation" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+    
+    <div class="mystical-bg">
+        <div class="floating-symbol animate__animated animate__fadeInUp">✨</div>
+        <div class="floating-symbol animate__animated animate__fadeInUp animate__delay-1s">🌙</div>
+        <div class="floating-symbol animate__animated animate__fadeInUp animate__delay-2s">⭐</div>
+        <div class="floating-symbol animate__animated animate__fadeInUp animate__delay-3s">🔮</div>
+        <div class="floating-symbol animate__animated animate__fadeInUp animate__delay-4s">🌟</div>
+        <div class="floating-symbol animate__animated animate__fadeInUp animate__delay-5s">💫</div>
+    </div>
+
+    <div class="container">
+        <header class="animate__animated animate__fadeInDown">
+            <h1 class="magical-title">Mystical Fortune Cards</h1>
+            <p class="subtitle">Hover over a card, then click to reveal your cosmic destiny</p>
+            <div class="energy-orb"></div>
+        </header>
+
+        <div class="card-selection animate__animated animate__fadeInUp animate__delay-1s">
+            <button id="draw-cards-btn" class="mystical-btn">
+                <span>✨ Draw New Cards ✨</span>
+            </button>
+            <div class="card-count">
+                🔮 Cards Remaining: <span id="cards-remaining">16</span>
+            </div>
+        </div>
+
+        <div class="card-table animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="cards-container" id="cards-container">
+                <!-- Cards will be generated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="message-container" id="message-container">
+            <div class="message-card">
+                <div class="card-reveal-animation">
+                    <div class="cosmic-circle"></div>
+                    <div class="rotating-runes"></div>
+                </div>
+                <div class="message-content">
+                    <div class="message-title" id="message-title">Your Fortune</div>
+                    <div class="message-text" id="message-text"></div>
+                    <div class="fortune-details" id="fortune-details"></div>
+                    <div class="message-actions">
+                        <button id="reshuffle-btn" class="mystical-btn">
+                            <span>🔄 Shuffle Again</span>
+                        </button>
+                        <button id="save-fortune-btn" class="mystical-btn secondary">
+                            <span>💾 Save Fortune</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="animate__animated animate__fadeInUp animate__delay-3s">
+            <p>✨ Created for #CodePenChallenge: Pick a Card ✨</p>
+            <p class="mystical-quote">"The universe reveals its secrets to those who seek with an open heart"</p>
+        </footer>
+    </div>
+
+    <script>
+        // Enhanced Mystical Cards with Shine Effect
+                class EnhancedMysticalCards {
+            constructor() {
+                // DOM elements
+                this.cardsContainer = document.getElementById("cards-container");
+                this.messageContainer = document.getElementById("message-container");
+                this.messageTitle = document.getElementById("message-title");
+                this.messageText = document.getElementById("message-text");
+                this.fortuneDetails = document.getElementById("fortune-details");
+                this.reshuffleBtn = document.getElementById("reshuffle-btn");
+                this.drawCardsBtn = document.getElementById("draw-cards-btn");
+                this.saveFortuneBtn = document.getElementById("save-fortune-btn");
+                this.cardsRemaining = document.getElementById("cards-remaining");
+                this.loadingElement = document.getElementById("loading");
+                this.canvas = document.getElementById("particle-canvas");
+                this.glitterCanvas = document.getElementById("glitter-canvas");
+                this.shineCanvas = document.getElementById("shine-canvas");
+                this.ctx = this.canvas.getContext("2d");
+                this.glitterCtx = this.glitterCanvas.getContext("2d");
+                this.shineCtx = this.shineCanvas.getContext("2d");
+
+                // Enhanced cards data
+                this.allCards = [
+                    {
+                        symbol: "✨",
+                        title: "The Star",
+                        description: "Hope and inspiration",
+                        fortune: "A new opportunity will bring unexpected joy into your life. Trust your intuition to guide you toward success.",
+                        details: "Lucky numbers: 7, 14, 21 | Element: Air | Season: Spring | Color: Silver",
+                        rarity: "common"
+                    },
+                    {
+                        symbol: "🌙",
+                        title: "The Moon",
+                        description: "Intuition and mystery",
+                        fortune: "Hidden truths will be revealed. Pay attention to your dreams, as they contain important messages from the universe.",
+                        details: "Lucky numbers: 3, 9, 18 | Element: Water | Season: Winter | Color: Blue",
+                        rarity: "common"
+                    },
+                    {
+                        symbol: "☀️",
+                        title: "The Sun",
+                        description: "Success and positivity",
+                        fortune: "A period of growth and happiness approaches. Your efforts will soon be rewarded magnificently.",
+                        details: "Lucky numbers: 1, 10, 19 | Element: Fire | Season: Summer | Color: Gold",
+                        rarity: "common"
+                    },
+                    {
+                        symbol: "⚡",
+                        title: "The Tower",
+                        description: "Sudden change",
+                        fortune: "Prepare for a surprising revelation that will change your perspective. Embrace the transformation with courage.",
+                        details: "Lucky numbers: 16, 7, 25 | Element: Fire | Season: Autumn | Color: Red",
+                        rarity: "uncommon"
+                    },
+                    {
+                        symbol: "🔮",
+                        title: "The Magician",
+                        description: "Manifestation and power",
+                        fortune: "You have all the tools needed to succeed. Your creative powers are at their peak—use them wisely.",
+                        details: "Lucky numbers: 1, 8, 15 | Element: Air | Season: All | Color: Purple",
+                        rarity: "rare"
+                    },
+                    {
+                        symbol: "🌊",
+                        title: "The Ocean",
+                        description: "Emotions and intuition",
+                        fortune: "Trust the ebb and flow of your emotions. A deep connection awaits if you open your heart.",
+                        details: "Lucky numbers: 2, 11, 20 | Element: Water | Season: All | Color: Turquoise",
+                        rarity: "common"
+                    },
+                    {
+                        symbol: "🦋",
+                        title: "The Butterfly",
+                        description: "Transformation and rebirth",
+                        fortune: "You are entering a beautiful phase of transformation. What emerges will be more magnificent than before.",
+                        details: "Lucky numbers: 5, 12, 23 | Element: Air | Season: Spring | Color: Rainbow",
+                        rarity: "uncommon"
+                    },
+                    {
+                        symbol: "🌸",
+                        title: "The Blossom",
+                        description: "New beginnings",
+                        fortune: "A fresh start is blooming in your life. Nurture it with patience and watch it flourish into something beautiful.",
+                        details: "Lucky numbers: 4, 13, 22 | Element: Earth | Season: Spring | Color: Pink",
+                        rarity: "common"
+                    },
+                    {
+                        symbol: "🔥",
+                        title: "The Phoenix",
+                        description: "Resurrection and renewal",
+                        fortune: "From the ashes of your challenges, you will rise stronger and more radiant than ever before.",
+                        details: "Lucky numbers: 8, 17, 26 | Element: Fire | Season: Summer | Color: Orange",
+                        rarity: "legendary"
+                    },
+                    {
+                        symbol: "💎",
+                        title: "The Diamond",
+                        description: "Clarity and strength",
+                        fortune: "Your inner strength will shine through any pressure. You are unbreakable and infinitely precious.",
+                        details: "Lucky numbers: 6, 15, 24 | Element: Earth | Season: All | Color: Crystal",
+                        rarity: "rare"
+                    },
+                    {
+                        symbol: "🌟",
+                        title: "The Cosmic Gate",
+                        description: "Infinite possibilities",
+                        fortune: "The universe is aligning to open doors you never knew existed. Step through with courage and wonder.",
+                        details: "Lucky numbers: 11, 22, 33 | Element: Ether | Season: All | Color: Golden",
+                        rarity: "legendary"
+                    },
+                    {
+                        symbol: "🕊️",
+                        title: "The Dove",
+                        description: "Peace and harmony",
+                        fortune: "Inner peace is your greatest treasure. From this serene center, all good things will flow naturally.",
+                        details: "Lucky numbers: 9, 18, 27 | Element: Air | Season: All | Color: White",
+                        rarity: "uncommon"
+                    },
+                    {
+                        symbol: "🎭",
+                        title: "The Masks",
+                        description: "Hidden aspects",
+                        fortune: "It's time to reveal your true self. The masks you wear no longer serve your highest good.",
+                        details: "Lucky numbers: 14, 23, 32 | Element: Air | Season: Autumn | Color: Silver",
+                        rarity: "rare"
+                    },
+                    {
+                        symbol: "🗝️",
+                        title: "The Key",
+                        description: "Solutions and access",
+                        fortune: "The answer you seek is within reach. Trust your wisdom to unlock the door to success.",
+                        details: "Lucky numbers: 7, 16, 25 | Element: Metal | Season: All | Color: Bronze",
+                        rarity: "uncommon"
+                    },
+                    {
+                        symbol: "🌈",
+                        title: "The Rainbow",
+                        description: "Hope after storms",
+                        fortune: "After every storm comes a rainbow. Your difficult times are leading to beautiful outcomes.",
+                        details: "Lucky numbers: 3, 12, 21 | Element: All | Season: Spring | Color: Spectrum",
+                        rarity: "rare"
+                    },
+                    {
+                        symbol: "🌳",
+                        title: "The Ancient Tree",
+                        description: "Wisdom and growth",
+                        fortune: "Your roots run deep, and your branches reach high. Draw upon ancient wisdom for guidance.",
+                        details: "Lucky numbers: 5, 14, 23 | Element: Earth | Season: All | Color: Green",
+                        rarity: "legendary"
+                    }
+                ];
+
+                // Shine effect properties
+                this.shineParticles = [];
+                this.shineDepth = 0;
+                this.shineRotation = 0;
+                this.mouse = { x: 0, y: 0 };
+                this.mouseDeltas = { x: 0, y: 0 };
+                this.w = 0;
+                this.h = 0;
+
+                // Current deck and state
+                this.currentDeck = [];
+                this.availableCards = [...this.allCards];
+                this.selectedCard = null;
+                this.isRevealed = false;
+                this.savedFortunes = JSON.parse(localStorage.getItem('mysticalFortunes') || '[]');
+
+                // Particle systems
+                this.particles = [];
+                this.glitterParticles = [];
+                this.particleColors = ["#9969ff", "#ff69a1", "#69b4ff", "#ffeb3b", "#ff9f69", "#00e5ff", "#76ff03"];
+
+                // Initialize
+                this.init();
+            }
+
+            init() {
+                this.showLoading();
+                this.setupCanvas();
+                this.setupShineEffect();
+                
+                setTimeout(() => {
+                    this.drawNewCards();
+                    this.hideLoading();
+                }, 1500);
+                
+                this.setupEventListeners();
+                this.animateParticles();
+                this.animateGlitter();
+                this.animateShine();
+                this.createAmbientEffects();
+            }
+
+            // Shine Effect Setup
+            setupShineEffect() {
+                this.w = this.shineCanvas.width = window.innerWidth;
+                this.h = this.shineCanvas.height = window.innerHeight;
+                this.shineDepth = this.w;
+
+                // Create shine particles
+                for (let i = 0; i < 3000; i++) {
+                    const particle = {
+                        originalPos: {
+                            x: this.rnd(-this.w, this.w),
+                            y: this.rnd(-this.h, this.h),
+                            z: this.rnd(-this.shineDepth, this.shineDepth)
+                        },
+                        rotatedPos: {
+                            x: 0,
+                            y: 0,
+                            z: 0
+                        },
+                        rotation: {
+                            x: 0,
+                            y: 0,
+                            z: 0
+                        },
+                        velocity: {
+                            x: 0,
+                            y: 0,
+                            z: 0
+                        },
+                        color: `hsla(${this.rnd(280, 320)}, 95%, 85%, ${this.rnd(0.3, 0.9)})`
+                    };
+                    
+                    // Initialize rotated position
+                    particle.rotatedPos.x = particle.originalPos.x;
+                    particle.rotatedPos.y = particle.originalPos.y;
+                    particle.rotatedPos.z = particle.originalPos.z;
+                    
+                    this.shineParticles.push(particle);
+                }
+            }
+
+            // Shine Animation
+            animateShine() {
+                this.shineCtx.clearRect(0, 0, this.w, this.h);
+                
+                // Create gradient background
+                const gradient = this.shineCtx.createLinearGradient(
+                    this.w + this.w, this.h + this.h * 1.5,
+                    this.w + this.w, 1
+                );
+                gradient.addColorStop(0, 'hsla(280, 15%, 25%, 0.8)');
+                gradient.addColorStop(0.3, 'hsla(300, 95%, 15%, 0.6)');
+                gradient.addColorStop(0.6, 'hsla(280, 95%, 8%, 0.4)');
+                gradient.addColorStop(1, 'hsla(0, 0%, 5%, 0.2)');
+                
+                this.shineCtx.globalCompositeOperation = 'normal';
+                this.shineCtx.fillStyle = gradient;
+                this.shineCtx.fillRect(0, 0, this.w, this.h);
+                
+                // Draw mystical title with shine effect
+                const titleText = "Mystical Fortune Cards".split("").join(String.fromCharCode(0x2004));
+                this.shineCtx.font = "2.5em 'Poiret One', cursive";
+                this.shineCtx.fillStyle = 'hsla(280, 95%, 85%, 0.15)';
+                this.shineCtx.textBaseline = 'middle';
+                this.shineCtx.fillText(
+                    titleText,
+                    (this.w - this.shineCtx.measureText(titleText).width) * 0.5,
+                    this.h * 0.15
+                );
+
+                this.shineCtx.globalCompositeOperation = 'lighter';
+                
+                // Update and draw shine particles
+                this.updateShineParticles();
+                this.drawShineParticles();
+                
+                requestAnimationFrame(this.animateShine.bind(this));
+            }
+
+            updateShineParticles() {
+                for (let particle of this.shineParticles) {
+                    // Update velocity based on mouse movement
+                    particle.velocity.x += this.mouseDeltas.x * 0.1;
+                    particle.velocity.y += this.mouseDeltas.y * 0.1;
+                    
+                    // Copy original position
+                    particle.rotatedPos.x = particle.originalPos.x;
+                    particle.rotatedPos.y = particle.originalPos.y;
+                    particle.rotatedPos.z = particle.originalPos.z;
+                    
+                    // Update rotation
+                    particle.rotation.x += particle.velocity.x;
+                    particle.rotation.y += particle.velocity.y;
+                    particle.rotation.z += particle.velocity.z;
+                    
+                    // Apply rotation
+                    this.rotateY(particle, particle.rotation.y);
+                    this.rotateX(particle, particle.rotation.x);
+                    
+                    // Apply damping
+                    particle.velocity.x *= 0.98;
+                }
+                
+                // Smooth mouse deltas
+                this.mouseDeltas.x *= 0.95;
+                this.mouseDeltas.y *= 0.95;
+            }
+
+            drawShineParticles() {
+                for (let particle of this.shineParticles) {
+                    const depth = (particle.rotatedPos.z / this.shineDepth) + 1;
+                    const x = this.w * 0.5 + particle.rotatedPos.x;
+                    const y = this.h * 0.5 + particle.rotatedPos.y;
+                    const size = this.rnd(depth * 0.5, depth * 2);
+                    
+                    // Create shimmer effect
+                    const shimmer = Math.sin(Date.now() * 0.001 + particle.originalPos.x * 0.01) * 0.5 + 0.5;
+                    const alpha = (depth - 0.5) * shimmer;
+                    
+                    if (alpha > 0) {
+                        this.shineCtx.fillStyle = particle.color.replace(/[\d.]+\)$/g, `${alpha})`);
+                        this.shineCtx.fillRect(x, y, size, size * 0.8);
+                        
+                        // Add glow effect for brighter particles
+                        if (alpha > 0.7) {
+                            this.shineCtx.shadowBlur = 20;
+                            this.shineCtx.shadowColor = particle.color;
+                            this.shineCtx.fillRect(x, y, size, size * 0.8);
+                            this.shineCtx.shadowBlur = 0;
+                        }
+                    }
+                }
+            }
+
+            // Rotation functions for shine effect
+            rotateX(particle, angle) {
+                const y = particle.rotatedPos.y;
+                const z = particle.rotatedPos.z;
+                particle.rotatedPos.y = y * Math.cos(angle) - z * Math.sin(angle);
+                particle.rotatedPos.z = z * Math.cos(angle) + y * Math.sin(angle);
+            }
+
+            rotateY(particle, angle) {
+                const x = particle.rotatedPos.x;
+                const z = particle.rotatedPos.z;
+                particle.rotatedPos.x = x * Math.cos(angle) - z * Math.sin(angle);
+                particle.rotatedPos.z = z * Math.cos(angle) + x * Math.sin(angle);
+            }
+
+            // Enhanced event listeners
+            setupEventListeners() {
+                this.reshuffleBtn.addEventListener("click", () => this.reshuffleCards());
+                this.drawCardsBtn.addEventListener("click", () => this.drawNewCards());
+                this.saveFortuneBtn.addEventListener("click", () => this.saveFortune());
+                
+                // Enhanced mouse movement for shine effect
+                window.addEventListener('mousemove', (e) => {
+                    this.mouseDeltas.x = (e.clientY - this.mouse.y) / this.w;
+                    this.mouseDeltas.y = (e.clientX - this.mouse.x) / this.h;
+                    this.mouse.x = e.clientX;
+                    this.mouse.y = e.clientY;
+                    this.createGlitterTrail(e);
+                });
+                
+                // Touch events for mobile
+                window.addEventListener('touchmove', (e) => {
+                    e.preventDefault();
+                    this.mouseDeltas.x = (e.touches[0].clientY - this.mouse.y) / this.w;
+                    this.mouseDeltas.y = (e.touches[0].clientX - this.mouse.x) / this.h;
+                    this.mouse.x = e.touches[0].clientX;
+                    this.mouse.y = e.touches[0].clientY;
+                }, { passive: false });
+                
+                // Enhanced resize handler
+                window.addEventListener('resize', () => {
+                    this.w = this.shineCanvas.width = window.innerWidth;
+                    this.h = this.shineCanvas.height = window.innerHeight;
+                    this.canvas.width = window.innerWidth;
+                    this.canvas.height = window.innerHeight;
+                    this.glitterCanvas.width = window.innerWidth;
+                    this.glitterCanvas.height = window.innerHeight;
+                });
+                
+                // Click sparkles
+                document.addEventListener('click', (e) => this.createClickSparkles(e));
+                
+                // Keyboard shortcuts
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.isRevealed) {
+                        this.reshuffleCards();
+                    }
+                    if (e.key === 'Enter' && !this.isRevealed) {
+                        this.drawNewCards();
+                    }
+                    if (e.key === 's' && this.isRevealed) {
+                        this.saveFortune();
+                    }
+                });
+            }
+
+            // Enhanced loading functions
+            showLoading() {
+                this.loadingElement.style.display = 'block';
+                this.loadingElement.classList.add('animate__animated', 'animate__fadeIn');
+            }
+
+            hideLoading() {
+                this.loadingElement.classList.add('animate__animated', 'animate__fadeOut');
+                setTimeout(() => {
+                    this.loadingElement.style.display = 'none';
+                    this.loadingElement.classList.remove('animate__animated', 'animate__fadeOut');
+                }, 500);
+            }
+
+            // Enhanced card drawing
+            drawNewCards() {
+                this.showLoading();
+                this.currentDeck = [];
+                
+                const shuffled = [...this.availableCards].sort(() => Math.random() - 0.5);
+                this.currentDeck = shuffled.slice(0, 6);
+                this.cardsRemaining.textContent = this.availableCards.length;
+                
+                // Create dramatic shine burst
+                this.createShineBurst();
+                
+                setTimeout(() => {
+                    this.createCards();
+                    this.hideLoading();
+                }, 1000);
+            }
+
+            createShineBurst() {
+                // Create additional shine particles for dramatic effect
+                for (let i = 0; i < 100; i++) {
+                    const burstParticle = {
+                        originalPos: {
+                            x: this.rnd(-50, 50),
+                            y: this.rnd(-50, 50),
+                            z: this.rnd(-100, 100)
+                        },
+                        rotatedPos: { x: 0, y: 0, z: 0 },
+                        rotation: { x: 0, y: 0, z: 0 },
+                        velocity: {
+                            x: this.rnd(-0.1, 0.1),
+                            y: this.rnd(-0.1, 0.1),
+                            z: 0
+                        },
+                        color: `hsla(${this.rnd(280, 320)}, 95%, 85%, ${this.rnd(0.7, 1)})`,
+                        life: 60,
+                        maxLife: 60
+                    };
+                    
+                    burstParticle.rotatedPos.x = burstParticle.originalPos.x;
+                    burstParticle.rotatedPos.y = burstParticle.originalPos.y;
+                    burstParticle.rotatedPos.z = burstParticle.originalPos.z;
+                    
+                    this.shineParticles.push(burstParticle);
+                }
+            }
+
+            // Enhanced card creation
+            createCards() {
+                this.cardsContainer.innerHTML = "";
+
+                this.currentDeck.forEach((card, index) => {
+                    const cardElement = document.createElement("div");
+                    cardElement.className = `card ${card.rarity}`;
+                    cardElement.innerHTML = `
+                        <div class="card-face card-back">
+                            <div class="card-glow"></div>
+                        </div>
+                        <div class="card-face card-front">
+                            <div class="card-symbol">${card.symbol}</div>
+                            <div class="card-title">${card.title}</div>
+                            <div class="card-desc">${card.description}</div>
+                        </div>
+                    `;
+
+                    cardElement.addEventListener("click", () => this.selectCard(cardElement, card));
+                    cardElement.addEventListener("mouseenter", () => this.cardHoverEffect(cardElement));
+                    cardElement.addEventListener("mouseleave", () => this.cardLeaveEffect(cardElement));
+
+                    // Enhanced entrance animation
+                    setTimeout(() => {
+                        cardElement.classList.add('animate__animated', 'animate__flipInY');
+                        this.createCardSparkles(cardElement);
+                    }, index * 200);
+
+                    const randomRotation = Math.random() * 6 - 3;
+                    cardElement.style.transform = `rotateZ(${randomRotation}deg)`;
+
+                    this.cardsContainer.appendChild(cardElement);
+                });
+            }
+
+            createCardSparkles(cardElement) {
+                const rect = cardElement.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                for (let i = 0; i < 12; i++) {
+                    this.createEnhancedSparkle(centerX, centerY);
+                }
+            }
+
+            cardHoverEffect(cardElement) {
+                const rect = cardElement.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                for (let i = 0; i < 8; i++) {
+                    this.createGlitterParticle(
+                        centerX + (Math.random() - 0.5) * 100,
+                        centerY + (Math.random() - 0.5) * 100
+                    );
+                }
+
+                // Create localized shine effect
+                this.createLocalShine(centerX, centerY);
+                
+                cardElement.classList.add('animate__animated', 'animate__pulse');
+            }
+
+            createLocalShine(x, y) {
+                for (let i = 0; i < 20; i++) {
+                    const localShine = {
+                        originalPos: {
+                            x: this.rnd(-50, 50),
+                            y: this.rnd(-50, 50),
+                            z: this.rnd(-50, 50)
+                        },
+                        rotatedPos: { x: 0, y: 0, z: 0 },
+                        rotation: { x: 0, y: 0, z: 0 },
+                        velocity: {
+                            x: this.rnd(-0.05, 0.05),
+                            y: this.rnd(-0.05, 0.05),
+                            z: 0
+                        },
+                        color: `hsla(${this.rnd(280, 320)}, 95%, 85%, ${this.rnd(0.5, 0.8)})`,
+                        centerX: x,
+                        centerY: y,
+                        life: 30,
+                        maxLife: 30
+                    };
+                    
+                    localShine.rotatedPos.x = localShine.originalPos.x;
+                    localShine.rotatedPos.y = localShine.originalPos.y;
+                    localShine.rotatedPos.z = localShine.originalPos.z;
+                    
+                    this.shineParticles.push(localShine);
+                }
+            }
+
+            cardLeaveEffect(cardElement) {
+                cardElement.classList.remove('animate__animated', 'animate__pulse');
+            }
+
+            // Enhanced card selection
+            selectCard(cardElement, cardData) {
+                if (this.isRevealed) return;
+
+                cardElement.classList.add('selected');
+                cardElement.classList.add('animate__animated', 'animate__tada');
+
+                // Create massive shine explosion
+                this.createMassiveShineExplosion(cardElement);
+                
+                // Enhanced magical effect
+                this.createEnhancedMagicalEffect(cardElement);
+
+                setTimeout(() => {
+                    cardElement.classList.add("flipped");
+                }, 500);
+
+                this.selectedCard = { element: cardElement, data: cardData };
+
+                const allCards = this.cardsContainer.querySelectorAll(".card");
+                allCards.forEach((card) => {
+                    if (card !== cardElement) {
+                        card.style.opacity = "0.3";
+                        card.style.transform = "scale(0.9)";
+                        card.style.filter = "grayscale(0.8)";
+                        card.style.pointerEvents = "none";
+                        card.classList.add('animate__animated', 'animate__fadeOut');
+                    }
+                });
+
+                setTimeout(() => {
+                    this.revealFortune(cardData);
+                }, 1500);
+            }
+
+            createMassiveShineExplosion(cardElement) {
+                const rect = cardElement.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                // Create explosion of shine particles
+                for (let i = 0; i < 150; i++) {
+                    const angle = (Math.PI * 2 * i) / 150;
+                    const distance = this.rnd(50, 300);
+                    const explosionParticle = {
+                        originalPos: {
+                            x: Math.cos(angle) * distance,
+                            y: Math.sin(angle) * distance,
+                            z: this.rnd(-100, 100)
+                        },
+                        rotatedPos: { x: 0, y: 0, z: 0 },
+                        rotation: { x: 0, y: 0, z: 0 },
+                        velocity: {
+                            x: Math.cos(angle) * 0.2,
+                            y: Math.sin(angle) * 0.2,
+                            z: this.rnd(-0.1, 0.1)
+                        },
+                        color: `hsla(${this.rnd(280, 320)}, 95%, 85%, ${this.rnd(0.8, 1)})`,
+                        centerX: centerX,
+                        centerY: centerY,
+                        life: 100,
+                        maxLife: 100
+                    };
+                    
+                    explosionParticle.rotatedPos.x = explosionParticle.originalPos.x;
+                    explosionParticle.rotatedPos.y = explosionParticle.originalPos.y;
+                    explosionParticle.rotatedPos.z = explosionParticle.originalPos.z;
+                    
+                    this.shineParticles.push(explosionParticle);
+                }
+            }
+
+            // Enhanced fortune revelation
+            revealFortune(cardData) {
+                this.isRevealed = true;
+
+                this.messageTitle.textContent = cardData.title;
+                this.messageText.textContent = cardData.fortune;
+                this.fortuneDetails.textContent = cardData.details;
+
+                this.messageContainer.classList.add("visible");
+                
+                setTimeout(() => {
+                    const messageCard = this.messageContainer.querySelector('.message-card');
+                    messageCard.classList.add('animate__animated', 'animate__zoomIn');
+                }, 100);
+
+                // Create multiple particle effects
+                for (let i = 0; i < 100; i++) {
+                    this.createParticle(window.innerWidth / 2, window.innerHeight / 2, true);
+                }
+
+                for (let i = 0; i < 60; i++) {
+                    this.createGlitterParticle(window.innerWidth / 2, window.innerHeight / 2, true);
+                }
+
+                // Create fortune shine effect
+                this.createFortuneShine();
+                
+                this.playMagicalSound();
+            }
+
+            createFortuneShine() {
+                const centerX = window.innerWidth / 2;
+                const centerY = window.innerHeight / 2;
+                
+                for (let i = 0; i < 200; i++) {
+                    const fortuneShine = {
+                        originalPos: {
+                            x: this.rnd(-200, 200),
+                            y: this.rnd(-200, 200),
+                            z: this.rnd(-200, 200)
+                        },
+                        rotatedPos: { x: 0, y: 0, z: 0 },
+                        rotation: { x: 0, y: 0, z: 0 },
+                        velocity: {
+                            x: this.rnd(-0.3, 0.3),
+                            y: this.rnd(-0.3, 0.3),
+                            z: this.rnd(-0.1, 0.1)
+                        },
+                        color: `hsla(${this.rnd(280, 320)}, 95%, 85%, ${this.rnd(0.6, 1)})`,
+                        centerX: centerX,
+                        centerY: centerY,
+                        life: 150,
+                        maxLife: 150
+                    };
+                    
+                    fortuneShine.rotatedPos.x = fortuneShine.originalPos.x;
+                    fortuneShine.rotatedPos.y = fortuneShine.originalPos.y;
+                    fortuneShine.rotatedPos.z = fortuneShine.originalPos.z;
+                    
+                    this.shineParticles.push(fortuneShine);
+                }
+            }
+
+            // Enhanced magical effects
+            createEnhancedMagicalEffect(element) {
+                const rect = element.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                                // Create multiple rings of enhanced sparkles
+                for (let ring = 0; ring < 4; ring++) {
+                    const ringRadius = 60 + (ring * 40);
+                    const sparkleCount = 10 + (ring * 5);
+                    
+                    for (let i = 0; i < sparkleCount; i++) {
+                        const angle = (Math.PI * 2 * i) / sparkleCount;
+                        const posX = centerX + Math.cos(angle) * ringRadius;
+                        const posY = centerY + Math.sin(angle) * ringRadius;
+                        
+                        setTimeout(() => {
+                            this.createEnhancedSparkle(posX, posY);
+                        }, ring * 150);
+                    }
+                }
+
+                // Create enhanced particles
+                for (let i = 0; i < 40; i++) {
+                    this.createParticle(centerX, centerY);
+                }
+
+                // Create screen pulse effect
+                this.createScreenPulse();
+            }
+
+            createEnhancedSparkle(x, y) {
+                const sparkle = document.createElement("div");
+                sparkle.className = "magical-sparkle";
+
+                sparkle.style.left = `${x}px`;
+                sparkle.style.top = `${y}px`;
+
+                // Enhanced colors with shine effect
+                const colors = ["#9969ff", "#ff69a1", "#ffeb3b", "#69b4ff", "#ff9f69", "hsla(280, 95%, 85%, 0.9)"];
+                sparkle.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+                const size = Math.random() * 15 + 8;
+                sparkle.style.width = `${size}px`;
+                sparkle.style.height = `${size}px`;
+
+                // Add enhanced glow
+                sparkle.style.boxShadow = `0 0 ${size * 3}px ${sparkle.style.background}`;
+
+                document.body.appendChild(sparkle);
+
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 3000);
+            }
+
+            createScreenPulse() {
+                const pulse = document.createElement('div');
+                pulse.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: radial-gradient(circle, hsla(280, 95%, 85%, 0.2) 0%, transparent 70%);
+                    z-index: 50;
+                    pointer-events: none;
+                    animation: screenPulse 2s ease-out forwards;
+                `;
+
+                document.body.appendChild(pulse);
+
+                setTimeout(() => {
+                    pulse.remove();
+                }, 2000);
+
+                // Add CSS animation
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes screenPulse {
+                        0% { opacity: 0; transform: scale(0.8); }
+                        50% { opacity: 1; transform: scale(1.2); }
+                        100% { opacity: 0; transform: scale(1.5); }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+            // Enhanced reshuffle
+            reshuffleCards() {
+                const messageCard = this.messageContainer.querySelector('.message-card');
+                messageCard.classList.add('animate__animated', 'animate__zoomOut');
+                
+                setTimeout(() => {
+                    this.messageContainer.classList.remove("visible");
+                    messageCard.classList.remove('animate__animated', 'animate__zoomOut');
+                }, 500);
+
+                this.isRevealed = false;
+                this.selectedCard = null;
+
+                // Create reshuffle shine effect
+                this.createReshuffleShine();
+
+                // Create particles burst
+                for (let i = 0; i < 50; i++) {
+                                        this.createParticle(window.innerWidth / 2, window.innerHeight / 2, true);
+                }
+
+                setTimeout(() => {
+                    this.drawNewCards();
+                }, 800);
+            }
+
+            createReshuffleShine() {
+                for (let i = 0; i < 80; i++) {
+                    const reshuffleShine = {
+                        originalPos: {
+                            x: this.rnd(-100, 100),
+                            y: this.rnd(-100, 100),
+                            z: this.rnd(-100, 100)
+                        },
+                        rotatedPos: { x: 0, y: 0, z: 0 },
+                        rotation: { x: 0, y: 0, z: 0 },
+                        velocity: {
+                            x: this.rnd(-0.2, 0.2),
+                            y: this.rnd(-0.2, 0.2),
+                            z: this.rnd(-0.1, 0.1)
+                        },
+                        color: `hsla(${this.rnd(280, 320)}, 95%, 85%, ${this.rnd(0.4, 0.8)})`,
+                        life: 80,
+                        maxLife: 80
+                    };
+                    
+                    reshuffleShine.rotatedPos.x = reshuffleShine.originalPos.x;
+                    reshuffleShine.rotatedPos.y = reshuffleShine.originalPos.y;
+                    reshuffleShine.rotatedPos.z = reshuffleShine.originalPos.z;
+                    
+                    this.shineParticles.push(reshuffleShine);
+                }
+            }
+
+            // Enhanced save fortune
+            saveFortune() {
+                if (!this.selectedCard) return;
+
+                const fortune = {
+                    title: this.selectedCard.data.title,
+                    fortune: this.selectedCard.data.fortune,
+                    details: this.selectedCard.data.details,
+                    date: new Date().toLocaleDateString(),
+                    time: new Date().toLocaleTimeString()
+                };
+
+                this.savedFortunes.push(fortune);
+                localStorage.setItem('mysticalFortunes', JSON.stringify(this.savedFortunes));
+
+                this.showNotification("Fortune saved to your mystical collection! ✨");
+                this.createSaveShine();
+            }
+
+            createSaveShine() {
+                const saveButton = document.getElementById('save-fortune-btn');
+                const rect = saveButton.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                for (let i = 0; i < 30; i++) {
+                    const saveShine = {
+                        originalPos: {
+                            x: this.rnd(-30, 30),
+                            y: this.rnd(-30, 30),
+                            z: this.rnd(-30, 30)
+                        },
+                        rotatedPos: { x: 0, y: 0, z: 0 },
+                        rotation: { x: 0, y: 0, z: 0 },
+                        velocity: {
+                            x: this.rnd(-0.1, 0.1),
+                            y: this.rnd(-0.1, 0.1),
+                            z: 0
+                        },
+                        color: `hsla(${this.rnd(280, 320)}, 95%, 85%, ${this.rnd(0.6, 0.9)})`,
+                        centerX: centerX,
+                        centerY: centerY,
+                        life: 40,
+                        maxLife: 40
+                    };
+                    
+                    saveShine.rotatedPos.x = saveShine.originalPos.x;
+                    saveShine.rotatedPos.y = saveShine.originalPos.y;
+                    saveShine.rotatedPos.z = saveShine.originalPos.z;
+                    
+                    this.shineParticles.push(saveShine);
+                }
+            }
+
+            // Enhanced notification system
+            showNotification(message) {
+                const notification = document.createElement('div');
+                notification.className = 'notification';
+                notification.textContent = message;
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+                    color: white;
+                    padding: 1rem 2rem;
+                    border-radius: 15px;
+                    font-family: "Cinzel", serif;
+                    z-index: 10000;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+                    border: 2px solid hsla(280, 95%, 85%, 0.5);
+                `;
+
+                document.body.appendChild(notification);
+                
+                notification.classList.add('animate__animated', 'animate__slideInRight');
+
+                // Create notification shine effect
+                this.createNotificationShine(notification);
+
+                setTimeout(() => {
+                    notification.classList.add('animate__animated', 'animate__slideOutRight');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 500);
+                }, 3000);
+            }
+
+            createNotificationShine(notification) {
+                const rect = notification.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                for (let i = 0; i < 15; i++) {
+                    this.createEnhancedSparkle(
+                        centerX + this.rnd(-50, 50),
+                        centerY + this.rnd(-20, 20)
+                    );
+                }
+            }
+
+            // Enhanced glitter trail
+            createGlitterTrail(event) {
+                if (Math.random() < 0.4) {
+                    this.createGlitterParticle(event.clientX, event.clientY);
+                    
+                    // Add shine particles to trail
+                    if (Math.random() < 0.2) {
+                        const trailShine = {
+                            originalPos: {
+                                x: this.rnd(-10, 10),
+                                y: this.rnd(-10, 10),
+                                z: this.rnd(-10, 10)
+                            },
+                            rotatedPos: { x: 0, y: 0, z: 0 },
+                            rotation: { x: 0, y: 0, z: 0 },
+                            velocity: {
+                                x: this.rnd(-0.05, 0.05),
+                                y: this.rnd(-0.05, 0.05),
+                                z: 0
+                            },
+                            color: `hsla(${this.rnd(280, 320)}, 95%, 85%, ${this.rnd(0.3, 0.6)})`,
+                            centerX: event.clientX,
+                            centerY: event.clientY,
+                            life: 20,
+                            maxLife: 20
+                        };
+                        
+                        trailShine.rotatedPos.x = trailShine.originalPos.x;
+                        trailShine.rotatedPos.y = trailShine.originalPos.y;
+                        trailShine.rotatedPos.z = trailShine.originalPos.z;
+                        
+                        this.shineParticles.push(trailShine);
+                    }
+                }
+            }
+
+            // Enhanced click sparkles
+            createClickSparkles(event) {
+                for (let i = 0; i < 15; i++) {
+                    const sparkle = document.createElement("div");
+                    sparkle.className = "magical-sparkle";
+                    
+                    const offsetX = (Math.random() - 0.5) * 120;
+                    const offsetY = (Math.random() - 0.5) * 120;
+                    
+                    sparkle.style.left = `${event.clientX + offsetX}px`;
+                    sparkle.style.top = `${event.clientY + offsetY}px`;
+                    
+                    const colors = ["#9969ff", "#ff69a1", "#ffeb3b", "#69b4ff", "hsla(280, 95%, 85%, 0.9)"];
+                    sparkle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    const size = Math.random() * 12 + 6;
+                    sparkle.style.width = `${size}px`;
+                    sparkle.style.height = `${size}px`;
+                    sparkle.style.boxShadow = `0 0 ${size * 2}px ${sparkle.style.background}`;
+                    
+                    document.body.appendChild(sparkle);
+                    
+                    setTimeout(() => {
+                        sparkle.remove();
+                    }, 3000);
+                }
+
+                // Add click shine effect
+                this.createClickShine(event.clientX, event.clientY);
+            }
+
+            createClickShine(x, y) {
+                for (let i = 0; i < 25; i++) {
+                    const clickShine = {
+                        originalPos: {
+                            x: this.rnd(-40, 40),
+                            y: this.rnd(-40, 40),
+                            z: this.rnd(-40, 40)
+                        },
+                        rotatedPos: { x: 0, y: 0, z: 0 },
+                        rotation: { x: 0, y: 0, z: 0 },
+                        velocity: {
+                            x: this.rnd(-0.15, 0.15),
+                            y: this.rnd(-0.15, 0.15),
+                            z: this.rnd(-0.05, 0.05)
+                        },
+                        color: `hsla(${this.rnd(280, 320)}, 95%, 85%, ${this.rnd(0.4, 0.8)})`,
+                        centerX: x,
+                        centerY: y,
+                        life: 30,
+                        maxLife: 30
+                    };
+                    
+                    clickShine.rotatedPos.x = clickShine.originalPos.x;
+                    clickShine.rotatedPos.y = clickShine.originalPos.y;
+                    clickShine.rotatedPos.z = clickShine.originalPos.z;
+                    
+                    this.shineParticles.push(clickShine);
+                }
+            }
+
+            // Canvas setup
+            setupCanvas() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+                this.glitterCanvas.width = window.innerWidth;
+                this.glitterCanvas.height = window.innerHeight;
+
+                // Create background particles
+                for (let i = 0; i < 70; i++) {
+                    this.createParticle(
+                        Math.random() * this.canvas.width,
+                        Math.random() * this.canvas.height
+                    );
+                }
+            }
+
+            // Enhanced particle system
+            createParticle(x, y, isBurst = false) {
+                const color = this.particleColors[
+                    Math.floor(Math.random() * this.particleColors.length)
+                ];
+
+                const particle = {
+                    x,
+                    y,
+                    size: Math.random() * 6 + 2,
+                    color,
+                    speedX: (Math.random() - 0.5) * (isBurst ? 15 : 2),
+                    speedY: (Math.random() - 0.5) * (isBurst ? 15 : 2),
+                    life: 150,
+                    maxLife: 150,
+                    gravity: isBurst ? 0.12 : 0.06,
+                    bounce: 0.85,
+                    glow: Math.random() * 20 + 10
+                };
+
+                this.particles.push(particle);
+
+                if (this.particles.length > 120) {
+                    this.particles.shift();
+                }
+            }
+
+            createGlitterParticle(x, y, isBurst = false) {
+                const glitter = {
+                    x,
+                    y,
+                    size: Math.random() * 5 + 2,
+                    color: `hsla(${Math.random() * 60 + 280}, 95%, 85%, ${Math.random() * 0.5 + 0.5})`,
+                    speedX: (Math.random() - 0.5) * (isBurst ? 10 : 4),
+                    speedY: (Math.random() - 0.5) * (isBurst ? 10 : 4),
+                    life: 100,
+                    maxLife: 100,
+                    twinkle: Math.random() * Math.PI * 2,
+                    twinkleSpeed: Math.random() * 0.3 + 0.1,
+                    glow: Math.random() * 15 + 5
+                };
+
+                this.glitterParticles.push(glitter);
+
+                if (this.glitterParticles.length > 80) {
+                    this.glitterParticles.shift();
+                }
+            }
+
+            // Enhanced particle animations
+            animateParticles() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+                for (let i = this.particles.length - 1; i >= 0; i--) {
+                    const p = this.particles[i];
+
+                    p.x += p.speedX;
+                    p.y += p.speedY;
+                    p.speedY += p.gravity;
+
+                    // Enhanced edge bouncing
+                    if (p.x <= p.size || p.x >= this.canvas.width - p.size) {
+                        p.speedX *= -p.bounce;
+                        p.x = Math.max(p.size, Math.min(this.canvas.width - p.size, p.x));
+                    }
+                    if (p.y >= this.canvas.height - p.size) {
+                        p.speedY *= -p.bounce;
+                        p.y = this.canvas.height - p.size;
+                    }
+
+                    p.speedX *= 0.995;
+                    p.speedY *= 0.995;
+                    p.life--;
+
+                    const opacity = Math.max(0, p.life / p.maxLife);
+
+                    // Enhanced particle rendering with glow
+                    this.ctx.shadowBlur = p.glow;
+                    this.ctx.shadowColor = p.color;
+                    this.ctx.beginPath();
+                    this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = `${p.color}${Math.floor(opacity * 255)
+                        .toString(16)
+                        .padStart(2, "0")}`;
+                    this.ctx.fill();
+                    this.ctx.shadowBlur = 0;
+
+                    if (p.life <= 0) {
+                        this.particles.splice(i, 1);
+                    }
+                }
+
+                // Maintain particle count
+                while (this.particles.length < 70) {
+                    this.createParticle(
+                        Math.random() * this.canvas.width,
+                        Math.random() * this.canvas.height
+                    );
+                }
+
+                requestAnimationFrame(this.animateParticles.bind(this));
+            }
+
+            // Enhanced glitter animation
+            animateGlitter() {
+                this.glitterCtx.clearRect(0, 0, this.glitterCanvas.width, this.glitterCanvas.height);
+
+                for (let i = this.glitterParticles.length - 1; i >= 0; i--) {
+                    const g = this.glitterParticles[i];
+
+                    g.x += g.speedX;
+                    g.y += g.speedY;
+                    g.twinkle += g.twinkleSpeed;
+
+                    g.speedX *= 0.99;
+                    g.speedY *= 0.99;
+                    g.life--;
+
+                    const opacity = Math.max(0, g.life / g.maxLife);
+                    const twinkleOpacity = opacity * (0.5 + 0.5 * Math.sin(g.twinkle));
+
+                    // Enhanced glitter rendering
+                    this.glitterCtx.shadowBlur = g.glow;
+                    this.glitterCtx.shadowColor = g.color;
+                    
+                    this.glitterCtx.beginPath();
+                    this.glitterCtx.arc(g.x, g.y, g.size, 0, Math.PI * 2);
+                    this.glitterCtx.fillStyle = `${g.color}${Math.floor(twinkleOpacity * 255)
+                        .toString(16)
+                        .padStart(2, "0")}`;
+                    this.glitterCtx.fill();
+
+                    // Enhanced star effect
+                    this.glitterCtx.strokeStyle = `${g.color}${Math.floor(twinkleOpacity * 255)
+                        .toString(16)
+                        .padStart(2, "0")}`;
+                    this.glitterCtx.lineWidth = 2;
+                    this.glitterCtx.beginPath();
+                    this.glitterCtx.moveTo(g.x - g.size * 1.5, g.y);
+                    this.glitterCtx.lineTo(g.x + g.size * 1.5, g.y);
+                    this.glitterCtx.moveTo(g.x, g.y - g.size * 1.5);
+                    this.glitterCtx.lineTo(g.x, g.y + g.size * 1.5);
+                    this.glitterCtx.stroke();
+                    
+                    this.glitterCtx.shadowBlur = 0;
+
+                    if (g.life <= 0) {
+                        this.glitterParticles.splice(i, 1);
+                    }
+                }
+
+                requestAnimationFrame(this.animateGlitter.bind(this));
+            }
+
+            // Enhanced ambient effects
+            createAmbientEffects() {
+                // Periodic ambient particles
+                setInterval(() => {
+                    if (Math.random() < 0.8) {
+                        this.createParticle(
+                            Math.random() * this.canvas.width,
+                            -10
+                        );
+                    }
+                }, 1500);
+
+                // Periodic glitter bursts
+                setInterval(() => {
+                    if (Math.random() < 0.4) {
+                        const x = Math.random() * this.canvas.width;
+                        const y = Math.random() * this.canvas.height;
+                        for (let i = 0; i < 8; i++) {
+                            this.createGlitterParticle(x, y);
+                        }
+                    }
+                }, 4000);
+
+                // Periodic shine bursts
+                setInterval(() => {
+                    if (Math.random() < 0.3) {
+                        this.createAmbientShine();
+                    }
+                }, 6000);
+
+                this.createFloatingText();
+            }
+
+            createAmbientShine() {
+                const x = Math.random() * this.w;
+                const y = Math.random() * this.h;
+                
+                for (let i = 0; i < 30; i++) {
+                    const ambientShine = {
+                        originalPos: {
+                            x: this.rnd(-50, 50),
+                            y: this.rnd(-50, 50),
+                            z: this.rnd(-50, 50)
+                        },
+                        rotatedPos: { x: 0, y: 0, z: 0 },
+                        rotation: { x: 0, y: 0, z: 0 },
+                        velocity: {
+                            x: this.rnd(-0.1, 0.1),
+                            y: this.rnd(-0.1, 0.1),
+                            z: this.rnd(-0.05, 0.05)
+                        },
+                        color: `hsla(${this.rnd(280, 320)}, 95%, 85%, ${this.rnd(0.2, 0.5)})`,
+                        centerX: x,
+                        centerY: y,
+                        life: 60,
+                        maxLife: 60
+                    };
+                    
+                    ambientShine.rotatedPos.x = ambientShine.originalPos.x;
+                                        ambientShine.rotatedPos.y = ambientShine.originalPos.y;
+                    ambientShine.rotatedPos.z = ambientShine.originalPos.z;
+                    
+                    this.shineParticles.push(ambientShine);
+                }
+            }
+
+            // Enhanced floating text
+            createFloatingText() {
+                const mysticalPhrases = [
+                    "✨ Magic flows through the cosmos",
+                    "🌟 The stars whisper ancient secrets",
+                    "🔮 Destiny weaves its golden threads",
+                    "🌙 Dreams dance with moonlight",
+                    "⭐ Believe in the impossible",
+                    "💫 Wonder illuminates the path",
+                    "🌈 Hope paints the sky with colors",
+                    "🦋 Transformation brings beauty"
+                ];
+
+                setInterval(() => {
+                    if (Math.random() < 0.25) {
+                        const phrase = mysticalPhrases[Math.floor(Math.random() * mysticalPhrases.length)];
+                        this.showFloatingText(phrase);
+                    }
+                }, 12000);
+            }
+
+            showFloatingText(text) {
+                const floatingText = document.createElement('div');
+                floatingText.textContent = text;
+                floatingText.style.cssText = `
+                    position: fixed;
+                    top: 25%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-family: "Poiret One", cursive;
+                    font-size: 1.4rem;
+                    color: hsla(280, 95%, 85%, 0.8);
+                    text-shadow: 0 0 15px hsla(280, 95%, 85%, 0.8);
+                    z-index: 5;
+                    pointer-events: none;
+                    opacity: 0;
+                    animation: floatUpEnhanced 5s ease-out forwards;
+                `;
+
+                document.body.appendChild(floatingText);
+
+                // Create floating text shine effect
+                this.createFloatingTextShine(floatingText);
+
+                // Enhanced CSS animation
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes floatUpEnhanced {
+                        0% { 
+                            opacity: 0; 
+                            transform: translateX(-50%) translateY(0) scale(0.8);
