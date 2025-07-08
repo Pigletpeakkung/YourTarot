@@ -3,537 +3,358 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thanatsitt - AI Creative Designer & Researcher</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Quantum Consciousness Platform by Thanattsitt Santisamranwilai - Exploring the intersection of Buddhist philosophy, quantum technology, and cultural heritage through innovative web projects.">
+    <meta name="keywords" content="Buddhist Philosophy, Quantum Computing, Open Source, Thai Culture, Web Development, Thanattsitt Santisamranwilai, Pegearts">
+    <meta name="author" content="Thanattsitt Santisamranwilai">
+    <title>Quantum Consciousness - Ancient Wisdom meets Modern Innovation | Thanattsitt Santisamranwilai</title>
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Quantum Consciousness Platform by Thanattsitt Santisamranwilai">
+    <meta property="og:description" content="Exploring the intersection of Buddhist philosophy, quantum technology, and cultural heritage through innovative web projects.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&w=1200&h=630&fit=crop">
+    <meta property="og:url" content="https://pegearts.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Quantum Consciousness Platform">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Quantum Consciousness Platform">
+    <meta name="twitter:description" content="Exploring Buddhist philosophy and quantum technology intersection.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&w=1200&h=630&fit=crop">
+    <meta name="twitter:creator" content="@ThanttEzekiel">
+    
+    <!-- Structured Data for Google Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Quantum Consciousness Platform",
+      "url": "https://pegearts.com",
+      "description": "Exploring the intersection of Buddhist philosophy, quantum technology, and cultural heritage through innovative web projects.",
+      "author": {
+        "@type": "Person",
+        "name": "Thanattsitt Santisamranwilai",
+        "url": "https://linktr.ee/ThanttEzekiel",
+        "email": "thanattsitt.info@yahoo.co.uk",
+        "sameAs": [
+          "https://www.linkedin.com/in/thanatsitts",
+          "https://linktr.ee/ThanttEzekiel"
+        ]
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Thanattsitt Santisamranwilai",
+        "url": "https://pegearts.com"
+      },
+      "inLanguage": "en-US",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://pegearts.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <!-- Additional Schema for Portfolio -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Thanattsitt Santisamranwilai",
+      "url": "https://pegearts.com",
+      "email": "thanattsitt.info@yahoo.co.uk",
+      "jobTitle": "Quantum Consciousness Developer & Buddhist Philosophy Researcher",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Pegearts",
+        "url": "https://pegearts.com"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/thanatsitts",
+        "https://linktr.ee/ThanttEzekiel"
+      ],
+      "knowsAbout": [
+        "Buddhist Philosophy",
+        "Quantum Computing",
+        "Web Development",
+        "Cultural Heritage Preservation",
+        "Open Source Development"
+      ]
+    }
+    </script>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕉️</text></svg>">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#FFD700">
+    
     <style>
-        /* Enhanced CSS Variables with Pastel Harmony */
+        /* ===== CSS CUSTOM PROPERTIES ===== */
         :root {
-            --primary-bg: #F8F9FA;
-            --secondary-bg: #FFFFFF;
-            --accent-bg: #F0F4F8;
-            --accent-cyan: #0891B2;
-            --accent-coral: #DC2626;
-            --accent-mint: #059669;
-            --accent-gold: #D97706;
-            --accent-sage: #16A34A;
-            --text-primary: #1F2937;
-            --text-secondary: #4B5563;
-            --text-muted: #6B7280;
-            --border-light: #E5E7EB;
-            --border-medium: #D1D5DB;
-            --gradient-bg: linear-gradient(135deg, #F8F9FA 0%, #F0F4F8 100%);
+            /* Modern Color Palette */
+            --primary: #FFD700;
+            --secondary: #FF9933;
+            --accent: #4A90E2;
+            --dark: #2D1B20;
+            --light: #FFFFFF;
+            --surface: #FAFAFA;
+            --muted: #6B7280;
+            --border: #E5E7EB;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --error: #EF4444;
+            
+            /* Glassmorphism */
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 215, 0, 0.2);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --glass-backdrop: blur(16px) saturate(180%);
+            
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            /* Typography */
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            --font-size-5xl: 3rem;
+            
+            /* Shadows */
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-glow: 0 0 20px rgba(255, 215, 0, 0.3);
             
-            /* Pastel Harmony Colors */
-            --pastel-pink: #FFE4E1;
-            --pastel-blue: #E6F3FF;
-            --pastel-mint: #E8F5E8;
-            --pastel-lavender: #F0E6FF;
-            --pastel-peach: #FFE5CC;
-            --pastel-sky: #E0F2FE;
-            --pastel-sage: #F0F9F0;
-            --pastel-coral: #FFE8E8;
+            /* Transitions */
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             
-            /* Glassmorphism Variables */
-            --glass-bg: rgba(255, 255, 255, 0.25);
-            --glass-border: rgba(255, 255, 255, 0.18);
-            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            --glass-backdrop: blur(20px) saturate(180%);
+            /* Border Radius */
+            --radius-sm: 0.25rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
         }
-
-        /* Reset and Base Styles */
+        
+        /* ===== RESET & BASE STYLES ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--gradient-bg);
-            color: var(--text-primary);
-            overflow-x: hidden;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            overflow-x: hidden;
         }
-
-        /* Stars and Sparkles Background */
-        .stars-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            overflow: hidden;
+        
+        /* ===== UTILITIES ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
         }
-
-        .star {
-            position: absolute;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: twinkle 3s ease-in-out infinite;
-        }
-
-        .star.small {
-            width: 2px;
-            height: 2px;
-            animation-duration: 2s;
-        }
-
-        .star.medium {
-            width: 3px;
-            height: 3px;
-            animation-duration: 3s;
-        }
-
-        .star.large {
-            width: 4px;
-            height: 4px;
-            animation-duration: 4s;
-        }
-
-        .sparkle {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: linear-gradient(45deg, #FFD700, #FFA500, #FF69B4, #87CEEB);
-            border-radius: 50%;
-            animation: sparkle 2s ease-in-out infinite;
-        }
-
-        .sparkle::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
-
-        @keyframes sparkle {
-            0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
-            50% { opacity: 1; transform: scale(1) rotate(180deg); }
-        }
-
-        /* Enhanced Moon with Dynamic Phases */
-        .moon-container {
-            position: relative;
-            width: 280px;
-            height: 280px;
-            margin: 0 auto 2rem;
-        }
-
-        .moon {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            border-radius: 50%;
-            background: linear-gradient(135deg, 
-                var(--pastel-sky) 0%, 
-                var(--pastel-blue) 30%, 
-                var(--pastel-lavender) 70%, 
-                var(--pastel-mint) 100%);
-            border: 2px solid var(--border-medium);
-            box-shadow: 
-                var(--shadow-xl),
-                inset 0 0 30px rgba(255, 255, 255, 0.3),
-                0 0 60px rgba(8, 145, 178, 0.2);
-            transition: all var(--transition-smooth);
-            animation: moonPhase 8s ease-in-out infinite;
-            overflow: hidden;
-        }
-
-        .moon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, 
-                transparent 0%, 
-                rgba(255, 255, 255, 0.1) 25%, 
-                rgba(8, 145, 178, 0.1) 50%, 
-                transparent 75%);
-            border-radius: 50%;
-            animation: moonGlow 6s ease-in-out infinite;
-        }
-
-        .moon::after {
-            content: '';
-            position: absolute;
-            top: 20%;
-            left: 20%;
-            width: 60%;
-            height: 60%;
-            background: radial-gradient(circle at 30% 30%, 
-                rgba(255, 255, 255, 0.2) 0%, 
-                rgba(8, 145, 178, 0.1) 40%, 
-                transparent 70%);
-            border-radius: 50%;
-            animation: moonSurface 10s linear infinite;
-        }
-
-        /* Moon Phase Animations */
-        @keyframes moonPhase {
-            0% { transform: rotate(0deg) scale(1); }
-            25% { transform: rotate(90deg) scale(1.05); }
-            50% { transform: rotate(180deg) scale(1.1); }
-            75% { transform: rotate(270deg) scale(1.05); }
-            100% { transform: rotate(360deg) scale(1); }
-        }
-
-        @keyframes moonGlow {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.8; }
-        }
-
-        @keyframes moonSurface {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .moon:hover {
-            transform: scale(1.1);
-            box-shadow: 
-                var(--shadow-xl),
-                inset 0 0 40px rgba(255, 255, 255, 0.4),
-                0 0 80px rgba(8, 145, 178, 0.3);
-        }
-
-        /* Floating Elements around Moon */
-        .floating-element {
-            position: absolute;
-            border-radius: 50%;
-            background: linear-gradient(45deg, 
-                var(--pastel-pink), 
-                var(--pastel-blue), 
-                var(--pastel-mint));
-            opacity: 0.3;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-element:nth-child(1) {
-            width: 20px;
-            height: 20px;
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-element:nth-child(2) {
-            width: 15px;
-            height: 15px;
-            top: 60%;
-            right: 15%;
-            animation-delay: 2s;
-        }
-
-        .floating-element:nth-child(3) {
-            width: 25px;
-            height: 25px;
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-20px) rotate(120deg); }
-            66% { transform: translateY(-10px) rotate(240deg); }
-        }
-
-        /* Enhanced Glassmorphism Hero Summary */
-        .hero-summary {
-            max-width: 800px;
-            margin: 0 auto 4rem;
+        
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+        
+        .mb-1 { margin-bottom: var(--space-xs); }
+        .mb-2 { margin-bottom: var(--space-sm); }
+        .mb-3 { margin-bottom: var(--space-md); }
+        .mb-4 { margin-bottom: var(--space-lg); }
+        .mb-5 { margin-bottom: var(--space-xl); }
+        .mb-6 { margin-bottom: var(--space-2xl); }
+        
+        .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
-            position: relative;
-            overflow: hidden;
+            transition: var(--transition-slow);
         }
-
-        .hero-summary-card {
-            background: var(--glass-bg);
-            backdrop-filter: var(--glass-backdrop);
-            -webkit-backdrop-filter: var(--glass-backdrop);
-            border: 1px solid var(--glass-border);
-            border-radius: 30px;
-            padding: 3rem;
-            position: relative;
-            box-shadow: var(--glass-shadow);
-            transition: all var(--transition-smooth);
-            overflow: hidden;
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-
-        .hero-summary-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, 
-                transparent 0%, 
-                rgba(255, 255, 255, 0.1) 25%, 
-                transparent 50%, 
-                rgba(8, 145, 178, 0.1) 75%, 
-                transparent 100%);
-            animation: shimmer 4s ease-in-out infinite;
-        }
-
-        .hero-summary-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, 
-                var(--pastel-pink) 0%, 
-                var(--pastel-blue) 25%, 
-                var(--pastel-mint) 50%, 
-                var(--pastel-lavender) 75%, 
-                var(--pastel-peach) 100%);
-            opacity: 0.1;
-            border-radius: 30px;
-            pointer-events: none;
-        }
-
-        .hero-summary-content {
-            position: relative;
-            z-index: 2;
-            color: var(--text-primary);
-            font-size: 1.2rem;
-            line-height: 1.8;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        .hero-summary-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 
-                var(--glass-shadow),
-                0 25px 50px rgba(8, 145, 178, 0.15);
-            border-color: rgba(8, 145, 178, 0.3);
-        }
-
-        .hero-summary-card:hover::before {
-            animation-duration: 2s;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        /* Loading Screen */
-        #loadingScreen {
+        
+        /* ===== LOADING SCREEN ===== */
+        .loading-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--primary-bg);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            z-index: 10000;
+            z-index: 9999;
+            transition: opacity var(--transition-slow);
         }
-
+        
         .loading-content {
             text-align: center;
-            max-width: 400px;
-            width: 100%;
-            padding: 0 2rem;
+            color: var(--light);
         }
-
+        
         .loading-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-coral));
+            font-size: var(--font-size-5xl);
+            font-weight: 700;
+            margin-bottom: var(--space-lg);
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 2rem;
         }
-
-        .loading-text {
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
-        }
-
-        .loading-bar-container {
-            width: 100%;
+        
+        .loading-progress {
+            width: 200px;
             height: 4px;
-            background: var(--border-light);
-            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-full);
             overflow: hidden;
-            margin-bottom: 2rem;
+            margin-top: var(--space-lg);
         }
-
+        
         .loading-bar {
             height: 100%;
-            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-coral));
-            border-radius: 2px;
-            transition: width var(--transition-smooth);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: var(--radius-full);
+            transition: width var(--transition);
             width: 0%;
         }
-
-        .loading-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--accent-cyan);
-            animation: loadingDots 1.5s ease-in-out infinite;
-        }
-
-        .dot:nth-child(2) { animation-delay: 0.3s; }
-        .dot:nth-child(3) { animation-delay: 0.6s; }
-
-        @keyframes loadingDots {
-            0%, 60%, 100% { transform: scale(1); opacity: 0.7; }
-            30% { transform: scale(1.2); opacity: 1; }
-        }
-
-        /* Enhanced Particle Canvas */
-        #particle-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-            opacity: 0.4;
-        }
-
-        /* Enhanced Navigation */
-        .nav {
+        
+        /* ===== NAVIGATION ===== */
+        .navbar {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: var(--glass-backdrop);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .nav-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
-            background: rgba(248, 249, 250, 0.95);
-            backdrop-filter: blur(25px) saturate(180%);
-            -webkit-backdrop-filter: blur(25px) saturate(180%);
-            border-bottom: 1px solid var(--border-light);
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition-smooth);
+            padding: var(--space-md) 0;
         }
-
-        .nav.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(30px) saturate(200%);
-            box-shadow: var(--shadow-md);
-            border-bottom: 1px solid var(--border-medium);
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-coral), var(--accent-mint));
+        
+        .nav-logo {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            position: relative;
-            z-index: 1001;
-            transition: all var(--transition-smooth);
+            text-decoration: none;
         }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
+        
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: var(--space-lg);
             list-style: none;
-            position: relative;
-            z-index: 1001;
         }
-
+        
         .nav-links a {
-            color: var(--text-secondary);
+            color: var(--dark);
             text-decoration: none;
             font-weight: 500;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-lg);
+            transition: var(--transition);
             position: relative;
-            padding: 0.8rem 1.5rem;
-            border-radius: 12px;
-            transition: all var(--transition-smooth);
-            background: rgba(255, 255, 255, 0.5);
-            border: 1px solid var(--border-light);
-            box-shadow: var(--shadow-sm);
         }
-
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
         .nav-links a:hover {
-            color: var(--text-primary);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
-            background: rgba(255, 255, 255, 0.9);
-            border-color: var(--accent-cyan);
+            color: var(--primary);
+            background: rgba(255, 215, 0, 0.1);
         }
-
+        
         .mobile-toggle {
             display: none;
             flex-direction: column;
             cursor: pointer;
-            z-index: 1001;
+            padding: var(--space-sm);
         }
-
+        
         .mobile-toggle span {
             width: 25px;
             height: 3px;
-            background: var(--accent-cyan);
-            margin: 3px 0;
-            transition: var(--transition-smooth);
-            border-radius: 2px;
+            background: var(--dark);
+            margin: 2px 0;
+            transition: var(--transition);
+            border-radius: var(--radius-sm);
         }
-
-        /* Hero Section */
+        
+        /* ===== HERO SECTION ===== */
         .hero {
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
+            justify-content: center;
             position: relative;
-            z-index: 10;
-            padding: 2rem;
-            background: linear-gradient(135deg, var(--primary-bg) 0%, var(--accent-bg) 100%);
+            padding: var(--space-3xl) 0;
         }
-
+        
         .hero::before {
             content: '';
             position: absolute;
@@ -542,772 +363,1012 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(8, 145, 178, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(5, 150, 105, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(74, 144, 226, 0.1) 0%, transparent 50%);
             pointer-events: none;
-            z-index: 1;
         }
-
+        
         .hero-content {
+            text-align: center;
+            max-width: 800px;
             position: relative;
-            z-index: 3;
-            max-width: 1200px;
-            width: 100%;
+            z-index: 2;
         }
-
-        .intro-text {
-            font-size: 1.3rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            opacity: 0;
-            transform: translateY(20px);
-            font-weight: 400;
+        
+        .hero-badge {
+            display: inline-block;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: var(--glass-backdrop);
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: var(--space-lg);
+            animation: float 3s ease-in-out infinite;
         }
-
-        .identity-text {
-            font-size: 1.6rem;
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            transform: translateY(20px);
-            font-weight: 600;
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
-
-        .tagline {
+        
+        .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+            font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-coral), var(--accent-mint));
+            line-height: 1.2;
+            margin-bottom: var(--space-lg);
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 2rem;
-            line-height: 1.2;
-            opacity: 0;
-            transform: translateY(20px);
         }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid var(--border-medium);
-            border-radius: 50%;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            transition: all var(--transition-smooth);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .social-link:hover {
-            background: rgba(8, 145, 178, 0.1);
-            border-color: var(--accent-cyan);
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: var(--shadow-md);
-        }
-
-        .credentials {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        /* Continue with the rest of your existing styles... */
-        /* I'll include the essential sections to maintain the existing functionality */
         
-        .credentials-section {
-            padding: 6rem 2rem;
-            background: var(--secondary-bg);
-            position: relative;
-            z-index: 10;
+        .hero-subtitle {
+            font-size: var(--font-size-xl);
+            color: var(--muted);
+            margin-bottom: var(--space-xl);
+            font-weight: 400;
         }
-
-        .credentials-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 2;
+        
+        .hero-description {
+            font-size: var(--font-size-lg);
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: var(--space-2xl);
         }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-coral));
-            border-radius: 2px;
-        }
-
-        .education-badge {
+        
+        .hero-actions {
             display: flex;
-            align-items: center;
+            gap: var(--space-lg);
             justify-content: center;
-            gap: 1.5rem;
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid var(--border-medium);
-            border-radius: 25px;
-            padding: 2rem 3rem;
-            margin-bottom: 3rem;
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition-smooth);
+            flex-wrap: wrap;
         }
-
-        .education-badge:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--accent-cyan);
-        }
-
-        .education-icon {
-            font-size: 2rem;
-            color: var(--accent-cyan);
-        }
-
-        .education-text h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .education-text p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        /* Skills Section */
-        .skills {
-            padding: 6rem 2rem;
-            background: var(--primary-bg);
-            position: relative;
-            z-index: 10;
-        }
-
-        .skills-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .skill-category {
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid var(--border-light);
-            border-radius: 20px;
-            padding: 2.5rem;
+        
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-xl);
+            border: none;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
             position: relative;
             overflow: hidden;
-            transition: all var(--transition-smooth);
-            box-shadow: var(--shadow-sm);
         }
-
-        .skill-category:hover {
-            transform: translateY(-12px);
-            border-color: var(--accent-cyan);
-            box-shadow: var(--shadow-lg);
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left var(--transition);
         }
-
-        .skill-category h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+        
+        .btn:hover::before {
+            left: 100%;
         }
-
-        .skill-category .icon {
-            font-size: 1.8rem;
-            color: var(--accent-cyan);
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .skill-tag {
-            background: rgba(8, 145, 178, 0.1);
-            color: var(--text-primary);
-            padding: 0.8rem 1.2rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            border: 1px solid rgba(8, 145, 178, 0.3);
-            transition: all var(--transition-smooth);
-            cursor: pointer;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .skill-tag:hover {
-            background: rgba(8, 145, 178, 0.2);
-            border-color: var(--accent-cyan);
-            transform: translateY(-5px) scale(1.05);
+        
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--light);
             box-shadow: var(--shadow-md);
         }
-
-        /* Continue with remaining sections... */
-        /* Portfolio, Contact, Footer sections would continue here */
-        /* I'll include the essential animations and responsive design */
-
-        /* Responsive Design */
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--light);
+            transform: translateY(-2px);
+        }
+        
+        /* ===== GLASS CARD ===== */
+        .glass-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: var(--glass-backdrop);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--glass-shadow);
+            transition: var(--transition);
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        /* ===== ABOUT SECTION ===== */
+        .about {
+            padding: var(--space-3xl) 0;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--space-3xl);
+            align-items: center;
+        }
+        
+        .about-image {
+            position: relative;
+            text-align: center;
+        }
+        
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .about-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--glass-bg);
+            border: 2px solid var(--primary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-sm) var(--space-md);
+            backdrop-filter: var(--glass-backdrop);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: var(--primary);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .about-content h2 {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            margin-bottom: var(--space-lg);
+            color: var(--light);
+        }
+        
+        .about-text {
+            font-size: var(--font-size-lg);
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .credential {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: var(--glass-backdrop);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            color: var(--light);
+            transition: var(--transition);
+        }
+        
+        .credential:hover {
+            background: rgba(255, 215, 0, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: var(--glass-backdrop);
+            border-radius: 50%;
+            color: var(--light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        /* ===== PROJECTS SECTION ===== */
+        .projects {
+            padding: var(--space-3xl) 0;
+        }
+        
+        .section-title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+            color: var(--light);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+        
+        .project-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: var(--glass-backdrop);
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .project-image {
+            height: 200px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-icon {
+            font-size: 3rem;
+            color: var(--light);
+            z-index: 2;
+        }
+        
+        .project-content {
+            padding: var(--space-xl);
+        }
+        
+        .project-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            color: var(--light);
+        }
+        
+        .project-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .project-tag {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--primary);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: var(--space-md);
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-md);
+            background: var(--primary);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .project-link:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        /* ===== FAQ SECTION ===== */
+        .faq {
+            padding: var(--space-3xl) 0;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            gap: var(--space-md);
+        }
+        
+        .faq-item {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: var(--glass-backdrop);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: var(--space-lg);
+            background: transparent;
+            border: none;
+            text-align: left;
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--light);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        .faq-icon {
+            font-size: var(--font-size-xl);
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 var(--space-lg);
+            max-height: 0;
+            overflow: hidden;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 var(--space-lg) var(--space-lg);
+            max-height: 300px;
+        }
+        
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            padding: var(--space-3xl) 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+        
+        .contact-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: var(--glass-backdrop);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-2xl);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .contact-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .contact-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            color: var(--light);
+        }
+        
+        .contact-info {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-xl);
+            background: var(--primary);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .contact-link:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+                /* ===== FOOTER ===== */
+        .footer {
+            background: var(--glass-bg);
+            border-top: 1px solid var(--glass-border);
+            backdrop-filter: var(--glass-backdrop);
+            padding: var(--space-3xl) 0 var(--space-xl);
+            margin-top: var(--space-3xl);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .footer-section h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            margin-bottom: var(--space-lg);
+            color: var(--light);
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+        
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-xl);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--dark);
+            border: none;
+            border-radius: 50%;
+            font-size: var(--font-size-xl);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        /* ===== QUANTUM MEDITATION MODE ===== */
+        .quantum-mode {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.95) 100%);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+        
+        .quantum-mode.active {
+            display: flex;
+        }
+        
+        .quantum-content {
+            text-align: center;
+            color: var(--light);
+        }
+        
+        .quantum-circle {
+            width: 200px;
+            height: 200px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            margin: 0 auto var(--space-xl);
+            position: relative;
+            animation: quantum-pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes quantum-pulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+            }
+            50% { 
+                transform: scale(1.1);
+                box-shadow: 0 0 0 20px rgba(255, 215, 0, 0);
+            }
+        }
+        
+        .quantum-text {
+            font-size: var(--font-size-xl);
+            font-weight: 300;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .quantum-exit {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .quantum-exit:hover {
+            background: var(--primary);
+            color: var(--dark);
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--space-lg);
+            }
+            
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--light);
+                flex-direction: column;
+                padding: var(--space-lg);
+                box-shadow: var(--shadow-lg);
+                border-radius: 0 0 var(--radius-lg) var(--radius-lg);
             }
-
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
             .mobile-toggle {
                 display: flex;
             }
-
-            .tagline {
-                font-size: 2.5rem;
+            
+            .mobile-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
             }
-
-            .moon-container {
+            
+            .mobile-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .mobile-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: var(--font-size-3xl);
+            }
+            
+            .hero-subtitle {
+                font-size: var(--font-size-lg);
+            }
+            
+            .section-title {
+                font-size: var(--font-size-2xl);
+            }
+            
+            .profile-image {
                 width: 200px;
                 height: 200px;
             }
-
-            .hero-summary-card {
-                padding: 2rem;
-            }
-
-            .hero-summary-content {
-                font-size: 1.1rem;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
+            
+            .project-card {
+                margin: 0 var(--space-md);
             }
         }
-
-        @media (max-width: 480px) {
-            .nav {
-                padding: 1rem;
-            }
-
-            .hero {
-                padding: 1rem;
-            }
-
-            .tagline {
-                font-size: 2rem;
-            }
-
-            .moon-container {
-                width: 160px;
-                height: 160px;
-            }
-
-            .hero-summary-card {
-                padding: 1.5rem;
-            }
-
-            .hero-summary-content {
-                font-size: 1rem;
-            }
-
-            .intro-text {
-                font-size: 1.1rem;
-            }
-
-            .identity-text {
-                font-size: 1.4rem;
-            }
-        }
-
-        /* Animation Classes */
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
-        .animate-slide-up {
-            animation: slideUp 0.8s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--primary-bg);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent-cyan);
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-coral);
-        }
-
-        /* Accessibility */
-        .keyboard-navigation *:focus {
-            outline: 2px solid var(--accent-cyan);
-            outline-offset: 2px;
-        }
-
-        /* Reduced Motion */
+        
+        /* ===== ACCESSIBILITY ===== */
         @media (prefers-reduced-motion: reduce) {
             * {
-                animation-duration: 0.01s !important;
+                animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
-                transition-duration: 0.01s !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Focus styles for keyboard navigation */
+        .btn:focus,
+        .nav-links a:focus,
+        .social-link:focus,
+        .project-link:focus,
+        .contact-link:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+        
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --primary: #FFD700;
+                --secondary: #FF6600;
+                --glass-bg: rgba(255, 255, 255, 0.2);
+                --glass-border: rgba(255, 255, 255, 0.4);
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Loading Screen -->
-    <div id="loadingScreen">
+    <div class="loading-screen" id="loadingScreen">
         <div class="loading-content">
-            <div class="loading-logo">Thanatsitt</div>
-            <div class="loading-text">Crafting Digital Experiences</div>
-            <div class="loading-bar-container">
+            <div class="loading-logo">🕉️ Quantum Consciousness</div>
+            <div class="loading-progress">
                 <div class="loading-bar" id="loadingBar"></div>
             </div>
-                     <div class="loading-dots">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </div>
+            <div class="loading-text">Bridging Ancient Wisdom & Modern Innovation...</div>
         </div>
     </div>
 
-    <!-- Stars and Sparkles Background -->
-    <div class="stars-container" id="starsContainer"></div>
-
-    <!-- Particle Canvas -->
-    <canvas id="particle-canvas"></canvas>
-
     <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <div class="logo">Thanatsitt</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="mobile-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#home" class="nav-logo">🕉️ Quantum Consciousness</a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="moon-container">
-                <div class="moon">
-                    <div class="floating-element"></div>
-                    <div class="floating-element"></div>
-                    <div class="floating-element"></div>
-                </div>
-            </div>
-            <div class="intro-text">Hello, I'm</div>
-            <div class="identity-text">Thanatsitt Nareenapa</div>
-            <h1 class="tagline">AI Creative Designer<br>& Researcher</h1>
-            
-            <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-            </div>
-            
-            <div class="hero-summary">
-                <div class="hero-summary-card">
-                    <div class="hero-summary-content">
-                        <strong>Bridging Human Creativity & AI Innovation</strong><br><br>
-                        I'm passionate about creating the future where artificial intelligence amplifies human creativity rather than replacing it. With expertise in AI technologies, creative design, and research methodologies, I help organizations navigate the evolving landscape of digital innovation.
-                        <br><br>
-                        <em>Transforming ideas into intelligent, beautiful, and meaningful digital experiences.</em>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Credentials Section -->
-    <section class="credentials-section" id="about">
-        <div class="credentials-content">
-            <h2 class="section-title">Education & Background</h2>
-            <div class="education-badge">
-                <div class="education-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <div class="education-text">
-                    <h3>Bachelor of Arts in English</h3>
-                    <p>Thammasat University • Bangkok, Thailand</p>
-                </div>
-            </div>
-            <div class="credentials">
-                <p>My academic foundation in English Language and Literature has provided me with strong analytical thinking, cross-cultural communication skills, and deep understanding of human expression. This linguistic expertise, combined with my technical proficiency in AI and design, allows me to create solutions that truly resonate with diverse audiences and bridge the gap between complex technology and human understanding.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="skills-content">
-            <h2 class="section-title">Core Competencies</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-brain icon"></i>AI & Machine Learning</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">GPT Integration</span>
-                        <span class="skill-tag">Claude AI</span>
-                        <span class="skill-tag">Prompt Engineering</span>
-                        <span class="skill-tag">AI Research</span>
-                        <span class="skill-tag">Neural Networks</span>
-                        <span class="skill-tag">LLM Fine-tuning</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-palette icon"></i>Creative Design</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">UI/UX Design</span>
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">Adobe Creative Suite</span>
-                        <span class="skill-tag">Canva Pro</span>
-                        <span class="skill-tag">Brand Identity</span>
-                        <span class="skill-tag">Visual Storytelling</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-code icon"></i>Development</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">API Integration</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-language icon"></i>Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Thai (Native)</span>
-                        <span class="skill-tag">English (Fluent)</span>
-                        <span class="skill-tag">Japanese (Intermediate)</span>
-                        <span class="skill-tag">Korean (Basic)</span>
-                        <span class="skill-tag">Translation</span>
-                        <span class="skill-tag">Localization</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-search icon"></i>Research & Analysis</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Market Research</span>
-                        <span class="skill-tag">Data Analysis</span>
-                        <span class="skill-tag">Academic Writing</span>
-                        <span class="skill-tag">Content Strategy</span>
-                        <span class="skill-tag">Trend Analysis</span>
-                        <span class="skill-tag">User Research</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-tools icon"></i>Tools & Platforms</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">OpenAI API</span>
-                        <span class="skill-tag">Google Workspace</span>
-                        <span class="skill-tag">Notion</span>
-                        <span class="skill-tag">Slack</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">WordPress</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Achievements Section -->
-    <section class="achievements">
-        <div class="achievements-content">
-            <h2 class="section-title">Key Achievements</h2>
-            <div class="achievements-list">
-                <div class="achievement-item">
-                    <div class="achievement-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <div class="achievement-text">
-                        Successfully integrated AI solutions for 25+ creative projects, improving workflow efficiency by 45% while maintaining creative quality
-                    </div>
-                </div>
-                
-                <div class="achievement-item">
-                    <div class="achievement-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <div class="achievement-text">
-                        Completed advanced certifications in AI/ML, prompt engineering, and human-centered design methodologies
-                    </div>
-                </div>
-                
-                <div class="achievement-item">
-                    <div class="achievement-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="achievement-text">
-                        Led pioneering research initiatives on AI-human collaboration in creative processes, contributing to industry best practices
-                    </div>
-                </div>
-                
-                <div class="achievement-item">
-                    <div class="achievement-icon">
+        <div class="container">
+            <div class="hero-content animate-on-scroll">
+                <div class="hero-badge">✨ Open Source Buddhist Philosophy & Quantum Technology</div>
+                <h1 class="hero-title">Quantum Consciousness</h1>
+                <p class="hero-subtitle">Bridging Ancient Wisdom & Modern Innovation</p>
+                <p class="hero-description">
+                    Explore the intersection of Buddhist philosophy, quantum computing, and cultural heritage 
+                    through innovative open-source web projects that honor tradition while embracing the future.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
                         <i class="fas fa-rocket"></i>
+                        Explore Projects
+                    </a>
+                    <a href="#about" class="btn btn-outline">
+                        <i class="fas fa-user"></i>
+                        Meet the Creator
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid animate-on-scroll">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&w=400&h=400&fit=crop&crop=face" 
+                         alt="Thanattsitt Santisamranwilai" 
+                         class="profile-image">
+                    <div class="about-badge">Buddhist Philosophy Researcher</div>
+                </div>
+                <div class="about-content">
+                    <h2>Meet Thanattsitt Santisamranwilai</h2>
+                    <p class="about-text">
+                        Passionate developer and researcher bridging the gap between ancient Buddhist wisdom 
+                        and modern quantum technology. Through innovative web projects, I explore how 
+                        traditional Thai cultural heritage can inform and inspire contemporary technological solutions.
+                    </p>
+                    <p class="about-text">
+                        My work focuses on creating open-source platforms that make Buddhist philosophy 
+                        accessible to the digital age while preserving the depth and authenticity of 
+                        these ancient teachings.
+                    </p>
+                    <div class="credentials">
+                        <span class="credential">Buddhist Philosophy</span>
+                        <span class="credential">Quantum Computing</span>
+                        <span class="credential">Web Development</span>
+                        <span class="credential">Cultural Heritage</span>
+                        <span class="credential">Open Source</span>
                     </div>
-                    <div class="achievement-text">
-                        Developed innovative design systems and AI-powered tools that reduced project delivery timelines by 35%
+                    <div class="social-links">
+                        <a href="https://linktr.ee/ThanttEzekiel" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-link"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/thanatsitts" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:thanattsitt.info@yahoo.co.uk" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://pegearts.com" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-globe"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <div class="portfolio-content">
-            <h2>Creative Portfolio</h2>
-            <p class="portfolio-intro">
-                Explore my diverse range of projects spanning AI research, creative design, and innovative digital solutions. Each project represents a unique blend of creativity, technology, and human-centered thinking.
-            </p>
-            
-            <div class="portfolio-nav">
-                <button class="portfolio-tab active" data-filter="all">All Work</button>
-                <button class="portfolio-tab" data-filter="ai">AI Projects</button>
-                <button class="portfolio-tab" data-filter="design">Design</button>
-                <button class="portfolio-tab" data-filter="research">Research</button>
-                <button class="portfolio-tab" data-filter="translation">Translation</button>
-            </div>
-            
-            <!-- Featured Work -->
-            <div class="featured-work">
-                <div class="featured-content">
-                    <div class="featured-text">
-                        <h3>AI-Powered Creative Assistant Platform</h3>
-                        <p>Developed a comprehensive AI assistant that revolutionizes creative workflows through intelligent prompt engineering, automated design suggestions, and seamless integration with popular creative tools. This platform demonstrates the perfect synergy between artificial intelligence and human creativity, empowering designers and creators to achieve unprecedented levels of efficiency and innovation.</p>
-                        
-                        <div class="featured-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">85%</span>
-                                <span class="stat-label">Time Saved</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">200+</span>
-                                <span class="stat-label">Active Users</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">98%</span>
-                                <span class="stat-label">Satisfaction</span>
-                            </div>
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card glass-card animate-on-scroll">
+                    <div class="project-image">
+                        <i class="fas fa-om project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Buddhist Philosophy Platform</h3>
+                        <p class="project-description">
+                            An interactive platform exploring core Buddhist concepts through modern web technologies,
+                            making ancient wisdom accessible to contemporary audiences.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Buddhist Philosophy</span>
+                            <span class="project-tag">Interactive Learning</span>
+                            <span class="project-tag">Cultural Heritage</span>
                         </div>
-                        
-                        <div class="work-actions">
-                            <a href="#" class="work-btn primary">View Project</a>
-                            <a href="#" class="work-btn">Live Demo</a>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Project
+                            </a>
                         </div>
                     </div>
-                    
-                    <div class="featured-preview">
-                        <div class="preview-text">
-                            This AI assistant has fundamentally transformed how I approach creative challenges. The intelligent suggestions, automated workflows, and seamless integration have not only saved me countless hours but also inspired new creative directions I never would have explored otherwise.
+                </div>
+
+                <div class="project-card glass-card animate-on-scroll">
+                    <div class="project-image">
+                        <i class="fas fa-atom project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Quantum Meditation App</h3>
+                        <p class="project-description">
+                            A meditation application that combines quantum physics principles with traditional 
+                            Buddhist mindfulness practices for enhanced awareness.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Quantum Physics</span>
+                            <span class="project-tag">Meditation</span>
+                            <span class="project-tag">Mindfulness</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card animate-on-scroll">
+                    <div class="project-image">
+                        <i class="fas fa-globe-asia project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Thai Cultural Heritage Portal</h3>
+                        <p class="project-description">
+                            A comprehensive digital archive preserving and sharing Thai cultural heritage 
+                            through immersive web experiences and interactive storytelling.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Thai Culture</span>
+                            <span class="project-tag">Digital Archive</span>
+                            <span class="project-tag">Interactive Storytelling</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card animate-on-scroll">
+                    <div class="project-image">
+                        <i class="fas fa-code project-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Open Source Consciousness Framework</h3>
+                        <p class="project-description">
+                            An open-source development framework for creating consciousness-inspired applications 
+                            that integrate spiritual principles with modern technology.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Open Source</span>
+                            <span class="project-tag">Framework</span>
+                            <span class="project-tag">Consciousness</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Project
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="portfolio-grid">
-                <!-- AI Projects -->
-                <div class="work-card" data-category="ai">
-                    <div class="work-header">
-                        <div class="work-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                    </div>
-                    <div class="work-content">
-                        <span class="work-category">AI Development</span>
-                        <h3 class="work-title">Intelligent Content Generation Engine</h3>
-                        <p class="work-description">Built a sophisticated AI system that generates high-quality, contextually relevant content across multiple formats and languages. Utilizing advanced NLP techniques, custom training models, and ethical AI principles to ensure responsible content creation.</p>
-                        <div class="work-meta">
-                            <div class="work-meta-item">
-                                <i class="fas fa-calendar"></i>
-                                <span>2024</span>
-                            </div>
-                            <div class="work-meta-item">
-                                <i class="fas fa-code"></i>
-                                <span>Python, OpenAI API</span>
-                            </div>
-                            <div class="work-meta-item">
-                                <i class="fas fa-clock"></i>
-                                <span>4 months</span>
-                            </div>
-                        </div>
-                        <div class="work-actions">
-                            <a href="#" class="work-btn primary">View Details</a>
-                            <a href="#" class="work-btn">GitHub</a>
-                        </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question">
+                        What makes these projects unique?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        These projects uniquely combine spiritual and philosophical elements with cutting-edge 
+                        web technologies, creating bridges between ancient wisdom and modern innovation. 
+                        They explore how traditional Buddhist concepts can inform contemporary technological solutions.
                     </div>
                 </div>
-                
-                <!-- Design Projects -->
-                <div class="work-card" data-category="design">
-                    <div class="work-header">
-                        <div class="work-icon">
-                            <i class="fas fa-paint-brush"></i>
-                        </div>
-                    </div>
-                    <div class="work-content">
-                        <span class="work-category">UI/UX Design</span>
-                        <h3 class="work-title">Next-Gen Dashboard Interface</h3>
-                        <p class="work-description">Designed a comprehensive, accessible dashboard system with intuitive user experience, real-time data visualization, and responsive design principles. Focused on creating an interface that seamlessly adapts to user needs and preferences.</p>
-                        <div class="work-meta">
-                            <div class="work-meta-item">
-                                <i class="fas fa-calendar"></i>
-                                <span>2024</span>
-                            </div>
-                            <div class="work-meta-item">
-                                <i class="fas fa-tools"></i>
-                                <span>Figma, Adobe XD</span>
-                            </div>
-                            <div class="work-meta-item">
-                                <i class="fas fa-users"></i>
-                                <span>Team of 5</span>
-                            </div>
-                        </div>
-                        <div class="work-actions">
-                            <a href="#" class="work-btn primary">View Case Study</a>
-                            <a href="#" class="work-btn">Prototype</a>
-                        </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question">
+                        How do you integrate Buddhist philosophy with technology?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        I integrate Buddhist philosophy with technology by translating core concepts like 
+                        mindfulness, interconnectedness, and compassion into user experience design, 
+                        creating applications that promote awareness and well-being while maintaining 
+                        technological excellence.
                     </div>
                 </div>
-                
-                <!-- Research Projects -->
-                <div class="work-card research-card" data-category="research">
-                    <div class="work-header">
-                        <div class="work-icon">
-                            <i class="fas fa-microscope"></i>
-                        </div>
-                    </div>
-                    <div class="work-content">
-                        <span class="work-category">Academic Research</span>
-                        <h3 class="work-title">AI Ethics in Creative Industries</h3>
-                        <p class="work-description">Conducted comprehensive research on the ethical implications of AI adoption in creative fields, analyzing industry trends, interviewing practitioners, and proposing frameworks for responsible AI implementation in creative workflows.</p>
-                        <div class="work-meta">
-                            <div class="work-meta-item">
-                                <i class="fas fa-calendar"></i>
-                                <span>2024</span>
-                            </div>
-                            <div class="work-meta-item">
-                                <i class="fas fa-file-alt"></i>
-                                <span>Research Paper</span>
-                            </div>
-                            <div class="work-meta-item">
-                                <i class="fas fa-university"></i>
-                                <span>Academic</span>
-                            </div>
-                        </div>
-                        <div class="work-actions">
-                            <a href="#" class="work-btn primary">Read Paper</a>
-                            <a href="#" class="work-btn">Citations</a>
-                        </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question">
+                        Are these projects open source?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Yes, most projects are open source and available on GitHub. The Buddhist principle 
+                        of sharing wisdom freely guides the decision to make these resources accessible 
+                        to the global community for learning and collaboration.
                     </div>
                 </div>
-                
-                <!-- Translation Projects -->
-                <div class="work-card translation-card" data-category="translation">
-                    <div class="work-header">
-                        <div class="work-icon">
-                            <i class="fas fa-language"></i>
-                        </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question">
+                        How can I contribute to these projects?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Contributions are welcome! You can contribute through code, documentation, 
+                        testing, or sharing cultural insights. Visit the project repositories or 
+                        contact me directly to discuss collaboration opportunities.
                     </div>
-                    <div class="work-content">
-                        <span class="work-category">Translation & Localization</span>
-                        <h3 class="work-title">Technical Documentation Translation</h3>
-                        <p class="work-description">Translated complex technical documentation from English to Thai, ensuring accuracy, cultural appropriateness, and technical precision. Specialized in AI/ML documentation, maintaining consistency across technical terminology and cultural context.</p>
-                        <div class="language-pair">
-                            <div class="flag-icon" style="background: linear-gradient(to right, #012169, #012169 33%, #fff 33%, #fff 66%, #C8102E 66%);"></div>
-                            <i class="fas fa-arrow-right arrow-icon"></i>
-                            <div class="flag-icon" style="background: linear-gradient(to bottom, #A51931, #A51931 33%, #fff 33%, #fff 66%, #2D2A4A 66%);"></div>
-                        </div>
-                        <div class="work-meta">
-                            <div class="work-meta-item">
-                                <i class="fas fa-calendar"></i>
-                                <span>2024</span>
-                            </div>
-                            <div class="work-meta-item">
-                                <i class="fas fa-file-word"></i>
-                                <span>75+ Pages</span>
-                            </div>
-                            <div class="work-meta-item">
-                                <i class="fas fa-check"></i>
-                                <span>Delivered</span>
-                            </div>
-                        </div>
-                        <div class="work-actions">
-                            <a href="#" class="work-btn primary">View Sample</a>
-                            <a href="#" class="work-btn">Testimonial</a>
-                        </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <button class="faq-question">
+                        What is the vision for Quantum Consciousness?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        The vision is to create a digital ecosystem where ancient wisdom and modern 
+                        technology coexist harmoniously, fostering greater understanding of both 
+                        spiritual traditions and technological possibilities while preserving cultural heritage.
                     </div>
                 </div>
             </div>
@@ -1316,46 +1377,54 @@
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="contact-content">
-            <h2 class="section-title">Let's Create Together</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.2rem; line-height: 1.7;">
-                Ready to bring your ideas to life? I'm passionate about collaborating on innovative projects that push the boundaries of creativity and technology. Whether you're looking to integrate AI into your creative workflow, need expert design consultation, or want to explore new possibilities in digital innovation, I'd love to hear from you.
-            </p>
-            
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Get In Touch</h2>
             <div class="contact-grid">
-                <div class="contact-card">
+                <div class="contact-card animate-on-scroll">
                     <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <h3>Email</h3>
-                    <p>Drop me a line and I'll get back to you within 24 hours. I'm always excited to discuss new projects and opportunities.</p>
-                    <a href="mailto:hello@thanatsitt.com" class="contact-link">
+                    <h3 class="contact-title">Email</h3>
+                    <p class="contact-info">Ready to collaborate or have questions about the projects?</p>
+                    <a href="mailto:thanattsitt.info@yahoo.co.uk" class="contact-link">
                         <i class="fas fa-paper-plane"></i>
                         Send Email
                     </a>
                 </div>
-                
-                <div class="contact-card">
+
+                <div class="contact-card animate-on-scroll">
                     <div class="contact-icon">
                         <i class="fab fa-linkedin"></i>
                     </div>
-                    <h3>LinkedIn</h3>
-                    <p>Connect with me for professional networking, industry insights, and collaboration opportunities.</p>
-                    <a href="#" class="contact-link">
-                        <i class="fas fa-link"></i>
+                    <h3 class="contact-title">LinkedIn</h3>
+                    <p class="contact-info">Connect professionally and stay updated on latest projects.</p>
+                    <a href="https://www.linkedin.com/in/thanatsitts" class="contact-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin-in"></i>
                         Connect
                     </a>
                 </div>
-                
-                <div class="contact-card">
+
+                <div class="contact-card animate-on-scroll">
                     <div class="contact-icon">
-                        <i class="fab fa-github"></i>
+                        <i class="fas fa-link"></i>
                     </div>
-                    <h3>GitHub</h3>
-                    <p>Explore my open-source projects, contributions, and code samples showcasing my technical expertise.</p>
-                    <a href="#" class="contact-link">
-                        <i class="fas fa-code"></i>
-                        View Code
+                    <h3 class="contact-title">Linktree</h3>
+                    <p class="contact-info">Explore all my digital presence and social platforms.</p>
+                    <a href="https://linktr.ee/ThanttEzekiel" class="contact-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-external-link-alt"></i>
+                        Visit Linktree
+                    </a>
+                </div>
+
+                <div class="contact-card animate-on-scroll">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="contact-title">Portfolio</h3>
+                    <p class="contact-info">Discover more creative works and artistic projects.</p>
+                    <a href="https://pegearts.com" class="contact-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-palette"></i>
+                        View Portfolio
                     </a>
                 </div>
             </div>
@@ -1364,317 +1433,114 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Thanatsitt Nareenapa</h4>
-                <p>AI Creative Designer & Researcher passionate about bridging the gap between human creativity and artificial intelligence. Creating meaningful digital experiences that inspire and empower.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quantum Consciousness</h3>
+                    <p>Bridging ancient wisdom and modern innovation through open-source projects that honor Buddhist philosophy and embrace technological advancement.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#home">Home</a></p>
+                    <p><a href="#about">About</a></p>
+                    <p><a href="#projects">Projects</a></p>
+                    <p><a href="#faq">FAQ</a></p>
+                    <p><a href="#contact">Contact</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <p><a href="https://linktr.ee/ThanttEzekiel" target="_blank" rel="noopener noreferrer">Linktree</a></p>
+                    <p><a href="https://www.linkedin.com/in/thanatsitts" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                    <p><a href="mailto:thanattsitt.info@yahoo.co.uk">Email</a></p>
+                    <p><a href="https://pegearts.com" target="_blank" rel="noopener noreferrer">Portfolio</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Philosophy</h3>
+                    <p>"Technology should serve humanity's highest aspirations while honoring our deepest wisdom traditions."</p>
+                </div>
             </div>
-            
-            <div class="footer-section">
-                <h4>Services</h4>
-                <p><a href="#">AI Integration & Consulting</a></p>
-                <p><a href="#">Creative Design & Strategy</a></p>
-                <p><a href="#">Research & Analysis</a></p>
-                <p><a href="#">Translation & Localization</a></p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Thanattsitt Santisamranwilai. All rights reserved. | Open Source Buddhist Philosophy & Quantum Technology</p>
             </div>
-            
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <p><a href="#">LinkedIn</a></p>
-                <p><a href="#">GitHub</a></p>
-                <p><a href="#">Twitter</a></p>
-                <p><a href="#">Email</a></p>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Location</h4>
-                <p>Bangkok, Thailand</p>
-                <p>Available for remote collaboration</p>
-                <p>Open to global opportunities</p>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2024 Thanatsitt Nareenapa. All rights reserved. | Crafted with ❤️, AI, and human creativity</p>
         </div>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Quantum Meditation Mode (Easter Egg) -->
+    <div class="quantum-mode" id="quantumMode">
+        <div class="quantum-content">
+            <div class="quantum-circle"></div>
+            <div class="quantum-text">🕉️ Quantum Meditation Mode Activated</div>
+            <p>Breathe deeply and contemplate the interconnectedness of all things...</p>
+            <button class="quantum-exit" onclick="exitQuantumMode()">Exit Meditation</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
     <script>
-        // Enhanced Loading Screen Animation
-        document.addEventListener('DOMContentLoaded', function() {
+        // ===== GLOBAL VARIABLES =====
+        let scrollProgress = 0;
+        const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // Up, Up, Down, Down, Left, Right, Left, Right, B, A
+        let konamiIndex = 0;
+
+        // ===== LOADING SCREEN =====
+        window.addEventListener('load', function() {
             const loadingScreen = document.getElementById('loadingScreen');
             const loadingBar = document.getElementById('loadingBar');
-            let progress = 0;
             
+            // Simulate loading progress
+            let progress = 0;
             const loadingInterval = setInterval(() => {
-                progress += Math.random() * 15;
-                if (progress > 100) {
-                    progress = 100;
+                progress += Math.random() * 20;
+                if (progress > 100) progress = 100;
+                loadingBar.style.width = progress + '%';
+                
+                if (progress >= 100) {
                     clearInterval(loadingInterval);
-                    
                     setTimeout(() => {
                         loadingScreen.style.opacity = '0';
-                        loadingScreen.style.transition = 'opacity 0.5s ease-out';
-                        
                         setTimeout(() => {
                             loadingScreen.style.display = 'none';
-                            initializeAnimations();
-                            createStarsAndSparkles();
                         }, 500);
                     }, 500);
                 }
-                loadingBar.style.width = progress + '%';
             }, 100);
         });
 
-        // Create Dynamic Stars and Sparkles
-        function createStarsAndSparkles() {
-            const starsContainer = document.getElementById('starsContainer');
-            
-            // Create 50 twinkling stars
-            for (let i = 0; i < 50; i++) {
-                const star = document.createElement('div');
-                star.className = `star ${['small', 'medium', 'large'][Math.floor(Math.random() * 3)]}`;
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.animationDelay = Math.random() * 3 + 's';
-                starsContainer.appendChild(star);
-            }
-            
-            // Create 25 sparkles
-            for (let i = 0; i < 25; i++) {
-                const sparkle = document.createElement('div');
-                sparkle.className = 'sparkle';
-                sparkle.style.left = Math.random() * 100 + '%';
-                sparkle.style.top = Math.random() * 100 + '%';
-                sparkle.style.animationDelay = Math.random() * 2 + 's';
-                starsContainer.appendChild(sparkle);
-            }
-        }
+        // ===== NAVIGATION =====
+        const navbar = document.getElementById('navbar');
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navLinkItems = document.querySelectorAll('.nav-link');
 
-        // Mouse-following sparkles
-        function createMouseSparkle(x, y) {
-            const sparkle = document.createElement('div');
-            sparkle.className = 'sparkle';
-            sparkle.style.position = 'fixed';
-            sparkle.style.left = x + 'px';
-            sparkle.style.top = y + 'px';
-            sparkle.style.pointerEvents = 'none';
-            sparkle.style.zIndex = '999';
-            sparkle.style.animation = 'sparkle 1s ease-out forwards';
-            
-            document.body.appendChild(sparkle);
-            
-            setTimeout(() => {
-                sparkle.remove();
-            }, 1000);
-        }
-
-        // Enhanced Particle System with Pastel Colors
-        class ParticleSystem {
-            constructor() {
-                this.canvas = document.getElementById('particle-canvas');
-                this.ctx = this.canvas.getContext('2d');
-                this.particles = [];
-                this.mousePos = { x: 0, y: 0 };
-                this.connections = [];
-                
-                this.resize();
-                this.createParticles();
-                this.bindEvents();
-                this.animate();
-            }
-            
-            resize() {
-                this.canvas.width = window.innerWidth;
-                this.canvas.height = window.innerHeight;
-            }
-            
-            createParticles() {
-                const particleCount = Math.floor((window.innerWidth * window.innerHeight) / 12000);
-                this.particles = [];
-                
-                for (let i = 0; i < particleCount; i++) {
-                    this.particles.push({
-                        x: Math.random() * this.canvas.width,
-                        y: Math.random() * this.canvas.height,
-                        vx: (Math.random() - 0.5) * 0.3,
-                        vy: (Math.random() - 0.5) * 0.3,
-                        radius: Math.random() * 3 + 1,
-                        opacity: Math.random() * 0.4 + 0.2,
-                        color: this.getRandomPastelColor(),
-                        pulseSpeed: Math.random() * 0.02 + 0.01,
-                        pulsePhase: Math.random() * Math.PI * 2
-                    });
-                }
-            }
-            
-            getRandomPastelColor() {
-                const colors = [
-                    'rgba(255, 228, 225, 0.6)', // pastel pink
-                    'rgba(230, 243, 255, 0.6)', // pastel blue
-                    'rgba(232, 245, 232, 0.6)', // pastel mint
-                    'rgba(240, 230, 255, 0.6)', // pastel lavender
-                    'rgba(255, 229, 204, 0.6)', // pastel peach
-                    'rgba(224, 242, 254, 0.6)', // pastel sky
-                ];
-                return colors[Math.floor(Math.random() * colors.length)];
-            }
-            
-            bindEvents() {
-                window.addEventListener('resize', () => this.resize());
-                window.addEventListener('mousemove', (e) => {
-                    this.mousePos.x = e.clientX;
-                    this.mousePos.y = e.clientY;
-                    
-                    // Create sparkles near mouse occasionally
-                    if (Math.random() < 0.05) {
-                        createMouseSparkle(e.clientX, e.clientY);
-                    }
-                });
-            }
-            
-            updateParticles() {
-                this.particles.forEach(particle => {
-                    particle.x += particle.vx;
-                    particle.y += particle.vy;
-                    
-                    // Boundary check with smooth bouncing
-                    if (particle.x < 0 || particle.x > this.canvas.width) {
-                        particle.vx *= -0.8;
-                        particle.x = Math.max(0, Math.min(this.canvas.width, particle.x));
-                    }
-                    if (particle.y < 0 || particle.y > this.canvas.height) {
-                        particle.vy *= -0.8;
-                        particle.y = Math.max(0, Math.min(this.canvas.height, particle.y));
-                    }
-                    
-                    // Mouse interaction with gentle attraction
-                    const dx = this.mousePos.x - particle.x;
-                    const dy = this.mousePos.y - particle.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < 150) {
-                        const force = (150 - distance) / 150;
-                        particle.vx += dx * force * 0.0008;
-                        particle.vy += dy * force * 0.0008;
-                    }
-                    
-                    // Pulsing effect
-                    particle.pulsePhase += particle.pulseSpeed;
-                    particle.currentOpacity = particle.opacity + Math.sin(particle.pulsePhase) * 0.2;
-                });
-            }
-            
-            drawParticles() {
-                this.particles.forEach(particle => {
-                    this.ctx.beginPath();
-                    this.ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-                    
-                    // Create gradient for each particle
-                    const gradient = this.ctx.createRadialGradient(
-                        particle.x, particle.y, 0,
-                        particle.x, particle.y, particle.radius * 2
-                    );
-                    gradient.addColorStop(0, particle.color);
-                    gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
-                    
-                    this.ctx.fillStyle = gradient;
-                    this.ctx.globalAlpha = particle.currentOpacity;
-                    this.ctx.fill();
-                    this.ctx.globalAlpha = 1;
-                });
-            }
-            
-            drawConnections() {
-                this.particles.forEach((particle, i) => {
-                    this.particles.slice(i + 1).forEach(otherParticle => {
-                        const dx = particle.x - otherParticle.x;
-                        const dy = particle.y - otherParticle.y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        
-                        if (distance < 100) {
-                            const opacity = (100 - distance) / 100 * 0.2;
-                            this.ctx.beginPath();
-                            this.ctx.moveTo(particle.x, particle.y);
-                            this.ctx.lineTo(otherParticle.x, otherParticle.y);
-                            this.ctx.strokeStyle = `rgba(8, 145, 178, ${opacity})`;
-                            this.ctx.lineWidth = 0.5;
-                            this.ctx.stroke();
-                        }
-                    });
-                });
-            }
-            
-            animate() {
-                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-                this.updateParticles();
-                this.drawConnections();
-                this.drawParticles();
-                requestAnimationFrame(() => this.animate());
-            }
-        }
-
-        // Initialize animations after loading
-        function initializeAnimations() {
-            new ParticleSystem();
-            
-            // Animate hero elements
-            const heroElements = [
-                '.intro-text',
-                '.identity-text', 
-                '.tagline',
-                '.social-links',
-                '.hero-summary'
-            ];
-            
-            heroElements.forEach((selector, index) => {
-                const element = document.querySelector(selector);
-                if (element) {
-                    setTimeout(() => {
-                        element.style.opacity = '1';
-                        element.style.transform = 'translateY(0)';
-                        element.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-                        element.classList.add('animate-slide-up');
-                    }, index * 200);
-                }
-            });
-            
-            // Animate credentials section
-            setTimeout(() => {
-                const credentials = document.querySelector('.credentials');
-                if (credentials) {
-                    credentials.style.opacity = '1';
-                    credentials.style.transform = 'translateY(0)';
-                    credentials.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-                }
-            }, 1000);
-        }
-
-        // Enhanced Navigation
-        const nav = document.getElementById('nav');
-        let lastScrollTop = 0;
-        
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-            
-            // Hide/show nav on scroll
-            if (scrollTop > lastScrollTop && scrollTop > 200) {
-                nav.style.transform = 'translateY(-100%)';
-            } else {
-                nav.style.transform = 'translateY(0)';
-            }
-            
-            lastScrollTop = scrollTop;
+        // Mobile menu toggle
+        mobileToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
         });
 
-        // Smooth scrolling for navigation links
+        // Close mobile menu when clicking on a link
+        navLinkItems.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ===== SMOOTH SCROLLING =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1688,694 +1554,553 @@
             });
         });
 
-        // Portfolio filtering
-        const portfolioTabs = document.querySelectorAll('.portfolio-tab');
-        const workCards = document.querySelectorAll('.work-card');
-        
-        portfolioTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const filter = tab.getAttribute('data-filter');
-                
-                // Update active tab
-                portfolioTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                
-                // Filter work cards
-                workCards.forEach(card => {
-                    const category = card.getAttribute('data-category');
-                    if (filter === 'all' || category === filter) {
-                        card.style.display = 'block';
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                            card.style.transition = 'all 0.5s ease';
-                        }, 100);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
+        // ===== ACTIVE NAVIGATION HIGHLIGHTING =====
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', function() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + current) {
+                    item.classList.add('active');
+                }
             });
         });
 
-        // Skill tag interactions
-        document.querySelectorAll('.skill-tag').forEach(tag => {
-            tag.addEventListener('click', () => {
-                tag.style.transform = 'scale(1.1)';
-                tag.style.background = 'rgba(8, 145, 178, 0.3)';
-                
-                setTimeout(() => {
-                    tag.style.transform = 'translateY(-5px) scale(1.05)';
-                    tag.style.background = 'rgba(8, 145, 178, 0.2)';
-                }, 150);
-            });
-        });
-
-        // Intersection Observer for animations
+        // ===== SCROLL ANIMATIONS =====
         const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                    
-                    // Special animation for skill categories
-                    if (entry.target.classList.contains('skill-category')) {
-                        const tags = entry.target.querySelectorAll('.skill-tag');
-                        tags.forEach((tag, index) => {
-                            setTimeout(() => {
-                                tag.style.opacity = '1';
-                                tag.style.transform = 'translateY(0)';
-                                tag.style.transition = 'all 0.4s ease';
-                            }, index * 100);
-                        });
-                    }
-                    
-                    // Special animation for work cards
-                    if (entry.target.classList.contains('work-card')) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                        entry.target.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-                    }
+                    entry.target.classList.add('visible');
                 }
             });
         }, observerOptions);
 
-        // Observe elements for scroll animations
-        document.addEventListener('DOMContentLoaded', () => {
-            const elementsToObserve = document.querySelectorAll('.skill-category, .work-card, .achievement-item, .contact-card');
-            
-            elementsToObserve.forEach(element => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(30px)';
-                observer.observe(element);
+        // Observe all animated elements
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== FAQ ACCORDION =====
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+
+            question.addEventListener('click', function() {
+                const isActive = item.classList.contains('active');
+                
+                // Close all other FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+
+                // Toggle current item
+                if (isActive) {
+                    item.classList.remove('active');
+                } else {
+                    item.classList.add('active');
+                }
             });
         });
 
-        // Enhanced moon interaction
-        const moon = document.querySelector('.moon');
-        if (moon) {
-            moon.addEventListener('click', () => {
-                moon.style.transform = 'scale(1.2) rotate(360deg)';
-                moon.style.boxShadow = '0 0 100px rgba(8, 145, 178, 0.5)';
-                
-                setTimeout(() => {
-                    moon.style.transform = 'scale(1) rotate(0deg)';
-                    moon.style.boxShadow = '';
-                }, 1000);
+        // ===== SCROLL TO TOP BUTTON =====
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ===== QUANTUM MEDITATION MODE (EASTER EGG) =====
+        const quantumMode = document.getElementById('quantumMode');
+
+        document.addEventListener('keydown', function(event) {
+            if (event.keyCode === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    activateQuantumMode();
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+
+        function activateQuantumMode() {
+            quantumMode.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+                function exitQuantumMode() {
+            quantumMode.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // ===== PERFORMANCE OPTIMIZATIONS =====
+        // Throttle scroll events
+        function throttle(func, limit) {
+            let inThrottle;
+            return function() {
+                const args = arguments;
+                const context = this;
+                if (!inThrottle) {
+                    func.apply(context, args);
+                    inThrottle = true;
+                    setTimeout(() => inThrottle = false, limit);
+                }
+            }
+        }
+
+        // Apply throttling to scroll events
+        window.addEventListener('scroll', throttle(function() {
+            // Scroll-based animations and effects
+            updateScrollProgress();
+        }, 16)); // ~60fps
+
+        function updateScrollProgress() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            scrollProgress = (scrollTop / docHeight) * 100;
+        }
+
+        // ===== PRELOAD IMAGES =====
+        function preloadImages() {
+            const images = [
+                'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&w=1200&h=630&fit=crop',
+                'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&w=400&h=400&fit=crop&crop=face'
+            ];
+
+            images.forEach(src => {
+                const img = new Image();
+                img.src = src;
             });
         }
 
-        // Dynamic cursor effect
-        const cursor = document.createElement('div');
-        cursor.className = 'custom-cursor';
-        cursor.innerHTML = '✨';
-        cursor.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 20px;
-            height: 20px;
-            pointer-events: none;
-            z-index: 9999;
-            font-size: 20px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        `;
-        document.body.appendChild(cursor);
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 10 + 'px';
-            cursor.style.top = e.clientY + 10 + 'px';
-            cursor.style.opacity = '0.7';
+        // ===== ACCESSIBILITY ENHANCEMENTS =====
+        // Keyboard navigation for FAQ items
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    question.click();
+                }
+            });
         });
 
-        document.addEventListener('mouseleave', () => {
-            cursor.style.opacity = '0';
-        });
-
-        // Form validation and submission (if contact form exists)
-        const contactForm = document.querySelector('.contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
+        // Focus management for mobile menu
+        mobileToggle.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                
-                // Add form submission logic here
-                const formData = new FormData(contactForm);
-                const data = Object.fromEntries(formData);
-                
-                // Show success message
-                const successMsg = document.createElement('div');
-                successMsg.className = 'success-message';
-                successMsg.textContent = 'Thank you for your message! I\'ll get back to you soon.';
-                successMsg.style.cssText = `
-                    position: fixed;
-                    top: 20px;
-                    right: 20px;
-                    background: rgba(5, 150, 105, 0.9);
-                    color: white;
-                    padding: 1rem 2rem;
-                    border-radius: 10px;
-                    z-index: 10000;
-                    animation: slideIn 0.5s ease;
-                `;
-                
-                document.body.appendChild(successMsg);
-                
-                setTimeout(() => {
-                    successMsg.remove();
-                }, 5000);
-                
-                contactForm.reset();
-            });
-        }
-
-        // Keyboard navigation support
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Tab') {
-                document.body.classList.add('keyboard-navigation');
+                mobileToggle.click();
             }
         });
 
-        document.addEventListener('mousedown', () => {
-            document.body.classList.remove('keyboard-navigation');
-        });
+        // ===== DARK MODE DETECTION =====
+        function detectDarkMode() {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.body.classList.add('dark-mode');
+            }
+        }
 
-        // Performance optimization - lazy loading images
-        const images = document.querySelectorAll('img[data-src]');
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
+        // Listen for dark mode changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', detectDarkMode);
 
-        images.forEach(img => imageObserver.observe(img));
+        // ===== REDUCED MOTION SUPPORT =====
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        // Theme switching (if needed)
-        const themeToggle = document.querySelector('.theme-toggle');
-        if (themeToggle) {
-            themeToggle.addEventListener('click', () => {
-                document.body.classList.toggle('dark-theme');
-                localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+        if (prefersReducedMotion) {
+            // Disable animations for users who prefer reduced motion
+            document.querySelectorAll('*').forEach(el => {
+                el.style.animationDuration = '0.01ms';
+                el.style.animationIterationCount = '1';
+                el.style.transitionDuration = '0.01ms';
             });
         }
 
-        // Load saved theme
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            document.body.classList.add('dark-theme');
+        // ===== ANALYTICS (PRIVACY-FOCUSED) =====
+        function trackEvent(eventName, eventData) {
+            // Replace with your preferred analytics solution
+            // Example: Plausible, Fathom, or custom analytics
+            console.log('Event:', eventName, eventData);
         }
 
-        // Advanced scroll effects
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
+        // Track important interactions
+        document.querySelectorAll('.btn, .project-link, .contact-link').forEach(element => {
+            element.addEventListener('click', function(e) {
+                const elementText = this.textContent.trim();
+                const elementHref = this.getAttribute('href');
+                trackEvent('click', {
+                    element: elementText,
+                    href: elementHref
+                });
+            });
+        });
+
+        // ===== ERROR HANDLING =====
+        window.addEventListener('error', function(e) {
+            console.error('JavaScript error:', e.error);
+            // Optional: Send error to monitoring service
+        });
+
+        // ===== INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all components
+            preloadImages();
+            detectDarkMode();
             
-            // Parallax effect for hero section
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${rate}px)`;
-            }
+            // Add loaded class to body for CSS transitions
+            document.body.classList.add('loaded');
             
-            // Update progress indicator
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled_percentage = (winScroll / height) * 100;
-            
-            // Update any progress bars
-            const progressBar = document.querySelector('.scroll-progress');
-            if (progressBar) {
-                progressBar.style.width = scrolled_percentage + '%';
-            }
+            // Initialize any third-party libraries here
+            console.log('🕉️ Quantum Consciousness Platform Initialized');
         });
 
-        // Error handling for missing elements
-        window.addEventListener('error', (e) => {
-            console.warn('Non-critical error:', e.message);
-        });
-
-        // Mobile menu toggle
-        const mobileToggle = document.querySelector('.mobile-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        if (mobileToggle && navLinks) {
-            mobileToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                mobileToggle.classList.toggle('active');
+        // ===== SERVICE WORKER REGISTRATION (PWA) =====
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(function(err) {
+                        console.log('ServiceWorker registration failed');
+                    });
             });
         }
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav') && navLinks) {
-                navLinks.classList.remove('active');
-                if (mobileToggle) mobileToggle.classList.remove('active');
+        // ===== CONTACT FORM VALIDATION (if you add a form later) =====
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        // ===== SOCIAL SHARING =====
+        function shareOnSocial(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            const text = encodeURIComponent('Check out this amazing Quantum Consciousness platform!');
+            
+            let shareUrl = '';
+            
+            switch(platform) {
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+                    break;
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+                    break;
             }
-        });
-
-        // Preload critical resources
-        const preloadLinks = [
-            'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap',
-            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'
-        ];
-
-        preloadLinks.forEach(href => {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'style';
-            link.href = href;
-            document.head.appendChild(link);
-        });
-
-        // Add additional styles for missing components
-        const additionalStyles = `
-            .achievements {
-                padding: 6rem 2rem;
-                background: var(--secondary-bg);
-                position: relative;
-                z-index: 10;
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=400');
             }
+        }
 
-            .achievements-content {
-                max-width: 1200px;
-                margin: 0 auto;
-                text-align: center;
-            }
+        // ===== COPY TO CLIPBOARD =====
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                showNotification('Copied to clipboard!', 'success');
+            }).catch(function(err) {
+                console.error('Could not copy text: ', err);
+                showNotification('Copy failed', 'error');
+            });
+        }
 
-            .achievements-list {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 2rem;
-                margin-top: 3rem;
-            }
-
-            .achievement-item {
-                background: var(--glass-bg);
-                backdrop-filter: var(--glass-backdrop);
-                border: 1px solid var(--glass-border);
-                border-radius: 20px;
-                padding: 2rem;
-                text-align: left;
-                transition: all var(--transition-smooth);
-                box-shadow: var(--shadow-md);
-            }
-
-            .achievement-item:hover {
-                transform: translateY(-10px);
-                box-shadow: var(--shadow-xl);
-            }
-
-            .achievement-icon {
-                font-size: 2rem;
-                color: var(--accent-cyan);
-                margin-bottom: 1rem;
-            }
-
-            .achievement-text {
-                color: var(--text-primary);
-                line-height: 1.6;
-            }
-
-            .portfolio {
-                padding: 6rem 2rem;
-                background: var(--primary-bg);
-                position: relative;
-                z-index: 10;
-            }
-
-            .portfolio-content {
-                max-width: 1200px;
-                margin: 0 auto;
-                text-align: center;
-            }
-
-            .portfolio-intro {
-                color: var(--text-secondary);
-                font-size: 1.2rem;
-                margin-bottom: 3rem;
-                line-height: 1.7;
-            }
-
-            .portfolio-nav {
-                display: flex;
-                justify-content: center;
-                gap: 1rem;
-                margin-bottom: 3rem;
-                flex-wrap: wrap;
-            }
-
-            .portfolio-tab {
-                background: rgba(255, 255, 255, 0.9);
-                border: 1px solid var(--border-light);
-                border-radius: 25px;
-                padding: 1rem 2rem;
-                cursor: pointer;
-                transition: all var(--transition-smooth);
-                color: var(--text-secondary);
-                font-weight: 500;
-            }
-
-            .portfolio-tab.active,
-            .portfolio-tab:hover {
-                background: var(--accent-cyan);
-                color: white;
-                transform: translateY(-3px);
-                box-shadow: var(--shadow-md);
-            }
-
-            .featured-work {
-                background: var(--glass-bg);
-                backdrop-filter: var(--glass-backdrop);
-                border: 1px solid var(--glass-border);
-                border-radius: 30px;
-                padding: 3rem;
-                margin-bottom: 4rem;
+        // ===== NOTIFICATION SYSTEM =====
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: var(--primary);
+                color: var(--dark);
+                padding: 1rem 1.5rem;
+                border-radius: var(--radius-lg);
                 box-shadow: var(--shadow-lg);
-            }
+                z-index: 10000;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Show notification
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            // Hide notification after 3 seconds
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
 
-            .featured-content {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
-                align-items: center;
-            }
+        // ===== LAZY LOADING IMAGES =====
+        function lazyLoadImages() {
+            const images = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
 
-            .featured-text h3 {
-                font-family: 'Playfair Display', serif;
-                font-size: 2rem;
-                color: var(--text-primary);
-                margin-bottom: 1rem;
-            }
+            images.forEach(img => imageObserver.observe(img));
+        }
 
-            .featured-text p {
-                color: var(--text-secondary);
-                line-height: 1.7;
-                margin-bottom: 2rem;
-            }
-
-            .featured-stats {
-                display: flex;
-                gap: 2rem;
-                margin-bottom: 2rem;
-            }
-
-            .stat-item {
-                text-align: center;
-            }
-
-            .stat-number {
-                display: block;
-                font-size: 2rem;
-                font-weight: 700;
-                color: var(--accent-cyan);
-            }
-
-            .stat-label {
-                color: var(--text-secondary);
-                font-size: 0.9rem;
-            }
-
-            .work-actions {
-                display: flex;
-                gap: 1rem;
-            }
-
-            .work-btn {
-                padding: 0.8rem 1.5rem;
-                border-radius: 25px;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all var(--transition-smooth);
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
-            }
-
-            .work-btn.primary {
-                background: var(--accent-cyan);
-                color: white;
-            }
-
-            .work-btn {
-                background: rgba(255, 255, 255, 0.9);
-                color: var(--text-primary);
-                border: 1px solid var(--border-light);
-            }
-
-            .work-btn:hover {
-                transform: translateY(-3px);
-                box-shadow: var(--shadow-md);
-            }
-
-            .featured-preview {
-                background: var(--pastel-blue);
-                border-radius: 20px;
-                padding: 2rem;
-                font-style: italic;
-                color: var(--text-secondary);
-                line-height: 1.7;
-            }
-
-            .portfolio-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                gap: 2rem;
-                margin-top: 3rem;
-            }
-
-            .work-card {
-                background: rgba(255, 255, 255, 0.9);
-                border: 1px solid var(--border-light);
-                border-radius: 25px;
-                padding: 2rem;
-                transition: all var(--transition-smooth);
-                box-shadow: var(--shadow-sm);
-            }
-
-            .work-card:hover {
-                transform: translateY(-15px);
-                box-shadow: var(--shadow-xl);
-                border-color: var(--accent-cyan);
-            }
-
-            .work-header {
-                text-align: center;
-                margin-bottom: 1.5rem;
-            }
-
-            .work-icon {
-                font-size: 2.5rem;
-                color: var(--accent-cyan);
-            }
-
-            .work-category {
-                color: var(--accent-cyan);
-                font-size: 0.9rem;
-                font-weight: 600;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-            }
-
-            .work-title {
-                font-family: 'Playfair Display', serif;
-                font-size: 1.4rem;
-                color: var(--text-primary);
-                margin: 0.5rem 0 1rem;
-            }
-
-            .work-description {
-                color: var(--text-secondary);
-                line-height: 1.6;
-                margin-bottom: 1.5rem;
-            }
-
-            .work-meta {
-                display: flex;
-                gap: 1rem;
-                margin-bottom: 1.5rem;
-                flex-wrap: wrap;
-            }
-
-            .work-meta-item {
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                color: var(--text-muted);
-                font-size: 0.9rem;
-            }
-
-            .language-pair {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-                margin: 1rem 0;
-            }
-
-            .flag-icon {
-                width: 30px;
-                height: 20px;
-                border-radius: 3px;
-                border: 1px solid var(--border-light);
-            }
-
-            .arrow-icon {
-                color: var(--accent-cyan);
-            }
-
-            .contact {
-                padding: 6rem 2rem;
-                background: var(--secondary-bg);
-                position: relative;
-                z-index: 10;
-            }
-
-            .contact-content {
-                max-width: 1200px;
-                margin: 0 auto;
-                text-align: center;
-            }
-
-            .contact-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 2rem;
-                margin-top: 3rem;
-            }
-
-            .contact-card {
-                background: var(--glass-bg);
-                backdrop-filter: var(--glass-backdrop);
-                border: 1px solid var(--glass-border);
-                border-radius: 25px;
-                padding: 2.5rem;
-                transition: all var(--transition-smooth);
-                box-shadow: var(--shadow-md);
-            }
-
-            .contact-card:hover {
-                transform: translateY(-10px);
-                box-shadow: var(--shadow-xl);
-            }
-
-            .contact-icon {
-                font-size: 2.5rem;
-                color: var(--accent-cyan);
-                margin-bottom: 1.5rem;
-            }
-
-            .contact-card h3 {
-                font-family: 'Playfair Display', serif;
-                font-size: 1.5rem;
-                color: var(--text-primary);
-                margin-bottom: 1rem;
-            }
-
-            .contact-card p {
-                color: var(--text-secondary);
-                line-height: 1.6;
-                margin-bottom: 1.5rem;
-            }
-
-            .contact-link {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
-                color: var(--accent-cyan);
-                text-decoration: none;
-                font-weight: 500;
-                transition: all var(--transition-smooth);
-            }
-
-            .contact-link:hover {
-                transform: translateY(-2px);
-                color: var(--accent-coral);
-            }
-
-            .footer {
-                background: var(--text-primary);
-                color: white;
-                padding: 4rem 2rem 2rem;
-                position: relative;
-                z-index: 10;
-            }
-
-            .footer-content {
-                max-width: 1200px;
-                margin: 0 auto;
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 2rem;
-            }
-
-            .footer-section h4 {
-                font-family: 'Playfair Display', serif;
-                font-size: 1.2rem;
-                margin-bottom: 1rem;
-                color: var(--accent-cyan);
-            }
-
-            .footer-section p {
-                margin-bottom: 0.5rem;
-                line-height: 1.6;
-            }
-
-            .footer-section a {
-                color: rgba(255, 255, 255, 0.8);
-                text-decoration: none;
-                transition: color var(--transition-smooth);
-            }
-
-            .footer-section a:hover {
-                color: var(--accent-cyan);
-            }
-
-            .footer-bottom {
-                text-align: center;
-                padding-top: 2rem;
-                margin-top: 2rem;
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-                color: rgba(255, 255, 255, 0.7);
-            }
-
-            @media (max-width: 768px) {
-                .featured-content {
-                    grid-template-columns: 1fr;
+        // ===== TYPEWRITER EFFECT =====
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
                 }
+            }
+            
+            type();
+        }
+
+        // ===== PARALLAX EFFECT =====
+        function parallaxEffect() {
+            const parallaxElements = document.querySelectorAll('.parallax');
+            
+            window.addEventListener('scroll', throttle(() => {
+                const scrolled = window.pageYOffset;
                 
-                .featured-stats {
-                    justify-content: center;
+                parallaxElements.forEach(element => {
+                    const rate = scrolled * -0.5;
+                    element.style.transform = `translateY(${rate}px)`;
+                });
+            }, 16));
+        }
+
+        // ===== INITIALIZE ADDITIONAL FEATURES =====
+        document.addEventListener('DOMContentLoaded', function() {
+            lazyLoadImages();
+            parallaxEffect();
+        });
+    </script>
+
+    <!-- PWA Manifest -->
+    <script>
+        // Create manifest.json dynamically
+        const manifestData = {
+            "name": "Quantum Consciousness Platform",
+            "short_name": "Quantum Consciousness",
+            "description": "Bridging Ancient Wisdom & Modern Innovation",
+            "start_url": "/",
+            "display": "standalone",
+            "background_color": "#667eea",
+            "theme_color": "#FFD700",
+            "icons": [
+                {
+                    "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕉️</text></svg>",
+                    "sizes": "192x192",
+                    "type": "image/svg+xml"
+                },
+                {
+                    "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕉️</text></svg>",
+                    "sizes": "512x512",
+                    "type": "image/svg+xml"
                 }
-                
-                .portfolio-grid {
-                    grid-template-columns: 1fr;
-                }
-                
-                .work-actions {
-                    flex-direction: column;
-                }
-            }
+            ]
+        };
+
+        // Create and inject manifest
+        const manifestBlob = new Blob([JSON.stringify(manifestData)], {type: 'application/json'});
+        const manifestURL = URL.createObjectURL(manifestBlob);
+        
+        const manifestLink = document.createElement('link');
+        manifestLink.rel = 'manifest';
+        manifestLink.href = manifestURL;
+        document.head.appendChild(manifestLink);
+    </script>
+
+    <!-- Service Worker -->
+    <script>
+        // Create service worker dynamically
+        const swCode = `
+            const CACHE_NAME = 'quantum-consciousness-v1';
+            const urlsToCache = [
+                '/',
+                '/styles.css',
+                '/script.js',
+                'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap',
+                'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+            ];
+
+            self.addEventListener('install', function(event) {
+                event.waitUntil(
+                    caches.open(CACHE_NAME)
+                        .then(function(cache) {
+                            return cache.addAll(urlsToCache);
+                        })
+                );
+            });
+
+            self.addEventListener('fetch', function(event) {
+                event.respondWith(
+                    caches.match(event.request)
+                        .then(function(response) {
+                            if (response) {
+                                return response;
+                            }
+                            return fetch(event.request);
+                        })
+                );
+            });
         `;
 
-        const styleSheet = document.createElement('style');
-        styleSheet.textContent = additionalStyles;
-        document.head.appendChild(styleSheet);
-
-        console.log('🌟 Thanatsitt Portfolio - Enhanced with sparkling stars, dynamic moon phases, and glassmorphism effects!');
+        // Create and register service worker
+        const swBlob = new Blob([swCode], {type: 'application/javascript'});
+        const swURL = URL.createObjectURL(swBlob);
+        
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register(swURL)
+                .then(registration => console.log('SW registered'))
+                .catch(error => console.log('SW registration failed'));
+        }
     </script>
+
+    <!-- Google Analytics 4 (Optional - Replace with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Schema.org Structured Data for Rich Results -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Quantum Consciousness Platform",
+        "description": "Exploring the intersection of Buddhist philosophy, quantum technology, and cultural heritage through innovative web projects.",
+        "url": "https://pegearts.com",
+        "author": {
+            "@type": "Person",
+            "name": "Thanattsitt Santisamranwilai",
+            "email": "thanattsitt.info@yahoo.co.uk",
+            "url": "https://linktr.ee/ThanttEzekiel",
+            "sameAs": [
+                "https://www.linkedin.com/in/thanatsitts",
+                "https://pegearts.com"
+            ]
+        },
+        "datePublished": "2024-01-01",
+        "dateModified": "2024-01-15",
+        "keywords": "Buddhist Philosophy, Quantum Computing, Web Development, Cultural Heritage, Open Source",
+        "genre": "Technology, Philosophy, Cultural Heritage",
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://pegearts.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Quantum Consciousness",
+                "item": "https://pegearts.com#home"
+            }
+        ]
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What makes these projects unique?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "These projects uniquely combine spiritual and philosophical elements with cutting-edge web technologies, creating bridges between ancient wisdom and modern innovation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do you integrate Buddhist philosophy with technology?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "I integrate Buddhist philosophy with technology by translating core concepts like mindfulness, interconnectedness, and compassion into user experience design, creating applications that promote awareness and well-being."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are these projects open source?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, most projects are open source and available on GitHub. The Buddhist principle of sharing wisdom freely guides the decision to make these resources accessible to the global community."
+                }
+            }
+        ]
+    }
+    </script>
+
 </body>
 </html>
+
+
