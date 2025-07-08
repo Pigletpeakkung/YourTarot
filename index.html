@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudFlow - Modern SaaS Platform</title>
-    <meta name="description" content="Streamline your workflow with CloudFlow - the all-in-one SaaS platform for modern teams">
-    <meta name="keywords" content="SaaS, cloud platform, workflow, productivity, team collaboration">
+    <title>Thanatsitt Santisamranwilai - AI-Powered Cultural Bridge Builder</title>
+    <meta name="description" content="AI Solutions Architect transforming businesses through collaborative knowledge exchange and cross-cultural innovation">
+    <meta name="keywords" content="AI architect, cultural AI, cross-cultural innovation, AI solutions, collaborative AI">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,17 +17,20 @@
     
     <style>
         :root {
-            /* Modern SaaS Color Palette */
+            /* Cultural Bridge Color Palette */
             --primary-color: #6366f1;
             --primary-dark: #4f46e5;
             --secondary-color: #10b981;
             --accent-color: #f59e0b;
             --accent-pink: #ec4899;
+            --cultural-red: #dc2626;
+            --cultural-gold: #d97706;
+            --cultural-blue: #0284c7;
             --text-primary: #1f2937;
             --text-secondary: #6b7280;
             --text-light: #9ca3af;
             --bg-primary: #ffffff;
-            --bg-secondary: #f9fafb;
+            --bg-secondary: #f8fafc;
             --bg-dark: #111827;
             --border-light: #e5e7eb;
             --border-dark: #374151;
@@ -36,8 +39,8 @@
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            --gradient-cultural: linear-gradient(135deg, #dc2626 0%, #d97706 50%, #0284c7 100%);
             --gradient-secondary: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
             
             /* Typography */
             --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -106,16 +109,6 @@
             color: var(--text-secondary);
         }
         
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color var(--transition-base);
-        }
-        
-        a:hover {
-            color: var(--primary-dark);
-        }
-        
         /* Container */
         .container {
             max-width: var(--max-width);
@@ -164,25 +157,21 @@
             box-shadow: var(--shadow-md);
         }
         
-        .btn-outline {
-            background: transparent;
-            color: var(--primary-color);
-            border: 1px solid var(--primary-color);
+        .btn-cultural {
+            background: var(--gradient-cultural);
+            color: white;
+            box-shadow: var(--shadow-sm);
         }
         
-        .btn-outline:hover {
-            background: var(--primary-color);
+        .btn-cultural:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
             color: white;
         }
         
         .btn-lg {
             padding: var(--space-md) var(--space-xl);
             font-size: 1rem;
-        }
-        
-        .btn-sm {
-            padding: var(--space-xs) var(--space-md);
-            font-size: 0.75rem;
         }
         
         /* Header */
@@ -211,7 +200,7 @@
             align-items: center;
             gap: var(--space-sm);
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--text-primary);
         }
@@ -219,7 +208,7 @@
         .logo-icon {
             width: 32px;
             height: 32px;
-            background: var(--gradient-primary);
+            background: var(--gradient-cultural);
             border-radius: var(--border-radius);
             display: flex;
             align-items: center;
@@ -250,12 +239,6 @@
             color: var(--primary-color);
         }
         
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: var(--space-md);
-        }
-        
         .mobile-menu-toggle {
             display: none;
             background: none;
@@ -280,8 +263,9 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 50%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(2, 132, 199, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 60% 80%, rgba(217, 119, 6, 0.1) 0%, transparent 50%);
             pointer-events: none;
         }
         
@@ -315,18 +299,42 @@
         .hero-title {
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
-            margin-bottom: var(--space-lg);
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-color) 100%);
+            margin-bottom: var(--space-md);
+            background: var(--gradient-cultural);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
         .hero-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+            font-weight: 500;
+        }
+        
+        .hero-value-prop {
+            font-size: 1.25rem;
+            color: var(--text-primary);
             margin-bottom: var(--space-2xl);
-            line-height: 1.6;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .hero-location {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-2xl);
+            flex-wrap: wrap;
+        }
+        
+        .location-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
         }
         
         .hero-buttons {
@@ -335,146 +343,56 @@
             flex-wrap: wrap;
         }
         
-        .hero-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .hero-dashboard {
-            background: white;
-            border-radius: var(--border-radius-xl);
-            box-shadow: var(--shadow-xl);
-            padding: var(--space-xl);
-            max-width: 500px;
-            position: relative;
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .hero-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: var(--border-radius-xl);
-            margin-bottom: var(--space-lg);
-        }
-        
-        .dashboard-header {
-            display: flex;
-            align-items: center;
-            gap: var(--space-md);
-            margin-bottom: var(--space-lg);
-        }
-        
-        .dashboard-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-        }
-        
-        .dashboard-info h4 {
-            margin-bottom: var(--space-xs);
-            font-size: 0.875rem;
-        }
-        
-        .dashboard-info p {
-            color: var(--text-light);
-            font-size: 0.75rem;
-            margin-bottom: 0;
-        }
-        
-        .dashboard-stats {
+        .hero-metrics {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-md);
-            margin-bottom: var(--space-lg);
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-lg);
+            margin-top: var(--space-2xl);
         }
         
-        .stat-item {
+        .metric-item {
             text-align: center;
-            padding: var(--space-md);
-            background: var(--bg-secondary);
-            border-radius: var(--border-radius);
+            padding: var(--space-lg);
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition-base);
         }
         
-        .stat-number {
-            display: block;
-            font-size: 1.5rem;
+        .metric-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .metric-value {
+            font-size: 2rem;
             font-weight: 700;
             color: var(--primary-color);
+            display: block;
+            margin-bottom: var(--space-sm);
         }
         
-        .stat-label {
-            font-size: 0.75rem;
-            color: var(--text-light);
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 500;
         }
         
-        .dashboard-chart {
-            height: 120px;
-            background: var(--bg-secondary);
-            border-radius: var(--border-radius);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .chart-bar {
-            position: absolute;
-            bottom: 0;
-            width: 20px;
-            background: var(--gradient-primary);
-            border-radius: 2px 2px 0 0;
-            animation: chartGrow 2s ease-out forwards;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        @keyframes chartGrow {
-            from { height: 0; }
-            to { height: var(--height); }
-        }
-        
-        /* Features Section */
-        .features {
-            padding: var(--space-5xl) 0;
+        /* USP Section */
+        .usp-section {
+            padding: var(--space-4xl) 0;
             background: var(--bg-primary);
         }
         
-        .section-header {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto var(--space-4xl);
-        }
-        
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: var(--space-lg);
-        }
-        
-        .section-subtitle {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-        }
-        
-        .features-grid {
+        .usp-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-2xl);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
         }
         
-        .feature-card {
+        .usp-card {
             background: white;
             border-radius: var(--border-radius-lg);
-            padding: var(--space-2xl);
+            padding: var(--space-xl);
             box-shadow: var(--shadow-sm);
             border: 1px solid var(--border-light);
             transition: all var(--transition-base);
@@ -482,31 +400,31 @@
             overflow: hidden;
         }
         
-        .feature-card::before {
+        .usp-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             height: 4px;
-            background: var(--gradient-primary);
+            background: var(--gradient-cultural);
             transform: scaleX(0);
             transition: transform var(--transition-base);
         }
         
-        .feature-card:hover {
+        .usp-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
         }
         
-        .feature-card:hover::before {
+        .usp-card:hover::before {
             transform: scaleX(1);
         }
         
-        .feature-icon {
+        .usp-icon {
             width: 60px;
             height: 60px;
-            background: var(--gradient-primary);
+            background: var(--gradient-cultural);
             border-radius: var(--border-radius-lg);
             display: flex;
             align-items: center;
@@ -516,334 +434,330 @@
             margin-bottom: var(--space-lg);
         }
         
-        .feature-title {
-            font-size: 1.25rem;
+        .usp-text {
+            font-size: 1.125rem;
+            font-weight: 600;
             margin-bottom: var(--space-md);
             color: var(--text-primary);
         }
         
-        .feature-description {
+        .usp-proof {
+            font-size: 0.875rem;
             color: var(--text-secondary);
-            margin-bottom: var(--space-lg);
+            font-style: italic;
         }
         
-        .feature-link {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-sm);
-            color: var(--primary-color);
-            font-weight: 500;
-            transition: gap var(--transition-base);
-        }
-        
-        .feature-link:hover {
-            gap: var(--space-md);
-        }
-        
-        /* Gallery Section */
-        .gallery {
+        /* About Section */
+        .about {
             padding: var(--space-5xl) 0;
             background: var(--bg-secondary);
-            position: relative;
-            overflow: hidden;
         }
         
-        .gallery-grid {
+        .about-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-lg);
-            margin-bottom: var(--space-2xl);
-        }
-        
-        .gallery-item {
-            position: relative;
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            cursor: pointer;
-            transition: all var(--transition-base);
-            animation: fadeInUp 0.8s ease-out forwards;
-            opacity: 0;
-        }
-        
-        .gallery-item:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .gallery-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform var(--transition-slow);
-        }
-        
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.1);
-        }
-        
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.9) 0%, rgba(236, 72, 153, 0.9) 100%);
-            opacity: 0;
-            transition: opacity var(--transition-base);
-            display: flex;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4xl);
             align-items: center;
-            justify-content: center;
-            flex-direction: column;
         }
         
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
+        .about-text {
+            max-width: 600px;
         }
         
-        .gallery-title {
-            color: white;
+        .philosophy-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: var(--space-2xl);
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .philosophy-title {
             font-size: 1.25rem;
             font-weight: 600;
-            margin-bottom: var(--space-sm);
-            text-align: center;
-        }
-        
-        .gallery-description {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.875rem;
-            text-align: center;
+            color: var(--text-primary);
             margin-bottom: var(--space-md);
         }
         
-        .gallery-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: var(--space-md);
-            backdrop-filter: blur(10px);
+        .philosophy-text {
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
         
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .differentiators {
+            display: grid;
+            gap: var(--space-lg);
         }
         
-        /* Gallery Modal */
-        .gallery-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all var(--transition-base);
-        }
-        
-        .gallery-modal.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .modal-content {
-            max-width: 90%;
-            max-height: 90%;
-            position: relative;
-            animation: modalZoom 0.3s ease-out;
-        }
-        
-        .modal-image {
-            width: 100%;
-            height: auto;
+        .differentiator-card {
+            background: white;
             border-radius: var(--border-radius-lg);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
         }
         
-        .modal-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            transition: transform var(--transition-base);
-        }
-        
-        .modal-close:hover {
-            transform: rotate(90deg);
-        }
-        
-        .modal-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            padding: var(--space-md);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all var(--transition-base);
-            backdrop-filter: blur(10px);
-        }
-        
-        .modal-nav:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-50%) scale(1.1);
-        }
-        
-        .modal-prev {
-            left: -60px;
-        }
-        
-        .modal-next {
-            right: -60px;
-        }
-        
-        @keyframes modalZoom {
-            from {
-                transform: scale(0.8);
-            }
-            to {
-                transform: scale(1);
-            }
-        }
-        
-        /* Carousel for Gallery */
-        .gallery-carousel {
-            position: relative;
-            overflow: hidden;
-            border-radius: var(--border-radius-xl);
-            margin-bottom: var(--space-2xl);
-        }
-        
-        .carousel-track {
+        .diff-header {
             display: flex;
-            transition: transform var(--transition-slow);
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
         }
         
-        .carousel-slide {
-            min-width: 100%;
-            position: relative;
+        .diff-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
         }
         
-        .carousel-image {
+        .diff-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .diff-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .diff-proof {
+            font-size: 0.875rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            padding: var(--space-5xl) 0;
+            background: var(--bg-primary);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto var(--space-4xl);
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: var(--space-lg);
+            color: var(--text-primary);
+        }
+        
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-xl);
+        }
+        
+        .portfolio-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-base);
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .portfolio-image {
             width: 100%;
-            height: 400px;
+            height: 200px;
             object-fit: cover;
         }
         
-        .carousel-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-            color: white;
-            padding: var(--space-2xl);
+        .portfolio-content {
+            padding: var(--space-xl);
         }
         
-        .carousel-title {
-            font-size: 1.5rem;
+        .portfolio-category {
+            font-size: 0.875rem;
+            color: var(--primary-color);
+            font-weight: 500;
             margin-bottom: var(--space-sm);
         }
         
-        .carousel-description {
-            font-size: 1rem;
-            opacity: 0.9;
+        .portfolio-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-md);
         }
         
-        .carousel-controls {
-            display: flex;
-            justify-content: center;
+        .collaboration-highlight {
+            background: var(--bg-secondary);
+            padding: var(--space-md);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--space-md);
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .collaboration-highlight p {
+            margin-bottom: 0;
+            color: var(--text-primary);
+            font-style: italic;
+        }
+        
+        .portfolio-results {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: var(--space-md);
             margin-top: var(--space-lg);
         }
         
-        .carousel-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: white;
-            padding: var(--space-md);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all var(--transition-base);
-            backdrop-filter: blur(10px);
-        }
-        
-        .carousel-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
-        }
-        
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-sm);
-            margin-top: var(--space-lg);
-        }
-        
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
-            cursor: pointer;
-            transition: all var(--transition-base);
-        }
-        
-        .carousel-dot.active {
-            background: white;
-            transform: scale(1.2);
-        }
-        
-        /* Stats Section */
-        .stats {
-            padding: var(--space-4xl) 0;
-            background: var(--bg-dark);
-            color: white;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-2xl);
-        }
-        
-        .stats-item {
+        .result-item {
             text-align: center;
+            padding: var(--space-md);
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
         }
         
-        .stats-number {
-            font-size: 3rem;
+        .result-value {
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--primary-color);
             display: block;
+        }
+        
+        .result-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-top: var(--space-lg);
+        }
+        
+        .tech-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--border-radius);
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: var(--space-5xl) 0;
+            background: var(--bg-secondary);
+        }
+        
+        .services-grid {
+            display: grid;
+            gap: var(--space-2xl);
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: var(--space-2xl);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-cultural);
+        }
+        
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .service-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
             margin-bottom: var(--space-sm);
         }
         
-        .stats-label {
-            color: rgba(255, 255, 255, 0.8);
+        .service-tagline {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: var(--space-md);
+        }
+        
+        .service-investment {
+            background: var(--bg-secondary);
+            padding: var(--space-md);
+            border-radius: var(--border-radius);
+            text-align: center;
+            min-width: 150px;
+        }
+        
+        .investment-range {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .investment-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+        
+        .service-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+            line-height: 1.6;
+        }
+        
+        .service-outcomes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+        
+        .outcome-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm);
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+        }
+        
+        .outcome-icon {
+            color: var(--secondary-color);
             font-size: 1.125rem;
+        }
+        
+        .outcome-text {
+            color: var(--text-primary);
+            font-size: 0.875rem;
         }
         
         /* Testimonials Section */
@@ -854,7 +768,7 @@
         
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: var(--space-xl);
         }
         
@@ -867,18 +781,12 @@
             position: relative;
         }
         
-        .testimonial-author-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        
         .testimonial-quote {
             font-size: 1.125rem;
             color: var(--text-primary);
             margin-bottom: var(--space-lg);
             font-style: italic;
+            line-height: 1.6;
         }
         
         .testimonial-author {
@@ -888,25 +796,21 @@
         }
         
         .author-avatar {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            background: var(--gradient-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
+            object-fit: cover;
         }
         
         .author-info h4 {
             margin-bottom: var(--space-xs);
-            font-size: 0.875rem;
+            font-size: 1rem;
+            color: var(--text-primary);
         }
         
         .author-info p {
-            color: var(--text-light);
-            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
             margin-bottom: 0;
         }
         
@@ -920,16 +824,30 @@
             color: var(--accent-color);
         }
         
+        .testimonial-highlight {
+            background: var(--bg-secondary);
+            padding: var(--space-md);
+            border-radius: var(--border-radius);
+            margin-top: var(--space-lg);
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .testimonial-highlight p {
+            margin-bottom: 0;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        
         /* CTA Section */
         .cta {
             padding: var(--space-5xl) 0;
-            background: var(--gradient-primary);
+            background: var(--gradient-cultural);
             color: white;
             text-align: center;
         }
         
         .cta-content {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
         }
         
@@ -940,9 +858,19 @@
         }
         
         .cta-subtitle {
-            font-size: 1.125rem;
+            font-size: 1.25rem;
             opacity: 0.9;
+            margin-bottom: var(--space-lg);
+            line-height: 1.6;
+        }
+        
+        .cta-promise {
+            font-size: 1.125rem;
+            font-weight: 600;
             margin-bottom: var(--space-2xl);
+            background: rgba(255, 255, 255, 0.1);
+            padding: var(--space-lg);
+            border-radius: var(--border-radius);
         }
         
         .cta-buttons {
@@ -1030,7 +958,6 @@
             margin-bottom: var(--space-lg);
             color: white;
         }
-        
         .footer-links {
             list-style: none;
         }
@@ -1070,20 +997,16 @@
                 text-align: center;
             }
             
-            .hero-visual {
-                order: -1;
-            }
-            
-            .features-grid {
+            .hero-metrics {
                 grid-template-columns: 1fr;
             }
             
-            .gallery-grid {
+            .about-content {
                 grid-template-columns: 1fr;
             }
             
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .portfolio-grid {
+                grid-template-columns: 1fr;
             }
             
             .testimonials-grid {
@@ -1100,8 +1023,13 @@
                 align-items: center;
             }
             
-            .modal-nav {
-                display: none;
+            .service-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .service-investment {
+                margin-top: var(--space-md);
             }
         }
         
@@ -1145,20 +1073,24 @@
             }
         }
         
-        /* Utility Classes */
-        .text-center { text-align: center; }
-        .text-left { text-align: left; }
-        .text-right { text-align: right; }
-        .mb-0 { margin-bottom: 0; }
-        .mb-sm { margin-bottom: var(--space-sm); }
-        .mb-md { margin-bottom: var(--space-md); }
-        .mb-lg { margin-bottom: var(--space-lg); }
-        .mb-xl { margin-bottom: var(--space-xl); }
-        .mt-0 { margin-top: 0; }
-        .mt-sm { margin-top: var(--space-sm); }
-        .mt-md { margin-top: var(--space-md); }
-        .mt-lg { margin-top: var(--space-lg); }
-        .mt-xl { margin-top: var(--space-xl); }
+        .cultural-pulse {
+            animation: culturalPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes culturalPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Floating Animation */
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
     </style>
 </head>
 <body>
@@ -1168,24 +1100,19 @@
             <div class="header-content">
                 <div class="logo">
                     <div class="logo-icon">
-                        <i class="fas fa-cloud"></i>
+                        <i class="fas fa-globe-asia"></i>
                     </div>
-                    <span>CloudFlow</span>
+                    <span>Thanatsitt S.</span>
                 </div>
                 
                 <nav class="nav">
                     <ul class="nav-links">
-                        <li><a href="#features" class="nav-link">Features</a></li>
-                        <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                         <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                         <li><a href="#contact" class="nav-link">Contact</a></li>
                     </ul>
-                    
-                    <div class="nav-actions">
-                        <a href="#" class="btn btn-secondary btn-sm">Sign In</a>
-                        <a href="#" class="btn btn-primary btn-sm">Get Started</a>
-                    </div>
                     
                     <button class="mobile-menu-toggle">
                         <i class="fas fa-bars"></i>
@@ -1201,303 +1128,475 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="hero-badge">
-                        <i class="fas fa-rocket"></i>
-                        <span>New: AI-Powered Analytics</span>
+                        <i class="fas fa-brain"></i>
+                        <span>AI-Powered Cultural Bridge Builder</span>
                     </div>
                     
-                    <h1 class="hero-title">Streamline Your Workflow with CloudFlow</h1>
+                    <h1 class="hero-title">Thanatsitt Santisamranwilai</h1>
+                    <p class="hero-subtitle">Where AI Meets Cultural Intelligence</p>
                     
-                    <p class="hero-subtitle">
-                        The all-in-one SaaS platform that helps modern teams collaborate, manage projects, and scale their business with powerful automation tools.
+                    <p class="hero-value-prop">
+                        I don't just implement AI—I facilitate transformative knowledge exchange between cultures, technologies, and human insights
                     </p>
                     
+                    <div class="hero-location">
+                        <div class="location-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Kamphaeng Phet, Thailand</span>
+                        </div>
+                        <div class="location-item">
+                            <i class="fas fa-globe"></i>
+                            <span>London-Tokyo-Bangkok Cultural Fluency</span>
+                        </div>
+                    </div>
+                    
                     <div class="hero-buttons">
-                        <a href="#" class="btn btn-primary btn-lg">
-                            <i class="fas fa-play"></i>
-                            Start Free Trial
+                        <a href="#services" class="btn btn-cultural btn-lg">
+                            <i class="fas fa-users"></i>
+                            Explore Collaborative AI Solutions
                         </a>
-                        <a href="#" class="btn btn-outline btn-lg">
-                            <i class="fas fa-video"></i>
-                            Watch Demo
+                        <a href="#portfolio" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-book-open"></i>
+                            See Cultural Innovation Stories
                         </a>
                     </div>
                 </div>
                 
-                <div class="hero-visual">
-                    <div class="hero-dashboard">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Dashboard Analytics" class="hero-image">
-                        
-                        <div class="dashboard-header">
-                            <div class="dashboard-avatar">JD</div>
-                            <div class="dashboard-info">
-                                <h4>John Doe</h4>
-                                <p>Product Manager</p>
-                            </div>
-                        </div>
-                        
-                        <div class="dashboard-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">24</span>
-                                <span class="stat-label">Projects</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">156</span>
-                                <span class="stat-label">Tasks</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">89%</span>
-                                <span class="stat-label">Complete</span>
-                            </div>
-                        </div>
-                        
-                        <div class="dashboard-chart">
-                            <div class="chart-bar" style="left: 20px; --height: 60px;"></div>
-                            <div class="chart-bar" style="left: 50px; --height: 80px;"></div>
-                            <div class="chart-bar" style="left: 80px; --height: 45px;"></div>
-                            <div class="chart-bar" style="left: 110px; --height: 95px;"></div>
-                            <div class="chart-bar" style="left: 140px; --height: 70px;"></div>
-                            <div class="chart-bar" style="left: 170px; --height: 88px;"></div>
-                        </div>
+                <div class="hero-metrics">
+                    <div class="metric-item float">
+                        <span class="metric-value">30%</span>
+                        <span class="metric-label">Revenue Increases</span>
+                    </div>
+                    <div class="metric-item float">
+                        <span class="metric-value">95%</span>
+                        <span class="metric-label">Client Discovery Rate</span>
+                    </div>
+                    <div class="metric-item float">
+                        <span class="metric-value">3</span>
+                        <span class="metric-label">Cultural Contexts</span>
+                    </div>
+                    <div class="metric-item float">
+                        <span class="metric-value">£50K+</span>
+                        <span class="metric-label">Collaborative Revenue</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
+    <!-- USP Section -->
+    <section class="usp-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Powerful Features for Modern Teams</h2>
-                <p class="section-subtitle">Everything you need to manage your projects, collaborate with your team, and grow your business in one integrated platform.</p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-project-diagram"></i>
+            <div class="usp-grid">
+                <div class="usp-card fade-in">
+                    <div class="usp-icon">
+                        <i class="fas fa-globe-asia"></i>
                     </div>
-                    <h3 class="feature-title">Project Management</h3>
-                    <p class="feature-description">Organize and track all your projects with intuitive Kanban boards, Gantt charts, and timeline views.</p>
-                    <a href="#" class="feature-link">
-                        Learn more <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <p class="usp-text">Only AI architect with London-Tokyo-Bangkok cultural fluency</p>
+                    <p class="usp-proof">Fashion design graduate + 6 years cross-cultural AI work</p>
                 </div>
                 
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="feature-title">Team Collaboration</h3>
-                    <p class="feature-description">Real-time chat, file sharing, and video calls keep your team connected no matter where they are.</p>
-                    <a href="#" class="feature-link">
-                        Learn more <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
+                <div class="usp-card fade-in">
+                    <div class="usp-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="feature-title">Analytics & Insights</h3>
-                    <p class="feature-description">AI-powered analytics provide deep insights into team performance and project progress.</p>
-                    <a href="#" class="feature-link">
-                        Learn more <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <p class="usp-text">Proven 30% revenue increases through collaborative AI strategies</p>
+                    <p class="usp-proof">£50K+ generated across 25+ culturally-aware projects</p>
                 </div>
                 
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-cog"></i>
+                <div class="usp-card fade-in">
+                    <div class="usp-icon">
+                        <i class="fas fa-handshake"></i>
                     </div>
-                    <h3 class="feature-title">Workflow Automation</h3>
-                    <p class="feature-description">Automate repetitive tasks and create custom workflows to boost productivity and efficiency.</p>
-                    <a href="#" class="feature-link">
-                        Learn more <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <p class="usp-text">Expert in human-AI collaboration methodologies</p>
+                    <p class="usp-proof">95% of clients discover new insights about their own work</p>
                 </div>
                 
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                <div class="usp-card fade-in">
+                    <div class="usp-icon">
+                        <i class="fas fa-language"></i>
                     </div>
-                    <h3 class="feature-title">Enterprise Security</h3>
-                    <p class="feature-description">Bank-level security with end-to-end encryption, SSO, and compliance with industry standards.</p>
-                    <a href="#" class="feature-link">
-                        Learn more <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-puzzle-piece"></i>
-                    </div>
-                    <h3 class="feature-title">Integrations</h3>
-                    <p class="feature-description">Connect with 100+ popular tools including Slack, Google Workspace, and Microsoft 365.</p>
-                    <a href="#" class="feature-link">
-                        Learn more <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <p class="usp-text">AI systems trained to understand cultural contexts</p>
+                    <p class="usp-proof">Thai, Western, and Japanese market expertise</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">See CloudFlow in Action</h2>
-                <p class="section-subtitle">Explore our platform through stunning visuals and real-world examples</p>
+                <h2 class="section-title">Beyond Technical Implementation</h2>
+                <p class="section-subtitle">Where Cultural Wisdom Meets AI Innovation</p>
             </div>
             
-            <!-- Featured Carousel -->
-            <div class="gallery-carousel">
-                <div class="carousel-track" id="carouselTrack">
-                    <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80" alt="Dashboard Overview" class="carousel-image">
-                        <div class="carousel-content">
-                            <h3 class="carousel-title">Intuitive Dashboard</h3>
-                            <p class="carousel-description">Get a complete overview of your projects, team performance, and key metrics in one beautiful dashboard.</p>
-                        </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="philosophy-card">
+                        <h3 class="philosophy-title">Core Philosophy</h3>
+                        <p class="philosophy-text">
+                            Every AI project is a learning journey where YOUR expertise shapes the solution. 
+                            The best AI implementations emerge from collaborative knowledge exchange—where 
+                            cultural insights, human creativity, and technological possibilities converge.
+                        </p>
                     </div>
-                    <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80" alt="Team Collaboration" class="carousel-image">
-                        <div class="carousel-content">
-                            <h3 class="carousel-title">Team Collaboration</h3>
-                            <p class="carousel-description">Connect with your team members in real-time with integrated chat, video calls, and file sharing.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Analytics" class="carousel-image">
-                        <div class="carousel-content">
-                            <h3 class="carousel-title">Advanced Analytics</h3>
-                            <p class="carousel-description">Make data-driven decisions with powerful analytics and reporting tools.</p>
-                        </div>
-                    </div>
+                    
+                    <p>
+                        Starting with fashion design in London and Tokyo taught me that the most powerful 
+                        innovations happen at cultural intersections. Now, I apply that same collaborative 
+                        spirit to AI solutions—your domain expertise combined with my cultural AI knowledge 
+                        creates transformative results.
+                    </p>
                 </div>
                 
-                <div class="carousel-controls">
-                    <button class="carousel-btn" id="prevBtn">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="carousel-btn" id="nextBtn">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-                
-                <div class="carousel-dots" id="carouselDots">
-                    <span class="carousel-dot active" data-slide="0"></span>
-                    <span class="carousel-dot" data-slide="1"></span>
-                    <span class="carousel-dot" data-slide="2"></span>
-                </div>
-            </div>
-            
-            <!-- Gallery Grid -->
-            <div class="gallery-grid">
-                <div class="gallery-item" data-category="dashboard">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project Dashboard" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <div class="gallery-icon">
-                            <i class="fas fa-chart-bar"></i>
+                <div class="differentiators">
+                    <div class="differentiator-card">
+                        <div class="diff-header">
+                            <div class="diff-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3 class="diff-title">Cultural AI Integration</h3>
                         </div>
-                        <h3 class="gallery-title">Project Dashboard</h3>
-                        <p class="gallery-description">Comprehensive project overview with real-time metrics</p>
+                        <p class="diff-description">
+                            The only architect who trains AI to understand Thai, Western, and Japanese cultural contexts
+                        </p>
+                        <p class="diff-proof">40% better international performance</p>
                     </div>
-                </div>
-                
-                <div class="gallery-item" data-category="team">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team Workspace" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <div class="gallery-icon">
-                            <i class="fas fa-users"></i>
+                    
+                    <div class="differentiator-card">
+                        <div class="diff-header">
+                            <div class="diff-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3 class="diff-title">Collaborative Innovation Process</h3>
                         </div>
-                        <h3 class="gallery-title">Team Workspace</h3>
-                        <p class="gallery-description">Collaborative environment for seamless teamwork</p>
+                        <p class="diff-description">
+                            95% of clients discover new aspects of their own work through our exchange sessions
+                        </p>
+                        <p class="diff-proof">90% extend projects for additional work</p>
                     </div>
-                </div>
-                
-                <div class="gallery-item" data-category="analytics">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Analytics Dashboard" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <div class="gallery-icon">
-                            <i class="fas fa-chart-line"></i>
+                    
+                    <div class="differentiator-card">
+                        <div class="diff-header">
+                            <div class="diff-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3 class="diff-title">Revenue-Driven Creativity</h3>
                         </div>
-                        <h3 class="gallery-title">Analytics Dashboard</h3>
-                        <p class="gallery-description">Advanced analytics and performance insights</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="mobile">
-                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mobile App" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <div class="gallery-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3 class="gallery-title">Mobile Experience</h3>
-                        <p class="gallery-description">Full-featured mobile app for on-the-go productivity</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="automation">
-                    <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Workflow Automation" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <div class="gallery-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h3 class="gallery-title">Workflow Automation</h3>
-                        <p class="gallery-description">Automate repetitive tasks and boost efficiency</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="integration">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Integrations" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <div class="gallery-icon">
-                            <i class="fas fa-plug"></i>
-                        </div>
-                        <h3 class="gallery-title">Integrations</h3>
-                        <p class="gallery-description">Connect with your favorite tools and services</p>
+                        <p class="diff-description">
+                            Fashion design background + AI expertise = solutions that are both beautiful and profitable
+                        </p>
+                        <p class="diff-proof">30% average revenue increase</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Modal -->
-    <div class="gallery-modal" id="galleryModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">
-                <i class="fas fa-times"></i>
-            </button>
-            <button class="modal-nav modal-prev" id="modalPrev">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="modal-nav modal-next" id="modalNext">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            <img src="" alt="" class="modal-image" id="modalImage">
-        </div>
-    </div>
-
-    <!-- Stats Section -->
-    <section class="stats">
+    <!-- Services Section -->
+    <section class="services" id="services">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stats-item">
-                    <span class="stats-number" data-counter="50000">0</span>
-                    <span class="stats-label">Active Users</span>
+            <div class="section-header">
+                <h2 class="section-title">Collaborative AI Innovation Services</h2>
+                <p class="section-subtitle">
+                    Where your expertise meets AI innovation. Each service is designed as a collaborative journey, 
+                    ensuring AI solutions that truly understand and amplify your unique cultural and business context.
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <div class="service-info">
+                            <h3>Cross-Cultural AI Training</h3>
+                            <p class="service-tagline">AI that understands cultural contexts</p>
+                        </div>
+                        <div class="service-investment">
+                            <span class="investment-range">£5K - £25K</span>
+                            <span class="investment-label">Investment Range</span>
+                        </div>
+                    </div>
+                    
+                    <p class="service-description">
+                        AI systems that understand and respect cultural contexts through collaborative 
+                        training with your team's expertise. We work together to train AI models using 
+                        your cultural insights and market knowledge.
+                    </p>
+                    
+                    <div class="service-outcomes">
+                        <div class="outcome-item">
+                            <i class="fas fa-check outcome-icon"></i>
+                            <span class="outcome-text">AI content that resonates across cultures</span>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-check outcome-icon"></i>
+                            <span class="outcome-text">Reduced cultural misunderstandings</span>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-check outcome-icon"></i>
+                            <span class="outcome-text">Improved international engagement</span>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-check outcome-icon"></i>
+                            <span class="outcome-text">40% better international performance</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="stats-item">
-                    <span class="stats-number" data-counter="1200">0</span>
-                    <span class="stats-label">Companies</span>
+                
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <div class="service-info">
+                            <h3>Collaborative Content Automation</h3>
+                            <p class="service-tagline">AI that learns from your expertise</p>
+                        </div>
+                        <div class="service-investment">
+                            <span class="investment-range">£3K - £15K</span>
+                            <span class="investment-label">Investment Range</span>
+                        </div>
+                    </div>
+                    
+                    <p class="service-description">
+                        AI that learns from your expertise to create authentic content while preserving 
+                        your unique voice and cultural perspective. Through knowledge exchange sessions, 
+                        we train AI to understand and replicate your expertise.
+                    </p>
+                    
+                    <div class="service-outcomes">
+                        <div class="outcome-item">
+                            <i class="fas fa-check outcome-icon"></i>
+                            <span class="outcome-text">Authentic AI-generated content</span>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-check outcome-icon"></i>
+                            <span class="outcome-text">Preserved brand voice and values</span>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-check outcome-icon"></i>
+                            <span class="outcome-text">Culturally-adapted messaging</span>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-check outcome-icon"></i>
+                            <span class="outcome-text">70% time savings</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="stats-item">
-                    <span class="stats-number" data-counter="99">0</span>
-                    <span class="stats-label">% Uptime</span>
+                
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <div class="service-info">
+                            <h3>Revenue-Driven E-Commerce AI</h3>
+                            <p class="service-tagline">AI solutions designed through business understanding</p>
+                        </div>
+                        <div class="service-investment">
+                            <span class="investment-range">£8K - £35K</span>
+                            <span class="investment-label">Investment Range</span>
+                        </div>
+                    </div>
+                    
+                    <p class="service-description">
+                        AI solutions designed through collaborative business understanding that directly 
+                        impact your bottom line. We analyze your business model together to identify 
+                        AI opportunities that drive revenue.
+                    </p>
+                    
+                    <div class="service-outcomes">
+                        <div class="outcome-item">
+                            <i class="fas fa-check outcome-icon"></i>
+                            <span class="outcome-text">Increased conversion rates</span>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-check outcome-icon"></i>
+                            <span class="outcome-text">Better customer segmentation</span>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-check outcome-icon"></i>
+                            <span class="outcome-text">Culturally-optimized product descriptions</span>
+                        </div>
+                        <div class="outcome-item">
+                            <i class="fas fa-check outcome-icon"></i>
+                            <span class="outcome-text">30% average revenue increase</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="stats-item">
-                    <span class="stats-number" data-counter="24">0</span>
-                    <span class="stats-label">Countries</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Innovation Through Collaboration</h2>
+                <p class="section-subtitle">
+                    Real stories of knowledge exchange and transformation. Each project represents a 
+                    unique collaboration where client expertise combined with AI innovation created extraordinary results.
+                </p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card fade-in">
+                    <img src="https://raw.githubusercontent.com/Pigletpeakkung/Astrotrias-Archon/main/public/screenshot.png" 
+                         alt="TON Foundation Grant Success" class="portfolio-image">
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">Blockchain AI Innovation</p>
+                        <h3 class="portfolio-title">TON Foundation Grant Success</h3>
+                        
+                        <div class="collaboration-highlight">
+                            <p>The breakthrough came when we realized AI could preserve cultural storytelling traditions while scaling globally</p>
+                        </div>
+                        
+                        <p>Through collaborative sessions with storytellers and blockchain experts, we created an AI narrative system that secured competitive funding and bridged traditional Thai storytelling with modern blockchain technology.</p>
+                        
+                        <div class="portfolio-results">
+                            <div class="result-item">
+                                <span class="result-value">Grant</span>
+                                <span class="result-label">Secured</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">10K+</span>
+                                <span class="result-label">Users</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">85%</span>
+                                <span class="result-label">Completion</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">Global</span>
+                                <span class="result-label">Reach</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-tag">TON Blockchain</span>
+                            <span class="tech-tag">GPT-4</span>
+                            <span class="tech-tag">Cultural AI</span>
+                            <span class="tech-tag">Telegram API</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-card fade-in">
+                    <img src="https://raw.githubusercontent.com/Pigletpeakkung/Siam-Blessing/main/public/homepage.png" 
+                         alt="Cross-Cultural E-Commerce Platform" class="portfolio-image">
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">Cultural E-Commerce Innovation</p>
+                        <h3 class="portfolio-title">Cross-Cultural E-Commerce Platform</h3>
+                        
+                        <div class="collaboration-highlight">
+                            <p>Our sessions revealed how AI could translate cultural authenticity into global appeal</p>
+                        </div>
+                        
+                        <p>Working with artisans who had deep craft knowledge but struggled with international marketing. AI learned to adapt artisan stories for different cultural contexts while maintaining authenticity.</p>
+                        
+                        <div class="portfolio-results">
+                            <div class="result-item">
+                                <span class="result-value">40%</span>
+                                <span class="result-label">Sales Increase</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">3</span>
+                                <span class="result-label">New Markets</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">25%</span>
+                                <span class="result-label">Conversion Up</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">100%</span>
+                                <span class="result-label">Authentic</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-tag">Shopify Plus</span>
+                            <span class="tech-tag">Cultural AI</span>
+                            <span class="tech-tag">Multi-language</span>
+                            <span class="tech-tag">Analytics</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-card fade-in">
+                    <img src="https://raw.githubusercontent.com/Pigletpeakkung/Cozy-light/main/screenshots/portfolio-view.png" 
+                         alt="Cozy-light Portfolio System" class="portfolio-image">
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">Frontend Development</p>
+                        <h3 class="portfolio-title">Cozy-light Portfolio System</h3>
+                        
+                        <div class="collaboration-highlight">
+                            <p>Focused on blending minimalistic Japanese design with vibrant Thai elements</p>
+                        </div>
+                        
+                        <p>Developed a responsive portfolio framework showcasing modern CSS techniques and cultural design elements, integrating cultural aesthetics into a technical framework for universal appeal.</p>
+                        
+                        <div class="portfolio-results">
+                            <div class="result-item">
+                                <span class="result-value">50+</span>
+                                <span class="result-label">GitHub Stars</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">25+</span>
+                                <span class="result-label">Forks</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">1K+</span>
+                                <span class="result-label">Downloads</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">98/100</span>
+                                <span class="result-label">Performance</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-card fade-in">
+                    <img src="https://raw.githubusercontent.com/Pigletpeakkung/Holy-bless/main/public/landing-page.png" 
+                         alt="Holy-bless Spiritual Website" class="portfolio-image">
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">Cultural Web Development</p>
+                        <h3 class="portfolio-title">Holy-bless Spiritual Website</h3>
+                        
+                        <div class="collaboration-highlight">
+                            <p>Focused on integrating Thai cultural and spiritual elements into a modern web experience</p>
+                        </div>
+                        
+                        <p>Designed a religious website with cultural storytelling elements for spiritual engagement, blending traditional Thai spiritual themes with accessible web technologies.</p>
+                        
+                        <div class="portfolio-results">
+                            <div class="result-item">
+                                <span class="result-value">High</span>
+                                <span class="result-label">Engagement</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">Positive</span>
+                                <span class="result-label">Feedback</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">100%</span>
+                                <span class="result-label">Cultural Align</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-value">Modern</span>
+                                <span class="result-label">Design</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Cultural Design</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1507,12 +1606,15 @@
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Loved by Teams Worldwide</h2>
-                <p class="section-subtitle">See what our customers have to say about CloudFlow</p>
+                <h2 class="section-title">Client Transformation Stories</h2>
+                <p class="section-subtitle">
+                    How collaboration changed their perspective and results. Testimonials emphasizing 
+                    the collaborative discovery process and mutual learning.
+                </p>
             </div>
             
             <div class="testimonials-grid">
-                <div class="testimonial-card">
+                <div class="testimonial-card fade-in">
                     <div class="testimonial-rating">
                         <i class="fas fa-star star"></i>
                         <i class="fas fa-star star"></i>
@@ -1520,17 +1622,27 @@
                         <i class="fas fa-star star"></i>
                         <i class="fas fa-star star"></i>
                     </div>
-                    <p class="testimonial-quote">"CloudFlow has revolutionized how our team works. The automation features alone have saved us 20+ hours per week."</p>
+                    
+                    <p class="testimonial-quote">
+                        "Thanatsitt didn't just implement AI—he helped us understand our own cultural 
+                        positioning in ways we never considered. The knowledge exchange sessions were transformative."
+                    </p>
+                    
                     <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b47c?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Sarah Mitchell" class="testimonial-author-image">
+                        <img src="https://via.placeholder.com/150?text=Sarah+Chen" 
+                             alt="Sarah Chen" class="author-avatar">
                         <div class="author-info">
-                            <h4>Sarah Mitchell</h4>
-                            <p>CTO, TechStart Inc.</p>
+                            <h4>Sarah Chen</h4>
+                            <p>Marketing Director, TechStart Asia</p>
                         </div>
+                    </div>
+                    
+                    <div class="testimonial-highlight">
+                        <p>Business Result: 300% content output increase with better cultural relevance</p>
                     </div>
                 </div>
                 
-                <div class="testimonial-card">
+                <div class="testimonial-card fade-in">
                     <div class="testimonial-rating">
                         <i class="fas fa-star star"></i>
                         <i class="fas fa-star star"></i>
@@ -1538,31 +1650,23 @@
                         <i class="fas fa-star star"></i>
                         <i class="fas fa-star star"></i>
                     </div>
-                    <p class="testimonial-quote">"The best project management tool we've ever used. Intuitive, powerful, and the customer support is outstanding."</p>
+                    
+                    <p class="testimonial-quote">
+                        "The collaborative process revealed insights about our customers that we had missed. 
+                        It wasn't just about the technology—it was about understanding."
+                    </p>
+                    
                     <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Michael Johnson" class="testimonial-author-image">
+                        <img src="https://via.placeholder.com/150?text=James+Rodriguez" 
+                             alt="James Rodriguez" class="author-avatar">
                         <div class="author-info">
-                            <h4>Michael Johnson</h4>
-                            <p>Project Manager, Creative Agency</p>
+                            <h4>James Rodriguez</h4>
+                            <p>CEO, EcoCommerce Solutions</p>
                         </div>
                     </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                    </div>
-                    <p class="testimonial-quote">"CloudFlow's analytics have given us incredible insights into our team's performance. It's a game-changer for scaling."</p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Emily Lee" class="testimonial-author-image">
-                        <div class="author-info">
-                            <h4>Emily Lee</h4>
-                            <p>Operations Director, GrowthCorp</p>
-                        </div>
+                    
+                    <div class="testimonial-highlight">
+                        <p>Business Result: 40% international growth through culturally-adapted messaging</p>
                     </div>
                 </div>
             </div>
@@ -1570,19 +1674,27 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
+    <section class="cta" id="contact">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Ready to Transform Your Workflow?</h2>
-                <p class="cta-subtitle">Join thousands of teams who have already streamlined their processes with CloudFlow. Start your free trial today.</p>
+                <h2 class="cta-title">Ready for Collaborative Innovation?</h2>
+                <p class="cta-subtitle">
+                    Let's explore how your expertise + AI can create something extraordinary. 
+                    Every conversation starts with understanding YOUR unique perspective and cultural context.
+                </p>
+                
+                <div class="cta-promise">
+                    95% of clients discover new insights about their own work through our process
+                </div>
+                
                 <div class="cta-buttons">
                     <a href="#" class="btn btn-white btn-lg">
-                        <i class="fas fa-rocket"></i>
-                        Start Free Trial
+                        <i class="fas fa-handshake"></i>
+                        Start Our Knowledge Exchange Journey
                     </a>
                     <a href="#" class="btn btn-outline-white btn-lg">
                         <i class="fas fa-calendar"></i>
-                        Schedule Demo
+                        Schedule Cultural Discovery Call
                     </a>
                 </div>
             </div>
@@ -1596,78 +1708,144 @@
                 <div class="footer-brand">
                     <div class="footer-logo">
                         <div class="logo-icon">
-                            <i class="fas fa-cloud"></i>
+                            <i class="fas fa-globe-asia"></i>
                         </div>
-                        <span>CloudFlow</span>
+                        <span>Thanatsitt S.</span>
                     </div>
                     <p class="footer-description">
-                        The all-in-one SaaS platform that helps modern teams collaborate, manage projects, and scale their business.
+                        AI-Powered Cultural Bridge Builder transforming businesses through collaborative 
+                        knowledge exchange and cross-cultural innovation.
                     </p>
                     <div class="footer-social">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-facebook"></i>
-                        </a>
                         <a href="#" class="social-link">
                             <i class="fab fa-linkedin"></i>
                         </a>
                         <a href="#" class="social-link">
-                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Product</h4>
+                    <h4>Services</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Integrations</a></li>
-                        <li><a href="#">API</a></li>
-                        <li><a href="#">Changelog</a></li>
+                        <li><a href="#">Cross-Cultural AI Training</a></li>
+                        <li><a href="#">Content Automation</a></li>
+                        <li><a href="#">E-Commerce AI</a></li>
+                        <li><a href="#">Cultural Voice Training</a></li>
+                        <li><a href="#">Multilingual Expansion</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Company</h4>
+                    <h4>Expertise</h4>
                     <ul class="footer-links">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Cultural AI Integration</a></li>
+                        <li><a href="#">Collaborative Innovation</a></li>
+                        <li><a href="#">Revenue-Driven Solutions</a></li>
+                        <li><a href="#">Knowledge Exchange</a></li>
+                        <li><a href="#">Cross-Cultural Design</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Resources</h4>
+                    <h4>Connect</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">Status</a></li>
+                        <li><a href="#">Schedule Discovery Call</a></li>
+                        <li><a href="#">Collaboration Partnership</a></li>
+                        <li><a href="#">Portfolio Review</a></li>
+                        <li><a href="#">Cultural Consultation</a></li>
+                        <li><a href="#">Project Inquiry</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 CloudFlow. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p>&copy; 2024 Thanatsitt Santisamranwilai. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Enhanced SaaS Website JavaScript with Gallery
-        class CloudFlowWebsite {
+        // Load content from JSON file
+        let contentData = null;
+
+        // Enhanced Cultural Bridge Builder Website JavaScript
+        class CulturalBridgeWebsite {
             constructor() {
-                this.currentSlide = 0;
-                this.totalSlides = 3;
-                this.currentModalImage = 0;
-                this.modalImages = [];
+                this.loadContent();
                 this.init();
+            }
+
+            async loadContent() {
+                try {
+                    const response = await fetch('content.json');
+                    contentData = await response.json();
+                    this.populateContent();
+                } catch (error) {
+                    console.log('Using embedded content data');
+                    // Fallback to embedded content
+                    contentData = {
+                        "hero": {
+                            "name": "Thanatsitt Santisamranwilai",
+                            "title": "AI-Powered Cultural Bridge Builder",
+                            "tagline": "Where AI Meets Cultural Intelligence",
+                            "subtitle": "The only AI Solutions Architect who transforms businesses through collaborative knowledge exchange and cross-cultural innovation",
+                            "value_proposition": "I don't just implement AI—I facilitate transformative knowledge exchange between cultures, technologies, and human insights",
+                            "location": {
+                                "city": "Kamphaeng Phet",
+                                "country": "Thailand",
+                                "cultural_bridges": ["London-Tokyo-Bangkok Cultural Fluency"],
+                                "availability": "Open to Remote/Hybrid Globally"
+                            },
+                            "key_metrics": [
+                                {
+                                    "value": "30%",
+                                    "label": "Revenue Increases",
+                                    "description": "Through collaborative AI strategies",
+                                    "icon": "fas fa-rocket"
+                                },
+                                {
+                                    "value": "95%",
+                                    "label": "Client Discovery Rate",
+                                    "description": "Gain new insights about their work",
+                                    "icon": "fas fa-lightbulb"
+                                },
+                                {
+                                    "value": "3",
+                                    "label": "Cultural Contexts",
+                                    "description": "Thai, Western, Japanese expertise",
+                                    "icon": "fas fa-globe"
+                                },
+                                {
+                                    "value": "£50K+",
+                                    "label": "Collaborative Revenue",
+                                    "description": "Generated through knowledge exchange",
+                                    "icon": "fas fa-pound-sign"
+                                }
+                            ]
+                        }
+                    };
+                    this.populateContent();
+                }
+            }
+
+            populateContent() {
+                if (contentData && contentData.hero) {
+                    // Update hero metrics if data is available
+                    const metricsContainer = document.querySelector('.hero-metrics');
+                    if (metricsContainer && contentData.hero.key_metrics) {
+                        metricsContainer.innerHTML = contentData.hero.key_metrics.map(metric => `
+                            <div class="metric-item float">
+                                <span class="metric-value">${metric.value}</span>
+                                <span class="metric-label">${metric.label}</span>
+                            </div>
+                        `).join('');
+                    }
+                }
             }
 
             init() {
@@ -1676,9 +1854,8 @@
                 this.setupCounters();
                 this.setupParallax();
                 this.setupMobileMenu();
-                this.setupCarousel();
-                this.setupGallery();
-                this.setupModal();
+                this.setupScrollEffects();
+                this.setupCulturalAnimations();
             }
 
             setupNavigation() {
@@ -1741,6 +1918,7 @@
                         entries.forEach(entry => {
                             if (entry.isIntersecting) {
                                 entry.target.style.animationPlayState = 'running';
+                                entry.target.classList.add('animated');
                             }
                         });
                     },
@@ -1753,27 +1931,19 @@
                     animationObserver.observe(el);
                 });
 
-                // Staggered animations for feature cards
-                const featureCards = document.querySelectorAll('.feature-card');
-                featureCards.forEach((card, index) => {
-                    card.style.animationDelay = `${index * 0.1}s`;
-                });
-
-                // Gallery items staggered animation
-                const galleryItems = document.querySelectorAll('.gallery-item');
-                galleryItems.forEach((item, index) => {
-                    item.style.animationDelay = `${index * 0.2}s`;
-                });
-
-                // Testimonial cards animation
-                const testimonialCards = document.querySelectorAll('.testimonial-card');
-                testimonialCards.forEach((card, index) => {
-                    card.style.animationDelay = `${index * 0.2}s`;
+                // Staggered animations for cards
+                const cardSections = ['.usp-grid', '.differentiators', '.services-grid', '.portfolio-grid', '.testimonials-grid'];
+                
+                cardSections.forEach(sectionSelector => {
+                    const cards = document.querySelectorAll(`${sectionSelector} > *`);
+                    cards.forEach((card, index) => {
+                        card.style.animationDelay = `${index * 0.2}s`;
+                    });
                 });
             }
 
             setupCounters() {
-                const counters = document.querySelectorAll('[data-counter]');
+                const counters = document.querySelectorAll('.metric-value');
                 const counterObserver = new IntersectionObserver(
                     (entries) => {
                         entries.forEach(entry => {
@@ -1792,18 +1962,50 @@
             }
 
             animateCounter(element) {
-                const target = parseInt(element.dataset.counter);
-                const duration = 2000; // 2 seconds
-                const step = target / (duration / 16); // 60fps
+                const text = element.textContent;
+                const hasPercent = text.includes('%');
+                const hasPlus = text.includes('+');
+                const hasPound = text.includes('£');
+                const hasK = text.includes('K');
+                
+                let targetValue = 0;
+                let suffix = '';
+                
+                if (hasPercent) {
+                    targetValue = parseInt(text.replace('%', ''));
+                    suffix = '%';
+                } else if (hasPlus) {
+                    if (hasPound && hasK) {
+                        targetValue = parseInt(text.replace('£', '').replace('K+', ''));
+                        suffix = 'K+';
+                    } else {
+                        targetValue = parseInt(text.replace('+', ''));
+                        suffix = '+';
+                    }
+                } else if (!isNaN(parseInt(text))) {
+                    targetValue = parseInt(text);
+                } else {
+                    // Handle non-numeric values
+                    return;
+                }
+
+                const duration = 2000;
+                const step = targetValue / (duration / 16);
                 let current = 0;
 
                 const timer = setInterval(() => {
                     current += step;
-                    if (current >= target) {
-                        current = target;
+                    if (current >= targetValue) {
+                        current = targetValue;
                         clearInterval(timer);
                     }
-                    element.textContent = Math.floor(current).toLocaleString();
+                    
+                    let displayValue = Math.floor(current);
+                    if (hasPound) {
+                        element.textContent = `£${displayValue}${suffix}`;
+                    } else {
+                        element.textContent = `${displayValue}${suffix}`;
+                    }
                 }, 16);
             }
 
@@ -1816,7 +2018,8 @@
                     const parallaxSpeed = 0.5;
                     
                     if (scrolled < hero.offsetHeight) {
-                        heroContent.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+                        const translateY = scrolled * parallaxSpeed;
+                        heroContent.style.transform = `translateY(${translateY}px)`;
                     }
                 });
             }
@@ -1824,257 +2027,98 @@
             setupMobileMenu() {
                 const mobileToggle = document.querySelector('.mobile-menu-toggle');
                 const navLinks = document.querySelector('.nav-links');
-                const navActions = document.querySelector('.nav-actions');
 
-                mobileToggle?.addEventListener('click', () => {
-                    navLinks.classList.toggle('active');
-                    navActions.classList.toggle('active');
-                    
-                    // Animate hamburger icon
-                    const icon = mobileToggle.querySelector('i');
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
-                });
-
-                // Close menu when clicking outside
-                document.addEventListener('click', (e) => {
-                    if (!e.target.closest('.nav') && navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                        navActions.classList.remove('active');
-                        const icon = mobileToggle.querySelector('i');
-                        icon.classList.add('fa-bars');
-                        icon.classList.remove('fa-times');
-                    }
-                });
-            }
-
-            setupCarousel() {
-                const track = document.getElementById('carouselTrack');
-                const prevBtn = document.getElementById('prevBtn');
-                const nextBtn = document.getElementById('nextBtn');
-                const dots = document.querySelectorAll('.carousel-dot');
-
-                if (!track) return;
-
-                const updateCarousel = () => {
-                    const offset = -this.currentSlide * 100;
-                    track.style.transform = `translateX(${offset}%)`;
-                    
-                    // Update dots
-                    dots.forEach((dot, index) => {
-                        dot.classList.toggle('active', index === this.currentSlide);
-                    });
-                };
-
-                prevBtn?.addEventListener('click', () => {
-                    this.currentSlide = this.currentSlide === 0 ? this.totalSlides - 1 : this.currentSlide - 1;
-                    updateCarousel();
-                });
-
-                nextBtn?.addEventListener('click', () => {
-                    this.currentSlide = this.currentSlide === this.totalSlides - 1 ? 0 : this.currentSlide + 1;
-                    updateCarousel();
-                });
-
-                // Dot navigation
-                dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => {
-                        this.currentSlide = index;
-                        updateCarousel();
-                    });
-                });
-
-                // Auto-play carousel
-                setInterval(() => {
-                    this.currentSlide = this.currentSlide === this.totalSlides - 1 ? 0 : this.currentSlide + 1;
-                    updateCarousel();
-                }, 5000);
-            }
-
-            setupGallery() {
-                const galleryItems = document.querySelectorAll('.gallery-item');
-                
-                galleryItems.forEach((item, index) => {
-                    const img = item.querySelector('.gallery-image');
-                    this.modalImages.push({
-                        src: img.src,
-                        alt: img.alt,
-                        title: item.querySelector('.gallery-title').textContent,
-                        description: item.querySelector('.gallery-description').textContent
-                    });
-
-                    item.addEventListener('click', () => {
-                        this.openModal(index);
-                    });
-
-                    // Add hover effect
-                    item.addEventListener('mouseenter', () => {
-                        item.style.transform = 'translateY(-10px) scale(1.02)';
-                    });
-
-                    item.addEventListener('mouseleave', () => {
-                        item.style.transform = 'translateY(0) scale(1)';
-                    });
-                });
-
-                // Filter functionality (if needed)
-                this.setupGalleryFilters();
-            }
-
-            setupGalleryFilters() {
-                // Create filter buttons dynamically
-                const gallery = document.querySelector('.gallery');
-                const categories = ['all', 'dashboard', 'team', 'analytics', 'mobile', 'automation', 'integration'];
-                
-                const filterContainer = document.createElement('div');
-                filterContainer.className = 'gallery-filters';
-                filterContainer.style.cssText = `
-                    display: flex;
-                    justify-content: center;
-                    gap: 1rem;
-                    margin-bottom: 2rem;
-                    flex-wrap: wrap;
-                `;
-
-                categories.forEach(category => {
-                    const button = document.createElement('button');
-                    button.className = 'filter-btn';
-                    button.textContent = category.charAt(0).toUpperCase() + category.slice(1);
-                    button.dataset.filter = category;
-                    button.style.cssText = `
-                        padding: 0.5rem 1rem;
-                        border: 2px solid var(--primary-color);
-                        background: ${category === 'all' ? 'var(--primary-color)' : 'transparent'};
-                        color: ${category === 'all' ? 'white' : 'var(--primary-color)'};
-                        border-radius: var(--border-radius);
-                        cursor: pointer;
-                        transition: all var(--transition-base);
-                        font-weight: 500;
-                    `;
-
-                    button.addEventListener('click', () => {
-                        this.filterGallery(category);
+                if (mobileToggle) {
+                    mobileToggle.addEventListener('click', () => {
+                        navLinks.classList.toggle('active');
                         
-                        // Update button styles
-                        document.querySelectorAll('.filter-btn').forEach(btn => {
-                            btn.style.background = 'transparent';
-                            btn.style.color = 'var(--primary-color)';
-                        });
-                        button.style.background = 'var(--primary-color)';
-                        button.style.color = 'white';
+                        // Animate hamburger icon
+                        const icon = mobileToggle.querySelector('i');
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
                     });
 
-                    filterContainer.appendChild(button);
-                });
-
-                const galleryGrid = document.querySelector('.gallery-grid');
-                gallery.insertBefore(filterContainer, galleryGrid);
-            }
-
-            filterGallery(category) {
-                const items = document.querySelectorAll('.gallery-item');
-                
-                items.forEach(item => {
-                    const itemCategory = item.dataset.category;
-                    if (category === 'all' || itemCategory === category) {
-                        item.style.display = 'block';
-                        item.style.animation = 'fadeInUp 0.5s ease-out forwards';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            }
-
-            setupModal() {
-                const modal = document.getElementById('galleryModal');
-                const modalImage = document.getElementById('modalImage');
-                const modalClose = document.getElementById('modalClose');
-                const modalPrev = document.getElementById('modalPrev');
-                const modalNext = document.getElementById('modalNext');
-
-                modalClose?.addEventListener('click', () => this.closeModal());
-                modalPrev?.addEventListener('click', () => this.prevModalImage());
-                modalNext?.addEventListener('click', () => this.nextModalImage());
-
-                // Close modal on backdrop click
-                modal?.addEventListener('click', (e) => {
-                    if (e.target === modal) {
-                        this.closeModal();
-                    }
-                });
-
-                // Keyboard navigation
-                document.addEventListener('keydown', (e) => {
-                    if (modal.classList.contains('active')) {
-                        switch (e.key) {
-                            case 'Escape':
-                                this.closeModal();
-                                break;
-                            case 'ArrowLeft':
-                                this.prevModalImage();
-                                break;
-                            case 'ArrowRight':
-                                this.nextModalImage();
-                                break;
+                    // Close menu when clicking outside
+                    document.addEventListener('click', (e) => {
+                        if (!e.target.closest('.nav') && navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            const icon = mobileToggle.querySelector('i');
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
                         }
-                    }
+                    });
+                }
+            }
+
+            setupScrollEffects() {
+                // Scroll-triggered animations
+                const scrollObserver = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.style.opacity = '1';
+                                entry.target.style.transform = 'translateY(0)';
+                            }
+                        });
+                    },
+                    { threshold: 0.1 }
+                );
+
+                // Apply scroll effects to sections
+                document.querySelectorAll('section').forEach(section => {
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateY(30px)';
+                    section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                    scrollObserver.observe(section);
+                });
+
+                // Card hover effects
+                document.querySelectorAll('.usp-card, .service-card, .portfolio-card, .testimonial-card').forEach(card => {
+                    card.addEventListener('mouseenter', () => {
+                        card.style.transform = 'translateY(-10px) scale(1.02)';
+                    });
+
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform = 'translateY(0) scale(1)';
+                    });
                 });
             }
 
-            openModal(index) {
-                const modal = document.getElementById('galleryModal');
-                const modalImage = document.getElementById('modalImage');
-                
-                this.currentModalImage = index;
-                const imageData = this.modalImages[index];
-                
-                modalImage.src = imageData.src;
-                modalImage.alt = imageData.alt;
-                
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
+            setupCulturalAnimations() {
+                // Cultural pulse animation for icons
+                const culturalIcons = document.querySelectorAll('.logo-icon, .usp-icon, .diff-icon');
+                culturalIcons.forEach(icon => {
+                    icon.classList.add('cultural-pulse');
+                });
 
-            closeModal() {
-                const modal = document.getElementById('galleryModal');
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
+                // Floating animation for metrics
+                const floatingElements = document.querySelectorAll('.metric-item');
+                floatingElements.forEach((element, index) => {
+                    element.style.animationDelay = `${index * 0.5}s`;
+                });
 
-            prevModalImage() {
-                this.currentModalImage = this.currentModalImage === 0 
-                    ? this.modalImages.length - 1 
-                    : this.currentModalImage - 1;
-                this.updateModalImage();
-            }
-
-            nextModalImage() {
-                this.currentModalImage = this.currentModalImage === this.modalImages.length - 1 
-                    ? 0 
-                    : this.currentModalImage + 1;
-                this.updateModalImage();
-            }
-
-            updateModalImage() {
-                const modalImage = document.getElementById('modalImage');
-                const imageData = this.modalImages[this.currentModalImage];
-                
-                modalImage.style.opacity = '0';
-                setTimeout(() => {
-                    modalImage.src = imageData.src;
-                    modalImage.alt = imageData.alt;
-                    modalImage.style.opacity = '1';
-                }, 150);
+                // Cultural gradient animation
+                const gradientElements = document.querySelectorAll('.hero-title, .cta');
+                gradientElements.forEach(element => {
+                    element.style.backgroundSize = '200% 200%';
+                    element.style.animation = 'gradientShift 4s ease-in-out infinite';
+                });
             }
         }
 
         // Initialize the website
         document.addEventListener('DOMContentLoaded', () => {
-            new CloudFlowWebsite();
+            new CulturalBridgeWebsite();
         });
 
-        // Additional mobile menu styles
-        const mobileMenuStyles = `
+        // Add additional CSS animations
+        const additionalStyles = `
+            @keyframes gradientShift {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+            
             @media (max-width: 768px) {
                 .nav-links {
                     position: fixed;
@@ -2098,42 +2142,31 @@
                     visibility: visible;
                 }
                 
-                .nav-actions {
-                    position: fixed;
-                    top: calc(var(--header-height) + 200px);
-                    left: var(--space-lg);
-                    right: var(--space-lg);
-                    background: white;
-                    padding: var(--space-lg);
-                    border-radius: var(--border-radius);
-                    box-shadow: var(--shadow-lg);
-                    transform: translateY(-100%);
-                    opacity: 0;
-                    visibility: hidden;
-                    transition: all var(--transition-base);
-                    z-index: 999;
+                .nav-links li {
+                    margin: var(--space-sm) 0;
                 }
                 
-                .nav-actions.active {
-                    transform: translateY(0);
-                    opacity: 1;
-                    visibility: visible;
+                .service-outcomes {
+                    grid-template-columns: 1fr;
                 }
-
-                .gallery-filters {
-                    justify-content: center !important;
+                
+                .portfolio-results {
+                    grid-template-columns: 1fr;
                 }
-
-                .filter-btn {
-                    font-size: 0.875rem !important;
-                    padding: 0.375rem 0.75rem !important;
+                
+                .hero-location {
+                    justify-content: center;
                 }
+            }
+            
+            .animated {
+                animation-play-state: running !important;
             }
         `;
 
-        // Inject mobile menu styles
+        // Inject additional styles
         const style = document.createElement('style');
-        style.textContent = mobileMenuStyles;
+        style.textContent = additionalStyles;
         document.head.appendChild(style);
 
         // Performance optimization: Debounce scroll events
@@ -2151,105 +2184,128 @@
             };
         }
 
-        // Apply debouncing to scroll events
-        window.addEventListener('scroll', debounce(() => {
-            // Scroll event handlers here
-        }, 10));
-
-        // Lazy loading for images
-        const lazyImages = document.querySelectorAll('img[data-src]');
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
-                }
+        // Enhanced button interactions
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s ease-out;
+                    pointer-events: none;
+                `;
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
             });
         });
 
-        lazyImages.forEach(img => imageObserver.observe(img));
+        // Add ripple animation
+        const rippleStyle = document.createElement('style');
+        rippleStyle.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(rippleStyle);
 
-        // Smooth scroll polyfill for older browsers
+        // Cultural theme switcher (optional enhancement)
+        let currentTheme = 'default';
+        const themes = {
+            default: {
+                primary: '#6366f1',
+                cultural: 'linear-gradient(135deg, #dc2626 0%, #d97706 50%, #0284c7 100%)'
+            },
+            thai: {
+                primary: '#dc2626',
+                cultural: 'linear-gradient(135deg, #dc2626 0%, #d97706 100%)'
+            },
+            japanese: {
+                primary: '#0284c7',
+                cultural: 'linear-gradient(135deg, #0284c7 0%, #6366f1 100%)'
+            },
+            western: {
+                primary: '#10b981',
+                cultural: 'linear-gradient(135deg, #10b981 0%, #6366f1 100%)'
+            }
+        };
+
+        // Smooth scroll enhancement
         if (!('scrollBehavior' in document.documentElement.style)) {
             const script = document.createElement('script');
             script.src = 'https://cdn.jsdelivr.net/gh/iamdustan/smoothscroll@latest/dist/smoothscroll.min.js';
             document.head.appendChild(script);
         }
 
-        // Add loading states for better UX
-        const buttons = document.querySelectorAll('.btn');
-        buttons.forEach(button => {
-            button.addEventListener('click', function(e) {
-                if (this.classList.contains('btn-primary')) {
-                    const originalText = this.innerHTML;
-                    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
-                    this.disabled = true;
-                    
-                    setTimeout(() => {
-                        this.innerHTML = originalText;
-                        this.disabled = false;
-                    }, 2000);
-                }
-            });
-        });
-
-        // Add intersection observer for better animation control
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animatable elements
-        document.querySelectorAll('.feature-card, .gallery-item, .testimonial-card').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Add custom cursor effect for gallery items
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        galleryItems.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                document.body.style.cursor = 'pointer';
-            });
+        // Loading state management
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
             
-            item.addEventListener('mouseleave', () => {
-                document.body.style.cursor = 'default';
-            });
+            // Trigger initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach((el, index) => {
+                    setTimeout(() => {
+                        el.style.animationPlayState = 'running';
+                    }, index * 100);
+                });
+            }, 300);
         });
 
-        // Add touch support for mobile gallery
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        const modal = document.getElementById('galleryModal');
-        modal.addEventListener('touchstart', e => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-
-        modal.addEventListener('touchend', e => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleGesture();
-        });
-
-        function handleGesture() {
-            if (touchEndX < touchStartX - 50) {
-                // Swipe left - next image
-                document.getElementById('modalNext').click();
+        // Add loaded state styles
+        const loadedStyles = document.createElement('style');
+        loadedStyles.textContent = `
+            body:not(.loaded) {
+                overflow: hidden;
             }
-            if (touchEndX > touchStartX + 50) {
-                // Swipe right - previous image
-                document.getElementById('modalPrev').click();
+            
+            body:not(.loaded)::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: var(--gradient-cultural);
+                z-index: 9999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
-        }
+            
+            body.loaded::before {
+                animation: fadeOut 0.5s ease-out forwards;
+            }
+            
+            @keyframes fadeOut {
+                to {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+        `;
+        document.head.appendChild(loadedStyles);
     </script>
 </body>
 </html>
+
+
