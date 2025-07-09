@@ -1,0 +1,85 @@
+# _redirects file for Netlify
+
+# SPA redirect (fallback for client-side routing)
+/*    /index.html   200
+
+# API redirects
+/api/*  https://your-api-endpoint.com/:splat  200
+
+# SEO-friendly redirects
+/home                   /                     301
+/about-us              /#about               301
+/about-me              /#about               301
+/services-page         /#services            301
+/my-services           /#services            301
+/portfolio-page        /#portfolio           301
+/work                  /#portfolio           301
+/projects              /#portfolio           301
+/testimonials-page     /#testimonials        301
+/reviews               /#testimonials        301
+/contact-us            /#contact             301
+/contact-me            /#contact             301
+/get-in-touch          /#contact             301
+
+# Cultural AI specific redirects
+/cultural-ai           /#services            301
+/ai-solutions          /#services            301
+/cross-cultural-ai     /#services            301
+/collaborative-ai      /#services            301
+
+# Project-specific redirects
+/ton-foundation        /#portfolio           301
+/blockchain-ai         /#portfolio           301
+/ecommerce-ai          /#portfolio           301
+
+# Location-based redirects
+/thailand              /                     301
+/kamphaeng-phet        /                     301
+/london                /                     301
+/tokyo                 /                     301
+/bangkok               /                     301
+
+# Remove trailing slashes
+/*/                    /:splat               301
+
+# Remove index.html
+/index.html            /                     301
+
+# Remove .html extensions
+/*.html                /:splat               301
+
+# Social media redirects
+/github                https://github.com/Pigletpeakkung                          301
+/linkedin              https://linkedin.com/in/thanatsitt-santisamranwilai        301
+/twitter               https://twitter.com/ThanatsittS                            301
+
+# Blog redirects (future expansion)
+/blog                  /#portfolio           301
+/articles              /#portfolio           301
+/insights              /#portfolio           301
+
+# Security - block common attack patterns
+/wp-admin/*            /404.html             404
+/wp-content/*          /404.html             404
+/admin/*               /404.html             404
+/wp-login.php          /404.html             404
+
+# Functions
+/api/contact           /.netlify/functions/contact    200
+/api/analytics         /.netlify/functions/analytics  200
+
+# Language-specific (future)
+/th/*                  /th/index.html        200
+/ja/*                  /ja/index.html        200
+
+# Mobile redirects
+/m/*                   /:splat               301
+/mobile/*              /:splat               301
+
+# Verification files
+/google*.html          /google-site-verification.html  200
+/BingSiteAuth.xml      /bing-site-verification.xml     200
+
+# Analytics shortcuts
+/analytics             https://analytics.google.com/analytics/web/#/p123456789/reports/intelligenthome  301
+/search-console        https://search.google.com/search-console  301
