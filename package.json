@@ -7,7 +7,10 @@
     "deploy": "node netlify-deploy.js",
     "dev": "python -m http.server 8000",
     "validate": "html-validate index.html",
-    "lighthouse": "lighthouse https://pegearts.com --output=html --output-path=./lighthouse-report.html"
+    "lighthouse": "lighthouse https://pegearts.com --output=html --output-path=./lighthouse-report.html",
+    "build:css": "postcss src/css/main.css -o dist/css/main.css",
+    "watch:css": "postcss src/css/main.css -o dist/css/main.css --watch",
+    "autoprefix": "postcss --use autoprefixer --map false --output dist/css/ src/css/*.css"
   },
   "keywords": [
     "cultural-ai",
@@ -18,13 +21,24 @@
   ],
   "author": "Thanatsitt Santisamranwilai",
   "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^10.4.16"
+  },
   "devDependencies": {
     "html-validate": "^7.0.0",
-    "lighthouse": "^10.0.0"
+    "lighthouse": "^10.0.0",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Pigletpeakkung/cultural-bridge-builder.git"
   },
-  "homepage": "https://pegearts.com"
+  "homepage": "https://pegearts.com",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
 }
