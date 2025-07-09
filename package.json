@@ -10,7 +10,9 @@
     "lighthouse": "lighthouse https://pegearts.com --output=html --output-path=./lighthouse-report.html",
     "build:css": "postcss src/css/main.css -o dist/css/main.css",
     "watch:css": "postcss src/css/main.css -o dist/css/main.css --watch",
-    "autoprefix": "postcss --use autoprefixer --map false --output dist/css/ src/css/*.css"
+    "autoprefix": "postcss --use autoprefixer --map false --output dist/css/ src/css/*.css",
+    "build": "npm run build:css && echo 'Build completed'",
+    "test": "npm run validate"
   },
   "keywords": [
     "cultural-ai",
@@ -28,7 +30,12 @@
     "html-validate": "^7.0.0",
     "lighthouse": "^10.0.0",
     "postcss": "^8.4.31",
-    "postcss-cli": "^10.1.0"
+    "postcss-cli": "^10.1.0",
+    "@netlify/plugin-lighthouse": "^5.0.0",
+    "netlify-plugin-html-validate": "^1.0.8",
+    "netlify-plugin-minify-html": "^0.4.1",
+    "netlify-plugin-checklinks": "^1.0.19",
+    "netlify-plugin-sitemap": "^0.8.1"
   },
   "repository": {
     "type": "git",
