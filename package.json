@@ -1,49 +1,8 @@
 {
-  "name": "cultural-bridge-builder-site",
+  "name": "cultural-bridge-builder",
   "version": "1.0.0",
-  "description": "AI-Powered Cultural Bridge Builder Website",
   "main": "index.html",
   "scripts": {
-    "deploy": "node netlify-deploy.js",
-    "dev": "python -m http.server 8000",
-    "validate": "html-validate index.html",
-    "lighthouse": "lighthouse https://pegearts.com --output=html --output-path=./lighthouse-report.html",
-    "build:css": "postcss src/css/main.css -o dist/css/main.css",
-    "watch:css": "postcss src/css/main.css -o dist/css/main.css --watch",
-    "autoprefix": "postcss --use autoprefixer --map false --output dist/css/ src/css/*.css",
-    "build": "echo 'Static site build complete'"
-  },
-  "keywords": [
-    "cultural-ai",
-    "cross-cultural-innovation",
-    "ai-solutions",
-    "collaborative-ai",
-    "cultural-bridge-builder"
-  ],
-  "author": "Thanatsitt Santisamranwilai",
-  "license": "MIT",
-  "dependencies": {
-    "autoprefixer": "^10.4.16"
-  },
-  "devDependencies": {
-    "html-validate": "^7.0.0",
-    "lighthouse": "^10.0.0",
-    "postcss": "^8.4.31",
-    "postcss-cli": "^10.1.0",
-    "@netlify/plugin-lighthouse": "^6.0.0",
-    "netlify-plugin-html-validate": "^1.0.8",
-    "netlify-plugin-minify-html": "^0.4.1",
-    "netlify-plugin-sitemap": "^0.8.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Pigletpeakkung/cultural-bridge-builder.git"
-  },
-  "homepage": "https://pegearts.com",
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
-  ]
+    "build": "echo 'ready'"
+  }
 }
