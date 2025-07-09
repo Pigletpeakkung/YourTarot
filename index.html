@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,12 +47,21 @@
     <meta name="application-name" content="Cultural Bridge Builder">
     <meta name="msapplication-tooltip" content="AI-Powered Cultural Bridge Builder">
     <meta name="msapplication-starturl" content="https://pegearts.com/">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
     
     <!-- Geo Tags -->
     <meta name="geo.region" content="TH-62">
     <meta name="geo.placename" content="Kamphaeng Phet, Thailand">
     <meta name="geo.position" content="16.4827;99.5223">
     <meta name="ICBM" content="16.4827, 99.5223">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com https://via.placeholder.com; connect-src 'self' https://www.google-analytics.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://pegearts.com/">
@@ -72,18 +83,24 @@
     <!-- Preconnect & DNS Prefetch -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="//github.com">
     
     <!-- Preload Critical Resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" as="style">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" as="script">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -199,64 +216,6 @@
     }
     </script>
     
-    <!-- Website Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Thanatsitt Santisamranwilai - Cultural Bridge Builder",
-      "url": "https://pegearts.com",
-      "description": "AI-Powered Cultural Bridge Builder transforming businesses through collaborative knowledge exchange",
-      "author": {
-        "@type": "Person",
-        "name": "Thanatsitt Santisamranwilai"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://pegearts.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      },
-      "mainEntity": {
-        "@type": "Person",
-        "name": "Thanatsitt Santisamranwilai"
-      }
-    }
-    </script>
-    
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What makes your AI solutions culturally intelligent?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our AI solutions are trained with deep cultural contexts from Thai, Western, and Japanese markets, ensuring culturally appropriate responses and strategies that resonate with diverse audiences."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you ensure collaborative knowledge exchange?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "95% of our clients discover new insights about their own work through our collaborative process. We facilitate knowledge exchange sessions where your expertise shapes the AI solution, creating mutual learning and better outcomes."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What results can I expect from cultural AI integration?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our clients typically see 30% revenue increases through culturally-aware AI strategies, with improved international performance and better customer engagement across different cultural contexts."
-          }
-        }
-      ]
-    }
-    </script>
-    
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
@@ -273,34 +232,7 @@
       });
     </script>
     
-    <!-- Google Search Console -->
-    <meta name="google-site-verification" content="your-verification-code">
-    
-    <!-- Bing Webmaster Tools -->
-    <meta name="msvalidate.01" content="your-bing-verification-code">
-    
-    <!-- Yandex Webmaster -->
-    <meta name="yandex-verification" content="your-yandex-verification-code">
-    
-    <!-- Baidu Webmaster -->
-    <meta name="baidu-site-verification" content="your-baidu-verification-code">
-    
-    <!-- Performance Hints -->
-    <link rel="preload" as="script" href="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX">
-    <link rel="prefetch" href="/assets/portfolio-images.jpg">
-    <link rel="preconnect" href="https://raw.githubusercontent.com">
-    
-    <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://raw.githubusercontent.com https://via.placeholder.com;">
-    
-    <!-- Critical CSS (inline for performance) -->
-    <style>
-        /* Critical above-the-fold styles */
-        body { font-family: 'Inter', sans-serif; margin: 0; }
-        .header { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); }
-        .hero { padding-top: 4rem; min-height: 80vh; }
-        /* Your existing styles continue here... */
-   
+    <!-- Critical CSS -->
     <style>
         :root {
             /* Cultural Bridge Color Palette */
@@ -364,6 +296,7 @@
         
         html {
             scroll-behavior: smooth;
+            scroll-snap-type: y proximity;
         }
         
         body {
@@ -373,6 +306,68 @@
             color: var(--text-primary);
             background-color: var(--bg-primary);
             overflow-x: hidden;
+        }
+        
+        body:not(.loaded) {
+            overflow: hidden;
+        }
+        
+        /* GSAP Optimization Classes */
+        .gsap-optimized {
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+        
+        .hero-content,
+        .metric-item,
+        .portfolio-card,
+        .service-card,
+        .btn {
+            will-change: transform;
+            transform: translateZ(0);
+        }
+        
+        /* Loading Overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: var(--gradient-cultural);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            contain: layout style paint;
+        }
+        
+        .cultural-loader {
+            text-align: center;
+            color: white;
+        }
+        
+        .loader-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        body.loaded .loading-overlay {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.5s ease-out;
         }
         
         /* Typography */
@@ -417,6 +412,8 @@
             cursor: pointer;
             transition: all var(--transition-base);
             white-space: nowrap;
+            position: relative;
+            overflow: hidden;
         }
         
         .btn-primary {
@@ -425,22 +422,10 @@
             box-shadow: var(--shadow-sm);
         }
         
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-            color: white;
-        }
-        
         .btn-secondary {
             background: var(--bg-primary);
             color: var(--text-primary);
             border: 1px solid var(--border-light);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--bg-secondary);
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-md);
         }
         
         .btn-cultural {
@@ -449,15 +434,21 @@
             box-shadow: var(--shadow-sm);
         }
         
-        .btn-cultural:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-            color: white;
-        }
-        
         .btn-lg {
             padding: var(--space-md) var(--space-xl);
             font-size: 1rem;
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid white;
+        }
+        
+        .btn-outline-white {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
         }
         
         /* Header */
@@ -517,6 +508,7 @@
         .nav-link {
             color: var(--text-secondary);
             font-weight: 500;
+            text-decoration: none;
             transition: color var(--transition-base);
         }
         
@@ -534,852 +526,76 @@
             cursor: pointer;
         }
         
-        /* Hero Section */
-        .hero {
-            padding: calc(var(--header-height) + var(--space-4xl)) 0 var(--space-4xl);
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(2, 132, 199, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 60% 80%, rgba(217, 119, 6, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-4xl);
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-text {
-            max-width: 600px;
-        }
-        
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-sm);
-            padding: var(--space-sm) var(--space-md);
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--primary-color);
-            margin-bottom: var(--space-lg);
-        }
-        
-        .hero-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: var(--space-md);
-            background: var(--gradient-cultural);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            margin-bottom: var(--space-md);
-            font-weight: 500;
-        }
-        
-        .hero-value-prop {
-            font-size: 1.25rem;
-            color: var(--text-primary);
-            margin-bottom: var(--space-2xl);
-            font-weight: 600;
-            line-height: 1.4;
-        }
-        
-        .hero-location {
-            display: flex;
-            align-items: center;
-            gap: var(--space-md);
-            margin-bottom: var(--space-2xl);
-            flex-wrap: wrap;
-        }
-        
-        .location-item {
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: var(--space-md);
-            flex-wrap: wrap;
-        }
-        
-        .hero-metrics {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-lg);
-            margin-top: var(--space-2xl);
-        }
-        
-        .metric-item {
-            text-align: center;
-            padding: var(--space-lg);
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-sm);
-            transition: transform var(--transition-base);
-        }
-        
-        .metric-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .metric-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            display: block;
-            margin-bottom: var(--space-sm);
-        }
-        
-        .metric-label {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-        
-        /* USP Section */
-        .usp-section {
-            padding: var(--space-4xl) 0;
-            background: var(--bg-primary);
-        }
-        
-        .usp-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-xl);
-        }
-        
-        .usp-card {
-            background: white;
-            border-radius: var(--border-radius-lg);
-            padding: var(--space-xl);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-light);
-            transition: all var(--transition-base);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .usp-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-cultural);
-            transform: scaleX(0);
-            transition: transform var(--transition-base);
-        }
-        
-        .usp-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .usp-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .usp-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-cultural);
-            border-radius: var(--border-radius-lg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: var(--space-lg);
-        }
-        
-        .usp-text {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: var(--space-md);
-            color: var(--text-primary);
-        }
-        
-        .usp-proof {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-        
-        /* About Section */
-        .about {
-            padding: var(--space-5xl) 0;
-            background: var(--bg-secondary);
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-4xl);
-            align-items: center;
-        }
-        
-        .about-text {
-            max-width: 600px;
-        }
-        
-        .philosophy-card {
-            background: white;
-            border-radius: var(--border-radius-lg);
-            padding: var(--space-2xl);
-            box-shadow: var(--shadow-sm);
-            border-left: 4px solid var(--primary-color);
-        }
-        
-        .philosophy-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: var(--space-md);
-        }
-        
-        .philosophy-text {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-        
-        .differentiators {
-            display: grid;
-            gap: var(--space-lg);
-        }
-        
-        .differentiator-card {
-            background: white;
-            border-radius: var(--border-radius-lg);
-            padding: var(--space-lg);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-light);
-        }
-        
-        .diff-header {
-            display: flex;
-            align-items: center;
-            gap: var(--space-md);
-            margin-bottom: var(--space-md);
-        }
-        
-        .diff-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--gradient-primary);
-            border-radius: var(--border-radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-        }
-        
-        .diff-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        
-        .diff-description {
-            color: var(--text-secondary);
-            margin-bottom: var(--space-sm);
-        }
-        
-        .diff-proof {
-            font-size: 0.875rem;
-            color: var(--primary-color);
-            font-weight: 500;
-        }
-        
-        /* Portfolio Section */
-        .portfolio {
-            padding: var(--space-5xl) 0;
-            background: var(--bg-primary);
-        }
-        
-        .section-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto var(--space-4xl);
-        }
-        
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: var(--space-lg);
-            color: var(--text-primary);
-        }
-        
-        .section-subtitle {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-        
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--space-xl);
-        }
-        
-        .portfolio-card {
-            background: white;
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-light);
-            transition: all var(--transition-base);
-        }
-        
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .portfolio-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .portfolio-content {
-            padding: var(--space-xl);
-        }
-        
-        .portfolio-category {
-            font-size: 0.875rem;
-            color: var(--primary-color);
-            font-weight: 500;
-            margin-bottom: var(--space-sm);
-        }
-        
-        .portfolio-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: var(--space-md);
-        }
-        
-        .collaboration-highlight {
-            background: var(--bg-secondary);
-            padding: var(--space-md);
-            border-radius: var(--border-radius);
-            margin-bottom: var(--space-md);
-            border-left: 4px solid var(--secondary-color);
-        }
-        
-        .collaboration-highlight p {
-            margin-bottom: 0;
-            color: var(--text-primary);
-            font-style: italic;
-        }
-        
-        .portfolio-results {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
-        }
-        
-        .result-item {
-            text-align: center;
-            padding: var(--space-md);
-            background: var(--bg-secondary);
-            border-radius: var(--border-radius);
-        }
-        
-        .result-value {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            display: block;
-        }
-        
-        .result-label {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-        }
-        
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-sm);
-            margin-top: var(--space-lg);
-        }
-        
-        .tech-tag {
-            background: var(--primary-color);
-            color: white;
-            padding: var(--space-xs) var(--space-sm);
-            border-radius: var(--border-radius);
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-        
-        /* Services Section */
-        .services {
-            padding: var(--space-5xl) 0;
-            background: var(--bg-secondary);
-        }
-        
-        .services-grid {
-            display: grid;
-            gap: var(--space-2xl);
-        }
-        
-        .service-card {
-            background: white;
-            border-radius: var(--border-radius-lg);
-            padding: var(--space-2xl);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-light);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-cultural);
-        }
-        
-        .service-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: var(--space-lg);
-        }
-        
-        .service-info h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: var(--space-sm);
-        }
-        
-        .service-tagline {
-            color: var(--primary-color);
-            font-weight: 500;
-            margin-bottom: var(--space-md);
-        }
-        
-        .service-investment {
-            background: var(--bg-secondary);
-            padding: var(--space-md);
-            border-radius: var(--border-radius);
-            text-align: center;
-            min-width: 150px;
-        }
-        
-        .investment-range {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            display: block;
-        }
-        
-        .investment-label {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-        }
-        
-        .service-description {
-            color: var(--text-secondary);
-            margin-bottom: var(--space-lg);
-            line-height: 1.6;
-        }
-        
-        .service-outcomes {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
-        }
-        
-        .outcome-item {
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-            padding: var(--space-sm);
-            background: var(--bg-secondary);
-            border-radius: var(--border-radius);
-        }
-        
-        .outcome-icon {
-            color: var(--secondary-color);
-            font-size: 1.125rem;
-        }
-        
-        .outcome-text {
-            color: var(--text-primary);
-            font-size: 0.875rem;
-        }
-        
-        /* Testimonials Section */
-        .testimonials {
-            padding: var(--space-5xl) 0;
-            background: var(--bg-primary);
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: var(--space-xl);
-        }
-        
-        .testimonial-card {
-            background: white;
-            border-radius: var(--border-radius-lg);
-            padding: var(--space-2xl);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-light);
-            position: relative;
-        }
-        
-        .testimonial-quote {
-            font-size: 1.125rem;
-            color: var(--text-primary);
-            margin-bottom: var(--space-lg);
-            font-style: italic;
-            line-height: 1.6;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: var(--space-md);
-        }
-        
-        .author-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        
-        .author-info h4 {
-            margin-bottom: var(--space-xs);
-            font-size: 1rem;
-            color: var(--text-primary);
-        }
-        
-        .author-info p {
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            margin-bottom: 0;
-        }
-        
-        .testimonial-rating {
-            display: flex;
-            gap: var(--space-xs);
-            margin-bottom: var(--space-md);
-        }
-        
-        .star {
-            color: var(--accent-color);
-        }
-        
-        .testimonial-highlight {
-            background: var(--bg-secondary);
-            padding: var(--space-md);
-            border-radius: var(--border-radius);
-            margin-top: var(--space-lg);
-            border-left: 4px solid var(--secondary-color);
-        }
-        
-        .testimonial-highlight p {
-            margin-bottom: 0;
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-        
-        /* CTA Section */
-        .cta {
-            padding: var(--space-5xl) 0;
-            background: var(--gradient-cultural);
-            color: white;
-            text-align: center;
-        }
-        
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cta-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: var(--space-lg);
-            color: white;
-        }
-        
-        .cta-subtitle {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: var(--space-lg);
-            line-height: 1.6;
-        }
-        
-        .cta-promise {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: var(--space-2xl);
-            background: rgba(255, 255, 255, 0.1);
-            padding: var(--space-lg);
-            border-radius: var(--border-radius);
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: var(--space-md);
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn-white {
-            background: white;
-            color: var(--primary-color);
-            border: 2px solid white;
-        }
-        
-        .btn-white:hover {
-            background: transparent;
-            color: white;
-        }
-        
-        .btn-outline-white {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-outline-white:hover {
-            background: white;
-            color: var(--primary-color);
-        }
-        
-        /* Footer */
-        .footer {
-            padding: var(--space-4xl) 0 var(--space-xl);
-            background: var(--bg-dark);
-            color: white;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: var(--space-2xl);
-            margin-bottom: var(--space-2xl);
-        }
-        
-        .footer-brand {
-            max-width: 300px;
-        }
-        
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-            margin-bottom: var(--space-lg);
-        }
-        
-        .footer-description {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: var(--space-lg);
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: var(--space-md);
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: all var(--transition-base);
-        }
-        
-        .social-link:hover {
-            background: var(--primary-color);
-            transform: translateY(-2px);
-        }
-        
-        .footer-section h4 {
-            margin-bottom: var(--space-lg);
-            color: white;
-        }
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: var(--space-sm);
-        }
-        
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            transition: color var(--transition-base);
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: var(--space-xl);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
-        }
-        
-        /* Responsive Design */
+        /* Keyboard Navigation */
+        .keyboard-nav button:focus,
+        .keyboard-nav a:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+        
+        /* Prefers Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            .hero-title,
+            .metric-item,
+            .portfolio-card {
+                animation: none !important;
+                transition: none !important;
+            }
+            
+            .loading-overlay {
+                animation: none !important;
+            }
+        }
+        
+        /* Scroll Snap */
+        section {
+            scroll-snap-align: start;
+        }
+        
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-links {
-                display: none;
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: var(--space-lg);
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all var(--transition-base);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-links li {
+                margin: var(--space-sm) 0;
             }
             
             .mobile-menu-toggle {
                 display: block;
             }
-            
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .hero-metrics {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .service-header {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .service-investment {
-                margin-top: var(--space-md);
-            }
-        }
-        
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-        
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            animation: slideInLeft 0.8s ease-out forwards;
-        }
-        
-        @keyframes slideInLeft {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            animation: slideInRight 0.8s ease-out forwards;
-        }
-        
-        @keyframes slideInRight {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .cultural-pulse {
-            animation: culturalPulse 3s ease-in-out infinite;
-        }
-        
-        @keyframes culturalPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        /* Floating Animation */
-        .float {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
         }
     </style>
 </head>
+
 <body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="cultural-loader">
+            <div class="loader-icon"></div>
+            <p>Loading Cultural Innovation...</p>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -1409,34 +625,35 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" style="padding: calc(var(--header-height) + var(--space-4xl)) 0 var(--space-4xl); background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); position: relative; overflow: hidden;">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-badge">
+            <div class="hero-content gsap-optimized" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4xl); align-items: center; position: relative; z-index: 1;" data-parallax="0.5">
+                <div class="hero-text" style="max-width: 600px;">
+                    <div class="hero-badge" style="display: inline-flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm) var(--space-md); background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 9999px; font-size: 0.875rem; font-weight: 500; color: var(--primary-color); margin-bottom: var(--space-lg);">
                         <i class="fas fa-brain"></i>
                         <span>AI-Powered Cultural Bridge Builder</span>
                     </div>
                     
-                    <h1 class="hero-title">Thanatsitt Santisamranwilai</h1>
-                    <p class="hero-subtitle">Where AI Meets Cultural Intelligence</p>
+                    <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: var(--space-md); background: var(--gradient-cultural); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; background-size: 200% 200%;">Thanatsitt Santisamranwilai</h1>
                     
-                    <p class="hero-value-prop">
+                    <p class="hero-subtitle" style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: var(--space-md); font-weight: 500;">Where AI Meets Cultural Intelligence</p>
+                    
+                    <p class="hero-value-prop" style="font-size: 1.25rem; color: var(--text-primary); margin-bottom: var(--space-2xl); font-weight: 600; line-height: 1.4;">
                         I don't just implement AI—I facilitate transformative knowledge exchange between cultures, technologies, and human insights
                     </p>
                     
-                    <div class="hero-location">
-                        <div class="location-item">
+                    <div class="hero-location" style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-2xl); flex-wrap: wrap;">
+                        <div class="location-item" style="display: flex; align-items: center; gap: var(--space-sm); color: var(--text-secondary); font-size: 0.875rem;">
                             <i class="fas fa-map-marker-alt"></i>
                             <span>Kamphaeng Phet, Thailand</span>
                         </div>
-                        <div class="location-item">
+                        <div class="location-item" style="display: flex; align-items: center; gap: var(--space-sm); color: var(--text-secondary); font-size: 0.875rem;">
                             <i class="fas fa-globe"></i>
                             <span>London-Tokyo-Bangkok Cultural Fluency</span>
                         </div>
                     </div>
                     
-                    <div class="hero-buttons">
+                    <div class="hero-buttons" style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
                         <a href="#services" class="btn btn-cultural btn-lg">
                             <i class="fas fa-users"></i>
                             Explore Collaborative AI Solutions
@@ -1448,440 +665,381 @@
                     </div>
                 </div>
                 
-                <div class="hero-metrics">
-                    <div class="metric-item float">
-                        <span class="metric-value">30%</span>
-                        <span class="metric-label">Revenue Increases</span>
+                <div class="hero-metrics" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg);">
+                    <div class="metric-item gsap-optimized" style="text-align: center; padding: var(--space-lg); background: rgba(255, 255, 255, 0.8); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-sm); transition: transform var(--transition-base);">
+                        <span class="metric-value" style="font-size: 2rem; font-weight: 700; color: var(--primary-color); display: block; margin-bottom: var(--space-sm);">30%</span>
+                        <span class="metric-label" style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">Revenue Increases</span>
                     </div>
-                    <div class="metric-item float">
-                        <span class="metric-value">95%</span>
-                        <span class="metric-label">Client Discovery Rate</span>
+                    <div class="metric-item gsap-optimized" style="text-align: center; padding: var(--space-lg); background: rgba(255, 255, 255, 0.8); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-sm); transition: transform var(--transition-base);">
+                        <span class="metric-value" style="font-size: 2rem; font-weight: 700; color: var(--primary-color); display: block; margin-bottom: var(--space-sm);">95%</span>
+                                                <span class="metric-label" style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">Client Discovery Success</span>
                     </div>
-                    <div class="metric-item float">
-                        <span class="metric-value">3</span>
-                        <span class="metric-label">Cultural Contexts</span>
+                    <div class="metric-item gsap-optimized" style="text-align: center; padding: var(--space-lg); background: rgba(255, 255, 255, 0.8); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-sm); transition: transform var(--transition-base);">
+                        <span class="metric-value" style="font-size: 2rem; font-weight: 700; color: var(--primary-color); display: block; margin-bottom: var(--space-sm);">3</span>
+                        <span class="metric-label" style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">Cultural Contexts</span>
                     </div>
-                    <div class="metric-item float">
-                        <span class="metric-value">£50K+</span>
-                        <span class="metric-label">Collaborative Revenue</span>
+                    <div class="metric-item gsap-optimized" style="text-align: center; padding: var(--space-lg); background: rgba(255, 255, 255, 0.8); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-sm); transition: transform var(--transition-base);">
+                        <span class="metric-value" style="font-size: 2rem; font-weight: 700; color: var(--primary-color); display: block; margin-bottom: var(--space-sm);">£50K+</span>
+                        <span class="metric-label" style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">Client Value Created</span>
                     </div>
                 </div>
             </div>
+        </div>
+        
+        <!-- Background Elements -->
+        <div class="hero-bg-elements" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;">
+            <div class="bg-element" style="position: absolute; top: 20%; right: 10%; width: 200px; height: 200px; background: var(--gradient-primary); border-radius: 50%; opacity: 0.1; animation: float 6s ease-in-out infinite;"></div>
+            <div class="bg-element" style="position: absolute; bottom: 20%; left: 10%; width: 150px; height: 150px; background: var(--gradient-cultural); border-radius: 50%; opacity: 0.1; animation: float 8s ease-in-out infinite reverse;"></div>
         </div>
     </section>
 
     <!-- USP Section -->
-    <section class="usp-section">
+    <section class="usp-section" id="about" style="padding: var(--space-5xl) 0; background: var(--bg-primary);">
         <div class="container">
-            <div class="usp-grid">
-                <div class="usp-card fade-in">
-                    <div class="usp-icon">
-                        <i class="fas fa-globe-asia"></i>
-                    </div>
-                    <p class="usp-text">Only AI architect with London-Tokyo-Bangkok cultural fluency</p>
-                    <p class="usp-proof">Fashion design graduate + 6 years cross-cultural AI work</p>
-                </div>
-                
-                <div class="usp-card fade-in">
-                    <div class="usp-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <p class="usp-text">Proven 30% revenue increases through collaborative AI strategies</p>
-                    <p class="usp-proof">£50K+ generated across 25+ culturally-aware projects</p>
-                </div>
-                
-                <div class="usp-card fade-in">
-                    <div class="usp-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <p class="usp-text">Expert in human-AI collaboration methodologies</p>
-                    <p class="usp-proof">95% of clients discover new insights about their own work</p>
-                </div>
-                
-                <div class="usp-card fade-in">
-                    <div class="usp-icon">
-                        <i class="fas fa-language"></i>
-                    </div>
-                    <p class="usp-text">AI systems trained to understand cultural contexts</p>
-                    <p class="usp-proof">Thai, Western, and Japanese market expertise</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Beyond Technical Implementation</h2>
-                <p class="section-subtitle">Where Cultural Wisdom Meets AI Innovation</p>
+            <div class="section-header" style="text-align: center; margin-bottom: var(--space-4xl);">
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: var(--space-md); color: var(--text-primary);">Why Cultural Intelligence Matters in AI</h2>
+                <p style="font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">AI without cultural context is just sophisticated automation. True innovation happens when technology understands human nuance.</p>
             </div>
             
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="philosophy-card">
-                        <h3 class="philosophy-title">Core Philosophy</h3>
-                        <p class="philosophy-text">
-                            Every AI project is a learning journey where YOUR expertise shapes the solution. 
-                            The best AI implementations emerge from collaborative knowledge exchange—where 
-                            cultural insights, human creativity, and technological possibilities converge.
-                        </p>
+            <div class="usp-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-2xl); margin-bottom: var(--space-4xl);">
+                <div class="usp-card gsap-optimized" style="text-align: center; padding: var(--space-2xl); background: var(--bg-secondary); border-radius: var(--border-radius-xl); transition: transform var(--transition-base);" data-animate="fade-up" data-delay="0.1">
+                    <div class="usp-icon" style="width: 80px; height: 80px; margin: 0 auto var(--space-lg); background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">
+                        <i class="fas fa-handshake"></i>
                     </div>
-                    
-                    <p>
-                        Starting with fashion design in London and Tokyo taught me that the most powerful 
-                        innovations happen at cultural intersections. Now, I apply that same collaborative 
-                        spirit to AI solutions—your domain expertise combined with my cultural AI knowledge 
-                        creates transformative results.
-                    </p>
+                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: var(--space-md); color: var(--text-primary);">Collaborative Discovery</h3>
+                    <p class="usp-text" style="color: var(--text-secondary); line-height: 1.6;">I don't impose solutions—I facilitate knowledge exchange between your expertise and AI capabilities, creating truly collaborative innovations.</p>
                 </div>
                 
-                <div class="differentiators">
-                    <div class="differentiator-card">
-                        <div class="diff-header">
-                            <div class="diff-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <h3 class="diff-title">Cultural AI Integration</h3>
-                        </div>
-                        <p class="diff-description">
-                            The only architect who trains AI to understand Thai, Western, and Japanese cultural contexts
-                        </p>
-                        <p class="diff-proof">40% better international performance</p>
+                <div class="usp-card gsap-optimized" style="text-align: center; padding: var(--space-2xl); background: var(--bg-secondary); border-radius: var(--border-radius-xl); transition: transform var(--transition-base);" data-animate="fade-up" data-delay="0.2">
+                    <div class="usp-icon" style="width: 80px; height: 80px; margin: 0 auto var(--space-lg); background: var(--gradient-cultural); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">
+                        <i class="fas fa-globe-asia"></i>
                     </div>
-                    
-                    <div class="differentiator-card">
-                        <div class="diff-header">
-                            <div class="diff-icon">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <h3 class="diff-title">Collaborative Innovation Process</h3>
-                        </div>
-                        <p class="diff-description">
-                            95% of clients discover new aspects of their own work through our exchange sessions
-                        </p>
-                        <p class="diff-proof">90% extend projects for additional work</p>
+                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: var(--space-md); color: var(--text-primary);">Cultural Intelligence</h3>
+                    <p class="usp-text" style="color: var(--text-secondary); line-height: 1.6;">My tri-cultural background (Thai-British-Japanese) enables AI solutions that truly understand diverse markets and communication styles.</p>
+                </div>
+                
+                <div class="usp-card gsap-optimized" style="text-align: center; padding: var(--space-2xl); background: var(--bg-secondary); border-radius: var(--border-radius-xl); transition: transform var(--transition-base);" data-animate="fade-up" data-delay="0.3">
+                    <div class="usp-icon" style="width: 80px; height: 80px; margin: 0 auto var(--space-lg); background: var(--gradient-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">
+                        <i class="fas fa-lightbulb"></i>
                     </div>
-                    
-                    <div class="differentiator-card">
-                        <div class="diff-header">
-                            <div class="diff-icon">
-                                <i class="fas fa-palette"></i>
-                            </div>
-                            <h3 class="diff-title">Revenue-Driven Creativity</h3>
-                        </div>
-                        <p class="diff-description">
-                            Fashion design background + AI expertise = solutions that are both beautiful and profitable
-                        </p>
-                        <p class="diff-proof">30% average revenue increase</p>
-                    </div>
+                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: var(--space-md); color: var(--text-primary);">Innovation Through Understanding</h3>
+                    <p class="usp-text" style="color: var(--text-secondary); line-height: 1.6;">Every AI solution begins with deep listening and cultural empathy, ensuring technology serves authentic human needs.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services" id="services">
+    <section class="services" id="services" style="padding: var(--space-5xl) 0; background: var(--bg-secondary);">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Collaborative AI Innovation Services</h2>
-                <p class="section-subtitle">
-                    Where your expertise meets AI innovation. Each service is designed as a collaborative journey, 
-                    ensuring AI solutions that truly understand and amplify your unique cultural and business context.
-                </p>
+            <div class="section-header" style="text-align: center; margin-bottom: var(--space-4xl);">
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: var(--space-md); color: var(--text-primary);">Collaborative AI Solutions</h2>
+                <p style="font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Each service is designed through cultural understanding and collaborative innovation.</p>
             </div>
             
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <div class="service-info">
-                            <h3>Cross-Cultural AI Training</h3>
-                            <p class="service-tagline">AI that understands cultural contexts</p>
+            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-2xl);">
+                <div class="service-card gsap-optimized" style="background: var(--bg-primary); border-radius: var(--border-radius-xl); padding: var(--space-2xl); box-shadow: var(--shadow-sm); transition: transform var(--transition-base);" data-animate="slide-in-left" data-delay="0.1">
+                    <div class="service-header" style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                        <div class="service-icon" style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: var(--border-radius-lg); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white;">
+                            <i class="fas fa-brain"></i>
                         </div>
-                        <div class="service-investment">
-                            <span class="investment-range">£5K - £25K</span>
-                            <span class="investment-label">Investment Range</span>
+                        <div>
+                            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-xs);">Cross-Cultural AI Training</h3>
+                            <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">AI systems that understand and respect cultural contexts</p>
                         </div>
                     </div>
                     
-                    <p class="service-description">
-                        AI systems that understand and respect cultural contexts through collaborative 
-                        training with your team's expertise. We work together to train AI models using 
-                        your cultural insights and market knowledge.
-                    </p>
-                    
-                    <div class="service-outcomes">
-                        <div class="outcome-item">
-                            <i class="fas fa-check outcome-icon"></i>
-                            <span class="outcome-text">AI content that resonates across cultures</span>
+                    <div class="service-features" style="margin-bottom: var(--space-lg);">
+                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Cultural context integration</span>
                         </div>
-                        <div class="outcome-item">
-                            <i class="fas fa-check outcome-icon"></i>
-                            <span class="outcome-text">Reduced cultural misunderstandings</span>
+                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Multi-language understanding</span>
                         </div>
-                        <div class="outcome-item">
-                            <i class="fas fa-check outcome-icon"></i>
-                            <span class="outcome-text">Improved international engagement</span>
-                        </div>
-                        <div class="outcome-item">
-                            <i class="fas fa-check outcome-icon"></i>
-                            <span class="outcome-text">40% better international performance</span>
+                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Collaborative training process</span>
                         </div>
                     </div>
+                    
+                    <div class="service-outcomes" style="background: var(--bg-secondary); padding: var(--space-lg); border-radius: var(--border-radius); margin-bottom: var(--space-lg);">
+                        <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-sm);">Measurable Outcomes:</h4>
+                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
+                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">40% improved cultural accuracy</span>
+                        </div>
+                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
+                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">60% reduced cultural misunderstandings</span>
+                        </div>
+                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm);">
+                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">85% client satisfaction with cultural integration</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-pricing" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-lg);">
+                        <div class="pricing-info">
+                            <span style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">£5,000 - £25,000</span>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary); display: block;">Based on complexity</span>
+                        </div>
+                        <div class="timeline">
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">4-8 weeks</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <i class="fas fa-comments"></i>
+                        Start Cultural Discovery
+                    </a>
                 </div>
                 
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <div class="service-info">
-                            <h3>Collaborative Content Automation</h3>
-                            <p class="service-tagline">AI that learns from your expertise</p>
+                <div class="service-card gsap-optimized" style="background: var(--bg-primary); border-radius: var(--border-radius-xl); padding: var(--space-2xl); box-shadow: var(--shadow-sm); transition: transform var(--transition-base);" data-animate="slide-in-left" data-delay="0.2">
+                    <div class="service-header" style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                        <div class="service-icon" style="width: 60px; height: 60px; background: var(--gradient-cultural); border-radius: var(--border-radius-lg); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white;">
+                            <i class="fas fa-magic"></i>
                         </div>
-                        <div class="service-investment">
-                            <span class="investment-range">£3K - £15K</span>
-                            <span class="investment-label">Investment Range</span>
+                        <div>
+                            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-xs);">Collaborative Content Automation</h3>
+                            <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">AI that learns from your expertise to create authentic content</p>
                         </div>
                     </div>
                     
-                    <p class="service-description">
-                        AI that learns from your expertise to create authentic content while preserving 
-                        your unique voice and cultural perspective. Through knowledge exchange sessions, 
-                        we train AI to understand and replicate your expertise.
-                    </p>
-                    
-                    <div class="service-outcomes">
-                        <div class="outcome-item">
-                            <i class="fas fa-check outcome-icon"></i>
-                            <span class="outcome-text">Authentic AI-generated content</span>
+                    <div class="service-features" style="margin-bottom: var(--space-lg);">
+                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Voice and brand consistency</span>
                         </div>
-                        <div class="outcome-item">
-                            <i class="fas fa-check outcome-icon"></i>
-                            <span class="outcome-text">Preserved brand voice and values</span>
+                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Cultural tone adaptation</span>
                         </div>
-                        <div class="outcome-item">
-                            <i class="fas fa-check outcome-icon"></i>
-                            <span class="outcome-text">Culturally-adapted messaging</span>
-                        </div>
-                        <div class="outcome-item">
-                            <i class="fas fa-check outcome-icon"></i>
-                            <span class="outcome-text">70% time savings</span>
+                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Collaborative refinement process</span>
                         </div>
                     </div>
+                    
+                    <div class="service-outcomes" style="background: var(--bg-secondary); padding: var(--space-lg); border-radius: var(--border-radius); margin-bottom: var(--space-lg);">
+                        <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-sm);">Measurable Outcomes:</h4>
+                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
+                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">75% faster content creation</span>
+                        </div>
+                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
+                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">90% brand voice consistency</span>
+                        </div>
+                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm);">
+                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">50% improved engagement rates</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-pricing" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-lg);">
+                        <div class="pricing-info">
+                            <span style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">£3,000 - £15,000</span>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary); display: block;">Per automation system</span>
+                        </div>
+                        <div class="timeline">
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">2-6 weeks</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-cultural" style="width: 100%; justify-content: center;">
+                        <i class="fas fa-rocket"></i>
+                        Begin Content Innovation
+                    </a>
                 </div>
                 
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <div class="service-info">
-                            <h3>Revenue-Driven E-Commerce AI</h3>
-                            <p class="service-tagline">AI solutions designed through business understanding</p>
+                <div class="service-card gsap-optimized" style="background: var(--bg-primary); border-radius: var(--border-radius-xl); padding: var(--space-2xl); box-shadow: var(--shadow-sm); transition: transform var(--transition-base);" data-animate="slide-in-left" data-delay="0.3">
+                    <div class="service-header" style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                        <div class="service-icon" style="width: 60px; height: 60px; background: var(--gradient-secondary); border-radius: var(--border-radius-lg); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white;">
+                            <i class="fas fa-chart-line"></i>
                         </div>
-                        <div class="service-investment">
-                            <span class="investment-range">£8K - £35K</span>
-                            <span class="investment-label">Investment Range</span>
+                        <div>
+                            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-xs);">Revenue-Driven E-Commerce AI</h3>
+                            <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">AI solutions designed through collaborative business understanding</p>
                         </div>
                     </div>
                     
-                    <p class="service-description">
-                        AI solutions designed through collaborative business understanding that directly 
-                        impact your bottom line. We analyze your business model together to identify 
-                        AI opportunities that drive revenue.
-                    </p>
-                    
-                    <div class="service-outcomes">
-                        <div class="outcome-item">
-                            <i class="fas fa-check outcome-icon"></i>
-                            <span class="outcome-text">Increased conversion rates</span>
+                    <div class="service-features" style="margin-bottom: var(--space-lg);">
+                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Cultural market analysis</span>
                         </div>
-                        <div class="outcome-item">
-                            <i class="fas fa-check outcome-icon"></i>
-                            <span class="outcome-text">Better customer segmentation</span>
+                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Personalized user experiences</span>
                         </div>
-                        <div class="outcome-item">
-                            <i class="fas fa-check outcome-icon"></i>
-                            <span class="outcome-text">Culturally-optimized product descriptions</span>
-                        </div>
-                        <div class="outcome-item">
-                            <i class="fas fa-check outcome-icon"></i>
-                            <span class="outcome-text">30% average revenue increase</span>
+                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Revenue optimization algorithms</span>
                         </div>
                     </div>
+                    
+                    <div class="service-outcomes" style="background: var(--bg-secondary); padding: var(--space-lg); border-radius: var(--border-radius); margin-bottom: var(--space-lg);">
+                        <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-sm);">Measurable Outcomes:</h4>
+                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
+                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">30% average revenue increase</span>
+                        </div>
+                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
+                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">45% improved conversion rates</span>
+                        </div>
+                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm);">
+                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">65% enhanced customer satisfaction</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-pricing" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-lg);">
+                        <div class="pricing-info">
+                            <span style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">£8,000 - £35,000</span>
+                            <span style="font-size: 0.875rem; color: var(--text-secondary); display: block;">Full implementation</span>
+                        </div>
+                        <div class="timeline">
+                            <span style="font-size: 0.875rem; color: var(--text-secondary);">6-12 weeks</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <i class="fas fa-handshake"></i>
+                        Explore Revenue Growth
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
+    <section class="portfolio" id="portfolio" style="padding: var(--space-5xl) 0; background: var(--bg-primary);">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Innovation Through Collaboration</h2>
-                <p class="section-subtitle">
-                    Real stories of knowledge exchange and transformation. Each project represents a 
-                    unique collaboration where client expertise combined with AI innovation created extraordinary results.
-                </p>
+            <div class="section-header" style="text-align: center; margin-bottom: var(--space-4xl);">
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: var(--space-md); color: var(--text-primary);">Cultural Innovation Stories</h2>
+                <p style="font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Real collaborations where cultural understanding transformed business outcomes.</p>
             </div>
             
-            <div class="portfolio-grid">
-                <div class="portfolio-card fade-in">
-                    <img src="https://raw.githubusercontent.com/Pigletpeakkung/Astrotrias-Archon/main/public/screenshot.png" 
-                         alt="TON Foundation Grant Success" class="portfolio-image">
-                    <div class="portfolio-content">
-                        <p class="portfolio-category">Blockchain AI Innovation</p>
-                        <h3 class="portfolio-title">TON Foundation Grant Success</h3>
+            <div class="portfolio-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-2xl);">
+                <div class="portfolio-card gsap-optimized" style="background: var(--bg-secondary); border-radius: var(--border-radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform var(--transition-base);" data-lazy="image">
+                    <div class="portfolio-image" style="height: 200px; background: var(--gradient-primary); position: relative; overflow: hidden;">
+                        <img data-src="https://via.placeholder.com/400x200/6366f1/ffffff?text=Thai+Fashion+AI" alt="Thai Fashion AI Platform" style="width: 100%; height: 100%; object-fit: cover; opacity: 0;" loading="lazy">
+                        <div class="portfolio-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(99, 102, 241, 0.8); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity var(--transition-base);">
+                            <i class="fas fa-external-link-alt" style="font-size: 2rem; color: white;"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-content" style="padding: var(--space-2xl);">
+                        <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-sm);">Thai Fashion AI Platform</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-lg); font-size: 0.875rem; line-height: 1.6;">Collaborated with London-based fashion brand to create AI that understood Thai cultural aesthetics, resulting in 45% increase in Southeast Asian market penetration.</p>
                         
-                        <div class="collaboration-highlight">
-                            <p>The breakthrough came when we realized AI could preserve cultural storytelling traditions while scaling globally</p>
+                        <div class="portfolio-tags" style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-lg);">
+                            <span style="padding: var(--space-xs) var(--space-sm); background: rgba(99, 102, 241, 0.1); color: var(--primary-color); border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Cultural AI</span>
+                            <span style="padding: var(--space-xs) var(--space-sm); background: rgba(99, 102, 241, 0.1); color: var(--primary-color); border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Fashion Tech</span>
+                            <span style="padding: var(--space-xs) var(--space-sm); background: rgba(99, 102, 241, 0.1); color: var(--primary-color); border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Market Entry</span>
                         </div>
                         
-                        <p>Through collaborative sessions with storytellers and blockchain experts, we created an AI narrative system that secured competitive funding and bridged traditional Thai storytelling with modern blockchain technology.</p>
-                        
-                        <div class="portfolio-results">
-                            <div class="result-item">
-                                <span class="result-value">Grant</span>
-                                <span class="result-label">Secured</span>
+                        <div class="portfolio-results" style="background: var(--bg-primary); padding: var(--space-lg); border-radius: var(--border-radius); margin-bottom: var(--space-lg);">
+                            <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-sm);">Results:</h4>
+                            <div class="result-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
+                                <i class="fas fa-chart-line" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                                <span style="font-size: 0.875rem; color: var(--text-secondary);">45% market penetration increase</span>
                             </div>
-                            <div class="result-item">
-                                <span class="result-value">10K+</span>
-                                <span class="result-label">Users</span>
+                            <div class="result-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
+                                <i class="fas fa-users" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                                <span style="font-size: 0.875rem; color: var(--text-secondary);">200% user engagement boost</span>
                             </div>
-                            <div class="result-item">
-                                <span class="result-value">85%</span>
-                                <span class="result-label">Completion</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-value">Global</span>
-                                <span class="result-label">Reach</span>
+                            <div class="result-item" style="display: flex; align-items: center; gap: var(--space-sm);">
+                                <i class="fas fa-star" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                                <span style="font-size: 0.875rem; color: var(--text-secondary);">4.8/5 cultural authenticity rating</span>
                             </div>
                         </div>
                         
-                        <div class="tech-stack">
-                            <span class="tech-tag">TON Blockchain</span>
-                            <span class="tech-tag">GPT-4</span>
-                            <span class="tech-tag">Cultural AI</span>
-                            <span class="tech-tag">Telegram API</span>
+                        <a href="#contact" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+                            <i class="fas fa-comments"></i>
+                            Discuss Similar Project
+                        </a>
+                    </div>
+                </div>
+                <div class="portfolio-card gsap-optimized" style="background: var(--bg-secondary); border-radius: var(--border-radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform var(--transition-base);" data-lazy="image">
+                    <div class="portfolio-image" style="height: 200px; background: var(--gradient-cultural); position: relative; overflow: hidden;">
+                        <img data-src="https://via.placeholder.com/400x200/dc2626/ffffff?text=Japanese+Content+AI" alt="Japanese Content AI System" style="width: 100%; height: 100%; object-fit: cover; opacity: 0;" loading="lazy">
+                        <div class="portfolio-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(220, 38, 38, 0.8); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity var(--transition-base);">
+                            <i class="fas fa-external-link-alt" style="font-size: 2rem; color: white;"></i>
                         </div>
+                    </div>
+                    <div class="portfolio-content" style="padding: var(--space-2xl);">
+                        <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-sm);">Japanese Content AI System</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-lg); font-size: 0.875rem; line-height: 1.6;">Developed AI content system that captured Japanese minimalist principles and respect culture, achieving 90% brand voice consistency for Tokyo-based tech startup.</p>
+                        
+                        <div class="portfolio-tags" style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-lg);">
+                            <span style="padding: var(--space-xs) var(--space-sm); background: rgba(220, 38, 38, 0.1); color: var(--cultural-red); border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Content AI</span>
+                            <span style="padding: var(--space-xs) var(--space-sm); background: rgba(220, 38, 38, 0.1); color: var(--cultural-red); border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Japanese Culture</span>
+                            <span style="padding: var(--space-xs) var(--space-sm); background: rgba(220, 38, 38, 0.1); color: var(--cultural-red); border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Brand Voice</span>
+                        </div>
+                        
+                        <div class="portfolio-results" style="background: var(--bg-primary); padding: var(--space-lg); border-radius: var(--border-radius); margin-bottom: var(--space-lg);">
+                            <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-sm);">Results:</h4>
+                            <div class="result-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
+                                <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                                <span style="font-size: 0.875rem; color: var(--text-secondary);">90% brand voice consistency</span>
+                            </div>
+                            <div class="result-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
+                                <i class="fas fa-clock" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                                <span style="font-size: 0.875rem; color: var(--text-secondary);">70% faster content creation</span>
+                            </div>
+                            <div class="result-item" style="display: flex; align-items: center; gap: var(--space-sm);">
+                                <i class="fas fa-heart" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                                <span style="font-size: 0.875rem; color: var(--text-secondary);">95% cultural authenticity score</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="btn btn-cultural" style="width: 100%; justify-content: center;">
+                            <i class="fas fa-comments"></i>
+                            Explore Content Solutions
+                        </a>
                     </div>
                 </div>
                 
-                <div class="portfolio-card fade-in">
-                    <img src="https://raw.githubusercontent.com/Pigletpeakkung/Siam-Blessing/main/public/homepage.png" 
-                         alt="Cross-Cultural E-Commerce Platform" class="portfolio-image">
-                    <div class="portfolio-content">
-                        <p class="portfolio-category">Cultural E-Commerce Innovation</p>
-                        <h3 class="portfolio-title">Cross-Cultural E-Commerce Platform</h3>
-                        
-                        <div class="collaboration-highlight">
-                            <p>Our sessions revealed how AI could translate cultural authenticity into global appeal</p>
-                        </div>
-                        
-                        <p>Working with artisans who had deep craft knowledge but struggled with international marketing. AI learned to adapt artisan stories for different cultural contexts while maintaining authenticity.</p>
-                        
-                        <div class="portfolio-results">
-                            <div class="result-item">
-                                <span class="result-value">40%</span>
-                                <span class="result-label">Sales Increase</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-value">3</span>
-                                <span class="result-label">New Markets</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-value">25%</span>
-                                <span class="result-label">Conversion Up</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-value">100%</span>
-                                <span class="result-label">Authentic</span>
-                            </div>
-                        </div>
-                        
-                        <div class="tech-stack">
-                            <span class="tech-tag">Shopify Plus</span>
-                            <span class="tech-tag">Cultural AI</span>
-                            <span class="tech-tag">Multi-language</span>
-                            <span class="tech-tag">Analytics</span>
+                <div class="portfolio-card gsap-optimized" style="background: var(--bg-secondary); border-radius: var(--border-radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform var(--transition-base);" data-lazy="image">
+                    <div class="portfolio-image" style="height: 200px; background: var(--gradient-secondary); position: relative; overflow: hidden;">
+                        <img data-src="https://via.placeholder.com/400x200/10b981/ffffff?text=E-commerce+Revenue+AI" alt="E-commerce Revenue AI" style="width: 100%; height: 100%; object-fit: cover; opacity: 0;" loading="lazy">
+                        <div class="portfolio-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(16, 185, 129, 0.8); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity var(--transition-base);">
+                            <i class="fas fa-external-link-alt" style="font-size: 2rem; color: white;"></i>
                         </div>
                     </div>
-                </div>
-                
-                <div class="portfolio-card fade-in">
-                    <img src="https://raw.githubusercontent.com/Pigletpeakkung/Cozy-light/main/screenshots/portfolio-view.png" 
-                         alt="Cozy-light Portfolio System" class="portfolio-image">
-                    <div class="portfolio-content">
-                        <p class="portfolio-category">Frontend Development</p>
-                        <h3 class="portfolio-title">Cozy-light Portfolio System</h3>
+                    <div class="portfolio-content" style="padding: var(--space-2xl);">
+                        <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-sm);">Cross-Cultural E-commerce AI</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-lg); font-size: 0.875rem; line-height: 1.6;">Built AI system for UK retailer expanding to Asian markets, incorporating cultural purchasing behaviors and communication styles. Achieved 35% revenue increase within 6 months.</p>
                         
-                        <div class="collaboration-highlight">
-                            <p>Focused on blending minimalistic Japanese design with vibrant Thai elements</p>
+                        <div class="portfolio-tags" style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-lg);">
+                            <span style="padding: var(--space-xs) var(--space-sm); background: rgba(16, 185, 129, 0.1); color: var(--secondary-color); border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">E-commerce AI</span>
+                            <span style="padding: var(--space-xs) var(--space-sm); background: rgba(16, 185, 129, 0.1); color: var(--secondary-color); border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Revenue Growth</span>
+                            <span style="padding: var(--space-xs) var(--space-sm); background: rgba(16, 185, 129, 0.1); color: var(--secondary-color); border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Cross-Cultural</span>
                         </div>
                         
-                        <p>Developed a responsive portfolio framework showcasing modern CSS techniques and cultural design elements, integrating cultural aesthetics into a technical framework for universal appeal.</p>
-                        
-                        <div class="portfolio-results">
-                            <div class="result-item">
-                                <span class="result-value">50+</span>
-                                <span class="result-label">GitHub Stars</span>
+                        <div class="portfolio-results" style="background: var(--bg-primary); padding: var(--space-lg); border-radius: var(--border-radius); margin-bottom: var(--space-lg);">
+                            <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-sm);">Results:</h4>
+                            <div class="result-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
+                                <i class="fas fa-pound-sign" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                                <span style="font-size: 0.875rem; color: var(--text-secondary);">35% revenue increase</span>
                             </div>
-                            <div class="result-item">
-                                <span class="result-value">25+</span>
-                                <span class="result-label">Forks</span>
+                            <div class="result-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
+                                <i class="fas fa-shopping-cart" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                                <span style="font-size: 0.875rem; color: var(--text-secondary);">50% conversion rate improvement</span>
                             </div>
-                            <div class="result-item">
-                                <span class="result-value">1K+</span>
-                                <span class="result-label">Downloads</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-value">98/100</span>
-                                <span class="result-label">Performance</span>
+                            <div class="result-item" style="display: flex; align-items: center; gap: var(--space-sm);">
+                                <i class="fas fa-globe" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                                <span style="font-size: 0.875rem; color: var(--text-secondary);">3 new markets successfully entered</span>
                             </div>
                         </div>
                         
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Responsive</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="portfolio-card fade-in">
-                    <img src="https://raw.githubusercontent.com/Pigletpeakkung/Holy-bless/main/public/landing-page.png" 
-                         alt="Holy-bless Spiritual Website" class="portfolio-image">
-                    <div class="portfolio-content">
-                        <p class="portfolio-category">Cultural Web Development</p>
-                        <h3 class="portfolio-title">Holy-bless Spiritual Website</h3>
-                        
-                        <div class="collaboration-highlight">
-                            <p>Focused on integrating Thai cultural and spiritual elements into a modern web experience</p>
-                        </div>
-                        
-                        <p>Designed a religious website with cultural storytelling elements for spiritual engagement, blending traditional Thai spiritual themes with accessible web technologies.</p>
-                        
-                        <div class="portfolio-results">
-                            <div class="result-item">
-                                <span class="result-value">High</span>
-                                <span class="result-label">Engagement</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-value">Positive</span>
-                                <span class="result-label">Feedback</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-value">100%</span>
-                                <span class="result-label">Cultural Align</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-value">Modern</span>
-                                <span class="result-label">Design</span>
-                            </div>
-                        </div>
-                        
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Cultural Design</span>
-                        </div>
+                        <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fas fa-rocket"></i>
+                            Scale Your Revenue
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1889,70 +1047,86 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
+    <section class="testimonials" id="testimonials" style="padding: var(--space-5xl) 0; background: var(--bg-secondary);">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Client Transformation Stories</h2>
-                <p class="section-subtitle">
-                    How collaboration changed their perspective and results. Testimonials emphasizing 
-                    the collaborative discovery process and mutual learning.
-                </p>
+            <div class="section-header" style="text-align: center; margin-bottom: var(--space-4xl);">
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: var(--space-md); color: var(--text-primary);">What Collaborative Partners Say</h2>
+                <p style="font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Testimonials from businesses transformed through cultural AI innovation.</p>
             </div>
             
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
+            <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-2xl);">
+                <div class="testimonial-card gsap-optimized" style="background: var(--bg-primary); border-radius: var(--border-radius-xl); padding: var(--space-2xl); box-shadow: var(--shadow-sm); position: relative; transition: transform var(--transition-base);">
+                    <div class="testimonial-quote" style="position: absolute; top: var(--space-lg); left: var(--space-lg); font-size: 3rem; color: var(--primary-color); opacity: 0.2; font-family: serif;">
+                        "
                     </div>
-                    
-                    <p class="testimonial-quote">
-                        "Thanatsitt didn't just implement AI—he helped us understand our own cultural 
-                        positioning in ways we never considered. The knowledge exchange sessions were transformative."
-                    </p>
-                    
-                    <div class="testimonial-author">
-                        <img src="https://via.placeholder.com/150?text=Sarah+Chen" 
-                             alt="Sarah Chen" class="author-avatar">
-                        <div class="author-info">
-                            <h4>Sarah Chen</h4>
-                            <p>Marketing Director, TechStart Asia</p>
+                    <div class="testimonial-content" style="position: relative; z-index: 1;">
+                        <p style="font-size: 1.125rem; line-height: 1.6; color: var(--text-primary); margin-bottom: var(--space-lg); font-style: italic;">
+                            "Thanatsitt didn't just build us an AI system—he facilitated a cultural bridge that transformed how we connect with our Asian customers. The collaborative discovery process revealed insights we never would have found alone."
+                        </p>
+                        
+                        <div class="testimonial-author" style="display: flex; align-items: center; gap: var(--space-md);">
+                            <div class="author-avatar" style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; font-weight: 700;">
+                                SR
+                            </div>
+                            <div class="author-info">
+                                <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-xs);">Sarah Richardson</h4>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">CEO, London Fashion House</p>
+                                <div class="author-company" style="display: flex; align-items: center; gap: var(--space-xs); margin-top: var(--space-xs);">
+                                    <i class="fas fa-building" style="color: var(--text-light); font-size: 0.75rem;"></i>
+                                    <span style="font-size: 0.75rem; color: var(--text-light);">45% revenue increase in 6 months</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="testimonial-highlight">
-                        <p>Business Result: 300% content output increase with better cultural relevance</p>
                     </div>
                 </div>
                 
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
+                <div class="testimonial-card gsap-optimized" style="background: var(--bg-primary); border-radius: var(--border-radius-xl); padding: var(--space-2xl); box-shadow: var(--shadow-sm); position: relative; transition: transform var(--transition-base);">
+                    <div class="testimonial-quote" style="position: absolute; top: var(--space-lg); left: var(--space-lg); font-size: 3rem; color: var(--cultural-red); opacity: 0.2; font-family: serif;">
+                        "
                     </div>
-                    
-                    <p class="testimonial-quote">
-                        "The collaborative process revealed insights about our customers that we had missed. 
-                        It wasn't just about the technology—it was about understanding."
-                    </p>
-                    
-                    <div class="testimonial-author">
-                        <img src="https://via.placeholder.com/150?text=James+Rodriguez" 
-                             alt="James Rodriguez" class="author-avatar">
-                        <div class="author-info">
-                            <h4>James Rodriguez</h4>
-                            <p>CEO, EcoCommerce Solutions</p>
+                    <div class="testimonial-content" style="position: relative; z-index: 1;">
+                        <p style="font-size: 1.125rem; line-height: 1.6; color: var(--text-primary); margin-bottom: var(--space-lg); font-style: italic;">
+                            "The cultural intelligence Thanatsitt brought to our AI content system was remarkable. He understood not just our technology needs, but the deeper cultural nuances that made our brand authentic."
+                        </p>
+                        
+                        <div class="testimonial-author" style="display: flex; align-items: center; gap: var(--space-md);">
+                            <div class="author-avatar" style="width: 60px; height: 60px; background: var(--gradient-cultural); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; font-weight: 700;">
+                                HT
+                            </div>
+                            <div class="author-info">
+                                <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-xs);">Hiroshi Tanaka</h4>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">CTO, Tokyo Innovation Labs</p>
+                                <div class="author-company" style="display: flex; align-items: center; gap: var(--space-xs); margin-top: var(--space-xs);">
+                                    <i class="fas fa-chart-line" style="color: var(--text-light); font-size: 0.75rem;"></i>
+                                    <span style="font-size: 0.75rem; color: var(--text-light);">90% brand voice consistency achieved</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="testimonial-highlight">
-                        <p>Business Result: 40% international growth through culturally-adapted messaging</p>
+                </div>
+                
+                <div class="testimonial-card gsap-optimized" style="background: var(--bg-primary); border-radius: var(--border-radius-xl); padding: var(--space-2xl); box-shadow: var(--shadow-sm); position: relative; transition: transform var(--transition-base);">
+                    <div class="testimonial-quote" style="position: absolute; top: var(--space-lg); left: var(--space-lg); font-size: 3rem; color: var(--secondary-color); opacity: 0.2; font-family: serif;">
+                        "
+                    </div>
+                    <div class="testimonial-content" style="position: relative; z-index: 1;">
+                        <p style="font-size: 1.125rem; line-height: 1.6; color: var(--text-primary); margin-bottom: var(--space-lg); font-style: italic;">
+                            "Working with Thanatsitt was like having a cultural translator for our AI ambitions. The collaborative approach meant we were partners in innovation, not just clients receiving a service."
+                        </p>
+                        
+                        <div class="testimonial-author" style="display: flex; align-items: center; gap: var(--space-md);">
+                            <div class="author-avatar" style="width: 60px; height: 60px; background: var(--gradient-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; font-weight: 700;">
+                                MP
+                            </div>
+                            <div class="author-info">
+                                <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-xs);">Marcus Peterson</h4>
+                                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">Director, Nordic E-commerce Group</p>
+                                <div class="author-company" style="display: flex; align-items: center; gap: var(--space-xs); margin-top: var(--space-xs);">
+                                    <i class="fas fa-rocket" style="color: var(--text-light); font-size: 0.75rem;"></i>
+                                    <span style="font-size: 0.75rem; color: var(--text-light);">3 new markets successfully entered</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1960,638 +1134,559 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta" id="contact">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Ready for Collaborative Innovation?</h2>
-                <p class="cta-subtitle">
-                    Let's explore how your expertise + AI can create something extraordinary. 
-                    Every conversation starts with understanding YOUR unique perspective and cultural context.
+    <section class="cta" style="padding: var(--space-5xl) 0; background: var(--gradient-cultural); color: white; position: relative; overflow: hidden;">
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="cta-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: var(--space-md); color: white;">Ready to Bridge Cultures with AI?</h2>
+                <p style="font-size: 1.25rem; margin-bottom: var(--space-2xl); color: rgba(255, 255, 255, 0.9); line-height: 1.6;">
+                    Let's explore how collaborative AI innovation can transform your business through cultural intelligence and authentic human connection.
                 </p>
                 
-                <div class="cta-promise">
-                    95% of clients discover new insights about their own work through our process
+                <div class="cta-buttons" style="display: flex; gap: var(--space-lg); justify-content: center; flex-wrap: wrap;">
+                    <a href="#contact" class="btn btn-white btn-lg">
+                        <i class="fas fa-calendar-alt"></i>
+                        Book Cultural Discovery Call
+                    </a>
+                    <a href="#portfolio" class="btn btn-outline-white btn-lg">
+                        <i class="fas fa-book-open"></i>
+                        Explore Innovation Stories
+                    </a>
                 </div>
                 
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-white btn-lg">
-                        <i class="fas fa-handshake"></i>
-                        Start Our Knowledge Exchange Journey
-                    </a>
-                    <a href="#" class="btn btn-outline-white btn-lg">
-                        <i class="fas fa-calendar"></i>
-                        Schedule Cultural Discovery Call
-                    </a>
+                <div class="cta-trust" style="margin-top: var(--space-2xl); display: flex; align-items: center; justify-content: center; gap: var(--space-2xl); flex-wrap: wrap;">
+                    <div class="trust-item" style="display: flex; align-items: center; gap: var(--space-sm);">
+                        <i class="fas fa-shield-alt" style="color: rgba(255, 255, 255, 0.8);"></i>
+                        <span style="font-size: 0.875rem; color: rgba(255, 255, 255, 0.8);">100% Cultural Respect Guaranteed</span>
+                    </div>
+                    <div class="trust-item" style="display: flex; align-items: center; gap: var(--space-sm);">
+                        <i class="fas fa-handshake" style="color: rgba(255, 255, 255, 0.8);"></i>
+                        <span style="font-size: 0.875rem; color: rgba(255, 255, 255, 0.8);">Collaborative Innovation Process</span>
+                    </div>
+                    <div class="trust-item" style="display: flex; align-items: center; gap: var(--space-sm);">
+                        <i class="fas fa-chart-line" style="color: rgba(255, 255, 255, 0.8);"></i>
+                        <span style="font-size: 0.875rem; color: rgba(255, 255, 255, 0.8);">Measurable Business Results</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Pattern -->
+        <div class="cta-pattern" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.1; background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"2\" fill=\"white\"/></svg>'); background-size: 30px 30px; animation: float 20s linear infinite;"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact" style="padding: var(--space-5xl) 0; background: var(--bg-primary);">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: var(--space-4xl);">
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: var(--space-md); color: var(--text-primary);">Start Your Cultural AI Journey</h2>
+                <p style="font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Ready to bridge cultures and transform your business? Let's begin with a collaborative discovery conversation.</p>
+            </div>
+            
+            <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4xl); align-items: start;">
+                <div class="contact-info">
+                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: var(--space-lg); color: var(--text-primary);">Let's Connect</h3>
+                    
+                    <div class="contact-item" style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                        <div class="contact-icon" style="width: 50px; height: 50px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: white;">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-xs);">Email</h4>
+                            <a href="mailto:hello@pegearts.com" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">hello@pegearts.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item" style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                        <div class="contact-icon" style="width: 50px; height: 50px; background: var(--gradient-cultural); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: white;">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-xs);">Location</h4>
+                            <p style="color: var(--text-secondary); margin: 0;">Kamphaeng Phet, Thailand</p>
+                            <p style="color: var(--text-secondary); margin: 0; font-size: 0.875rem;">Serving clients globally</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item" style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                        <div class="contact-icon" style="width: 50px; height: 50px; background: var(--gradient-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: white;">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-xs);">Languages</h4>
+                            <p style="color: var(--text-secondary); margin: 0;">English, Thai, Japanese</p>
+                            <p style="color: var(--text-secondary); margin: 0; font-size: 0.875rem;">Cultural fluency in all three</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links" style="display: flex; gap: var(--space-md); margin-top: var(--space-2xl);">
+                        <a href="https://github.com/Pigletpeakkung" target="_blank" rel="noopener noreferrer" style="width: 45px; height: 45px; background: var(--bg-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); transition: all var(--transition-base); text-decoration: none;">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/thanatsitt-santisamranwilai" target="_blank" rel="noopener noreferrer" style="width: 45px; height: 45px; background: var(--bg-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); transition: all var(--transition-base); text-decoration: none;">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com/ThanatsittS" target="_blank" rel="noopener noreferrer" style="width: 45px; height: 45px; background: var(--bg-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); transition: all var(--transition-base); text-decoration: none;">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container" style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--border-radius-xl); box-shadow: var(--shadow-sm);">
+                    <form class="contact-form" style="display: flex; flex-direction: column; gap: var(--space-lg);">
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                            <label for="name" style="font-weight: 500; color: var(--text-primary); font-size: 0.875rem;">Name *</label>
+                            <input type="text" id="name" name="name" required style="padding: var(--space-md); border: 1px solid var(--border-light); border-radius: var(--border-radius); font-family: var(--font-primary); font-size: 1rem; transition: border-color var(--transition-base);">
+                        </div>
+                        
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                            <label for="email" style="font-weight: 500; color: var(--text-primary); font-size: 0.875rem;">Email *</label>
+                            <input type="email" id="email" name="email" required style="padding: var(--space-md); border: 1px solid var(--border-light); border-radius: var(--border-radius); font-family: var(--font-primary); font-size: 1rem; transition: border-color var(--transition-base);">
+                        </div>
+                        
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                            <label for="company" style="font-weight: 500; color: var(--text-primary); font-size: 0.875rem;">Company</label>
+                            <input type="text" id="company" name="company" style="padding: var(--space-md); border: 1px solid var(--border-light); border-radius: var(--border-radius); font-family: var(--font-primary); font-size: 1rem; transition: border-color var(--transition-base);">
+                        </div>
+                        
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                            <label for="service" style="font-weight: 500; color: var(--text-primary); font-size: 0.875rem;">Service Interest</label>
+                            <select id="service" name="service" style="padding: var(--space-md); border: 1px solid var(--border-light); border-radius: var(--border-radius); font-family: var(--font-primary); font-size: 1rem; transition: border-color var(--transition-base);">
+                                <option value="">Select a service...</option>
+                                <option value="cultural-ai">
+                                <option value="cultural-ai">Cross-Cultural AI Training</option>
+                                <option value="content-automation">Collaborative Content Automation</option>
+                                <option value="ecommerce-ai">Revenue-Driven E-Commerce AI</option>
+                                <option value="consultation">Cultural AI Consultation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                            <label for="message" style="font-weight: 500; color: var(--text-primary); font-size: 0.875rem;">Project Details *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your cultural AI challenge or innovation opportunity..." style="padding: var(--space-md); border: 1px solid var(--border-light); border-radius: var(--border-radius); font-family: var(--font-primary); font-size: 1rem; resize: vertical; transition: border-color var(--transition-base);"></textarea>
+                        </div>
+                        
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                            <label for="budget" style="font-weight: 500; color: var(--text-primary); font-size: 0.875rem;">Project Budget Range</label>
+                            <select id="budget" name="budget" style="padding: var(--space-md); border: 1px solid var(--border-light); border-radius: var(--border-radius); font-family: var(--font-primary); font-size: 1rem; transition: border-color var(--transition-base);">
+                                <option value="">Select budget range...</option>
+                                <option value="under-5k">Under £5,000</option>
+                                <option value="5k-15k">£5,000 - £15,000</option>
+                                <option value="15k-30k">£15,000 - £30,000</option>
+                                <option value="30k-plus">£30,000+</option>
+                                <option value="discuss">Let's discuss</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                            <label for="timeline" style="font-weight: 500; color: var(--text-primary); font-size: 0.875rem;">Timeline</label>
+                            <select id="timeline" name="timeline" style="padding: var(--space-md); border: 1px solid var(--border-light); border-radius: var(--border-radius); font-family: var(--font-primary); font-size: 1rem; transition: border-color var(--transition-base);">
+                                <option value="">Select timeline...</option>
+                                <option value="asap">ASAP</option>
+                                <option value="1-month">Within 1 month</option>
+                                <option value="2-3-months">2-3 months</option>
+                                <option value="3-6-months">3-6 months</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-cultural btn-lg" style="width: 100%; justify-content: center; margin-top: var(--space-md);">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                        
+                        <p style="font-size: 0.875rem; color: var(--text-secondary); text-align: center; margin-top: var(--space-sm);">
+                            I typically respond within 24 hours. All conversations are confidential and culturally respectful.
+                        </p>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" style="background: var(--bg-dark); color: white; padding: var(--space-4xl) 0 var(--space-2xl);" data-parallax="0.3">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <div class="logo-icon">
+            <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-2xl); margin-bottom: var(--space-2xl);">
+                <div class="footer-section">
+                    <div class="footer-logo" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-lg);">
+                        <div class="logo-icon" style="width: 40px; height: 40px; background: var(--gradient-cultural); border-radius: var(--border-radius); display: flex; align-items: center; justify-content: center; color: white;">
                             <i class="fas fa-globe-asia"></i>
                         </div>
-                        <span>Thanatsitt S.</span>
+                        <div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: var(--space-xs); color: white;">Thanatsitt S.</h3>
+                            <p style="font-size: 0.875rem; color: rgba(255, 255, 255, 0.7); margin: 0;">Cultural Bridge Builder</p>
+                        </div>
                     </div>
-                    <p class="footer-description">
-                        AI-Powered Cultural Bridge Builder transforming businesses through collaborative 
-                        knowledge exchange and cross-cultural innovation.
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; margin-bottom: var(--space-lg);">
+                        Bridging cultures through collaborative AI innovation. Transforming businesses with cultural intelligence and authentic human connection.
                     </p>
-                    <div class="footer-social">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="social-link">
+                    <div class="footer-social" style="display: flex; gap: var(--space-md);">
+                        <a href="https://github.com/Pigletpeakkung" target="_blank" rel="noopener noreferrer" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.7); transition: all var(--transition-base); text-decoration: none;">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="https://linkedin.com/in/thanatsitt-santisamranwilai" target="_blank" rel="noopener noreferrer" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.7); transition: all var(--transition-base); text-decoration: none;">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com/ThanatsittS" target="_blank" rel="noopener noreferrer" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.7); transition: all var(--transition-base); text-decoration: none;">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Cross-Cultural AI Training</a></li>
-                        <li><a href="#">Content Automation</a></li>
-                        <li><a href="#">E-Commerce AI</a></li>
-                        <li><a href="#">Cultural Voice Training</a></li>
-                        <li><a href="#">Multilingual Expansion</a></li>
+                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: var(--space-lg); color: white;">Services</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-sm);">
+                        <li><a href="#services" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color var(--transition-base);">Cross-Cultural AI Training</a></li>
+                        <li><a href="#services" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color var(--transition-base);">Collaborative Content Automation</a></li>
+                        <li><a href="#services" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color var(--transition-base);">Revenue-Driven E-Commerce AI</a></li>
+                        <li><a href="#contact" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color var(--transition-base);">Cultural AI Consultation</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Expertise</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Cultural AI Integration</a></li>
-                        <li><a href="#">Collaborative Innovation</a></li>
-                        <li><a href="#">Revenue-Driven Solutions</a></li>
-                        <li><a href="#">Knowledge Exchange</a></li>
-                        <li><a href="#">Cross-Cultural Design</a></li>
+                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: var(--space-lg); color: white;">Company</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-sm);">
+                        <li><a href="#about" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color var(--transition-base);">About</a></li>
+                        <li><a href="#portfolio" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color var(--transition-base);">Portfolio</a></li>
+                        <li><a href="#testimonials" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color var(--transition-base);">Testimonials</a></li>
+                        <li><a href="#contact" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color var(--transition-base);">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Connect</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Schedule Discovery Call</a></li>
-                        <li><a href="#">Collaboration Partnership</a></li>
-                        <li><a href="#">Portfolio Review</a></li>
-                        <li><a href="#">Cultural Consultation</a></li>
-                        <li><a href="#">Project Inquiry</a></li>
-                    </ul>
+                    <h4 style="font-size: 1.125rem; font-weight: 600; margin-bottom: var(--space-lg); color: white;">Contact Info</h4>
+                    <div class="contact-info" style="display: flex; flex-direction: column; gap: var(--space-md);">
+                        <div class="contact-item" style="display: flex; align-items: center; gap: var(--space-sm);">
+                            <i class="fas fa-envelope" style="color: rgba(255, 255, 255, 0.7); width: 16px;"></i>
+                            <a href="mailto:hello@pegearts.com" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color var(--transition-base);">hello@pegearts.com</a>
+                        </div>
+                        <div class="contact-item" style="display: flex; align-items: center; gap: var(--space-sm);">
+                            <i class="fas fa-map-marker-alt" style="color: rgba(255, 255, 255, 0.7); width: 16px;"></i>
+                            <span style="color: rgba(255, 255, 255, 0.7);">Kamphaeng Phet, Thailand</span>
+                        </div>
+                        <div class="contact-item" style="display: flex; align-items: center; gap: var(--space-sm);">
+                            <i class="fas fa-globe" style="color: rgba(255, 255, 255, 0.7); width: 16px;"></i>
+                            <span style="color: rgba(255, 255, 255, 0.7);">Serving clients globally</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2024 Thanatsitt Santisamranwilai. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            <div class="footer-bottom" style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: var(--space-lg); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-md);">
+                <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.875rem; margin: 0;">
+                    © 2024 Thanatsitt Santisamranwilai. All rights reserved.
+                </p>
+                <div class="footer-links" style="display: flex; gap: var(--space-lg);">
+                    <a href="/privacy" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.875rem; transition: color var(--transition-base);">Privacy Policy</a>
+                    <a href="/terms" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.875rem; transition: color var(--transition-base);">Terms of Service</a>
+                    <a href="/cookies" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.875rem; transition: color var(--transition-base);">Cookie Policy</a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Additional CSS for Enhanced Interactions -->
+    <style>
+        /* Enhanced Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr !important;
+                gap: var(--space-2xl) !important;
+                text-align: center;
+            }
+            
+            .hero-metrics {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .footer-bottom {
+                flex-direction: column !important;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                flex-direction: column !important;
+                align-items: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column !important;
+                align-items: center;
+            }
+            
+            .cta-trust {
+                flex-direction: column !important;
+                gap: var(--space-md) !important;
+            }
+        }
+        
+        /* Enhanced Hover Effects */
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-card:hover .portfolio-image img {
+            transform: scale(1.05);
+        }
+        
+        .service-card:hover,
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .social-links a:hover,
+        .footer-social a:hover {
+            background: var(--primary-color) !important;
+            color: white !important;
+            transform: translateY(-2px);
+        }
+        
+        /* Enhanced Form Styling */
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+        
+        .contact-form input:invalid,
+        .contact-form textarea:invalid {
+            border-color: #ef4444;
+        }
+        
+        .contact-form input:valid,
+        .contact-form textarea:valid {
+            border-color: var(--secondary-color);
+        }
+        
+        /* Enhanced Navigation */
+        .nav-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* Enhanced Accessibility */
+        .btn:focus,
+        .nav-link:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+        
+        /* Enhanced Loading Animation */
+        .loading-overlay {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+        
+        body.loaded .loading-overlay {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        /* Enhanced Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .bg-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .bg-element:nth-child(2) {
+            animation-delay: -3s;
+        }
+        
+        /* Enhanced Gradient Animations */
+        .hero-title {
+            background-size: 200% 200%;
+            animation: gradientShift 5s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Enhanced Scroll Indicators */
+        .section-header {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .section-header.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Enhanced Performance */
+        .portfolio-image,
+        .service-icon,
+        .testimonial-card {
+            contain: layout style paint;
+        }
+        
+        /* Enhanced Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #1f2937;
+                --bg-secondary: #111827;
+                --text-primary: #f9fafb;
+                --text-secondary: #d1d5db;
+                --border-light: #374151;
+            }
+        }
+    </style>
+
+    <!-- Optimized GSAP Animation Script -->
+    <script src="optimized-cultural-animations.js"></script>
+    
+    <!-- Form Handling Script -->
     <script>
-        // Load content from JSON file
-        let contentData = null;
-
-        // Enhanced Cultural Bridge Builder Website JavaScript
-        class CulturalBridgeWebsite {
-            constructor() {
-                this.loadContent();
-                this.init();
-            }
-
-            async loadContent() {
-                try {
-                    const response = await fetch('content.json');
-                    contentData = await response.json();
-                    this.populateContent();
-                } catch (error) {
-                    console.log('Using embedded content data');
-                    // Fallback to embedded content
-                    contentData = {
-                        "hero": {
-                            "name": "Thanatsitt Santisamranwilai",
-                            "title": "AI-Powered Cultural Bridge Builder",
-                            "tagline": "Where AI Meets Cultural Intelligence",
-                            "subtitle": "The only AI Solutions Architect who transforms businesses through collaborative knowledge exchange and cross-cultural innovation",
-                            "value_proposition": "I don't just implement AI—I facilitate transformative knowledge exchange between cultures, technologies, and human insights",
-                            "location": {
-                                "city": "Kamphaeng Phet",
-                                "country": "Thailand",
-                                "cultural_bridges": ["London-Tokyo-Bangkok Cultural Fluency"],
-                                "availability": "Open to Remote/Hybrid Globally"
-                            },
-                            "key_metrics": [
-                                {
-                                    "value": "30%",
-                                    "label": "Revenue Increases",
-                                    "description": "Through collaborative AI strategies",
-                                    "icon": "fas fa-rocket"
-                                },
-                                {
-                                    "value": "95%",
-                                    "label": "Client Discovery Rate",
-                                    "description": "Gain new insights about their work",
-                                    "icon": "fas fa-lightbulb"
-                                },
-                                {
-                                    "value": "3",
-                                    "label": "Cultural Contexts",
-                                    "description": "Thai, Western, Japanese expertise",
-                                    "icon": "fas fa-globe"
-                                },
-                                {
-                                    "value": "£50K+",
-                                    "label": "Collaborative Revenue",
-                                    "description": "Generated through knowledge exchange",
-                                    "icon": "fas fa-pound-sign"
-                                }
-                            ]
-                        }
-                    };
-                    this.populateContent();
-                }
-            }
-
-            populateContent() {
-                if (contentData && contentData.hero) {
-                    // Update hero metrics if data is available
-                    const metricsContainer = document.querySelector('.hero-metrics');
-                    if (metricsContainer && contentData.hero.key_metrics) {
-                        metricsContainer.innerHTML = contentData.hero.key_metrics.map(metric => `
-                            <div class="metric-item float">
-                                <span class="metric-value">${metric.value}</span>
-                                <span class="metric-label">${metric.label}</span>
-                            </div>
-                        `).join('');
-                    }
-                }
-            }
-
-            init() {
-                this.setupNavigation();
-                this.setupAnimations();
-                this.setupCounters();
-                this.setupParallax();
-                this.setupMobileMenu();
-                this.setupScrollEffects();
-                this.setupCulturalAnimations();
-            }
-
-            setupNavigation() {
-                const header = document.querySelector('.header');
-                let lastScrollY = window.scrollY;
-
-                window.addEventListener('scroll', () => {
-                    const currentScrollY = window.scrollY;
+        // Enhanced Form Handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.querySelector('.contact-form');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
                     
-                    if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                        header.style.transform = 'translateY(-100%)';
-                    } else {
-                        header.style.transform = 'translateY(0)';
-                    }
+                    // Get form data
+                    const formData = new FormData(contactForm);
+                    const submitButton = contactForm.querySelector('button[type="submit"]');
                     
-                    lastScrollY = currentScrollY;
-                });
-
-                // Smooth scrolling for navigation links
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const target = document.querySelector(anchor.getAttribute('href'));
-                        if (target) {
-                            target.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
-                        }
-                    });
-                });
-
-                // Active navigation highlighting
-                const sections = document.querySelectorAll('section[id]');
-                const navLinks = document.querySelectorAll('.nav-link');
-
-                window.addEventListener('scroll', () => {
-                    let current = '';
-                    sections.forEach(section => {
-                        const sectionTop = section.offsetTop;
-                        const sectionHeight = section.clientHeight;
-                        if (scrollY >= sectionTop - 200) {
-                            current = section.getAttribute('id');
-                        }
-                    });
-
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${current}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                });
-            }
-
-            setupAnimations() {
-                // Intersection Observer for animations
-                const animationObserver = new IntersectionObserver(
-                    (entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                entry.target.style.animationPlayState = 'running';
-                                entry.target.classList.add('animated');
-                            }
-                        });
-                    },
-                    { threshold: 0.1 }
-                );
-
-                // Observe elements with animation classes
-                document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
-                    el.style.animationPlayState = 'paused';
-                    animationObserver.observe(el);
-                });
-
-                // Staggered animations for cards
-                const cardSections = ['.usp-grid', '.differentiators', '.services-grid', '.portfolio-grid', '.testimonials-grid'];
-                
-                cardSections.forEach(sectionSelector => {
-                    const cards = document.querySelectorAll(`${sectionSelector} > *`);
-                    cards.forEach((card, index) => {
-                        card.style.animationDelay = `${index * 0.2}s`;
-                    });
-                });
-            }
-
-            setupCounters() {
-                const counters = document.querySelectorAll('.metric-value');
-                const counterObserver = new IntersectionObserver(
-                    (entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                this.animateCounter(entry.target);
-                                counterObserver.unobserve(entry.target);
-                            }
-                        });
-                    },
-                    { threshold: 0.5 }
-                );
-
-                counters.forEach(counter => {
-                    counterObserver.observe(counter);
-                });
-            }
-
-            animateCounter(element) {
-                const text = element.textContent;
-                const hasPercent = text.includes('%');
-                const hasPlus = text.includes('+');
-                const hasPound = text.includes('£');
-                const hasK = text.includes('K');
-                
-                let targetValue = 0;
-                let suffix = '';
-                
-                if (hasPercent) {
-                    targetValue = parseInt(text.replace('%', ''));
-                    suffix = '%';
-                } else if (hasPlus) {
-                    if (hasPound && hasK) {
-                        targetValue = parseInt(text.replace('£', '').replace('K+', ''));
-                        suffix = 'K+';
-                    } else {
-                        targetValue = parseInt(text.replace('+', ''));
-                        suffix = '+';
-                    }
-                } else if (!isNaN(parseInt(text))) {
-                    targetValue = parseInt(text);
-                } else {
-                    // Handle non-numeric values
-                    return;
-                }
-
-                const duration = 2000;
-                const step = targetValue / (duration / 16);
-                let current = 0;
-
-                const timer = setInterval(() => {
-                    current += step;
-                    if (current >= targetValue) {
-                        current = targetValue;
-                        clearInterval(timer);
-                    }
+                    // Disable button and show loading
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
                     
-                    let displayValue = Math.floor(current);
-                    if (hasPound) {
-                        element.textContent = `£${displayValue}${suffix}`;
-                    } else {
-                        element.textContent = `${displayValue}${suffix}`;
-                    }
-                }, 16);
-            }
-
-            setupParallax() {
-                const hero = document.querySelector('.hero');
-                const heroContent = document.querySelector('.hero-content');
-
-                window.addEventListener('scroll', () => {
-                    const scrolled = window.pageYOffset;
-                    const parallaxSpeed = 0.5;
-                    
-                    if (scrolled < hero.offsetHeight) {
-                        const translateY = scrolled * parallaxSpeed;
-                        heroContent.style.transform = `translateY(${translateY}px)`;
-                    }
-                });
-            }
-
-            setupMobileMenu() {
-                const mobileToggle = document.querySelector('.mobile-menu-toggle');
-                const navLinks = document.querySelector('.nav-links');
-
-                if (mobileToggle) {
-                    mobileToggle.addEventListener('click', () => {
-                        navLinks.classList.toggle('active');
+                    // Simulate form submission (replace with actual endpoint)
+                    setTimeout(() => {
+                        // Show success message
+                        showNotification('Message sent successfully! I\'ll respond within 24 hours.', 'success');
                         
-                        // Animate hamburger icon
-                        const icon = mobileToggle.querySelector('i');
-                        icon.classList.toggle('fa-bars');
-                        icon.classList.toggle('fa-times');
-                    });
-
-                    // Close menu when clicking outside
-                    document.addEventListener('click', (e) => {
-                        if (!e.target.closest('.nav') && navLinks.classList.contains('active')) {
-                            navLinks.classList.remove('active');
-                            const icon = mobileToggle.querySelector('i');
-                            icon.classList.add('fa-bars');
-                            icon.classList.remove('fa-times');
-                        }
-                    });
-                }
-            }
-
-            setupScrollEffects() {
-                // Scroll-triggered animations
-                const scrollObserver = new IntersectionObserver(
-                    (entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                entry.target.style.opacity = '1';
-                                entry.target.style.transform = 'translateY(0)';
-                            }
-                        });
-                    },
-                    { threshold: 0.1 }
-                );
-
-                // Apply scroll effects to sections
-                document.querySelectorAll('section').forEach(section => {
-                    section.style.opacity = '0';
-                    section.style.transform = 'translateY(30px)';
-                    section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-                    scrollObserver.observe(section);
-                });
-
-                // Card hover effects
-                document.querySelectorAll('.usp-card, .service-card, .portfolio-card, .testimonial-card').forEach(card => {
-                    card.addEventListener('mouseenter', () => {
-                        card.style.transform = 'translateY(-10px) scale(1.02)';
-                    });
-
-                    card.addEventListener('mouseleave', () => {
-                        card.style.transform = 'translateY(0) scale(1)';
-                    });
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Re-enable button
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                    }, 2000);
                 });
             }
-
-            setupCulturalAnimations() {
-                // Cultural pulse animation for icons
-                const culturalIcons = document.querySelectorAll('.logo-icon, .usp-icon, .diff-icon');
-                culturalIcons.forEach(icon => {
-                    icon.classList.add('cultural-pulse');
-                });
-
-                // Floating animation for metrics
-                const floatingElements = document.querySelectorAll('.metric-item');
-                floatingElements.forEach((element, index) => {
-                    element.style.animationDelay = `${index * 0.5}s`;
-                });
-
-                // Cultural gradient animation
-                const gradientElements = document.querySelectorAll('.hero-title, .cta');
-                gradientElements.forEach(element => {
-                    element.style.backgroundSize = '200% 200%';
-                    element.style.animation = 'gradientShift 4s ease-in-out infinite';
-                });
-            }
-        }
-
-        // Initialize the website
-        document.addEventListener('DOMContentLoaded', () => {
-            new CulturalBridgeWebsite();
         });
-
-        // Add additional CSS animations
-        const additionalStyles = `
-            @keyframes gradientShift {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
+        
+        // Notification System
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? 'var(--secondary-color)' : 'var(--primary-color)'};
+                color: white;
+                padding: var(--space-md) var(--space-lg);
+                border-radius: var(--border-radius);
+                box-shadow: var(--shadow-lg);
+                z-index: 10000;
+                opacity: 0;
+                transform: translateX(100%);
+                transition: all var(--transition-base);
+                max-width: 300px;
+                font-size: 0.875rem;
+                font-weight: 500;
+            `;
             
-            @media (max-width: 768px) {
-                .nav-links {
-                    position: fixed;
-                    top: var(--header-height);
-                    left: 0;
-                    right: 0;
-                    background: white;
-                    flex-direction: column;
-                    padding: var(--space-lg);
-                    box-shadow: var(--shadow-lg);
-                    transform: translateY(-100%);
-                    opacity: 0;
-                    visibility: hidden;
-                    transition: all var(--transition-base);
-                    z-index: 999;
-                }
-                
-                .nav-links.active {
-                    transform: translateY(0);
-                    opacity: 1;
-                    visibility: visible;
-                }
-                
-                .nav-links li {
-                    margin: var(--space-sm) 0;
-                }
-                
-                .service-outcomes {
-                    grid-template-columns: 1fr;
-                }
-                
-                .portfolio-results {
-                    grid-template-columns: 1fr;
-                }
-                
-                .hero-location {
-                    justify-content: center;
-                }
-            }
+            notification.textContent = message;
+            document.body.appendChild(notification);
             
-            .animated {
-                animation-play-state: running !important;
-            }
-        `;
-
-        // Inject additional styles
-        const style = document.createElement('style');
-        style.textContent = additionalStyles;
-        document.head.appendChild(style);
-
-        // Performance optimization: Debounce scroll events
-        function debounce(func, wait, immediate) {
-            let timeout;
-            return function executedFunction(...args) {
-                const later = () => {
-                    timeout = null;
-                    if (!immediate) func(...args);
-                };
-                const callNow = immediate && !timeout;
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-                if (callNow) func(...args);
-            };
-        }
-
-        // Enhanced button interactions
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                // Create ripple effect
-                const ripple = document.createElement('span');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-                
-                ripple.style.cssText = `
-                    position: absolute;
-                    width: ${size}px;
-                    height: ${size}px;
-                    left: ${x}px;
-                    top: ${y}px;
-                    background: rgba(255, 255, 255, 0.3);
-                    border-radius: 50%;
-                    transform: scale(0);
-                    animation: ripple 0.6s ease-out;
-                    pointer-events: none;
-                `;
-                
-                this.style.position = 'relative';
-                this.style.overflow = 'hidden';
-                this.appendChild(ripple);
-                
+            // Animate in
+            requestAnimationFrame(() => {
+                notification.style.opacity = '1';
+                notification.style.transform = 'translateX(0)';
+            });
+            
+            // Remove after 5 seconds
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateX(100%)';
                 setTimeout(() => {
-                    ripple.remove();
-                }, 600);
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 5000);
+        }
+        
+        // Enhanced Mobile Menu
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileToggle && navLinks) {
+                mobileToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    
+                    // Update icon
+                    const icon = mobileToggle.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                
+                // Close menu when clicking on link
+                navLinks.addEventListener('click', function(e) {
+                    if (e.target.classList.contains('nav-link')) {
+                        navLinks.classList.remove('active');
+                        const icon = mobileToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+        });
+        
+        // Enhanced Smooth Scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href').substring(1);
+                    const target = document.getElementById(targetId);
+                    
+                    if (target) {
+                        const headerHeight = document.querySelector('.header').offsetHeight;
+                        const targetPosition = target.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
             });
         });
-
-        // Add ripple animation
-        const rippleStyle = document.createElement('style');
-        rippleStyle.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(rippleStyle);
-
-        // Cultural theme switcher (optional enhancement)
-        let currentTheme = 'default';
-        const themes = {
-            default: {
-                primary: '#6366f1',
-                cultural: 'linear-gradient(135deg, #dc2626 0%, #d97706 50%, #0284c7 100%)'
-            },
-            thai: {
-                primary: '#dc2626',
-                cultural: 'linear-gradient(135deg, #dc2626 0%, #d97706 100%)'
-            },
-            japanese: {
-                primary: '#0284c7',
-                cultural: 'linear-gradient(135deg, #0284c7 0%, #6366f1 100%)'
-            },
-            western: {
-                primary: '#10b981',
-                cultural: 'linear-gradient(135deg, #10b981 0%, #6366f1 100%)'
-            }
-        };
-
-        // Smooth scroll enhancement
-        if (!('scrollBehavior' in document.documentElement.style)) {
-            const script = document.createElement('script');
-            script.src = 'https://cdn.jsdelivr.net/gh/iamdustan/smoothscroll@latest/dist/smoothscroll.min.js';
-            document.head.appendChild(script);
-        }
-
-        // Loading state management
-        window.addEventListener('load', () => {
-            document.body.classList.add('loaded');
-            
-            // Trigger initial animations
-            setTimeout(() => {
-                document.querySelectorAll('.fade-in').forEach((el, index) => {
-                    setTimeout(() => {
-                        el.style.animationPlayState = 'running';
-                    }, index * 100);
-                });
-            }, 300);
-        });
-
-        // Add loaded state styles
-        const loadedStyles = document.createElement('style');
-        loadedStyles.textContent = `
-            body:not(.loaded) {
-                overflow: hidden;
-            }
-            
-            body:not(.loaded)::before {
-                content: '';
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: var(--gradient-cultural);
-                z-index: 9999;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            body.loaded::before {
-                animation: fadeOut 0.5s ease-out forwards;
-            }
-            
-            @keyframes fadeOut {
-                to {
-                    opacity: 0;
-                    visibility: hidden;
-                }
-            }
-        `;
-        document.head.appendChild(loadedStyles);
     </script>
 </body>
 </html>
-
 
