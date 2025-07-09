@@ -24,12 +24,12 @@
 [build.processing.images]
   compress = true
 
-# Redirects for SEO and user experience
+# SPA redirect (must be last)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  
+
 # API redirects (if you have backend services)
 [[redirects]]
   from = "/api/*"
@@ -216,6 +216,82 @@
   to = "/#portfolio"
   status = 301
 
+# Security - block common attack patterns
+[[redirects]]
+  from = "/wp-admin/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/wp-content/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/wp-login.php"
+  to = "/404.html"
+  status = 404
+
+# Functions (if you add them later)
+[[redirects]]
+  from = "/api/contact"
+  to = "/.netlify/functions/contact"
+  status = 200
+
+[[redirects]]
+  from = "/api/analytics"
+  to = "/.netlify/functions/analytics"
+  status = 200
+
+# Language-specific (future)
+[[redirects]]
+  from = "/th/*"
+  to = "/th/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ja/*"
+  to = "/ja/index.html"
+  status = 200
+
+# Mobile redirects
+[[redirects]]
+  from = "/m/*"
+  to = "/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/mobile/*"
+  to = "/:splat"
+  status = 301
+
+# Verification files
+[[redirects]]
+  from = "/google*.html"
+  to = "/google-site-verification.html"
+  status = 200
+
+[[redirects]]
+  from = "/BingSiteAuth.xml"
+  to = "/bing-site-verification.xml"
+  status = 200
+
+# Analytics shortcuts
+[[redirects]]
+  from = "/analytics"
+  to = "https://analytics.google.com/analytics/web/#/p123456789/reports/intelligenthome"
+  status = 301
+
+[[redirects]]
+  from = "/search-console"
+  to = "https://search.google.com/search-console"
+  status = 301
+
 # Security Headers
 [[headers]]
   for = "/*"
@@ -230,40 +306,8 @@
     # SEO headers
     X-Robots-Tag = "index, follow"
     
-    # Content Security Policy
-    Content-Security-Policy = """
-      default-src 'self';
-      script-src 'self' 'unsafe-inline' 'unsafe-eval' 
-        https://www.googletagmanager.com 
-        https://www.google-analytics.com 
-        https://connect.facebook.net 
-        https://www.facebook.com
-        https://cdnjs.cloudflare.com;
-      style-src 'self' 'unsafe-inline' 
-        https://fonts.googleapis.com 
-        https://cdnjs.cloudflare.com;
-      font-src 'self' 
-        https://fonts.gstatic.com 
-        https://cdnjs.cloudflare.com;
-      img-src 'self' data: blob: 
-        https://raw.githubusercontent.com 
-        https://via.placeholder.com 
-        https://github.com
-        https://www.google-analytics.com
-        https://www.facebook.com;
-      connect-src 'self' 
-        https://www.google-analytics.com 
-        https://api.github.com
-        https://fonts.googleapis.com
-        https://your-api-endpoint.com;
-      frame-src 'self' 
-        https://www.youtube.com 
-        https://www.facebook.com;
-      object-src 'none';
-      base-uri 'self';
-      form-action 'self';
-      upgrade-insecure-requests;
-    """
+    # Content Security Policy (simplified for compatibility)
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: blob: https://raw.githubusercontent.com https://via.placeholder.com https://github.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://api.github.com https://fonts.googleapis.com; object-src 'none'; base-uri 'self'; form-action 'self';"
     
     # Performance headers
     X-DNS-Prefetch-Control = "on"
@@ -414,19 +458,14 @@
     X-Robots-Tag = "noindex, nofollow"
 
 # Form handling
-[forms]
-  # Enable form handling
-  [forms.contact]
-    name = "contact"
-    action = "/"
-    method = "POST"
-    
+[[forms]]
+  name = "contact"
+
 # Environment variables for different contexts
 [context.production.environment]
   NODE_ENV = "production"
   API_URL = "https://your-api-endpoint.com"
   GOOGLE_ANALYTICS_ID = "G-XXXXXXXXXX"
-  FACEBOOK_PIXEL_ID = "XXXXXXXXXX"
 
 [context.deploy-preview.environment]
   NODE_ENV = "development"
@@ -437,133 +476,21 @@
   NODE_ENV = "development"
   API_URL = "https://dev-api-endpoint.com"
 
-# Plugins for enhanced functionality
+# Simplified plugins configuration (removed problematic ones)
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
   
   [plugins.inputs]
     output_path = "lighthouse"
-    
-[[plugins]]
-  package = "netlify-plugin-html-validate"
-  
-  [plugins.inputs]
-    enable = true
-    
-[[plugins]]
-  package = "netlify-plugin-minify-html"
-  
-  [plugins.inputs]
-    contexts = ["production"]
-    
-[[plugins]]
-  package = "netlify-plugin-checklinks"
-  
-  [plugins.inputs]
-    entryPoints = ["*.html"]
-    recursive = true
-    pretty = true
-    
+
 [[plugins]]
   package = "netlify-plugin-sitemap"
   
   [plugins.inputs]
     baseUrl = "https://pegearts.com"
-    
+    prettify = true
+    exclude = ["/404.html", "/admin/*"]
+
 # Functions (if you add serverless functions later)
 [functions]
   directory = "functions"
-  
-# Edge functions (for advanced use cases)
-[[edge_functions]]
-  function = "geo-location"
-  path = "/*"
-  
-# Advanced redirects with conditions
-[[redirects]]
-  from = "/api/contact"
-  to = "/.netlify/functions/contact"
-  status = 200
-  
-[[redirects]]
-  from = "/api/analytics"
-  to = "/.netlify/functions/analytics"
-  status = 200
-  
-# Language-specific redirects (for future internationalization)
-[[redirects]]
-  from = "/th/*"
-  to = "/th/index.html"
-  status = 200
-  
-[[redirects]]
-  from = "/ja/*"
-  to = "/ja/index.html"
-  status = 200
-  
-# Mobile-specific redirects
-[[redirects]]
-  from = "/m/*"
-  to = "/:splat"
-  status = 301
-  
-[[redirects]]
-  from = "/mobile/*"
-  to = "/:splat"
-  status = 301
-
-# Legacy URL redirects (common patterns)
-[[redirects]]
-  from = "/wp-admin/*"
-  to = "/404.html"
-  status = 404
-  
-[[redirects]]
-  from = "/wp-content/*"
-  to = "/404.html"
-  status = 404
-  
-[[redirects]]
-  from = "/admin/*"
-  to = "/404.html"
-  status = 404
-  
-[[redirects]]
-  from = "/wp-login.php"
-  to = "/404.html"
-  status = 404
-
-# Social media verification files
-[[redirects]]
-  from = "/google*.html"
-  to = "/google-site-verification.html"
-  status = 200
-  
-[[redirects]]
-  from = "/BingSiteAuth.xml"
-  to = "/bing-site-verification.xml"
-  status = 200
-
-# Analytics and tracking redirects
-[[redirects]]
-  from = "/analytics"
-  to = "https://analytics.google.com/analytics/web/#/p123456789/reports/intelligenthome"
-  status = 301
-  
-[[redirects]]
-  from = "/search-console"
-  to = "https://search.google.com/search-console"
-  status = 301
-
-# Development and testing redirects
-[[redirects]]
-  from = "/test"
-  to = "/index.html"
-  status = 200
-  condition = "Role=admin"
-  
-[[redirects]]
-  from = "/dev"
-  to = "/index.html"
-  status = 200
-  condition = "Role=developer"
