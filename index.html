@@ -97,11 +97,6 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- GSAP Animation Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
-    
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -364,10 +359,7 @@
         }
         
         body.loaded .loading-overlay {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transition: opacity 0.5s ease-out;
+            display: none;
         }
         
         /* Typography */
@@ -584,6 +576,158 @@
                 display: block;
             }
         }
+        
+        /* Enhanced Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr !important;
+                gap: var(--space-2xl) !important;
+                text-align: center;
+            }
+            
+            .hero-metrics {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .footer-bottom {
+                flex-direction: column !important;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                flex-direction: column !important;
+                align-items: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column !important;
+                align-items: center;
+            }
+            
+            .cta-trust {
+                flex-direction: column !important;
+                gap: var(--space-md) !important;
+            }
+        }
+        
+        /* Enhanced Hover Effects */
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-card:hover .portfolio-image img {
+            transform: scale(1.05);
+        }
+        
+        .service-card:hover,
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .social-links a:hover,
+        .footer-social a:hover {
+            background: var(--primary-color) !important;
+            color: white !important;
+            transform: translateY(-2px);
+        }
+        
+        /* Enhanced Form Styling */
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+        
+        .contact-form input:invalid,
+        .contact-form textarea:invalid {
+            border-color: #ef4444;
+        }
+        
+        .contact-form input:valid,
+        .contact-form textarea:valid {
+            border-color: var(--secondary-color);
+        }
+        
+        /* Enhanced Navigation */
+        .nav-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* Enhanced Accessibility */
+        .btn:focus,
+        .nav-link:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+        
+        /* Enhanced Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .bg-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .bg-element:nth-child(2) {
+            animation-delay: -3s;
+        }
+        
+        /* Enhanced Gradient Animations */
+        .hero-title {
+            background-size: 200% 200%;
+            animation: gradientShift 5s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Enhanced Scroll Indicators */
+        .section-header {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .section-header.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Enhanced Performance */
+        .portfolio-image,
+        .service-icon,
+        .testimonial-card {
+            contain: layout style paint;
+        }
+        
+        /* Enhanced Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #1f2937;
+                --bg-secondary: #111827;
+                --text-primary: #f9fafb;
+                --text-secondary: #d1d5db;
+                --border-light: #374151;
+            }
+        }
     </style>
 </head>
 
@@ -633,336 +777,43 @@
                         <i class="fas fa-brain"></i>
                         <span>AI-Powered Cultural Bridge Builder</span>
                     </div>
-                    
-                    <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: var(--space-md); background: var(--gradient-cultural); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; background-size: 200% 200%;">Thanatsitt Santisamranwilai</h1>
-                    
-                    <p class="hero-subtitle" style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: var(--space-md); font-weight: 500;">Where AI Meets Cultural Intelligence</p>
-                    
-                    <p class="hero-value-prop" style="font-size: 1.25rem; color: var(--text-primary); margin-bottom: var(--space-2xl); font-weight: 600; line-height: 1.4;">
-                        I don't just implement AI—I facilitate transformative knowledge exchange between cultures, technologies, and human insights
-                    </p>
-                    
-                    <div class="hero-location" style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-2xl); flex-wrap: wrap;">
-                        <div class="location-item" style="display: flex; align-items: center; gap: var(--space-sm); color: var(--text-secondary); font-size: 0.875rem;">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Kamphaeng Phet, Thailand</span>
-                        </div>
-                        <div class="location-item" style="display: flex; align-items: center; gap: var(--space-sm); color: var(--text-secondary); font-size: 0.875rem;">
-                            <i class="fas fa-globe"></i>
-                            <span>London-Tokyo-Bangkok Cultural Fluency</span>
-                        </div>
-                    </div>
-                    
-                    <div class="hero-buttons" style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
-                        <a href="#services" class="btn btn-cultural btn-lg">
-                            <i class="fas fa-users"></i>
-                            Explore Collaborative AI Solutions
-                        </a>
-                        <a href="#portfolio" class="btn btn-secondary btn-lg">
-                            <i class="fas fa-book-open"></i>
-                            See Cultural Innovation Stories
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="hero-metrics" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg);">
-                    <div class="metric-item gsap-optimized" style="text-align: center; padding: var(--space-lg); background: rgba(255, 255, 255, 0.8); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-sm); transition: transform var(--transition-base);">
-                        <span class="metric-value" style="font-size: 2rem; font-weight: 700; color: var(--primary-color); display: block; margin-bottom: var(--space-sm);">30%</span>
-                        <span class="metric-label" style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">Revenue Increases</span>
-                    </div>
-                    <div class="metric-item gsap-optimized" style="text-align: center; padding: var(--space-lg); background: rgba(255, 255, 255, 0.8); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-sm); transition: transform var(--transition-base);">
-                        <span class="metric-value" style="font-size: 2rem; font-weight: 700; color: var(--primary-color); display: block; margin-bottom: var(--space-sm);">95%</span>
-                                                <span class="metric-label" style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">Client Discovery Success</span>
-                    </div>
-                    <div class="metric-item gsap-optimized" style="text-align: center; padding: var(--space-lg); background: rgba(255, 255, 255, 0.8); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-sm); transition: transform var(--transition-base);">
-                        <span class="metric-value" style="font-size: 2rem; font-weight: 700; color: var(--primary-color); display: block; margin-bottom: var(--space-sm);">3</span>
-                        <span class="metric-label" style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">Cultural Contexts</span>
-                    </div>
-                    <div class="metric-item gsap-optimized" style="text-align: center; padding: var(--space-lg); background: rgba(255, 255, 255, 0.8); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-sm); transition: transform var(--transition-base);">
-                        <span class="metric-value" style="font-size: 2rem; font-weight: 700; color: var(--primary-color); display: block; margin-bottom: var(--space-sm);">£50K+</span>
-                        <span class="metric-label" style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">Client Value Created</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Background Elements -->
-        <div class="hero-bg-elements" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;">
-            <div class="bg-element" style="position: absolute; top: 20%; right: 10%; width: 200px; height: 200px; background: var(--gradient-primary); border-radius: 50%; opacity: 0.1; animation: float 6s ease-in-out infinite;"></div>
-            <div class="bg-element" style="position: absolute; bottom: 20%; left: 10%; width: 150px; height: 150px; background: var(--gradient-cultural); border-radius: 50%; opacity: 0.1; animation: float 8s ease-in-out infinite reverse;"></div>
-        </div>
-    </section>
-
-    <!-- USP Section -->
-    <section class="usp-section" id="about" style="padding: var(--space-5xl) 0; background: var(--bg-primary);">
-        <div class="container">
-            <div class="section-header" style="text-align: center; margin-bottom: var(--space-4xl);">
-                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: var(--space-md); color: var(--text-primary);">Why Cultural Intelligence Matters in AI</h2>
-                <p style="font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">AI without cultural context is just sophisticated automation. True innovation happens when technology understands human nuance.</p>
-            </div>
-            
-            <div class="usp-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-2xl); margin-bottom: var(--space-4xl);">
-                <div class="usp-card gsap-optimized" style="text-align: center; padding: var(--space-2xl); background: var(--bg-secondary); border-radius: var(--border-radius-xl); transition: transform var(--transition-base);" data-animate="fade-up" data-delay="0.1">
-                    <div class="usp-icon" style="width: 80px; height: 80px; margin: 0 auto var(--space-lg); background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: var(--space-md); color: var(--text-primary);">Collaborative Discovery</h3>
-                    <p class="usp-text" style="color: var(--text-secondary); line-height: 1.6;">I don't impose solutions—I facilitate knowledge exchange between your expertise and AI capabilities, creating truly collaborative innovations.</p>
-                </div>
-                
-                <div class="usp-card gsap-optimized" style="text-align: center; padding: var(--space-2xl); background: var(--bg-secondary); border-radius: var(--border-radius-xl); transition: transform var(--transition-base);" data-animate="fade-up" data-delay="0.2">
-                    <div class="usp-icon" style="width: 80px; height: 80px; margin: 0 auto var(--space-lg); background: var(--gradient-cultural); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">
-                        <i class="fas fa-globe-asia"></i>
-                    </div>
-                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: var(--space-md); color: var(--text-primary);">Cultural Intelligence</h3>
-                    <p class="usp-text" style="color: var(--text-secondary); line-height: 1.6;">My tri-cultural background (Thai-British-Japanese) enables AI solutions that truly understand diverse markets and communication styles.</p>
-                </div>
-                
-                <div class="usp-card gsap-optimized" style="text-align: center; padding: var(--space-2xl); background: var(--bg-secondary); border-radius: var(--border-radius-xl); transition: transform var(--transition-base);" data-animate="fade-up" data-delay="0.3">
-                    <div class="usp-icon" style="width: 80px; height: 80px; margin: 0 auto var(--space-lg); background: var(--gradient-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: var(--space-md); color: var(--text-primary);">Innovation Through Understanding</h3>
-                    <p class="usp-text" style="color: var(--text-secondary); line-height: 1.6;">Every AI solution begins with deep listening and cultural empathy, ensuring technology serves authentic human needs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services" style="padding: var(--space-5xl) 0; background: var(--bg-secondary);">
-        <div class="container">
-            <div class="section-header" style="text-align: center; margin-bottom: var(--space-4xl);">
-                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: var(--space-md); color: var(--text-primary);">Collaborative AI Solutions</h2>
-                <p style="font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Each service is designed through cultural understanding and collaborative innovation.</p>
-            </div>
-            
-            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-2xl);">
-                <div class="service-card gsap-optimized" style="background: var(--bg-primary); border-radius: var(--border-radius-xl); padding: var(--space-2xl); box-shadow: var(--shadow-sm); transition: transform var(--transition-base);" data-animate="slide-in-left" data-delay="0.1">
-                    <div class="service-header" style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
-                        <div class="service-icon" style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: var(--border-radius-lg); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white;">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <div>
-                            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-xs);">Cross-Cultural AI Training</h3>
-                            <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">AI systems that understand and respect cultural contexts</p>
-                        </div>
-                    </div>
-                    
-                    <div class="service-features" style="margin-bottom: var(--space-lg);">
-                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
-                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Cultural context integration</span>
-                        </div>
-                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
-                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Multi-language understanding</span>
-                        </div>
-                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
-                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Collaborative training process</span>
-                        </div>
-                    </div>
-                    
-                    <div class="service-outcomes" style="background: var(--bg-secondary); padding: var(--space-lg); border-radius: var(--border-radius); margin-bottom: var(--space-lg);">
-                        <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-sm);">Measurable Outcomes:</h4>
-                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
-                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">40% improved cultural accuracy</span>
-                        </div>
-                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
-                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">60% reduced cultural misunderstandings</span>
-                        </div>
-                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm);">
-                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">85% client satisfaction with cultural integration</span>
-                        </div>
-                    </div>
-                    
-                    <div class="service-pricing" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-lg);">
-                        <div class="pricing-info">
-                            <span style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">£5,000 - £25,000</span>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary); display: block;">Based on complexity</span>
-                        </div>
-                        <div class="timeline">
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">4-8 weeks</span>
-                        </div>
-                    </div>
-                    
-                    <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                        <i class="fas fa-comments"></i>
-                        Start Cultural Discovery
-                    </a>
-                </div>
-                
-                <div class="service-card gsap-optimized" style="background: var(--bg-primary); border-radius: var(--border-radius-xl); padding: var(--space-2xl); box-shadow: var(--shadow-sm); transition: transform var(--transition-base);" data-animate="slide-in-left" data-delay="0.2">
-                    <div class="service-header" style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
-                        <div class="service-icon" style="width: 60px; height: 60px; background: var(--gradient-cultural); border-radius: var(--border-radius-lg); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white;">
-                            <i class="fas fa-magic"></i>
-                        </div>
-                        <div>
-                            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-xs);">Collaborative Content Automation</h3>
-                            <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">AI that learns from your expertise to create authentic content</p>
-                        </div>
-                    </div>
-                    
-                    <div class="service-features" style="margin-bottom: var(--space-lg);">
-                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
-                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Voice and brand consistency</span>
-                        </div>
-                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
-                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Cultural tone adaptation</span>
-                        </div>
-                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
-                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Collaborative refinement process</span>
-                        </div>
-                    </div>
-                    
-                    <div class="service-outcomes" style="background: var(--bg-secondary); padding: var(--space-lg); border-radius: var(--border-radius); margin-bottom: var(--space-lg);">
-                        <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-sm);">Measurable Outcomes:</h4>
-                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
-                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">75% faster content creation</span>
-                        </div>
-                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
-                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">90% brand voice consistency</span>
-                        </div>
-                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm);">
-                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">50% improved engagement rates</span>
-                        </div>
-                    </div>
-                    
-                    <div class="service-pricing" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-lg);">
-                        <div class="pricing-info">
-                            <span style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">£3,000 - £15,000</span>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary); display: block;">Per automation system</span>
-                        </div>
-                        <div class="timeline">
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">2-6 weeks</span>
-                        </div>
-                    </div>
-                    
-                    <a href="#contact" class="btn btn-cultural" style="width: 100%; justify-content: center;">
-                        <i class="fas fa-rocket"></i>
-                        Begin Content Innovation
-                    </a>
-                </div>
-                
-                <div class="service-card gsap-optimized" style="background: var(--bg-primary); border-radius: var(--border-radius-xl); padding: var(--space-2xl); box-shadow: var(--shadow-sm); transition: transform var(--transition-base);" data-animate="slide-in-left" data-delay="0.3">
-                    <div class="service-header" style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
-                        <div class="service-icon" style="width: 60px; height: 60px; background: var(--gradient-secondary); border-radius: var(--border-radius-lg); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white;">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div>
-                            <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-xs);">Revenue-Driven E-Commerce AI</h3>
-                            <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">AI solutions designed through collaborative business understanding</p>
-                        </div>
-                    </div>
-                    
-                    <div class="service-features" style="margin-bottom: var(--space-lg);">
-                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
-                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Cultural market analysis</span>
-                        </div>
-                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
-                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Personalized user experiences</span>
-                        </div>
-                        <div class="feature-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
-                            <i class="fas fa-check-circle" style="color: var(--secondary-color); font-size: 0.875rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">Revenue optimization algorithms</span>
-                        </div>
-                    </div>
-                    
-                    <div class="service-outcomes" style="background: var(--bg-secondary); padding: var(--space-lg); border-radius: var(--border-radius); margin-bottom: var(--space-lg);">
-                        <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-sm);">Measurable Outcomes:</h4>
-                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
-                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">30% average revenue increase</span>
-                        </div>
-                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
-                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">45% improved conversion rates</span>
-                        </div>
-                        <div class="outcome-item" style="display: flex; align-items: center; gap: var(--space-sm);">
-                            <i class="fas fa-arrow-up" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">65% enhanced customer satisfaction</span>
-                        </div>
-                    </div>
-                    
-                    <div class="service-pricing" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-lg);">
-                        <div class="pricing-info">
-                            <span style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">£8,000 - £35,000</span>
-                            <span style="font-size: 0.875rem; color: var(--text-secondary); display: block;">Full implementation</span>
-                        </div>
-                        <div class="timeline">
-                            <span style="font-size: 0.875rem; color: var(--text-secondary);">6-12 weeks</span>
-                        </div>
-                    </div>
-                    
-                    <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                        <i class="fas fa-handshake"></i>
-                        Explore Revenue Growth
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio" style="padding: var(--space-5xl) 0; background: var(--bg-primary);">
-        <div class="container">
-            <div class="section-header" style="text-align: center; margin-bottom: var(--space-4xl);">
-                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: var(--space-md); color: var(--text-primary);">Cultural Innovation Stories</h2>
-                <p style="font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Real collaborations where cultural understanding transformed business outcomes.</p>
-            </div>
-            
-            <div class="portfolio-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-2xl);">
-                <div class="portfolio-card gsap-optimized" style="background: var(--bg-secondary); border-radius: var(--border-radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform var(--transition-base);" data-lazy="image">
-                    <div class="portfolio-image" style="height: 200px; background: var(--gradient-primary); position: relative; overflow: hidden;">
-                        <img data-src="https://via.placeholder.com/400x200/6366f1/ffffff?text=Thai+Fashion+AI" alt="Thai Fashion AI Platform" style="width: 100%; height: 100%; object-fit: cover; opacity: 0;" loading="lazy">
-                        <div class="portfolio-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(99, 102, 241, 0.8); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity var(--transition-base);">
+                                            <div class="portfolio-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(99, 102, 241, 0.8); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity var(--transition-base);">
                             <i class="fas fa-external-link-alt" style="font-size: 2rem; color: white;"></i>
                         </div>
                     </div>
                     <div class="portfolio-content" style="padding: var(--space-2xl);">
                         <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-sm);">Thai Fashion AI Platform</h3>
-                        <p style="color: var(--text-secondary); margin-bottom: var(--space-lg); font-size: 0.875rem; line-height: 1.6;">Collaborated with London-based fashion brand to create AI that understood Thai cultural aesthetics, resulting in 45% increase in Southeast Asian market penetration.</p>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-lg); font-size: 0.875rem; line-height: 1.6;">Collaborative AI system that understood traditional Thai aesthetics while appealing to Western markets. Achieved 45% revenue increase through cultural bridge-building.</p>
                         
                         <div class="portfolio-tags" style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-lg);">
-                            <span style="padding: var(--space-xs) var(--space-sm); background: rgba(99, 102, 241, 0.1); color: var(--primary-color); border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Cultural AI</span>
-                            <span style="padding: var(--space-xs) var(--space-sm); background: rgba(99, 102, 241, 0.1); color: var(--primary-color); border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Fashion Tech</span>
-                            <span style="padding: var(--space-xs) var(--space-sm); background: rgba(99, 102, 241, 0.1); color: var(--primary-color); border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Market Entry</span>
+                            <span style="padding: var(--space-xs) var(--space-sm); background: rgba(99, 102, 241, 0.1); color: var(--primary-color); border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Fashion AI</span>
+                            <span style="padding: var(--space-xs) var(--space-sm); background: rgba(99, 102, 241, 0.1); color: var(--primary-color); border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Cultural Bridge</span>
+                            <span style="padding: var(--space-xs) var(--space-sm); background: rgba(99, 102, 241, 0.1); color: var(--primary-color); border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Revenue Growth</span>
                         </div>
                         
                         <div class="portfolio-results" style="background: var(--bg-primary); padding: var(--space-lg); border-radius: var(--border-radius); margin-bottom: var(--space-lg);">
                             <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-sm);">Results:</h4>
                             <div class="result-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
                                 <i class="fas fa-chart-line" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
-                                <span style="font-size: 0.875rem; color: var(--text-secondary);">45% market penetration increase</span>
+                                <span style="font-size: 0.875rem; color: var(--text-secondary);">45% revenue increase</span>
                             </div>
                             <div class="result-item" style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-xs);">
                                 <i class="fas fa-users" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
-                                <span style="font-size: 0.875rem; color: var(--text-secondary);">200% user engagement boost</span>
+                                <span style="font-size: 0.875rem; color: var(--text-secondary);">300% customer engagement</span>
                             </div>
                             <div class="result-item" style="display: flex; align-items: center; gap: var(--space-sm);">
-                                <i class="fas fa-star" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
-                                <span style="font-size: 0.875rem; color: var(--text-secondary);">4.8/5 cultural authenticity rating</span>
+                                <i class="fas fa-globe" style="color: var(--secondary-color); font-size: 0.75rem;"></i>
+                                <span style="font-size: 0.875rem; color: var(--text-secondary);">2 new markets successfully entered</span>
                             </div>
                         </div>
                         
-                        <a href="#contact" class="btn btn-secondary" style="width: 100%; justify-content: center;">
-                            <i class="fas fa-comments"></i>
-                            Discuss Similar Project
+                        <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fas fa-lightbulb"></i>
+                            Discover Similar Innovation
                         </a>
                     </div>
                 </div>
+                
                 <div class="portfolio-card gsap-optimized" style="background: var(--bg-secondary); border-radius: var(--border-radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform var(--transition-base);" data-lazy="image">
                     <div class="portfolio-image" style="height: 200px; background: var(--gradient-cultural); position: relative; overflow: hidden;">
                         <img data-src="https://via.placeholder.com/400x200/dc2626/ffffff?text=Japanese+Content+AI" alt="Japanese Content AI System" style="width: 100%; height: 100%; object-fit: cover; opacity: 0;" loading="lazy">
@@ -1219,7 +1070,7 @@
                     </div>
                     
                     <div class="social-links" style="display: flex; gap: var(--space-md); margin-top: var(--space-2xl);">
-                        <a href="https://github.com/Pigletpeakkung" target="_blank" rel="noopener noreferrer" style="width: 45px; height: 45px; background: var(--bg-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); transition: all var(--transition-base); text-decoration: none;">
+                                                <a href="https://github.com/Pigletpeakkung" target="_blank" rel="noopener noreferrer" style="width: 45px; height: 45px; background: var(--bg-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); transition: all var(--transition-base); text-decoration: none;">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="https://linkedin.com/in/thanatsitt-santisamranwilai" target="_blank" rel="noopener noreferrer" style="width: 45px; height: 45px; background: var(--bg-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); transition: all var(--transition-base); text-decoration: none;">
@@ -1229,30 +1080,49 @@
                             <i class="fab fa-twitter"></i>
                         </a>
                     </div>
+                    
+                    <div class="contact-availability" style="margin-top: var(--space-2xl); padding: var(--space-lg); background: var(--bg-secondary); border-radius: var(--border-radius-lg);">
+                        <h4 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: var(--space-sm);">Current Availability</h4>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-sm); font-size: 0.875rem;">
+                            I'm currently accepting new collaborative projects for Q1 2024. Response time is typically within 24 hours.
+                        </p>
+                        <div class="availability-status" style="display: flex; align-items: center; gap: var(--space-sm);">
+                            <div style="width: 8px; height: 8px; background: var(--secondary-color); border-radius: 50%; animation: pulse 2s ease-in-out infinite alternate;"></div>
+                            <span style="font-size: 0.875rem; color: var(--secondary-color); font-weight: 500;">Available for new projects</span>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="contact-form-container" style="background: var(--bg-secondary); padding: var(--space-2xl); border-radius: var(--border-radius-xl); box-shadow: var(--shadow-sm);">
+                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: var(--space-lg); color: var(--text-primary);">Start Your Cultural Discovery</h3>
+                    
                     <form class="contact-form" style="display: flex; flex-direction: column; gap: var(--space-lg);">
-                        <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-sm);">
-                            <label for="name" style="font-weight: 500; color: var(--text-primary); font-size: 0.875rem;">Name *</label>
-                            <input type="text" id="name" name="name" required style="padding: var(--space-md); border: 1px solid var(--border-light); border-radius: var(--border-radius); font-family: var(--font-primary); font-size: 1rem; transition: border-color var(--transition-base);">
+                        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                                <label for="firstName" style="font-weight: 500; color: var(--text-primary); font-size: 0.875rem;">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required style="padding: var(--space-md); border: 1px solid var(--border-light); border-radius: var(--border-radius); font-family: var(--font-primary); font-size: 1rem; transition: border-color var(--transition-base);">
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                                <label for="lastName" style="font-weight: 500; color: var(--text-primary); font-size: 0.875rem;">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required style="padding: var(--space-md); border: 1px solid var(--border-light); border-radius: var(--border-radius); font-family: var(--font-primary); font-size: 1rem; transition: border-color var(--transition-base);">
+                            </div>
                         </div>
                         
-                        <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-sm);">
-                            <label for="email" style="font-weight: 500; color: var(--text-primary); font-size: 0.875rem;">Email *</label>
-                            <input type="email" id="email" name="email" required style="padding: var(--space-md); border: 1px solid var(--border-light); border-radius: var(--border-radius); font-family: var(--font-primary); font-size: 1rem; transition: border-color var(--transition-base);">
-                        </div>
-                        
-                        <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-sm);">
-                            <label for="company" style="font-weight: 500; color: var(--text-primary); font-size: 0.875rem;">Company</label>
-                            <input type="text" id="company" name="company" style="padding: var(--space-md); border: 1px solid var(--border-light); border-radius: var(--border-radius); font-family: var(--font-primary); font-size: 1rem; transition: border-color var(--transition-base);">
+                        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                                <label for="email" style="font-weight: 500; color: var(--text-primary); font-size: 0.875rem;">Email *</label>
+                                <input type="email" id="email" name="email" required style="padding: var(--space-md); border: 1px solid var(--border-light); border-radius: var(--border-radius); font-family: var(--font-primary); font-size: 1rem; transition: border-color var(--transition-base);">
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-sm);">
+                                <label for="company" style="font-weight: 500; color: var(--text-primary); font-size: 0.875rem;">Company</label>
+                                <input type="text" id="company" name="company" style="padding: var(--space-md); border: 1px solid var(--border-light); border-radius: var(--border-radius); font-family: var(--font-primary); font-size: 1rem; transition: border-color var(--transition-base);">
+                            </div>
                         </div>
                         
                         <div class="form-group" style="display: flex; flex-direction: column; gap: var(--space-sm);">
                             <label for="service" style="font-weight: 500; color: var(--text-primary); font-size: 0.875rem;">Service Interest</label>
                             <select id="service" name="service" style="padding: var(--space-md); border: 1px solid var(--border-light); border-radius: var(--border-radius); font-family: var(--font-primary); font-size: 1rem; transition: border-color var(--transition-base);">
                                 <option value="">Select a service...</option>
-                                <option value="cultural-ai">
                                 <option value="cultural-ai">Cross-Cultural AI Training</option>
                                 <option value="content-automation">Collaborative Content Automation</option>
                                 <option value="ecommerce-ai">Revenue-Driven E-Commerce AI</option>
@@ -1386,307 +1256,659 @@
         </div>
     </footer>
 
-    <!-- Additional CSS for Enhanced Interactions -->
-    <style>
-        /* Enhanced Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .hero-content {
-                grid-template-columns: 1fr !important;
-                gap: var(--space-2xl) !important;
-                text-align: center;
-            }
-            
-            .hero-metrics {
-                grid-template-columns: repeat(2, 1fr) !important;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr !important;
-            }
-            
-            .footer-bottom {
-                flex-direction: column !important;
-                text-align: center;
-            }
-            
-            .hero-buttons {
-                flex-direction: column !important;
-                align-items: center;
-            }
-            
-            .cta-buttons {
-                flex-direction: column !important;
-                align-items: center;
-            }
-            
-            .cta-trust {
-                flex-direction: column !important;
-                gap: var(--space-md) !important;
-            }
-        }
-        
-        /* Enhanced Hover Effects */
-        .portfolio-card:hover .portfolio-overlay {
-            opacity: 1;
-        }
-        
-        .portfolio-card:hover .portfolio-image img {
-            transform: scale(1.05);
-        }
-        
-        .service-card:hover,
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .social-links a:hover,
-        .footer-social a:hover {
-            background: var(--primary-color) !important;
-            color: white !important;
-            transform: translateY(-2px);
-        }
-        
-        /* Enhanced Form Styling */
-        .contact-form input:focus,
-        .contact-form textarea:focus,
-        .contact-form select:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-        }
-        
-        .contact-form input:invalid,
-        .contact-form textarea:invalid {
-            border-color: #ef4444;
-        }
-        
-        .contact-form input:valid,
-        .contact-form textarea:valid {
-            border-color: var(--secondary-color);
-        }
-        
-        /* Enhanced Navigation */
-        .nav-link:hover {
-            color: var(--primary-color);
-            transform: translateY(-1px);
-        }
-        
-        .nav-link.active {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-        
-        /* Enhanced Accessibility */
-        .btn:focus,
-        .nav-link:focus {
-            outline: 2px solid var(--primary-color);
-            outline-offset: 2px;
-        }
-        
-        /* Enhanced Loading Animation */
-        .loading-overlay {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-        }
-        
-        body.loaded .loading-overlay {
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        /* Enhanced Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        .bg-element {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .bg-element:nth-child(2) {
-            animation-delay: -3s;
-        }
-        
-        /* Enhanced Gradient Animations */
-        .hero-title {
-            background-size: 200% 200%;
-            animation: gradientShift 5s ease infinite;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        /* Enhanced Scroll Indicators */
-        .section-header {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        
-        .section-header.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Enhanced Performance */
-        .portfolio-image,
-        .service-icon,
-        .testimonial-card {
-            contain: layout style paint;
-        }
-        
-        /* Enhanced Dark Mode Support */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-primary: #1f2937;
-                --bg-secondary: #111827;
-                --text-primary: #f9fafb;
-                --text-secondary: #d1d5db;
-                --border-light: #374151;
-            }
-        }
-    </style>
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
 
-    <!-- Optimized GSAP Animation Script -->
-    <script src="optimized-cultural-animations.js"></script>
-    
-    <!-- Form Handling Script -->
+    <!-- Fixed Animations Script -->
     <script>
-        // Enhanced Form Handling
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactForm = document.querySelector('.contact-form');
+// optimized-cultural-animations.js
+class OptimizedCulturalAnimations {
+    constructor() {
+        this.elements = {};
+        this.animationState = {
+            isScrolling: false,
+            currentSection: 0,
+            loadComplete: false
+        };
+        this.debounceTime = 16; // 60fps
+        this.lastScrollY = 0;
+        
+        // Initialize immediately
+        this.init();
+    }
+
+    init() {
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.start());
+        } else {
+            this.start();
+        }
+    }
+
+    start() {
+        this.cacheElements();
+        this.registerGSAP();
+        this.createLoadingSequence();
+        this.setupScrollTriggers();
+        this.setupInteractiveAnimations();
+        this.setupOptimizedScrolling();
+        this.setupLazyLoading();
+        this.setupAccessibilityFeatures();
+    }
+
+    cacheElements() {
+        // Safe element caching with fallbacks
+        this.elements = {
+            // Loading elements
+            loadingOverlay: document.querySelector('.loading-overlay'),
             
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Get form data
-                    const formData = new FormData(contactForm);
-                    const submitButton = contactForm.querySelector('button[type="submit"]');
-                    
-                    // Disable button and show loading
-                    submitButton.disabled = true;
-                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                    
-                    // Simulate form submission (replace with actual endpoint)
-                    setTimeout(() => {
-                        // Show success message
-                        showNotification('Message sent successfully! I\'ll respond within 24 hours.', 'success');
-                        
-                        // Reset form
-                        contactForm.reset();
-                        
-                        // Re-enable button
-                        submitButton.disabled = false;
-                        submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-                    }, 2000);
+            // Header elements
+            header: document.querySelector('.header'),
+            logo: document.querySelector('.logo'),
+            navLinks: document.querySelectorAll('.nav-link') || [],
+            mobileToggle: document.querySelector('.mobile-menu-toggle'),
+            
+            // Hero elements
+            heroSection: document.querySelector('.hero'),
+            heroContent: document.querySelector('.hero-content'),
+            heroTitle: document.querySelector('.hero-title'),
+            heroSubtitle: document.querySelector('.hero-subtitle'),
+            heroValueProp: document.querySelector('.hero-value-prop'),
+            heroButtons: document.querySelector('.hero-buttons'),
+            metricItems: document.querySelectorAll('.metric-item') || [],
+            
+            // Section elements
+            sections: document.querySelectorAll('section') || [],
+            uspCards: document.querySelectorAll('.usp-card') || [],
+            portfolioCards: document.querySelectorAll('.portfolio-card') || [],
+            serviceCards: document.querySelectorAll('.service-card') || [],
+            testimonialCards: document.querySelectorAll('.testimonial-card') || [],
+            
+            // Interactive elements
+            buttons: document.querySelectorAll('.btn') || [],
+            counters: document.querySelectorAll('.metric-value, .result-value') || [],
+            culturalIcons: document.querySelectorAll('.logo-icon, .usp-icon, .diff-icon') || [],
+            
+            // Animation containers
+            animatedElements: document.querySelectorAll('[data-animate]') || [],
+            parallaxElements: document.querySelectorAll('[data-parallax]') || [],
+            
+            // Footer
+            footer: document.querySelector('.footer')
+        };
+    }
+
+    registerGSAP() {
+        // Check if GSAP is loaded
+        if (typeof gsap === 'undefined') {
+            console.warn('GSAP not loaded, animations disabled');
+            return;
+        }
+
+        gsap.registerPlugin(ScrollTrigger, TextPlugin);
+        
+        // Global GSAP settings
+        gsap.defaults({
+            duration: 0.8,
+            ease: "power2.out"
+        });
+
+        // Set up reduced motion preferences
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) {
+            gsap.globalTimeline.timeScale(0.1);
+        }
+    }
+
+    createLoadingSequence() {
+        // Skip if GSAP not available
+        if (typeof gsap === 'undefined') {
+            this.completeLoading();
+            return;
+        }
+
+        const loadingOverlay = this.elements.loadingOverlay;
+        if (!loadingOverlay) {
+            this.completeLoading();
+            return;
+        }
+
+        const tl = gsap.timeline({
+            onComplete: () => this.completeLoading()
+        });
+
+        // Set initial state
+        tl.set('body', { overflow: 'hidden' })
+          .to(loadingOverlay, {
+              duration: 0.6,
+              opacity: 0,
+              scale: 1.1,
+              ease: "power2.inOut"
+          });
+
+        // Auto-complete loading after 2 seconds max
+        setTimeout(() => {
+            if (!this.animationState.loadComplete) {
+                this.completeLoading();
+            }
+        }, 2000);
+    }
+
+    completeLoading() {
+        this.animationState.loadComplete = true;
+        
+        // Remove loading overlay
+        if (this.elements.loadingOverlay) {
+            this.elements.loadingOverlay.style.display = 'none';
+        }
+        
+        // Enable scrolling
+        document.body.style.overflow = 'auto';
+        document.body.classList.add('loaded');
+        
+        // Start hero animations
+        this.triggerHeroAnimations();
+    }
+
+    triggerHeroAnimations() {
+        // Skip if GSAP not available
+        if (typeof gsap === 'undefined') {
+            return;
+        }
+
+        const tl = gsap.timeline();
+        
+        // Check if elements exist before animating
+        const heroElements = [
+            this.elements.heroTitle,
+            this.elements.heroSubtitle,
+            this.elements.heroValueProp,
+            this.elements.heroButtons
+        ].filter(Boolean);
+
+        if (heroElements.length === 0) return;
+
+        // Set initial states
+        tl.set(heroElements, {
+            opacity: 0,
+            y: 50
+        });
+
+        if (this.elements.metricItems.length > 0) {
+            tl.set(this.elements.metricItems, {
+                opacity: 0,
+                scale: 0.8,
+                y: 30
+            });
+        }
+
+        // Animate elements
+        heroElements.forEach((element, index) => {
+            if (element) {
+                tl.to(element, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "back.out(1.7)"
+                }, index * 0.2);
+            }
+        });
+
+        // Animate metrics
+        if (this.elements.metricItems.length > 0) {
+            tl.to(this.elements.metricItems, {
+                opacity: 1,
+                scale: 1,
+                y: 0,
+                duration: 0.6,
+                stagger: 0.1,
+                ease: "back.out(1.7)"
+            }, "-=0.4");
+        }
+
+        // Start counter animations
+        this.startCounterAnimations();
+    }
+
+    startCounterAnimations() {
+        // Skip if GSAP not available
+        if (typeof gsap === 'undefined') {
+            return;
+        }
+
+        const counterConfigs = [
+            { selector: '.metric-item:nth-child(1) .metric-value', target: 30, suffix: '%' },
+            { selector: '.metric-item:nth-child(2) .metric-value', target: 95, suffix: '%' },
+            { selector: '.metric-item:nth-child(3) .metric-value', target: 3, suffix: '' },
+            { selector: '.metric-item:nth-child(4) .metric-value', target: 50, suffix: 'K+', prefix: '£' }
+        ];
+
+        counterConfigs.forEach(({ selector, target, suffix, prefix = '' }) => {
+            const element = document.querySelector(selector);
+            if (element) {
+                gsap.to({ value: 0 }, {
+                    value: target,
+                    duration: 2,
+                    ease: "power2.out",
+                    delay: 0.5,
+                    onUpdate: function() {
+                        const current = Math.floor(this.targets()[0].value);
+                        element.textContent = `${prefix}${current}${suffix}`;
+                    }
                 });
             }
         });
-        
-        // Notification System
-        function showNotification(message, type = 'info') {
-            const notification = document.createElement('div');
-            notification.className = `notification notification-${type}`;
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: ${type === 'success' ? 'var(--secondary-color)' : 'var(--primary-color)'};
-                color: white;
-                padding: var(--space-md) var(--space-lg);
-                border-radius: var(--border-radius);
-                box-shadow: var(--shadow-lg);
-                z-index: 10000;
-                opacity: 0;
-                transform: translateX(100%);
-                transition: all var(--transition-base);
-                max-width: 300px;
-                font-size: 0.875rem;
-                font-weight: 500;
-            `;
-            
-            notification.textContent = message;
-            document.body.appendChild(notification);
-            
-            // Animate in
-            requestAnimationFrame(() => {
-                notification.style.opacity = '1';
-                notification.style.transform = 'translateX(0)';
-            });
-            
-            // Remove after 5 seconds
-            setTimeout(() => {
-                notification.style.opacity = '0';
-                notification.style.transform = 'translateX(100%)';
-                setTimeout(() => {
-                    document.body.removeChild(notification);
-                }, 300);
-            }, 5000);
+    }
+
+    setupScrollTriggers() {
+        // Skip if GSAP not available
+        if (typeof gsap === 'undefined') {
+            return;
         }
-        
-        // Enhanced Mobile Menu
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            
-            if (mobileToggle && navLinks) {
-                mobileToggle.addEventListener('click', function() {
-                    navLinks.classList.toggle('active');
-                    
-                    // Update icon
-                    const icon = mobileToggle.querySelector('i');
-                    if (navLinks.classList.contains('active')) {
-                        icon.classList.remove('fa-bars');
-                        icon.classList.add('fa-times');
-                    } else {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
+
+        // Create scroll triggers for different sections
+        const scrollConfigs = [
+            {
+                elements: this.elements.uspCards,
+                trigger: '.usp-section',
+                animation: { y: 60, opacity: 0, stagger: 0.15 }
+            },
+            {
+                elements: this.elements.portfolioCards,
+                trigger: '.portfolio',
+                animation: { y: 80, opacity: 0, stagger: 0.2, scale: 0.95 }
+            },
+            {
+                elements: this.elements.serviceCards,
+                trigger: '.services',
+                animation: { y: 100, opacity: 0, stagger: 0.25 }
+            },
+            {
+                elements: this.elements.testimonialCards,
+                trigger: '.testimonials',
+                animation: { y: 60, opacity: 0, stagger: 0.2 }
+            }
+        ];
+
+        scrollConfigs.forEach(config => {
+            if (config.elements.length > 0) {
+                gsap.from(config.elements, {
+                    ...config.animation,
+                    scrollTrigger: {
+                        trigger: config.trigger,
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        toggleActions: "play none none reverse"
                     }
+                });
+            }
+        });
+    }
+
+    setupInteractiveAnimations() {
+        // Skip if GSAP not available
+        if (typeof gsap === 'undefined') {
+            this.setupFallbackInteractions();
+            return;
+        }
+
+        // Button hover animations
+        this.elements.buttons.forEach(button => {
+            if (button) {
+                button.addEventListener('mouseenter', () => {
+                    gsap.to(button, { scale: 1.05, y: -2, duration: 0.3 });
                 });
                 
-                // Close menu when clicking on link
-                navLinks.addEventListener('click', function(e) {
-                    if (e.target.classList.contains('nav-link')) {
-                        navLinks.classList.remove('active');
-                        const icon = mobileToggle.querySelector('i');
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
+                button.addEventListener('mouseleave', () => {
+                    gsap.to(button, { scale: 1, y: 0, duration: 0.3 });
                 });
             }
         });
-        
-        // Enhanced Smooth Scrolling
-        document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('a[href^="#"]');
+
+        // Card hover animations
+        [...this.elements.portfolioCards, ...this.elements.serviceCards].forEach(card => {
+            if (card) {
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, { scale: 1.03, y: -8, duration: 0.3 });
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, { scale: 1, y: 0, duration: 0.3 });
+                });
+            }
+        });
+    }
+
+    setupFallbackInteractions() {
+        // CSS-only fallback for when GSAP is not available
+        const style = document.createElement('style');
+        style.textContent = `
+                        .btn:hover {
+                transform: translateY(-2px) scale(1.05);
+                transition: transform 0.3s ease;
+            }
+            .portfolio-card:hover,
+            .service-card:hover {
+                transform: translateY(-8px) scale(1.03);
+                transition: transform 0.3s ease;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    setupOptimizedScrolling() {
+        let ticking = false;
+
+        const updateScrollEffects = () => {
+            const scrollY = window.pageYOffset;
             
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href').substring(1);
-                    const target = document.getElementById(targetId);
-                    
-                    if (target) {
-                        const headerHeight = document.querySelector('.header').offsetHeight;
-                        const targetPosition = target.offsetTop - headerHeight;
-                        
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
+            // Update header visibility
+            this.updateHeaderVisibility(scrollY);
+            
+            ticking = false;
+        };
+
+        const handleScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollEffects);
+                ticking = true;
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+    }
+
+    updateHeaderVisibility(scrollY) {
+        if (!this.elements.header) return;
+
+        const threshold = 100;
+        const direction = scrollY > this.lastScrollY ? 'down' : 'up';
+        
+        if (typeof gsap !== 'undefined') {
+            if (scrollY > threshold && direction === 'down') {
+                gsap.to(this.elements.header, { y: -100, duration: 0.3 });
+            } else if (direction === 'up' || scrollY <= threshold) {
+                gsap.to(this.elements.header, { y: 0, duration: 0.3 });
+            }
+        } else {
+            // CSS fallback
+            if (scrollY > threshold && direction === 'down') {
+                this.elements.header.style.transform = 'translateY(-100px)';
+            } else if (direction === 'up' || scrollY <= threshold) {
+                this.elements.header.style.transform = 'translateY(0)';
+            }
+        }
+        
+        this.lastScrollY = scrollY;
+    }
+
+    setupLazyLoading() {
+        const lazyElements = document.querySelectorAll('[data-lazy]');
+        
+        if ('IntersectionObserver' in window) {
+            const lazyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        this.loadElement(entry.target);
+                        lazyObserver.unobserve(entry.target);
                     }
                 });
+            }, {
+                rootMargin: '50px'
             });
+
+            lazyElements.forEach(element => {
+                lazyObserver.observe(element);
+            });
+        } else {
+            // Fallback for older browsers
+            lazyElements.forEach(element => {
+                this.loadElement(element);
+            });
+        }
+    }
+
+    loadElement(element) {
+        if (element.dataset.lazy === 'image') {
+            const img = element.querySelector('img');
+            if (img && img.dataset.src) {
+                img.src = img.dataset.src;
+                img.style.opacity = '0';
+                img.onload = () => {
+                    if (typeof gsap !== 'undefined') {
+                        gsap.to(img, { opacity: 1, duration: 0.3 });
+                    } else {
+                        img.style.opacity = '1';
+                        img.style.transition = 'opacity 0.3s ease';
+                    }
+                };
+            }
+        }
+    }
+
+    setupAccessibilityFeatures() {
+        // Respect user's motion preferences
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        
+        const handleMotionPreference = (e) => {
+            if (typeof gsap !== 'undefined') {
+                if (e.matches) {
+                    gsap.globalTimeline.timeScale(0.01);
+                    if (typeof ScrollTrigger !== 'undefined') {
+                        ScrollTrigger.disable();
+                    }
+                } else {
+                    gsap.globalTimeline.timeScale(1);
+                    if (typeof ScrollTrigger !== 'undefined') {
+                        ScrollTrigger.enable();
+                    }
+                }
+            }
+        };
+
+        mediaQuery.addListener(handleMotionPreference);
+        handleMotionPreference(mediaQuery);
+
+        // Keyboard navigation support
+        this.setupKeyboardNavigation();
+    }
+
+    setupKeyboardNavigation() {
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-nav');
+            }
+        });
+
+        document.addEventListener('mousedown', () => {
+            document.body.classList.remove('keyboard-nav');
+        });
+    }
+
+    // Cleanup method
+    destroy() {
+        if (typeof gsap !== 'undefined') {
+            if (typeof ScrollTrigger !== 'undefined') {
+                ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+            }
+            gsap.globalTimeline.clear();
+        }
+        
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+}
+
+// Initialize when ready
+let animations;
+
+// Multiple initialization strategies
+function initializeAnimations() {
+    if (!animations) {
+        animations = new OptimizedCulturalAnimations();
+    }
+}
+
+// Try different initialization methods
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeAnimations);
+} else {
+    initializeAnimations();
+}
+
+// Fallback initialization
+window.addEventListener('load', () => {
+    if (!animations) {
+        initializeAnimations();
+    }
+});
+
+// Export for manual initialization if needed
+window.initCulturalAnimations = initializeAnimations;
+
+// Additional mobile menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileToggle && navLinks) {
+        mobileToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            });
+        });
+    }
+});
+
+// Form submission handling
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.querySelector('.contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Basic validation
+            if (!data.firstName || !data.lastName || !data.email || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitButton.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                alert('Thank you for your message! I\'ll get back to you within 24 hours.');
+                this.reset();
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+            }, 2000);
+        });
+    }
+});
+
+// Smooth scrolling for anchor links
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = target.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+
+// Pulse animation for availability status
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes pulse {
+        0% { opacity: 1; }
+        50% { opacity: 0.5; }
+        100% { opacity: 1; }
+    }
+`;
+document.head.appendChild(style);
+    </script>
+
+    <!-- Manual initialization fallback -->
+    <script>
+        // Manual initialization if needed
+        setTimeout(() => {
+            if (typeof initCulturalAnimations === 'function') {
+                initCulturalAnimations();
+            }
+        }, 100);
+        
+        // Additional fallback for very slow connections
+        setTimeout(() => {
+            const loadingOverlay = document.querySelector('.loading-overlay');
+            if (loadingOverlay && loadingOverlay.style.display !== 'none') {
+                loadingOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                document.body.classList.add('loaded');
+            }
+        }, 3000);
+    </script>
+
+    <!-- Performance monitoring -->
+    <script>
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            if ('performance' in window) {
+                const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+                console.log('Page load time:', loadTime + 'ms');
+                
+                // Track to analytics if available
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'page_load_time', {
+                        'event_category': 'Performance',
+                        'event_label': 'Load Time',
+                        'value': Math.round(loadTime)
+                    });
+                }
+            }
         });
     </script>
 </body>
 </html>
-
