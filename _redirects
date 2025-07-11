@@ -1,1 +1,9 @@
+# Redirect rules for Netlify
+/portfolio    /#portfolio    301
+/writing      /#writing      301
+/contact      /#contact      301
+/about        /#about        301
+/skills       /#skills       301
+
+# Fallback for SPA
 /*    /index.html   200
