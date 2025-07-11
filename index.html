@@ -1692,6 +1692,300 @@
             z-index: 10001;
             transition: width 0.1s ease;
         }
+        /* ===== CULTURAL-PSYCHOLOGICAL SEO PROCESS SECTION ===== */
+.cultural-process-section {
+    padding: 8rem 2rem;
+    background: linear-gradient(135deg, 
+        var(--pastel-mint) 0%, 
+        var(--pastel-sky) 25%,
+        var(--pastel-lavender) 50%,
+        var(--pastel-peach) 75%,
+        var(--pastel-coral) 100%);
+    position: relative;
+    z-index: var(--z-content);
+    overflow: hidden;
+}
+
+.cultural-process-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(8, 145, 178, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(5, 150, 105, 0.06) 0%, transparent 60%);
+    pointer-events: none;
+    animation: culturalAura 20s ease-in-out infinite;
+}
+
+@keyframes culturalAura {
+    0%, 100% { opacity: 0.3; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0.6; transform: scale(1.1) rotate(2deg); }
+}
+
+.cultural-process-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, 
+        var(--accent-cyan), 
+        var(--accent-coral), 
+        var(--accent-mint));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 2;
+}
+
+.cultural-process-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--accent-cyan), 
+        var(--accent-coral), 
+        var(--accent-mint));
+    border-radius: 2px;
+    box-shadow: 0 2px 10px rgba(8, 145, 178, 0.3);
+}
+
+.cultural-intro {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 5rem;
+    color: var(--text-secondary);
+    font-size: 1.3rem;
+    line-height: 1.8;
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-lg);
+}
+
+.cultural-process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.cultural-step {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-backdrop);
+    -webkit-backdrop-filter: var(--glass-backdrop);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    padding: 3.5rem 2.5rem;
+    position: relative;
+    box-shadow: var(--glass-shadow);
+    transition: all var(--transition-smooth);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cultural-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        var(--pastel-pink) 0%, 
+        var(--pastel-blue) 25%, 
+        var(--pastel-mint) 50%, 
+        var(--pastel-lavender) 75%, 
+        var(--pastel-peach) 100%);
+    opacity: 0.08;
+    border-radius: 30px;
+    pointer-events: none;
+    transition: opacity var(--transition-smooth);
+}
+
+.cultural-step:hover::before {
+    opacity: 0.15;
+}
+
+.cultural-step:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 
+        var(--glass-shadow),
+        0 30px 60px rgba(8, 145, 178, 0.2);
+    border-color: rgba(8, 145, 178, 0.4);
+}
+
+.cultural-step-number {
+    position: absolute;
+    top: -25px;
+    left: 2.5rem;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-coral));
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+    box-shadow: var(--shadow-lg);
+    border: 3px solid white;
+}
+
+.cultural-step-icon {
+    position: absolute;
+    top: -25px;
+    right: 2.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--accent-mint);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--border-light);
+}
+
+.cultural-step h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 2;
+    font-weight: 600;
+}
+
+.cultural-step p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+    font-weight: 500;
+}
+
+.cultural-step-details {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    padding: 1.5rem;
+    background: rgba(8, 145, 178, 0.08);
+    border-radius: 15px;
+    border-left: 4px solid var(--accent-cyan);
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 2px 10px rgba(8, 145, 178, 0.1);
+}
+
+.cultural-step-details::before {
+    content: '🎯';
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: var(--accent-cyan);
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+/* Thai Cultural Elements */
+.thai-pattern {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10 L60 30 L80 30 L67 45 L72 65 L50 55 L28 65 L33 45 L20 30 L40 30 Z" fill="%23059669" opacity="0.3"/></svg>');
+    background-size: contain;
+    animation: rotate 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .cultural-process-section {
+        padding: 5rem 1rem;
+    }
+    
+    .cultural-process-section h2 {
+        font-size: 2.5rem;
+    }
+    
+    .cultural-process-steps {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .cultural-step {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .cultural-intro {
+        font-size: 1.1rem;
+        padding: 1.5rem;
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cultural-process-section h2 {
+        font-size: 2rem;
+    }
+    
+    .cultural-step {
+        padding: 2rem 1rem;
+    }
+    
+    .cultural-step h3 {
+        font-size: 1.5rem;
+    }
+    
+    .cultural-step p {
+        font-size: 1.1rem;
+    }
+    
+    .cultural-step-number,
+    .cultural-step-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+}
+
     </style>
 
     <!-- Schema.org Structured Data -->
@@ -1700,13 +1994,13 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Thanattsitt Santisamranwilai",
-        "url": "https://thanattsitt.dev",
+        "url": "https://pegearts.com",
         "email": "thanatsitt.info@yahoo.co.uk",
         "jobTitle": "AI Creative Designer, Researcher & Scriptwriter",
         "description": "Bridging human creativity with artificial intelligence through innovative design, research, and storytelling.",
         "alumniOf": {
             "@type": "EducationalOrganization",
-            "name": "Master of Science in Innovation and Technology Management"
+            "name": "BA Fashion design"
         },
         "knowsAbout": [
             "Artificial Intelligence",
@@ -1734,9 +2028,9 @@
             }
         ],
         "sameAs": [
-            "https://linkedin.com/in/thanatsitt-nareenapa",
-            "https://github.com/thanatsittn",
-            "https://twitter.com/thanatsittn"
+            "https://linkedin.com/in/thanatsitts",
+            "https://github.com/pigletpeakkung",
+            "https://twitter.com/thanatsitts"
         ]
     }
     </script>
@@ -1771,7 +2065,7 @@
 
     <!-- Navigation -->
     <nav class="nav" id="nav" role="navigation">
-        <div class="logo">Thanattsitt</div>
+        <div class="logo">PegeArts</div>
         <ul class="nav-links" id="navLinks" role="menubar">
             <li role="none"><a href="#home" role="menuitem">Home</a></li>
             <li role="none"><a href="#about" role="menuitem">About</a></li>
@@ -1837,8 +2131,8 @@
                     <i class="fas fa-graduation-cap"></i>
                 </div>
                 <div class="education-text">
-                    <h3>Master of Science</h3>
-                    <p>Innovation and Technology Management</p>
+                    <h3>Arts Of Life</h3>
+                    <p>Arts Innovation and Technology</p>
                 </div>
             </div>
             
@@ -1856,41 +2150,71 @@
     </section>
 
     <!-- Cultural-Psychological SEO Process Section -->
-    <section class="process-section section" id="cultural-process">
-        <h2>My Cultural-Psychological SEO Approach</h2>
-        <div class="process-steps">
-            <div class="step element-animate">
-                <span class="step-number">1</span>
-                <h3>Exploring Culture Junctions</h3>
-                <p>Researching how Thai cultural heritage intersects with global digital trends to shape user behavior</p>
-                <div class="step-details">
-                    • Studying Thai Buddhist narratives as cultural tools for engagement<br>
-                    • Analyzing cross-cultural user motivations and cognitive styles<br>
-                    • Applying sociocultural learning theories to digital interfaces
-                </div>
+<section class="cultural-process-section section" id="cultural-process">
+    <h2 class="element-animate">My Cultural-Psychological SEO Approach</h2>
+    
+    <div class="cultural-intro element-animate">
+        <p>
+            Blending Thai cultural wisdom with cutting-edge SEO psychology to create 
+            digital experiences that resonate across cultures while optimizing for 
+            authentic human connection and search visibility.
+        </p>
+    </div>
+    
+    <div class="cultural-process-steps">
+        <div class="cultural-step element-animate">
+            <span class="cultural-step-number">1</span>
+            <div class="cultural-step-icon">
+                <i class="fas fa-globe-asia"></i>
             </div>
-            <div class="step element-animate">
-                <span class="step-number">2</span>
-                <h3>Psychological Learning Integration</h3>
-                <p>Designing user experiences that leverage social learning and cultural context for deeper engagement</p>
-                <div class="step-details">
-                    • Embedding text-to-speech and mandalas in Siam-Blessing for immersive learning<br>
-                    • Using quantum-inspired designs in Astrotrias-Archon to spark curiosity<br>
-                    • Crafting interfaces that align with users' cultural and psychological needs
-                </div>
-            </div>
-            <div class="step element-animate">
-                <span class="step-number">3</span>
-                <h3>SEO-Driven Cultural Impact</h3>
-                <p>Optimizing content to amplify cultural resonance and user intent in digital spaces</p>
-                <div class="step-details">
-                    • Using search intent analysis to promote Thai cultural content<br>
-                    • Enhancing discoverability with culturally relevant keywords<br>
-                    • Monitoring engagement metrics to refine user-focused experiences
-                </div>
+            <div class="thai-pattern"></div>
+            
+            <h3>Exploring Culture Junctions</h3>
+            <p>Researching how Thai cultural heritage intersects with global digital trends to shape user behavior</p>
+            
+            <div class="cultural-step-details">
+                • Studying Thai Buddhist narratives as cultural tools for engagement<br>
+                • Analyzing cross-cultural user motivations and cognitive styles<br>
+                • Applying sociocultural learning theories to digital interfaces
             </div>
         </div>
-    </section>
+        
+        <div class="cultural-step element-animate">
+            <span class="cultural-step-number">2</span>
+            <div class="cultural-step-icon">
+                <i class="fas fa-brain"></i>
+            </div>
+            <div class="thai-pattern"></div>
+            
+            <h3>Psychological Learning Integration</h3>
+            <p>Designing user experiences that leverage social learning and cultural context for deeper engagement</p>
+            
+            <div class="cultural-step-details">
+                • Embedding text-to-speech and mandalas in Siam-Blessing for immersive learning<br>
+                • Using quantum-inspired designs in Astrotrias-Archon to spark curiosity<br>
+                • Crafting interfaces that align with users' cultural and psychological needs
+            </div>
+        </div>
+        
+        <div class="cultural-step element-animate">
+            <span class="cultural-step-number">3</span>
+            <div class="cultural-step-icon">
+                <i class="fas fa-search-plus"></i>
+            </div>
+            <div class="thai-pattern"></div>
+            
+            <h3>SEO-Driven Cultural Impact</h3>
+            <p>Optimizing content to amplify cultural resonance and user intent in digital spaces</p>
+            
+            <div class="cultural-step-details">
+                • Using search intent analysis to promote Thai cultural content<br>
+                • Enhancing discoverability with culturally relevant keywords<br>
+                • Monitoring engagement metrics to refine user-focused experiences
+            </div>
+        </div>
+    </div>
+</section>
+
     
     <!-- Skills Section -->
     <section class="section" id="skills">
