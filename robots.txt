@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://pegearts.com/sitemap.xml
+
+# Disallow sensitive areas (if any)
+Disallow: /private/
+Disallow: /.netlify/
