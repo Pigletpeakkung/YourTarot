@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -207,6 +209,11 @@
             border-radius: 2px;
             transition: width var(--transition-smooth);
             width: 0%;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
         }
 
         .loading-dots {
@@ -734,6 +741,10 @@
             margin-bottom: 3rem;
             box-shadow: var(--shadow-md);
             transition: all var(--transition-smooth);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 3rem;
         }
 
         .education-badge:hover {
@@ -1011,6 +1022,7 @@
             box-shadow: var(--shadow-sm);
             text-decoration: none;
             color: var(--text-primary);
+            min-width: 280px;
         }
 
         .contact-item:hover {
@@ -1083,6 +1095,90 @@
             padding-top: 2rem;
         }
 
+        /* ===== SCROLL INDICATOR ===== */
+        .scroll-indicator {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            z-index: var(--z-content);
+            opacity: 0;
+            transition: opacity var(--transition-smooth);
+        }
+
+        .scroll-indicator.visible {
+            opacity: 1;
+        }
+
+        .scroll-arrow {
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* ===== ANIMATION UTILITIES ===== */
+        .element-animate {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .element-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s ease-out;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out forwards;
+        }
+
+        .animate-slide-up-delay {
+            animation: slideUp 0.8s ease-out 0.2s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 768px) {
             .nav-links {
@@ -1126,6 +1222,13 @@
             .script-card {
                 padding: 2rem;
             }
+
+            .education-badge {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+                padding: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1155,135 +1258,97 @@
             .hero-summary-card {
                 padding: 1.5rem;
             }
-        }
 
-        /* ===== ANIMATION UTILITIES ===== */
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
-        .animate-slide-up {
-            animation: slideUp 0.8s ease-out forwards;
-        }
-
-        .animate-slide-up-delay {
-            animation: slideUp 0.8s ease-out 0.2s forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
+            .script-card {
+                padding: 1.5rem;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+
+            .contact-item {
+                min-width: auto;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-text {
+                text-align: center;
             }
         }
 
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+        .keyboard-nav *:focus {
+            outline: 2px solid var(--accent-cyan) !important;
+            outline-offset: 2px !important;
         }
 
-        /* ===== SCROLL INDICATOR ===== */
-        .scroll-indicator {
-            position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            z-index: var(--z-content);
-            opacity: 0;
-            transition: opacity var(--transition-smooth);
+        .reduced-motion * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
         }
 
-        .scroll-indicator.visible {
-            opacity: 1;
+        .dark-theme {
+            filter: invert(1) hue-rotate(180deg);
         }
 
-        .scroll-arrow {
-            font-size: 1.5rem;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
-        /* ===== LOADING ANIMATIONS ===== */
-        .loading-screen.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .element-animate {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .element-animate.visible {
-            opacity: 1;
-            transform: translateY(0);
-            transition: all 0.8s ease-out;
+        .dark-theme img,
+        .dark-theme video,
+        .dark-theme canvas {
+            filter: invert(1) hue-rotate(180deg);
         }
     </style>
-<!-- Schema.org Structured Data -->
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Thanattsitt Santisamranwilai",
-    "url": "https://thanattsitt.dev",
-    "email": "thanatsitt.info@yahoo.co.uk",
-    "jobTitle": "AI Creative Designer, Researcher & Scriptwriter",
-    "description": "Bridging human creativity with artificial intelligence through innovative design, research, and storytelling.",
-    "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Master of Science in Innovation and Technology Management"
-    },
-    "knowsAbout": [
-        "Artificial Intelligence",
-        "Machine Learning",
-        "UX/UI Design",
-        "Creative Writing",
-        "Scriptwriting",
-        "Research",
-        "Innovation"
-    ],
-    "sameAs": [
-        "https://linkedin.com/in/thanatsitt-nareenapa",
-        "https://github.com/thanatsittn",
-        "https://twitter.com/thanatsittn"
-    ]
-}
-</script>
 
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Thanattsitt Santisamranwilai",
+        "url": "https://thanattsitt.dev",
+        "email": "thanatsitt.info@yahoo.co.uk",
+        "jobTitle": "AI Creative Designer, Researcher & Scriptwriter",
+        "description": "Bridging human creativity with artificial intelligence through innovative design, research, and storytelling.",
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Master of Science in Innovation and Technology Management"
+        },
+        "knowsAbout": [
+            "Artificial Intelligence",
+            "Machine Learning",
+            "UX/UI Design",
+            "Creative Writing",
+            "Scriptwriting",
+            "Research",
+            "Innovation"
+        ],
+        "creativeWork": [
+            {
+                "@type": "CreativeWork",
+                "name": "Digital Souls",
+                "description": "A contemplative exploration of identity in the digital age",
+                "genre": "Science Fiction Script"
+            },
+            {
+                "@type": "CreativeWork", 
+                "name": "The Algorithm's Heart",
+                "description": "An anthology podcast exploring AI's effect on human relationships",
+                "genre": "Podcast Series"
+            }
+        ],
+        "sameAs": [
+            "https://linkedin.com/in/thanatsitt-nareenapa",
+            "https://github.com/thanatsittn",
+            "https://twitter.com/thanatsittn"
+        ]
+    }
+    </script>
 </head>
+
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-content">
-            <div class="loading-logo">Thanatsitt</div>
+            <div class="loading-logo">Thanattsitt</div>
             <div class="loading-text">Preparing creative experience...</div>
             <div class="loading-bar-container">
                 <div class="loading-bar" id="loadingBar"></div>
@@ -1301,46 +1366,46 @@
     <canvas class="particle-canvas" id="particleCanvas"></canvas>
 
     <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <div class="logo">Thanatsitt</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <nav class="nav" id="nav" role="navigation">
+        <div class="logo">Thanattsitt</div>
+        <ul class="nav-links" role="menubar">
+            <li role="none"><a href="#home" role="menuitem">Home</a></li>
+            <li role="none"><a href="#about" role="menuitem">About</a></li>
+            <li role="none"><a href="#skills" role="menuitem">Skills</a></li>
+            <li role="none"><a href="#work" role="menuitem">Work</a></li>
+            <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
         </ul>
-        <div class="mobile-toggle" id="mobileToggle">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </button>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero" id="home" role="banner">
         <div class="hero-content">
             <div class="moon-container">
-                <div class="moon" id="moon">
-                    <div class="floating-element"></div>
-                    <div class="floating-element"></div>
-                    <div class="floating-element"></div>
+                <div class="moon" id="moon" tabindex="0" role="button" aria-label="Interactive moon element">
+                    <div class="floating-element" aria-hidden="true"></div>
+                    <div class="floating-element" aria-hidden="true"></div>
+                    <div class="floating-element" aria-hidden="true"></div>
                 </div>
             </div>
             
             <div class="intro-text element-animate">Hello, I'm</div>
-            <div class="identity-text element-animate">Thanatsitt Santisamranwilai</div>
+            <div class="identity-text element-animate">Thanattsitt Santisamranwilai</div>
             <h1 class="tagline element-animate">AI Creative Designer</h1>
             
-            <div class="social-links element-animate">
-                <a href="https://linkedin.com/in/thanatsitts" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
+            <div class="social-links element-animate" role="navigation" aria-label="Social media links">
+                <a href="https://linkedin.com/in/thanatsitts" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                 </a>
-                <a href="https://github.com/Pigletpeakkung" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
+                <a href="https://github.com/Pigletpeakkung" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                    <i class="fab fa-github" aria-hidden="true"></i>
                 </a>
-                <a href="https://twitter.com/thanatsitts" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                    <i class="fab fa-twitter"></i>
+                <a href="https://twitter.com/thanatsitts" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </div>
             
@@ -1356,12 +1421,12 @@
     </section>
 
     <!-- About Section -->
-    <section class="section" id="about">
+    <section class="section" id="about" role="main">
         <div class="section-content">
             <h2 class="section-title element-animate">About Me</h2>
             
             <div class="education-badge element-animate">
-                <div class="education-icon">
+                <div class="education-icon" aria-hidden="true">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
                 <div class="education-text">
@@ -1391,61 +1456,61 @@
             <div class="skills-grid">
                 <div class="skill-category element-animate">
                     <h3>
-                        <i class="fas fa-brain icon"></i>
+                        <i class="fas fa-brain icon" aria-hidden="true"></i>
                         AI & Machine Learning
                     </h3>
                     <div class="skill-tags">
-                        <div class="skill-tag">Machine Learning</div>
-                        <div class="skill-tag">Deep Learning</div>
-                        <div class="skill-tag">Natural Language Processing</div>
-                        <div class="skill-tag">Computer Vision</div>
-                        <div class="skill-tag">AI Ethics</div>
-                        <div class="skill-tag">Data Analysis</div>
+                        <div class="skill-tag" tabindex="0">Machine Learning</div>
+                        <div class="skill-tag" tabindex="0">Deep Learning</div>
+                        <div class="skill-tag" tabindex="0">Natural Language Processing</div>
+                        <div class="skill-tag" tabindex="0">Computer Vision</div>
+                        <div class="skill-tag" tabindex="0">AI Ethics</div>
+                        <div class="skill-tag" tabindex="0">Data Analysis</div>
                     </div>
                 </div>
                 
                 <div class="skill-category element-animate">
                     <h3>
-                        <i class="fas fa-palette icon"></i>
+                        <i class="fas fa-palette icon" aria-hidden="true"></i>
                         Design & UX
                     </h3>
                     <div class="skill-tags">
-                        <div class="skill-tag">UI/UX Design</div>
-                        <div class="skill-tag">User Research</div>
-                        <div class="skill-tag">Prototyping</div>
-                        <div class="skill-tag">Design Systems</div>
-                        <div class="skill-tag">Figma</div>
-                        <div class="skill-tag">Adobe Creative Suite</div>
+                        <div class="skill-tag" tabindex="0">UI/UX Design</div>
+                        <div class="skill-tag" tabindex="0">User Research</div>
+                        <div class="skill-tag" tabindex="0">Prototyping</div>
+                        <div class="skill-tag" tabindex="0">Design Systems</div>
+                        <div class="skill-tag" tabindex="0">Figma</div>
+                        <div class="skill-tag" tabindex="0">Adobe Creative Suite</div>
                     </div>
                 </div>
                 
                 <div class="skill-category element-animate">
                     <h3>
-                        <i class="fas fa-code icon"></i>
+                        <i class="fas fa-code icon" aria-hidden="true"></i>
                         Development
                     </h3>
                     <div class="skill-tags">
-                        <div class="skill-tag">Python</div>
-                        <div class="skill-tag">JavaScript</div>
-                        <div class="skill-tag">React</div>
-                        <div class="skill-tag">Node.js</div>
-                        <div class="skill-tag">TensorFlow</div>
-                        <div class="skill-tag">PyTorch</div>
+                        <div class="skill-tag" tabindex="0">Python</div>
+                        <div class="skill-tag" tabindex="0">JavaScript</div>
+                        <div class="skill-tag" tabindex="0">React</div>
+                        <div class="skill-tag" tabindex="0">Node.js</div>
+                        <div class="skill-tag" tabindex="0">TensorFlow</div>
+                        <div class="skill-tag" tabindex="0">PyTorch</div>
                     </div>
                 </div>
                 
                 <div class="skill-category element-animate">
                     <h3>
-                        <i class="fas fa-pen-nib icon"></i>
+                        <i class="fas fa-pen-nib icon" aria-hidden="true"></i>
                         Creative Writing
                     </h3>
                     <div class="skill-tags">
-                        <div class="skill-tag">Scriptwriting</div>
-                        <div class="skill-tag">Content Strategy</div>
-                        <div class="skill-tag">Storytelling</div>
-                        <div class="skill-tag">Thai Literature</div>
-                        <div class="skill-tag">Creative Direction</div>
-                        <div class="skill-tag">Narrative Design</div>
+                        <div class="skill-tag" tabindex="0">Scriptwriting</div>
+                        <div class="skill-tag" tabindex="0">Content Strategy</div>
+                        <div class="skill-tag" tabindex="0">Storytelling</div>
+                        <div class="skill-tag" tabindex="0">Thai Literature</div>
+                        <div class="skill-tag" tabindex="0">Creative Direction</div>
+                        <div class="skill-tag" tabindex="0">Narrative Design</div>
                     </div>
                 </div>
             </div>
@@ -1466,9 +1531,9 @@
             </div>
             
             <div class="scripts-grid">
-                <div class="script-card element-animate">
+                <article class="script-card element-animate">
                     <div class="script-header">
-                        <div class="script-icon">
+                        <div class="script-icon" aria-hidden="true">
                             <i class="fas fa-theater-masks"></i>
                         </div>
                         <div>
@@ -1478,19 +1543,22 @@
                     </div>
                     <p class="script-description">
                         A contemplative exploration of identity in the digital age, following characters 
-                        who discover their AI-generated personas have developed consciousness of their own.
+                        who discover their AI-generated personas have developed consciousness of their own. 
+                        This narrative examines the blurred boundaries between authentic self-expression and 
+                        algorithmic creation in contemporary Thai society.
                     </p>
                     <div class="script-tags">
-                        <div class="script-tag">Science Fiction</div>
-                        <div class="script-tag">AI Ethics</div>
-                        <div class="script-tag">Identity</div>
-                        <div class="script-tag">Thai Context</div>
+                        <span class="script-tag">Science Fiction</span>
+                        <span class="script-tag">AI Ethics</span>
+                        <span class="script-tag">Identity</span>
+                        <span class="script-tag">Thai Context</span>
+                        <span class="script-tag">Philosophy</span>
                     </div>
-                </div>
+                </article>
                 
-                <div class="script-card element-animate">
+                <article class="script-card element-animate">
                     <div class="script-header">
-                        <div class="script-icon">
+                        <div class="script-icon" aria-hidden="true">
                             <i class="fas fa-microphone-alt"></i>
                         </div>
                         <div>
@@ -1500,15 +1568,66 @@
                     </div>
                     <p class="script-description">
                         An anthology podcast exploring how artificial intelligence affects human relationships, 
-                        creativity, and society through interconnected stories and interviews.
+                        creativity, and society through interconnected stories and interviews. Each episode 
+                        weaves together personal narratives with expert insights, creating a tapestry of 
+                        contemporary digital life.
                     </p>
                     <div class="script-tags">
-                        <div class="script-tag">Anthology</div>
-                        <div class="script-tag">Technology</div>
-                        <div class="script-tag">Human Stories</div>
-                        <div class="script-tag">Documentary</div>
+                        <span class="script-tag">Anthology</span>
+                        <span class="script-tag">Technology & Society</span>
+                        <span class="script-tag">Human Stories</span>
+                        <span class="script-tag">Documentary</span>
+                        <span class="script-tag">Interview Format</span>
                     </div>
-                </div>
+                </article>
+
+                <article class="script-card element-animate">
+                    <div class="script-header">
+                        <div class="script-icon" aria-hidden="true">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div>
+                            <h3 class="script-title">Bangkok 2040</h3>
+                            <p class="script-type">Interactive Fiction</p>
+                        </div>
+                    </div>
+                    <p class="script-description">
+                        A speculative fiction project imagining Bangkok's transformation through AI integration. 
+                        This interactive narrative explores themes of urban development, cultural preservation, 
+                        and technological adaptation within a distinctly Thai futuristic landscape.
+                    </p>
+                    <div class="script-tags">
+                        <span class="script-tag">Speculative Fiction</span>
+                        <span class="script-tag">Urban Futures</span>
+                        <span class="script-tag">Interactive Media</span>
+                        <span class="script-tag">Cultural Identity</span>
+                        <span class="script-tag">Thailand</span>
+                    </div>
+                </article>
+
+                <article class="script-card element-animate">
+                    <div class="script-header">
+                        <div class="script-icon" aria-hidden="true">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div>
+                            <h3 class="script-title">Creative Minds & Machines</h3>
+                            <p class="script-type">Documentary Series</p>
+                        </div>
+                    </div>
+                    <p class="script-description">
+                        A documentary series following Thai artists, designers, and creators as they collaborate 
+                        with AI in their creative processes. Each episode reveals unique perspectives on 
+                        human-AI collaboration while celebrating innovation in Southeast Asian creative industries.
+                    </p>
+                    <div class="script-tags">
+                        <span class="script-tag">Documentary</span>
+                        <span class="script-tag">Creative Process</span>
+                        <span class="script-tag">AI Collaboration</span>
+                        <span class="script-tag">Thai Artists</span>
+                        <span class="script-tag">Innovation</span>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -1520,7 +1639,7 @@
             
             <div class="contact-info">
                 <a href="mailto:thanatsitt.info@yahoo.co.uk" class="contact-item element-animate">
-                    <div class="contact-icon">
+                    <div class="contact-icon" aria-hidden="true">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div class="contact-text">
@@ -1530,7 +1649,7 @@
                 </a>
                 
                 <a href="https://linkedin.com/in/thanatsitt-nareenapa" class="contact-item element-animate" target="_blank" rel="noopener noreferrer">
-                    <div class="contact-icon">
+                    <div class="contact-icon" aria-hidden="true">
                         <i class="fab fa-linkedin-in"></i>
                     </div>
                     <div class="contact-text">
@@ -1543,32 +1662,32 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="footer-content">
             <div class="footer-text">
                 <p>Thank you for visiting my creative space. Let's build something amazing together.</p>
             </div>
             
-            <div class="footer-social">
+            <div class="footer-social" role="navigation" aria-label="Footer social media links">
                 <a href="https://linkedin.com/in/thanatsitt-nareenapa" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
+                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                 </a>
                 <a href="https://github.com/thanatsittn" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
+                    <i class="fab fa-github" aria-hidden="true"></i>
                 </a>
                 <a href="https://twitter.com/thanatsittn" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
                 </a>
             </div>
             
             <div class="footer-copyright">
-                <p>&copy; 2024 Thanatsitt Nareenapa. All rights reserved.</p>
+                <p>&copy; 2024 Thanattsitt Santisamranwilai. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Scroll Indicator -->
-    <div class="scroll-indicator" id="scrollIndicator">
+    <div class="scroll-indicator" id="scrollIndicator" aria-hidden="true">
         <span>Scroll to explore</span>
         <div class="scroll-arrow">
             <i class="fas fa-chevron-down"></i>
@@ -1736,6 +1855,12 @@
                     }
                 });
             });
+            
+            // Mobile toggle functionality
+            mobileToggle.addEventListener('click', () => {
+                const navLinks = document.querySelector('.nav-links');
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
         }
 
         // ===== SCROLL ANIMATIONS =====
@@ -1759,12 +1884,14 @@
             });
             
             // Skill tags animation
-            document.querySelectorAll('.skill-tag').forEach((tag, index) => {
-                setTimeout(() => {
-                    tag.style.opacity = '1';
-                    tag.style.transform = 'translateY(0)';
-                }, index * 100);
-            });
+            setTimeout(() => {
+                document.querySelectorAll('.skill-tag').forEach((tag, index) => {
+                    setTimeout(() => {
+                        tag.style.opacity = '1';
+                        tag.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }, 1000);
         }
 
         // ===== SCROLL INDICATOR =====
@@ -1789,7 +1916,7 @@
             const moon = document.getElementById('moon');
             let isAnimating = false;
             
-            moon.addEventListener('click', () => {
+            function activateMoon() {
                 if (!isAnimating) {
                     isAnimating = true;
                     moon.style.animation = 'none';
@@ -1800,6 +1927,14 @@
                         moon.style.transform = '';
                         isAnimating = false;
                     }, 1000);
+                }
+            }
+            
+            moon.addEventListener('click', activateMoon);
+            moon.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    activateMoon();
                 }
             });
         }
@@ -1819,39 +1954,6 @@
                     element.style.transform = `translate(${x}px, ${y}px)`;
                 });
             });
-        }
-
-        // ===== INITIALIZE ALL FEATURES =====
-             function initializeAnimations() {
-            createStars();
-            initializeParticles();
-            initializeNavigation();
-            initializeScrollAnimations();
-            initializeScrollIndicator();
-            initializeMoonInteraction();
-            initializeMouseParallax();
-            
-            // Animate hero elements on load
-            setTimeout(() => {
-                document.querySelectorAll('.hero .element-animate').forEach((element, index) => {
-                    setTimeout(() => {
-                        element.classList.add('visible');
-                    }, index * 200);
-                });
-            }, 500);
-        }
-
-        // ===== PERFORMANCE OPTIMIZATION =====
-        function debounce(func, wait) {
-            let timeout;
-            return function executedFunction(...args) {
-                const later = () => {
-                    clearTimeout(timeout);
-                    func(...args);
-                };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-            };
         }
 
         // ===== ACCESSIBILITY ENHANCEMENTS =====
@@ -1883,80 +1985,31 @@
             }
         }
 
-        // ===== THEME DETECTION =====
-        function initializeThemeDetection() {
-            // Check for dark mode preference
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.body.classList.add('dark-theme');
-            }
+        // ===== SCROLL PROGRESS INDICATOR =====
+        function initializeScrollProgress() {
+            const progressBar = document.createElement('div');
+            progressBar.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 3px;
+                background: linear-gradient(90deg, var(--accent-cyan), var(--accent-coral));
+                z-index: 10001;
+                transition: width 0.1s ease;
+            `;
+            document.body.appendChild(progressBar);
 
-            // Listen for theme changes
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-                if (e.matches) {
-                    document.body.classList.add('dark-theme');
-                } else {
-                    document.body.classList.remove('dark-theme');
-                }
-            });
+            window.addEventListener('scroll', debounce(() => {
+                const scrollTop = window.pageYOffset;
+                const docHeight = document.body.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                progressBar.style.width = scrollPercent + '%';
+            }, 10));
         }
 
-        // ===== ERROR HANDLING =====
-        window.addEventListener('error', (e) => {
-            console.error('An error occurred:', e.error);
-            // Graceful degradation - continue with basic functionality
-        });
-
-        // ===== ANALYTICS & PERFORMANCE =====
-        function trackPerformance() {
-            if ('performance' in window) {
-                window.addEventListener('load', () => {
-                    setTimeout(() => {
-                        const perfData = performance.getEntriesByType('navigation')[0];
-                        console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
-                    }, 0);
-                });
-            }
-        }
-
-        // ===== SOCIAL MEDIA META UPDATES =====
-        function updateMetaTags() {
-            // Dynamic meta tag updates for better social sharing
-            const metaDescription = document.querySelector('meta[name="description"]');
-            const ogTitle = document.querySelector('meta[property="og:title"]');
-            const ogDescription = document.querySelector('meta[property="og:description"]');
-            
-            if (metaDescription) {
-                metaDescription.setAttribute('content', 
-                    'Thanatsitt Nareenapa - AI Creative Designer, Researcher & Scriptwriter. Bridging human creativity with artificial intelligence through innovative design, research, and storytelling.'
-                );
-            }
-            
-            if (ogTitle) {
-                ogTitle.setAttribute('content', 
-                    'Thanatsitt Nareenapa - AI Creative Designer & Researcher'
-                );
-            }
-            
-            if (ogDescription) {
-                ogDescription.setAttribute('content', 
-                    'Bridging human creativity with artificial intelligence through innovative design, research, and storytelling.'
-                );
-            }
-        }
-
-        // ===== CONTACT FORM ENHANCEMENT =====
+        // ===== CONTACT ENHANCEMENTS =====
         function initializeContactEnhancements() {
-            // Add mailto interaction enhancement
-            document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    // Add visual feedback
-                    link.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        link.style.transform = '';
-                    }, 150);
-                });
-            });
-
             // Add clipboard functionality for email
             const emailElements = document.querySelectorAll('[href*="thanatsitt.info@yahoo.co.uk"]');
             emailElements.forEach(element => {
@@ -1989,179 +2042,581 @@
             });
         }
 
-        // ===== SCROLL PROGRESS INDICATOR =====
-        function initializeScrollProgress() {
-            const progressBar = document.createElement('div');
-            progressBar.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 0%;
-                height: 3px;
-                background: linear-gradient(90deg, var(--accent-cyan), var(--accent-coral));
-                z-index: 10001;
-                transition: width 0.1s ease;
-            `;
-            document.body.appendChild(progressBar);
-
-            window.addEventListener('scroll', debounce(() => {
-                const scrollTop = window.pageYOffset;
-                const docHeight = document.body.scrollHeight - window.innerHeight;
-                const scrollPercent = (scrollTop / docHeight) * 100;
-                progressBar.style.width = scrollPercent + '%';
-            }, 10));
+        // ===== PERFORMANCE OPTIMIZATION =====
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
         }
 
-        // ===== LAZY LOADING ENHANCEMENT =====
-        function initializeLazyLoading() {
-            // Lazy load images and heavy content
-            if ('IntersectionObserver' in window) {
-                const lazyElements = document.querySelectorAll('[data-lazy]');
-                const lazyObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const element = entry.target;
-                            if (element.dataset.lazy === 'image') {
-                                // Load image if needed
-                                element.style.opacity = '1';
-                            }
-                            lazyObserver.unobserve(element);
-                        }
-                    });
-                });
-
-                lazyElements.forEach(element => {
-                    lazyObserver.observe(element);
-                });
-            }
-        }
-
-        // ===== INITIALIZATION =====
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize core features
+                // ===== INITIALIZE ALL FEATURES =====
+        function initializeAnimations() {
+            createStars();
+            initializeParticles();
+            initializeNavigation();
+            initializeScrollAnimations();
+            initializeScrollIndicator();
+            initializeMoonInteraction();
+            initializeMouseParallax();
             initializeAccessibility();
-            initializeThemeDetection();
-            updateMetaTags();
-            initializeContactEnhancements();
             initializeScrollProgress();
-            initializeLazyLoading();
-            trackPerformance();
+            initializeContactEnhancements();
+            
+            // Start hero animations
+            setTimeout(() => {
+                document.querySelectorAll('.hero .element-animate').forEach((element, index) => {
+                    setTimeout(() => {
+                        element.classList.add('animate-fade-in');
+                    }, index * 200);
+                });
+            }, 500);
+        }
 
-            // Add keyboard navigation styles
-            const keyboardStyles = document.createElement('style');
-            keyboardStyles.textContent = `
-                .keyboard-nav *:focus {
-                    outline: 2px solid var(--accent-cyan) !important;
-                    outline-offset: 2px !important;
-                }
-                
-                .reduced-motion * {
-                    animation-duration: 0.01ms !important;
-                    animation-iteration-count: 1 !important;
-                    transition-duration: 0.01ms !important;
-                }
-                
-                .dark-theme {
-                    filter: invert(1) hue-rotate(180deg);
-                }
-                
-                .dark-theme img,
-                .dark-theme video,
-                .dark-theme canvas {
-                    filter: invert(1) hue-rotate(180deg);
-                }
+        // ===== PWA INSTALLATION =====
+        let deferredPrompt;
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent the mini-infobar from appearing on mobile
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Create install button
+            const installButton = document.createElement('button');
+            installButton.innerHTML = '<i class="fas fa-download"></i> Install App';
+            installButton.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: var(--accent-cyan);
+                color: white;
+                border: none;
+                padding: 1rem 2rem;
+                border-radius: 25px;
+                font-size: 0.9rem;
+                font-weight: 500;
+                cursor: pointer;
+                z-index: 10000;
+                box-shadow: var(--shadow-lg);
+                transition: all var(--transition-smooth);
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
             `;
-            document.head.appendChild(keyboardStyles);
-
-            console.log('🎨 Thanatsitt\'s Portfolio Initialized Successfully!');
-            console.log('✨ Features: AI Design, Creative Writing, Interactive Experience');
-            console.log('🚀 Performance Optimized & Accessible');
+            
+            installButton.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    if (outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    }
+                    deferredPrompt = null;
+                    installButton.remove();
+                }
+            });
+            
+            installButton.addEventListener('mouseover', () => {
+                installButton.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            
+            installButton.addEventListener('mouseout', () => {
+                installButton.style.transform = 'translateY(0) scale(1)';
+            });
+            
+            document.body.appendChild(installButton);
         });
 
         // ===== SERVICE WORKER REGISTRATION =====
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js')
-                    .then(registration => {
-                        console.log('ServiceWorker registered successfully');
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
                     })
-                    .catch(error => {
-                        console.log('ServiceWorker registration failed');
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
                     });
             });
         }
 
-        // ===== EASTER EGG =====
-        let konamiCode = [];
-        const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
-
-        document.addEventListener('keydown', (e) => {
-            konamiCode.push(e.keyCode);
-            if (konamiCode.length > konamiSequence.length) {
-                konamiCode.shift();
-            }
+        // ===== ENHANCED SCROLL EFFECTS =====
+        function initializeAdvancedScrollEffects() {
+            const cards = document.querySelectorAll('.script-card, .skill-category');
             
-            if (konamiCode.join(',') === konamiSequence.join(',')) {
-                // Easter egg activated!
-                const moon = document.getElementById('moon');
-                moon.style.background = 'linear-gradient(135deg, #FFD700, #FF69B4, #00CED1, #98FB98)';
-                moon.style.animation = 'moonPhase 1s ease-in-out infinite';
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.transform = 'translateY(0) scale(1)';
+                        entry.target.style.opacity = '1';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            cards.forEach(card => {
+                card.style.transform = 'translateY(50px) scale(0.95)';
+                card.style.opacity = '0';
+                card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                cardObserver.observe(card);
+            });
+        }
+
+        // ===== ENHANCED MOON EFFECTS =====
+        function initializeEnhancedMoonEffects() {
+            const moon = document.getElementById('moon');
+            
+            // Create moon phases effect
+            const phases = ['🌑', '🌒', '🌓', '🌔', '🌕', '🌖', '🌗', '🌘'];
+            let currentPhase = 0;
+            
+            setInterval(() => {
+                currentPhase = (currentPhase + 1) % phases.length;
+                moon.setAttribute('data-phase', phases[currentPhase]);
+            }, 3000);
+            
+            // Add shooting stars effect
+            function createShootingStar() {
+                const star = document.createElement('div');
+                star.style.cssText = `
+                    position: absolute;
+                    width: 2px;
+                    height: 2px;
+                    background: white;
+                    border-radius: 50%;
+                    top: ${Math.random() * 50}%;
+                    left: ${Math.random() * 50}%;
+                    animation: shootingStar 2s linear forwards;
+                    pointer-events: none;
+                `;
                 
-                // Add rainbow effect to page
-                document.body.style.background = 'linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #96CEB4, #FFEAA7, #DDA0DD)';
-                document.body.style.backgroundSize = '400% 400%';
-                document.body.style.animation = 'rainbow 3s ease infinite';
-                
-                const rainbowAnimation = document.createElement('style');
-                rainbowAnimation.textContent = `
-                    @keyframes rainbow {
-                        0% { background-position: 0% 50%; }
-                        50% { background-position: 100% 50%; }
-                        100% { background-position: 0% 50%; }
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes shootingStar {
+                        0% {
+                            transform: translate(0, 0) scale(1);
+                            opacity: 1;
+                        }
+                        100% {
+                            transform: translate(200px, 200px) scale(0);
+                            opacity: 0;
+                        }
                     }
                 `;
-                document.head.appendChild(rainbowAnimation);
+                document.head.appendChild(style);
+                
+                moon.appendChild(star);
                 
                 setTimeout(() => {
-                    location.reload();
-                }, 5000);
-                
-                konamiCode = [];
+                    star.remove();
+                }, 2000);
             }
-        });
-    </script>
+            
+            // Create shooting stars periodically
+            setInterval(createShootingStar, 5000);
+        }
 
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Thanatsitt Nareenapa",
-        "url": "https://thanatsitt.dev",
-        "email": "thanatsitt.info@yahoo.co.uk",
-        "jobTitle": "AI Creative Designer, Researcher & Scriptwriter",
-        "description": "Bridging human creativity with artificial intelligence through innovative design, research, and storytelling.",
-        "alumniOf": {
-            "@type": "EducationalOrganization",
-            "name": "Master of Science in Innovation and Technology Management"
-        },
-        "knowsAbout": [
-            "Artificial Intelligence",
-            "Machine Learning",
-            "UX/UI Design",
-            "Creative Writing",
-            "Scriptwriting",
-            "Research",
-            "Innovation"
-        ],
-        "sameAs": [
-            "https://linkedin.com/in/thanatsitt-nareenapa",
-            "https://github.com/thanatsittn",
-            "https://twitter.com/thanatsittn"
-        ]
-    }
+        // ===== THEME TOGGLE =====
+        function initializeThemeToggle() {
+            const themeToggle = document.createElement('button');
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            themeToggle.style.cssText = `
+                position: fixed;
+                top: 50%;
+                right: 20px;
+                transform: translateY(-50%);
+                background: rgba(255, 255, 255, 0.9);
+                border: 1px solid var(--border-medium);
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                cursor: pointer;
+                z-index: 10000;
+                transition: all var(--transition-smooth);
+                box-shadow: var(--shadow-md);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                color: var(--text-primary);
+            `;
+            
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-theme');
+                const icon = themeToggle.querySelector('i');
+                icon.className = document.body.classList.contains('dark-theme') 
+                    ? 'fas fa-sun' 
+                    : 'fas fa-moon';
+            });
+            
+            document.body.appendChild(themeToggle);
+        }
+
+        // ===== PERFORMANCE MONITORING =====
+        function initializePerformanceMonitoring() {
+            // Monitor FPS
+            let fps = 0;
+            let lastTime = performance.now();
+            
+            function measureFPS() {
+                const currentTime = performance.now();
+                fps = Math.round(1000 / (currentTime - lastTime));
+                lastTime = currentTime;
+                
+                if (fps < 30) {
+                    // Reduce particle count for better performance
+                    const canvas = document.getElementById('particleCanvas');
+                    const ctx = canvas.getContext('2d');
+                    ctx.globalAlpha = 0.5;
+                }
+                
+                requestAnimationFrame(measureFPS);
+            }
+            
+            measureFPS();
+            
+            // Monitor memory usage
+            if (performance.memory) {
+                setInterval(() => {
+                    const memoryUsage = performance.memory.usedJSHeapSize / 1048576; // MB
+                    if (memoryUsage > 50) {
+                        console.warn('High memory usage detected:', memoryUsage, 'MB');
+                    }
+                }, 10000);
+            }
+        }
+
+        // ===== ENHANCED CONTACT FORM =====
+        function initializeEnhancedContact() {
+            const contactSection = document.getElementById('contact');
+            
+            // Add contact form
+            const contactForm = document.createElement('form');
+            contactForm.innerHTML = `
+                <div class="contact-form" style="
+                    max-width: 600px;
+                    margin: 3rem auto 0;
+                    padding: 3rem;
+                    background: rgba(255, 255, 255, 0.9);
+                    border-radius: 20px;
+                    box-shadow: var(--shadow-lg);
+                    border: 1px solid var(--border-light);
+                ">
+                    <h3 style="
+                        font-family: 'Playfair Display', serif;
+                        font-size: 1.5rem;
+                        margin-bottom: 2rem;
+                        text-align: center;
+                        color: var(--text-primary);
+                    ">Send me a message</h3>
+                    
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="name" style="
+                            display: block;
+                            margin-bottom: 0.5rem;
+                            font-weight: 500;
+                            color: var(--text-primary);
+                        ">Name</label>
+                        <input type="text" id="name" name="name" required style="
+                            width: 100%;
+                            padding: 1rem;
+                            border: 1px solid var(--border-medium);
+                            border-radius: 10px;
+                            font-size: 1rem;
+                            transition: all var(--transition-smooth);
+                            background: rgba(255, 255, 255, 0.8);
+                        ">
+                    </div>
+                    
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="email" style="
+                            display: block;
+                            margin-bottom: 0.5rem;
+                            font-weight: 500;
+                            color: var(--text-primary);
+                        ">Email</label>
+                        <input type="email" id="email" name="email" required style="
+                            width: 100%;
+                            padding: 1rem;
+                            border: 1px solid var(--border-medium);
+                            border-radius: 10px;
+                            font-size: 1rem;
+                            transition: all var(--transition-smooth);
+                            background: rgba(255, 255, 255, 0.8);
+                        ">
+                    </div>
+                    
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <label for="message" style="
+                            display: block;
+                            margin-bottom: 0.5rem;
+                            font-weight: 500;
+                            color: var(--text-primary);
+                        ">Message</label>
+                        <textarea id="message" name="message" rows="5" required style="
+                            width: 100%;
+                            padding: 1rem;
+                            border: 1px solid var(--border-medium);
+                            border-radius: 10px;
+                            font-size: 1rem;
+                            transition: all var(--transition-smooth);
+                            background: rgba(255, 255, 255, 0.8);
+                            resize: vertical;
+                        "></textarea>
+                    </div>
+                    
+                    <button type="submit" style="
+                        width: 100%;
+                        padding: 1rem 2rem;
+                        background: linear-gradient(135deg, var(--accent-cyan), var(--accent-coral));
+                        color: white;
+                        border: none;
+                        border-radius: 10px;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: all var(--transition-smooth);
+                        box-shadow: var(--shadow-md);
+                    ">Send Message</button>
+                </div>
+            `;
+            
+            contactSection.querySelector('.contact-content').appendChild(contactForm);
+            
+            // Add form styling on focus
+            const inputs = contactForm.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.style.borderColor = 'var(--accent-cyan)';
+                    input.style.boxShadow = '0 0 0 3px rgba(8, 145, 178, 0.1)';
+                });
+                
+                input.addEventListener('blur', () => {
+                    input.style.borderColor = 'var(--border-medium)';
+                    input.style.boxShadow = 'none';
+                });
+            });
+            
+            // Handle form submission
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData);
+                
+                // Create mailto link
+                const subject = `Portfolio Contact from ${data.name}`;
+                const body = `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`;
+                const mailtoLink = `mailto:thanatsitt.info@yahoo.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                
+                window.location.href = mailtoLink;
+                
+                // Show success message
+                const successMessage = document.createElement('div');
+                successMessage.innerHTML = '<i class="fas fa-check-circle"></i> Message prepared! Your email client should open.';
+                successMessage.style.cssText = `
+                    background: var(--accent-mint);
+                    color: white;
+                    padding: 1rem;
+                    border-radius: 10px;
+                    margin-top: 1rem;
+                    text-align: center;
+                    font-weight: 500;
+                `;
+                contactForm.appendChild(successMessage);
+                
+                setTimeout(() => {
+                    successMessage.remove();
+                }, 5000);
+            });
+        }
+
+        // ===== TYPING EFFECT =====
+        function initializeTypingEffect() {
+            const tagline = document.querySelector('.tagline');
+            const originalText = tagline.textContent;
+            const texts = [
+                'AI Creative Designer',
+                'Technology Researcher',
+                'Script Writer',
+                'Innovation Catalyst',
+                'Digital Storyteller'
+            ];
+            
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            
+            function typeText() {
+                const currentText = texts[textIndex];
+                
+                if (isDeleting) {
+                    tagline.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    tagline.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+                
+                let typeSpeed = isDeleting ? 100 : 150;
+                
+                if (!isDeleting && charIndex === currentText.length) {
+                    typeSpeed = 2000;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    typeSpeed = 500;
+                }
+                
+                setTimeout(typeText, typeSpeed);
+            }
+            
+            // Start typing effect after initial load
+            setTimeout(() => {
+                typeText();
+            }, 3000);
+        }
+
+        // ===== AUDIO FEEDBACK =====
+        function initializeAudioFeedback() {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            
+            function playTone(frequency, duration) {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.value = frequency;
+                oscillator.type = 'sine';
+                
+                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+                
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + duration);
+            }
+            
+            // Add audio feedback to interactions
+            document.querySelectorAll('.social-link, .contact-item').forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    playTone(800, 0.1);
+                });
+                
+                element.addEventListener('click', () => {
+                    playTone(1000, 0.2);
+                });
+            });
+        }
+
+        // ===== EASTER EGG =====
+        function initializeEasterEgg() {
+            const konamiCode = [
+                'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+                'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
+                'KeyB', 'KeyA'
+            ];
+            
+            let userInput = [];
+            
+            document.addEventListener('keydown', (e) => {
+                userInput.push(e.code);
+                userInput = userInput.slice(-konamiCode.length);
+                
+                if (userInput.join('') === konamiCode.join('')) {
+                    activateEasterEgg();
+                }
+            });
+            
+            function activateEasterEgg() {
+                // Create rainbow effect
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes rainbow {
+                        0% { filter: hue-rotate(0deg); }
+                        100% { filter: hue-rotate(360deg); }
+                    }
+                    
+                    .rainbow-mode * {
+                        animation: rainbow 2s linear infinite;
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                document.body.classList.add('rainbow-mode');
+                
+                // Show easter egg message
+                const message = document.createElement('div');
+                message.innerHTML = `
+                    <div style="
+                        position: fixed;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        background: rgba(0, 0, 0, 0.9);
+                        color: white;
+                        padding: 2rem;
+                        border-radius: 20px;
+                        text-align: center;
+                        z-index: 10001;
+                        font-family: 'Playfair Display', serif;
+                        font-size: 1.5rem;
+                        box-shadow: var(--shadow-xl);
+                    ">
+                        🎉 Congratulations! 🎉<br>
+                        You found the secret rainbow mode!<br>
+                        <small style="font-size: 0.8rem; opacity: 0.7;">
+                            (Click anywhere to continue)
+                        </small>
+                    </div>
+                `;
+                
+                document.body.appendChild(message);
+                
+                message.addEventListener('click', () => {
+                    document.body.classList.remove('rainbow-mode');
+                    message.remove();
+                    style.remove();
+                });
+                
+                setTimeout(() => {
+                    document.body.classList.remove('rainbow-mode');
+                    message.remove();
+                    style.remove();
+                }, 10000);
+            }
+        }
+
+        // ===== FINAL INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all enhanced features
+            setTimeout(() => {
+                initializeAdvancedScrollEffects();
+                initializeEnhancedMoonEffects();
+                initializeThemeToggle();
+                initializePerformanceMonitoring();
+                initializeEnhancedContact();
+                initializeTypingEffect();
+                initializeAudioFeedback();
+                initializeEasterEgg();
+            }, 1000);
+        });
+
+        // ===== CLEANUP ON PAGE UNLOAD =====
+        window.addEventListener('beforeunload', () => {
+            // Clean up any running animations or intervals
+            document.querySelectorAll('*').forEach(element => {
+                element.style.animation = 'none';
+            });
+        });
     </script>
 </body>
 </html>
-
-
