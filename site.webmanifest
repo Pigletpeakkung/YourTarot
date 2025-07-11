@@ -1,7 +1,7 @@
 {
-    "name": "PegeArts - Thanatsitt Nareenapa Portfolio",
+    "name": "PegeArts - Thanattsitt Santisamranwilai Portfolio",
     "short_name": "PegeArts",
-    "description": "AI Creative Designer, Researcher & Scriptwriter Portfolio",
+    "description": "Thanattsitt Santisamranwilai - AI Creative Designer, Researcher & Scriptwriter Portfolio",
     "icons": [
         {
             "src": "/assets/images/android-chrome-192x192.png",
@@ -17,5 +17,6 @@
     "theme_color": "#0891B2",
     "background_color": "#F8F9FA",
     "display": "standalone",
-    "start_url": "/"
+    "start_url": "/",
+    "author": "Thanattsitt Santisamranwilai"
 }
