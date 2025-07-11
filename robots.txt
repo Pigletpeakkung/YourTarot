@@ -1,9 +1,12 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
+# Sitemap
 Sitemap: https://pegearts.com/sitemap.xml
 
-# Disallow sensitive areas (if any)
-Disallow: /private/
-Disallow: /.netlify/
+# Block specific crawlers if needed
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
