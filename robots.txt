@@ -4,9 +4,37 @@ Allow: /
 # Sitemap
 Sitemap: https://pegearts.com/sitemap.xml
 
-# Block specific crawlers if needed
-User-agent: AhrefsBot
-Disallow: /
+# Disallow certain paths if needed
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /.git/
 
-User-agent: MJ12bot
-Disallow: /
+# Allow search engines to crawl assets
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Specific rules for different bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Social media bots
+User-agent: facebookexternalhit/
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
