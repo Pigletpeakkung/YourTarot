@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Frequently Asked Questions | PegeArts - Cultural AI Innovation</title>
+    <meta name="description" content="Get answers to common questions about Cultural AI development, VTuber technology, cross-cultural design, and collaboration with Thanatsitt Santisamranwilai.">
+    <meta name="keywords" content="AI FAQ, VTuber questions, Cultural AI, Cross-cultural technology, AI development pricing, VTuber creation">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="FAQ - PegeArts Cultural AI Innovation">
+    <meta property="og:description" content="Common questions about AI development, VTuber technology, and cross-cultural design solutions.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=630&fit=crop">
+    <meta property="og:url" content="https://pegearts.com/faq">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://pegearts.com/faq">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0891B2;
+            --secondary-color: #06B6D4;
+            --accent-color: #F59E0B;
+            --text-primary: #1F2937;
+            --text-secondary: #6B7280;
+            --background: #F8F9FA;
+            --white: #FFFFFF;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --success-color: #10B981;
+            --warning-color: #F59E0B;
+            --error-color: #EF4444;
+            
+            /* Dark theme */
+            --dark-bg: #0F172A;
+            --dark-surface: #1E293B;
+            --dark-card: #334155;
+            --dark-text: #F1F5F9;
+            --dark-text-secondary: #CBD5E1;
+            --dark-border: #475569;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-theme {
+            background: var(--dark-bg);
+            color: var(--dark-text);
+        }
+
+        /* Header Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+
+        .dark-theme .header {
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom-color: var(--dark-border);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .dark-theme .nav-links a {
+            color: var(--dark-text);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dark-theme .theme-toggle {
+            color: var(--dark-text);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding-top: 6rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 3rem 0 4rem;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .dark-theme .hero-subtitle {
+            color: var(--dark-text-secondary);
+        }
+
+        /* Search Section */
+        .search-section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1.5rem;
+            border: 2px solid var(--gray-300);
+            border-radius: 2rem;
+            font-size: 1rem;
+            background: var(--white);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .dark-theme .search-input {
+            background: var(--dark-surface);
+            color: var(--dark-text);
+            border-color: var(--dark-border);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .dark-theme .search-icon {
+            color: var(--dark-text-secondary);
+        }
+
+        /* Quick Links */
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .quick-link {
+            background: var(--white);
+            color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+        }
+
+        .dark-theme .quick-link {
+            background: var(--dark-surface);
+            border-color: var(--primary-color);
+        }
+
+        .quick-link:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* FAQ Categories */
+        .faq-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .category-card {
+            background: var(--white);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .dark-theme .category-card {
+            background: var(--dark-surface);
+            border-color: var(--dark-border);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-card.active {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .category-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .dark-theme .category-title {
+            color: var(--dark-text);
+        }
+
+        .category-count {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .dark-theme .category-count {
+            color: var(--dark-text-secondary);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 4rem;
+        }
+
+        .faq-category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .dark-theme .faq-category-title {
+            color: var(--dark-text);
+        }
+
+        .faq-category-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .faq-items {
+            display: none;
+        }
+
+        .faq-items.active {
+            display: block;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--gray-200);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .dark-theme .faq-item {
+            background: var(--dark-surface);
+            border-color: var(--dark-border);
+        }
+
+        .faq-item.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .dark-theme .faq-question {
+            color: var(--dark-text);
+        }
+
+        .faq-question:hover {
+            background: var(--gray-100);
+        }
+
+        .dark-theme .faq-question:hover {
+            background: var(--dark-card);
+        }
+
+        .faq-question.active {
+            background: var(--gray-100);
+            color: var(--primary-color);
+        }
+
+        .dark-theme .faq-question.active {
+            background: var(--dark-card);
+        }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .dark-theme .faq-answer-content {
+            color: var(--dark-text-secondary);
+        }
+
+        .faq-answer-content p {
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer-content ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .faq-answer-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer-content strong {
+            color: var(--primary-color);
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            border-radius: 2rem;
+            margin: 4rem 0;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .faq-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-links {
+                justify-content: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Animation Classes */
+        .animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hidden class */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">PegeArts</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/faq" class="active">FAQ</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-icon">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+                <h1 class="hero-title">Frequently Asked Questions</h1>
+                <p class="hero-subtitle">
+                    Find answers to common questions about Cultural AI development, VTuber technology, 
+                    and cross-cultural design solutions.
+                </p>
+            </section>
+
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <input type="text" class="search-input" id="faqSearch" placeholder="Search for answers...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </section>
+
+            <!-- Quick Links -->
+            <section class="quick-links">
+                <a href="#ai-development" class="quick-link">AI Development</a>
+                <a href="#vtuber-tech" class="quick-link">VTuber Technology</a>
+                <a href="#cultural-ai" class="quick-link">Cultural AI</a>
+                <a href="#pricing" class="quick-link">Pricing</a>
+                <a href="#collaboration" class="quick-link">Collaboration</a>
+            </section>
+
+            <!-- FAQ Categories -->
+            <section class="faq-categories">
+                <div class="category-card active" data-category="ai-development">
+                    <div class="category-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="category-title">AI Development</h3>
+                    <p class="category-count">8 questions</p>
+                </div>
+
+                <div class="category-card" data-category="vtuber-tech">
+                    <div class="category-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="category-title">VTuber Technology</h3>
+                    <p class="category-count">6 questions</p>
+                </div>
+
+                <div class="category-card" data-category="cultural-ai">
+                    <div class="category-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="category-title">Cultural AI</h3>
+                    <p class="category-count">7 questions</p>
+                </div>
+
+                <div class="category-card" data-category="pricing">
+                    <div class="category-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="category-title">Pricing & Services</h3>
+                    <p class="category-count">5 questions</p>
+                </div>
+
+                <div class="category-card" data-category="collaboration">
+                    <div class="category-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="category-title">Collaboration</h3>
+                    <p class="category-count">6 questions</p>
+                </div>
+
+                <div class="category-card" data-category="general">
+                    <div class="category-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3 class="category-title">General</h3>
+                    <p class="category-count">4 questions</p>
+                </div>
+            </section>
+
+            <!-- FAQ Sections -->
+            <!-- AI Development FAQ -->
+            <section class="faq-section">
+                <div class="faq-items active" id="ai-development">
+                    <h2 class="faq-category-title">AI Development</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What types of AI solutions do you develop?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>I specialize in culturally-aware AI solutions including:</p>
+                                <ul>
+                                    <li><strong>Natural Language Processing:</strong> Multilingual chatbots and content analysis systems</li>
+                                    <li><strong>Computer Vision:</strong> Cultural gesture recognition and adaptive visual interfaces</li>
+                                    <li><strong>Recommendation Systems:</strong> E-commerce AI that understands cultural preferences</li>
+                                    <li><strong>VTuber AI:</strong> Real-time character animation and personality modeling</li>
+                                    <li><strong>Cultural Adaptation AI:</strong> Systems that adjust behavior based on cultural context</li>
+                                </ul>
+                                <p>All solutions are designed with cultural sensitivity and ethical AI principles in mind.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do you ensure AI systems are culturally sensitive?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Cultural sensitivity is integrated throughout my AI development process:</p>
+                                <ul>
+                                    <li><strong>Diverse Training Data:</strong> Using datasets that represent multiple cultural perspectives</li>
+                                    <li><strong>Cultural Testing:</strong> Evaluating AI behavior across different cultural contexts</li>
+                                    <li><strong>Local Expertise:</strong> Collaborating with cultural experts from target regions</li>
+                                    <li><strong>Bias Detection:</strong> Implementing tools to identify and mitigate cultural biases</li>
+                                    <li><strong>Adaptive Algorithms:</strong> Creating systems that learn and adapt to cultural nuances</li>
+                                </ul>
+                                <p>I draw from my experience working across Thai, Japanese, and Western markets to ensure comprehensive cultural awareness.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What AI frameworks and technologies do you use?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>I work with cutting-edge AI technologies and frameworks:</p>
+                                <ul>
+                                    <li><strong>Deep Learning:</strong> TensorFlow, PyTorch, Keras</li>
+                                    <li><strong>NLP:</strong> Transformers, BERT, GPT variants, spaCy</li>
+                                    <li><strong>Computer Vision:</strong> OpenCV, YOLO, MediaPipe</li>
+                                    <li><strong>Cloud Platforms:</strong> AWS SageMaker, Google Cloud AI, Azure ML</li>
+                                    <li><strong>Specialized Tools:</strong> Live2D for VTuber tech, cultural adaptation libraries</li>
+                                </ul>
+                                <p>Technology choices are always aligned with project requirements and cultural considerations.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How long does it take to develop a custom AI solution?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Development timelines vary based on complexity and requirements:</p>
+                                <ul>
+                                    <li><strong>Simple AI Integration:</strong> 2-4 weeks</li>
+                                    <li><strong>Custom NLP Solutions:</strong> 6-12 weeks</li>
+                                    <li><strong>VTuber AI Systems:</strong> 8-16 weeks</li>
+                                    <li><strong>Complex Cultural AI:</strong> 12-24 weeks</li>
+                                    <li><strong>Enterprise Solutions:</strong> 3-6 months</li>
+                                </ul>
+                                <p>Timeline includes cultural research, development, testing, and cultural validation phases. Each project begins with a detailed timeline during the consultation phase.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can you work with existing AI systems or do you build from scratch?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>I offer both approaches depending on your needs:</p>
+                                <ul>
+                                    <li><strong>Enhancement:</strong> Adding cultural awareness to existing AI systems</li>
+                                    <li><strong>Integration:</strong> Connecting multiple AI services with cultural adaptation layers</li>
+                                    <li><strong>Migration:</strong> Upgrading legacy systems with modern, culturally-aware AI</li>
+                                    <li><strong>Custom Development:</strong> Building new solutions from the ground up</li>
+                                    <li><strong>Consultation:</strong> Providing guidance on AI strategy and cultural considerations</li>
+                                </ul>
+                                <p>The approach is determined during the initial consultation based on your current infrastructure and goals.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do you provide ongoing support and maintenance for AI systems?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Yes, I offer comprehensive ongoing support:</p>
+                                <ul>
+                                    <li><strong>Performance Monitoring:</strong> Regular system health checks and optimization</li>
+                                    <li><strong>Cultural Updates:</strong> Adapting AI behavior as cultural contexts evolve</li>
+                                    <li><strong>Model Retraining:</strong> Updating models with new data and insights</li>
+                                    <li><strong>Bug Fixes:</strong> Resolving issues and improving system reliability</li>
+                                    <li><strong>Feature Enhancements:</strong> Adding new capabilities as requirements grow</li>
+                                </ul>
+                                <p>Support packages are tailored to your needs, from basic monitoring to full managed services.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                                      <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What programming languages do you use for AI development?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>I work with a range of programming languages optimized for AI development:</p>
+                                <ul>
+                                    <li><strong>Python:</strong> Primary language for AI/ML development, data science, and automation</li>
+                                    <li><strong>JavaScript/TypeScript:</strong> For web-based AI applications and real-time interfaces</li>
+                                    <li><strong>R:</strong> Statistical analysis and specialized cultural data modeling</li>
+                                    <li><strong>C++:</strong> Performance-critical AI components and optimization</li>
+                                    <li><strong>SQL:</strong> Database management and data preprocessing</li>
+                                    <li><strong>Solidity:</strong> For blockchain-integrated AI solutions</li>
+                                </ul>
+                                <p>Language selection is based on project requirements, performance needs, and integration with existing systems.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do you handle data privacy and security in AI projects?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Data privacy and security are fundamental priorities in all AI projects:</p>
+                                <ul>
+                                    <li><strong>Privacy by Design:</strong> Building privacy protection into the AI architecture from the start</li>
+                                    <li><strong>Data Minimization:</strong> Using only necessary data and implementing data retention policies</li>
+                                    <li><strong>Encryption:</strong> End-to-end encryption for data in transit and at rest</li>
+                                    <li><strong>Compliance:</strong> Adherence to GDPR, PDPA (Thailand), and other regional privacy laws</li>
+                                    <li><strong>Anonymization:</strong> Advanced techniques to protect individual privacy in training data</li>
+                                    <li><strong>Cultural Sensitivity:</strong> Respecting cultural attitudes toward data privacy and consent</li>
+                                </ul>
+                                <p>All projects include comprehensive privacy impact assessments and security audits.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VTuber Technology FAQ -->
+                <div class="faq-items" id="vtuber-tech">
+                    <h2 class="faq-category-title">VTuber Technology</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What VTuber technologies and platforms do you work with?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>I specialize in comprehensive VTuber technology solutions:</p>
+                                <ul>
+                                    <li><strong>Live2D:</strong> Advanced character animation and rigging</li>
+                                    <li><strong>VTube Studio:</strong> Real-time motion capture and streaming integration</li>
+                                    <li><strong>Custom AI Personalities:</strong> Intelligent character behavior and response systems</li>
+                                    <li><strong>Voice Synthesis:</strong> AI-powered voice generation and real-time processing</li>
+                                    <li><strong>Motion Capture:</strong> Facial tracking, body movement, and gesture recognition</li>
+                                    <li><strong>Streaming Integration:</strong> OBS, YouTube, Twitch, and regional platforms</li>
+                                </ul>
+                                <p>Solutions are customized for different cultural markets, especially Japanese, Thai, and international audiences.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can you create AI-powered VTuber personalities that adapt to different cultures?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Absolutely! Cultural adaptation is a core feature of my VTuber AI systems:</p>
+                                <ul>
+                                    <li><strong>Language Switching:</strong> Seamless transitions between Japanese, Thai, and English</li>
+                                    <li><strong>Cultural Behaviors:</strong> Appropriate gestures, expressions, and mannerisms for each culture</li>
+                                    <li><strong>Context Awareness:</strong> Understanding cultural holidays, trends, and social norms</li>
+                                    <li><strong>Audience Adaptation:</strong> Adjusting personality and content style based on viewer demographics</li>
+                                    <li><strong>Regional Preferences:</strong> Incorporating gaming preferences, humor styles, and communication patterns</li>
+                                </ul>
+                                <p>The AI learns and evolves with audience interaction while maintaining cultural authenticity.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What's included in a complete VTuber setup?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>A complete VTuber package includes everything needed to start streaming:</p>
+                                <ul>
+                                    <li><strong>Character Design:</strong> Original artwork and personality development</li>
+                                    <li><strong>Live2D Model:</strong> Fully rigged and animated character model</li>
+                                    <li><strong>AI Personality System:</strong> Intelligent response and behavior engine</li>
+                                    <li><strong>Voice Setup:</strong> AI voice synthesis or recording guidance</li>
+                                    <li><strong>Streaming Software:</strong> Configured and optimized for your platform</li>
+                                    <li><strong>Cultural Localization:</strong> Adaptation for target markets</li>
+                                    <li><strong>Training & Support:</strong> Comprehensive tutorials and ongoing assistance</li>
+                                </ul>
+                                <p>Packages are customizable based on your specific needs and budget.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How realistic and expressive can AI-powered VTuber characters be?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Modern AI-powered VTuber technology achieves remarkable realism and expressiveness:</p>
+                                <ul>
+                                    <li><strong>Facial Expressions:</strong> Subtle micro-expressions and emotional nuances</li>
+                                    <li><strong>Eye Tracking:</strong> Natural eye movement and audience engagement</li>
+                                    <li><strong>Lip Sync:</strong> Accurate mouth movement synchronized with speech</li>
+                                    <li><strong>Body Language:</strong> Gesture recognition and natural movement patterns</li>
+                                    <li><strong>Emotional Intelligence:</strong> Contextual responses and mood adaptation</li>
+                                    <li><strong>Cultural Authenticity:</strong> Appropriate expressions for different cultural contexts</li>
+                                </ul>
+                                <p>The level of realism continues to improve with advances in AI and motion capture technology.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can VTuber AI handle live streaming and real-time interaction?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Yes, my VTuber AI systems are optimized for real-time performance:</p>
+                                <ul>
+                                    <li><strong>Live Chat Processing:</strong> Real-time analysis and response to viewer messages</li>
+                                    <li><strong>Low Latency:</strong> Minimal delay between input and character response</li>
+                                    <li><strong>Concurrent Handling:</strong> Managing multiple viewer interactions simultaneously</li>
+                                    <li><strong>Contextual Memory:</strong> Remembering previous conversations and viewer preferences</li>
+                                    <li><strong>Platform Integration:</strong> Native support for major streaming platforms</li>
+                                    <li><strong>Fallback Systems:</strong> Graceful handling of technical issues or overload</li>
+                                </ul>
+                                <p>The system can operate autonomously or with human oversight depending on your preference.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do you provide voice acting services for VTuber characters?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Yes, I offer comprehensive voice services for VTuber projects:</p>
+                                <ul>
+                                    <li><strong>Multilingual Voice Acting:</strong> Professional voice work in English, Thai, and Japanese</li>
+                                    <li><strong>Character Voice Development:</strong> Creating unique vocal personalities and traits</li>
+                                    <li><strong>AI Voice Training:</strong> Training custom AI voices based on your preferences</li>
+                                    <li><strong>Cultural Adaptation:</strong> Adjusting vocal style for different cultural audiences</li>
+                                    <li><strong>Recording Services:</strong> High-quality studio recording for character content</li>
+                                    <li><strong>Voice Coaching:</strong> Training other voice actors for your project</li>
+                                </ul>
+                                <p>Voice services can be combined with AI technology for hybrid live/pre-recorded content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cultural AI FAQ -->
+                <div class="faq-items" id="cultural-ai">
+                    <h2 class="faq-category-title">Cultural AI</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What makes AI "culturally aware" and why is it important?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Culturally aware AI understands and adapts to different cultural contexts:</p>
+                                <ul>
+                                    <li><strong>Communication Styles:</strong> Direct vs. indirect communication preferences</li>
+                                    <li><strong>Social Norms:</strong> Understanding appropriate behavior and etiquette</li>
+                                    <li><strong>Visual Preferences:</strong> Color meanings, imagery, and design aesthetics</li>
+                                    <li><strong>Business Practices:</strong> Decision-making processes and hierarchy structures</li>
+                                    <li><strong>Language Nuances:</strong> Context, formality levels, and cultural expressions</li>
+                                </ul>
+                                <p><strong>Why it matters:</strong> Cultural AI prevents misunderstandings, increases user adoption, and creates more inclusive technology experiences that respect diversity rather than imposing one-size-fits-all solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Which cultures and regions do you specialize in?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>I have deep expertise in several key cultural regions:</p>
+                                <ul>
+                                    <li><strong>Southeast Asian Cultures:</strong> Thailand, Singapore, and broader ASEAN markets</li>
+                                    <li><strong>East Asian Markets:</strong> Japan, with understanding of business and entertainment cultures</li>
+                                    <li><strong>Western Markets:</strong> US, UK, and European cultural contexts</li>
+                                    <li><strong>Cross-Cultural Dynamics:</strong> How these cultures interact in global business</li>
+                                    <li><strong>Digital Cultures:</strong> Gaming, anime, VTuber, and online communities across regions</li>
+                                </ul>
+                                <p>This expertise comes from living and working across these regions, not just academic study.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do you test AI systems for cultural bias and appropriateness?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Cultural testing is a multi-layered process involving both technical and human evaluation:</p>
+                                <ul>
+                                    <li><strong>Diverse Test Data:</strong> Evaluating AI responses across different cultural scenarios</li>
+                                    <li><strong>Cultural Expert Review:</strong> Working with native speakers and cultural consultants</li>
+                                    <li><strong>Bias Detection Tools:</strong> Automated analysis for cultural stereotypes and assumptions</li>
+                                    <li><strong>User Testing:</strong> Gathering feedback from real users in target cultures</li>
+                                    <li><strong>Iterative Refinement:</strong> Continuous improvement based on cultural feedback</li>
+                                    <li><strong>Ethical Review:</strong> Ensuring AI behavior aligns with cultural values and ethics</li>
+                                </ul>
+                                <p>Testing continues post-deployment with ongoing monitoring and adaptation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can existing AI systems be retrofitted with cultural awareness?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Yes, many existing AI systems can be enhanced with cultural awareness:</p>
+                                <ul>
+                                    <li><strong>Cultural Adaptation Layers:</strong> Adding cultural processing on top of existing AI</li>
+                                    <li><strong>Training Data Enhancement:</strong> Retraining models with culturally diverse datasets</li>
+                                    <li><strong>Output Filtering:</strong> Post-processing AI responses for cultural appropriateness</li>
+                                    <li><strong>Context Injection:</strong> Adding cultural context to AI decision-making processes</li>
+                                    <li><strong>Interface Localization:</strong> Adapting user interfaces for cultural preferences</li>
+                                </ul>
+                                <p>The approach depends on the AI architecture and the level of cultural awareness needed. Some systems may require more extensive modification than others.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do you handle conflicting cultural norms in global AI systems?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Managing cultural conflicts requires careful balance and strategic approaches:</p>
+                                <ul>
+                                    <li><strong>User Context Detection:</strong> Identifying user location and cultural background</li>
+                                    <li><strong>Adaptive Responses:</strong> Tailoring AI behavior to individual cultural contexts</li>
+                                    <li><strong>Cultural Hierarchies:</strong> Establishing priority systems when cultures conflict</li>
+                                    <li><strong>Neutral Defaults:</strong> Using universally acceptable approaches when context is unclear</li>
+                                    <li><strong>User Choice:</strong> Allowing users to specify their cultural preferences</li>
+                                    <li><strong>Transparent Communication:</strong> Explaining cultural adaptations to users</li>
+                                </ul>
+                                <p>The goal is respecting all cultures while maintaining system functionality and user experience.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What role does language play in cultural AI development?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Language is fundamental to cultural AI, extending far beyond simple translation:</p>
+                                <ul>
+                                    <li><strong>Cultural Context:</strong> Understanding implied meanings and cultural references</li>
+                                    <li><strong>Formality Levels:</strong> Appropriate levels of politeness and respect</li>
+                                    <li><strong>Communication Styles:</strong> Direct vs. indirect, high-context vs. low-context</li>
+                                    <li><strong>Cultural Expressions:</strong> Idioms, metaphors, and culturally-specific concepts</li>
+                                    <li><strong>Non-Verbal Communication:</strong> Understanding gestures and visual cues</li>
+                                    <li><strong>Regional Variations:</strong> Dialects and regional language differences</li>
+                                </ul>
+                                <p>My multilingual background (English, Thai, Japanese) provides deep insight into these linguistic cultural nuances.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do you stay updated on cultural trends and changes?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Cultural awareness requires continuous learning and adaptation:</p>
+                                <ul>
+                                    <li><strong>Active Community Engagement:</strong> Participating in cultural communities across regions</li>
+                                    <li><strong>Social Media Monitoring:</strong> Tracking cultural trends and conversations</li>
+                                    <li><strong>Academic Research:</strong> Following cultural studies and cross-cultural research</li>
+                                    <li><strong>Industry Collaboration:</strong> Working with cultural experts and local partners</li>
+                                    <li><strong>User Feedback:</strong> Learning from real user experiences and cultural responses</li>
+                                    <li><strong>Cultural Events:</strong> Attending festivals, conferences, and cultural gatherings</li>
+                                </ul>
+                                <p>This ongoing learning ensures AI systems remain culturally current and relevant.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing & Services FAQ -->
+                <div class="faq-items" id="pricing">
+                    <h2 class="faq-category-title">Pricing & Services</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do you price your AI development services?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Pricing is based on project complexity, scope, and cultural requirements:</p>
+                                <ul>
+                                    <li><strong>Consultation:</strong> $150-300/hour for strategy and planning</li>
+                                    <li><strong>Basic AI Integration:</strong> $5,000-15,000 for simple implementations</li>
+                                    <li><strong>Custom AI Development:</strong> $15,000-50,000 for comprehensive solutions</li>
+                                    <li><strong>VTuber Complete Setup:</strong> $10,000-30,000 including design and AI</li>
+                                    <li><strong>Enterprise Solutions:</strong> $50,000+ for large-scale cultural AI systems</li>
+                                </ul>
+                                <p>All projects begin with a detailed consultation to provide accurate estimates. Cultural complexity and multi-region requirements may affect pricing.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do you offer payment plans or flexible pricing options?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Yes, I offer several flexible payment options to accommodate different needs:</p>
+                                <ul>
+                                    <li><strong>Milestone Payments:</strong> Payments tied to project deliverables and milestones</li>
+                                    <li><strong>Monthly Retainers:</strong> Ongoing development and support arrangements</li>
+                                    <li><strong>Equity Partnerships:</strong> For startups with compelling cultural AI projects</li>
+                                    <li><strong>Academic Discounts:</strong> Reduced rates for educational institutions and research</li>
+                                    <li><strong>Regional Pricing:</strong> Adjusted pricing for different economic regions</li>
+                                </ul>
+                                <p>Payment terms are discussed during the initial consultation to find the best arrangement for both parties.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What's included in ongoing support and maintenance?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Ongoing support ensures your AI systems remain effective and culturally current:</p>
+                                <ul>
+                                    <li><strong>Technical Support:</strong> Bug fixes, performance optimization, and system updates</li>
+                                    <li><strong>Cultural Updates:</strong> Adapting AI behavior as cultural contexts evolve</li>
+                                    <li><strong>Model Retraining:</strong> Improving AI performance with new data and feedback</li>
+                                    <li><strong>Security Updates:</strong> Maintaining system security and compliance</li>
+                                    <li><strong>Performance Monitoring:</strong> Regular health checks and optimization recommendations</li>
+                                    <li><strong>Feature Enhancements:</strong> Adding new capabilities based on evolving needs</li>
+                                </ul>
+                                <p>Support packages range from basic monitoring ($500-1,000/month) to comprehensive managed services ($2,000-5,000/month).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do you provide training for teams to work with cultural AI systems?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Yes, comprehensive training is available to ensure successful adoption:</p>
+                                <ul>
+                                    <li><strong>Technical Training:</strong> How to operate and maintain AI systems</li>
+                                    <li><strong>Cultural Sensitivity Training:</strong> Understanding cultural AI principles</li>
+                                    <li><strong>Best Practices Workshops:</strong> Optimizing AI usage for different cultural contexts</li>
+                                    <li><strong>Ongoing Education:</strong> Regular updates on cultural trends and AI developments</li>
+                                    <li><strong>Custom Workshops:</strong> Tailored training for specific industry needs</li>
+                                </ul>
+                                <p>Training can be delivered in-person, virtually, or through a combination of methods. Materials are provided in English, Thai, or Japanese as needed.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Are there any industries or projects you don't work with?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>I maintain ethical standards and choose projects that align with positive cultural impact:</p>
+                                <ul>
+                                    <li><strong>Will Not Work With:</strong> Projects promoting discrimination, cultural appropriation, or harmful stereotypes</li>
+                                    <li><strong>Careful Consideration:</strong> Military applications, surveillance systems, or politically sensitive projects</li>
+                                    <li><strong>Preferred Industries:</strong> Entertainment, education, e-commerce, cultural preservation, and creative industries</li>
+                                    <li><strong>Ethical AI Focus:</strong> Projects that promote cultural understanding and positive human interaction</li>
+                                </ul>
+                                <p>Each project is evaluated based on its potential cultural impact and alignment with ethical AI principles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collaboration FAQ -->
+                <div class="faq-items" id="collaboration">
+                    <h2 class="faq-category-title">Collaboration</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What's your typical project collaboration process?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>My collaboration process is designed for cultural sensitivity and clear communication:</p>
+                                <ul>
+                                    <li><strong>Initial Consultation:</strong> Understanding project goals, cultural context, and requirements</li>
+                                    <li><strong>Cultural Research:</strong> Deep dive into target markets and cultural considerations</li>
+                                    <li><strong>Proposal & Planning:</strong> Detailed project plan with milestones and cultural checkpoints</li>
+                                    <li><strong>Iterative Development:</strong> Regular check-ins with cultural validation at each stage</li>
+                                    <li><strong>Testing & Refinement:</strong> Cultural testing with target audiences</li>
+                                    <li><strong>Deployment & Support:</strong> Launch support and ongoing cultural monitoring</li>
+                                </ul>
+                                <p>Communication is adapted to cultural preferences - formal documentation for some cultures, frequent informal check-ins for others.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do you work with remote teams across different time zones?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Absolutely! Remote collaboration across cultures is one of my specialties:</p>
+                                <ul>
+                                    <li><strong>Time Zone Management:</strong> Flexible scheduling across Asia-Pacific, European, and American time zones</li>
+                                    <li><strong>Cultural Communication:</strong> Adapting communication style to different cultural preferences</li>
+                                    <li><strong>Collaboration Tools:</strong> Using culturally-appropriate project management and communication platforms</li>
+                                    <li><strong>Language Support:</strong> Meetings and documentation in English, Thai, or Japanese</li>
+                                    <li><strong>Cultural Mediation:</strong> Helping bridge cultural differences in international teams</li>
+                                </ul>
+                                <p>Based in Bangkok (GMT+7), I regularly work with teams in Japan, Singapore, US, and Europe.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can you work as part of a larger development team?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Yes, I integrate well with existing development teams and organizations:</p>
+                                <ul>
+                                    <li><strong>Technical Integration:</strong> Working with existing development workflows and tools</li>
+                                    <li><strong>Cultural Advisory:</strong> Providing cultural expertise to guide technical decisions</li>
+                                    <li><strong>Specialized Contributions:</strong> Focusing on AI and cultural aspects while others handle infrastructure</li>
+                                    <li><strong>Knowledge Transfer:</strong> Training internal teams on cultural AI principles</li>
+                                    <li><strong>Cross-Cultural Facilitation:</strong> Helping international teams work together effectively</li>
+                                </ul>
+                                <p>I can serve as a cultural AI specialist, lead developer, or consultant depending on team needs.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do you handle intellectual property and confidentiality?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Intellectual property protection and confidentiality are paramount in all collaborations:</p>
+                                <ul>
+                                    <li><strong>NDAs:</strong> Comprehensive non-disclosure agreements before any project discussion</li>
+                                    <li><strong>IP Agreements:</strong> Clear ownership terms for custom AI models and cultural adaptations</li>
+                                    <li><strong>Secure Development:</strong> Using secure coding practices and protected development environments</li>
+                                    <li><strong>Cultural Sensitivity:</strong> Respecting cultural intellectual property and traditional knowledge</li>
+                                    <li><strong>Client Ownership:</strong> Clients retain full ownership of their custom solutions and data</li>
+                                </ul>
+                                <p>All agreements respect international IP law and cultural sensitivities around intellectual property.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What communication tools and methods do you prefer?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Communication methods are adapted to cultural preferences and project needs:</p>
+                                <ul>
+                                                                   <li><strong>Video Calls:</strong> Zoom, Google Meet, Microsoft Teams for face-to-face collaboration</li>
+                                    <li><strong>Project Management:</strong> Slack, Discord, Notion, or culturally-preferred platforms</li>
+                                    <li><strong>Documentation:</strong> Comprehensive written documentation in preferred languages</li>
+                                    <li><strong>Cultural Adaptation:</strong> Formal emails for some cultures, casual messaging for others</li>
+                                    <li><strong>Regional Platforms:</strong> LINE (Thailand/Japan), WeChat (China), or local preferences</li>
+                                    <li><strong>Asynchronous Updates:</strong> Regular progress reports accommodating time zone differences</li>
+                                </ul>
+                                <p>Communication style and frequency are customized based on cultural expectations and project requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do you ensure projects stay on schedule across different cultures?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Cultural awareness is key to successful project timeline management:</p>
+                                <ul>
+                                    <li><strong>Cultural Calendar Awareness:</strong> Planning around holidays and cultural events</li>
+                                    <li><strong>Communication Style Adaptation:</strong> Direct vs. indirect feedback approaches</li>
+                                    <li><strong>Decision-Making Processes:</strong> Understanding hierarchical vs. collaborative decision styles</li>
+                                    <li><strong>Buffer Time:</strong> Building in extra time for cultural validation and adaptation</li>
+                                    <li><strong>Flexible Milestones:</strong> Adapting project phases to cultural working styles</li>
+                                    <li><strong>Regular Check-ins:</strong> Frequency and format adapted to cultural preferences</li>
+                                </ul>
+                                <p>Experience working across cultures helps anticipate and prevent common scheduling challenges.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- General FAQ -->
+                <div class="faq-items" id="general">
+                    <h2 class="faq-category-title">General Questions</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What makes your approach to AI development unique?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>My unique approach combines technical expertise with deep cultural understanding:</p>
+                                <ul>
+                                    <li><strong>Cultural AI Specialization:</strong> One of the few developers focusing specifically on culturally-aware AI</li>
+                                    <li><strong>Multicultural Experience:</strong> Living and working across Thailand, Japan, and international markets</li>
+                                    <li><strong>VTuber Technology Expertise:</strong> Specialized knowledge in entertainment AI and character development</li>
+                                    <li><strong>Ethical AI Focus:</strong> Commitment to responsible AI development that respects cultural diversity</li>
+                                    <li><strong>Cross-Industry Experience:</strong> From e-commerce to entertainment, understanding diverse application needs</li>
+                                    <li><strong>Multilingual Capabilities:</strong> Native-level English and Thai, intermediate Japanese</li>
+                                </ul>
+                                <p>This combination allows me to create AI solutions that are not just technically advanced, but culturally intelligent and globally applicable.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How did you get started in Cultural AI development?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>My journey into Cultural AI evolved from personal experience and professional necessity:</p>
+                                <ul>
+                                    <li><strong>Multicultural Background:</strong> Growing up between cultures sparked interest in cross-cultural communication</li>
+                                    <li><strong>Technical Foundation:</strong> Computer science education with focus on AI and machine learning</li>
+                                    <li><strong>Real-World Problems:</strong> Encountering AI systems that failed across cultural contexts</li>
+                                    <li><strong>VTuber Industry:</strong> Working in entertainment AI revealed the need for cultural authenticity</li>
+                                    <li><strong>Client Demand:</strong> International clients requesting culturally-adapted AI solutions</li>
+                                    <li><strong>Research & Development:</strong> Continuous learning about cultural psychology and AI ethics</li>
+                                </ul>
+                                <p>The field of Cultural AI is still emerging, and I'm passionate about pioneering ethical, inclusive approaches to AI development.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What industries do you work with most frequently?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>I work across various industries, with particular strength in:</p>
+                                <ul>
+                                    <li><strong>Entertainment & Media:</strong> VTuber technology, gaming, streaming platforms</li>
+                                    <li><strong>E-commerce:</strong> Culturally-adapted recommendation systems and customer service AI</li>
+                                    <li><strong>Education:</strong> Language learning AI and cross-cultural educational tools</li>
+                                    <li><strong>Tourism & Hospitality:</strong> Cultural guide AI and multilingual customer service</li>
+                                    <li><strong>Technology Startups:</strong> AI-powered products expanding into international markets</li>
+                                    <li><strong>Cultural Organizations:</strong> Digital preservation and cultural exchange platforms</li>
+                                </ul>
+                                <p>Each industry presents unique cultural challenges and opportunities for AI innovation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do you stay current with AI technology developments?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Staying current in AI requires continuous learning and active engagement:</p>
+                                <ul>
+                                    <li><strong>Research Papers:</strong> Regular reading of AI research, particularly in ethics and cultural computing</li>
+                                    <li><strong>Industry Conferences:</strong> Attending AI conferences in Asia, Europe, and North America</li>
+                                    <li><strong>Open Source Contribution:</strong> Contributing to and learning from open source AI projects</li>
+                                    <li><strong>Professional Networks:</strong> Active in AI developer communities and cultural technology groups</li>
+                                    <li><strong>Experimentation:</strong> Hands-on testing of new AI tools and frameworks</li>
+                                    <li><strong>Client Projects:</strong> Real-world application drives learning and innovation</li>
+                                </ul>
+                                <p>The intersection of AI and culture is rapidly evolving, requiring constant adaptation and learning.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact CTA -->
+            <section class="contact-cta">
+                <h2 class="cta-title">Still Have Questions?</h2>
+                <p class="cta-description">
+                    Can't find the answer you're looking for? I'm here to help with personalized guidance 
+                    for your Cultural AI and VTuber technology needs.
+                </p>
+                <div class="cta-buttons">
+                    <a href="/contact" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        Get in Touch
+                    </a>
+                    <a href="mailto:thanattsitt.info@yahoo.co.uk" class="btn btn-secondary">
+                        <i class="fas fa-calendar"></i>
+                        Schedule Consultation
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Theme Management
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.classList.toggle('dark-theme', savedTheme === 'dark');
+            updateThemeIcon();
+        } else {
+            // Check system preference
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            body.classList.toggle('dark-theme', prefersDark);
+            updateThemeIcon();
+        }
+
+        function updateThemeIcon() {
+            if (body.classList.contains('dark-theme')) {
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+            }
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            const isDark = body.classList.contains('dark-theme');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeIcon();
+        });
+
+        // FAQ Functionality
+        class FAQManager {
+            constructor() {
+                this.currentCategory = 'ai-development';
+                this.searchInput = document.getElementById('faqSearch');
+                this.categoryCards = document.querySelectorAll('.category-card');
+                this.faqItems = document.querySelectorAll('.faq-items');
+                this.faqQuestions = document.querySelectorAll('.faq-question');
+                
+                this.init();
+            }
+
+            init() {
+                this.setupCategoryNavigation();
+                this.setupFAQToggles();
+                this.setupSearch();
+                this.setupQuickLinks();
+                this.animateInitialContent();
+            }
+
+            setupCategoryNavigation() {
+                this.categoryCards.forEach(card => {
+                    card.addEventListener('click', () => {
+                        const category = card.dataset.category;
+                        this.switchCategory(category);
+                    });
+                });
+            }
+
+            switchCategory(category) {
+                // Update active category card
+                this.categoryCards.forEach(card => {
+                    card.classList.toggle('active', card.dataset.category === category);
+                });
+
+                // Show/hide FAQ sections
+                this.faqItems.forEach(section => {
+                    section.classList.toggle('active', section.id === category);
+                });
+
+                // Animate FAQ items
+                const activeSection = document.getElementById(category);
+                if (activeSection) {
+                    const items = activeSection.querySelectorAll('.faq-item');
+                    gsap.fromTo(items, 
+                        { opacity: 0, y: 20 },
+                        { 
+                            opacity: 1, 
+                            y: 0, 
+                            duration: 0.5, 
+                            stagger: 0.1,
+                            ease: 'power3.out'
+                        }
+                    );
+                }
+
+                this.currentCategory = category;
+                
+                // Scroll to FAQ section
+                const faqSection = document.querySelector('.faq-section');
+                if (faqSection) {
+                    faqSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            setupFAQToggles() {
+                this.faqQuestions.forEach(question => {
+                    question.addEventListener('click', () => {
+                        const faqItem = question.closest('.faq-item');
+                        const answer = faqItem.querySelector('.faq-answer');
+                        const isActive = question.classList.contains('active');
+
+                        // Close other open FAQs in the same category (optional)
+                        const currentSection = question.closest('.faq-items');
+                        if (currentSection) {
+                            currentSection.querySelectorAll('.faq-question.active').forEach(activeQ => {
+                                if (activeQ !== question) {
+                                    activeQ.classList.remove('active');
+                                    activeQ.closest('.faq-item').querySelector('.faq-answer').classList.remove('active');
+                                }
+                            });
+                        }
+
+                        // Toggle current FAQ
+                        question.classList.toggle('active');
+                        answer.classList.toggle('active');
+
+                        // Analytics tracking
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'faq_interaction', {
+                                'faq_question': question.textContent.trim(),
+                                'faq_category': this.currentCategory,
+                                'action': isActive ? 'close' : 'open'
+                            });
+                        }
+                    });
+                });
+            }
+
+            setupSearch() {
+                let searchTimeout;
+                
+                this.searchInput.addEventListener('input', (e) => {
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(() => {
+                        this.performSearch(e.target.value);
+                    }, 300);
+                });
+            }
+
+            performSearch(query) {
+                if (!query.trim()) {
+                    this.clearSearch();
+                    return;
+                }
+
+                const searchTerm = query.toLowerCase();
+                let hasResults = false;
+
+                this.faqItems.forEach(section => {
+                    const items = section.querySelectorAll('.faq-item');
+                    let sectionHasResults = false;
+
+                    items.forEach(item => {
+                        const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                        const answer = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+                        
+                        const matches = question.includes(searchTerm) || answer.includes(searchTerm);
+                        
+                        item.style.display = matches ? 'block' : 'none';
+                        
+                        if (matches) {
+                            sectionHasResults = true;
+                            hasResults = true;
+                        }
+                    });
+
+                    // Show section if it has matching results
+                    section.classList.toggle('active', sectionHasResults);
+                });
+
+                // Update category cards to show which have results
+                this.categoryCards.forEach(card => {
+                    const category = card.dataset.category;
+                    const section = document.getElementById(category);
+                    const hasVisibleItems = section && section.querySelector('.faq-item[style*="block"], .faq-item:not([style*="none"])');
+                    
+                    card.style.opacity = hasVisibleItems ? '1' : '0.5';
+                });
+
+                // Show "no results" message if needed
+                this.toggleNoResults(!hasResults);
+
+                // Analytics
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'faq_search', {
+                        'search_term': query,
+                        'results_found': hasResults
+                    });
+                }
+            }
+
+            clearSearch() {
+                // Show all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.style.display = 'block';
+                });
+
+                // Reset category visibility
+                this.categoryCards.forEach(card => {
+                    card.style.opacity = '1';
+                });
+
+                // Show only current category
+                this.faqItems.forEach(section => {
+                    section.classList.toggle('active', section.id === this.currentCategory);
+                });
+
+                this.toggleNoResults(false);
+            }
+
+            toggleNoResults(show) {
+                let noResultsMsg = document.querySelector('.no-results-message');
+                
+                if (show && !noResultsMsg) {
+                    noResultsMsg = document.createElement('div');
+                    noResultsMsg.className = 'no-results-message';
+                    noResultsMsg.innerHTML = `
+                        <div style="text-align: center; padding: 3rem; color: var(--text-secondary);">
+                            <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                            <h3>No results found</h3>
+                            <p>Try different keywords or <a href="/contact">contact me directly</a> for personalized help.</p>
+                        </div>
+                    `;
+                    document.querySelector('.faq-section').appendChild(noResultsMsg);
+                } else if (!show && noResultsMsg) {
+                    noResultsMsg.remove();
+                }
+            }
+
+            setupQuickLinks() {
+                document.querySelectorAll('.quick-link').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const category = link.getAttribute('href').substring(1);
+                        this.switchCategory(category);
+                    });
+                });
+            }
+
+            animateInitialContent() {
+                // Animate hero elements
+                const heroTl = gsap.timeline();
+                heroTl.to('.hero-icon', {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.8,
+                    ease: 'back.out(1.7)'
+                })
+                .to('.hero-title', {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power3.out'
+                }, '-=0.4')
+                .to('.hero-subtitle', {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power3.out'
+                }, '-=0.4')
+                .to('.search-section', {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power3.out'
+                }, '-=0.4')
+                .to('.quick-links', {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power3.out'
+                }, '-=0.4');
+
+                // Animate category cards
+                gsap.to('.category-card', {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.6,
+                    stagger: 0.1,
+                    ease: 'power3.out',
+                    delay: 0.5
+                });
+
+                // Animate initial FAQ items
+                const initialItems = document.querySelector(`#${this.currentCategory} .faq-item`);
+                if (initialItems) {
+                    gsap.to(`#${this.currentCategory} .faq-item`, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.5,
+                        stagger: 0.1,
+                        ease: 'power3.out',
+                        delay: 0.8
+                    });
+                }
+
+                // Animate CTA
+                gsap.to('.contact-cta', {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: '.contact-cta',
+                        start: 'top 80%'
+                    }
+                });
+            }
+        }
+
+        // Initialize FAQ Manager when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new FAQManager();
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = body.classList.contains('dark-theme') 
+                    ? 'rgba(15, 23, 42, 0.98)' 
+                    : 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = body.classList.contains('dark-theme') 
+                    ? 'rgba(15, 23, 42, 0.95)' 
+                    : 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Analytics tracking (if available)
+        if (typeof gtag !== 'undefined') {
+            gtag('config', 'GA_MEASUREMENT_ID', {
+                page_title: 'FAQ - Cultural AI Innovation',
+                page_location: window.location.href
+            });
+        }
+
+        // Keyboard navigation for accessibility
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                // Close any open FAQ items
+                document.querySelectorAll('.faq-question.active').forEach(question => {
+                    question.classList.remove('active');
+                    question.closest('.faq-item').querySelector('.faq-answer').classList.remove('active');
+                });
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
