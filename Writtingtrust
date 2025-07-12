@@ -2289,6 +2289,1108 @@ body {
     <!-- Scripts -->
     <script src="trust-recognition.js"></script>
     <script>
+// Enhanced Trust Section JavaScript with Advanced Features
+class TrustSectionManager {
+    constructor() {
+        this.currentTestimonial = 0;
+        this.testimonialInterval = null;
+        this.animatedStats = new Set();
+        this.isVisible = false;
+        this.observers = new Map();
+        this.filters = new Set(['all']);
+        this.analytics = new AnalyticsManager();
+        
+        this.init();
+    }
+
+    init() {
+        this.setupIntersectionObserver();
+        this.setupTestimonialSlider();
+        this.setupStatsCounter();
+        this.setupMarqueeInteraction();
+        this.setupPublicationCards();
+        this.setupPublicationFilter();
+        this.setupKeyboardNavigation();
+        this.setupAnalytics();
+        this.setupPerformanceOptimizations();
+        this.startAutoTestimonials();
+        this.setupErrorHandling();
+    }
+
+    setupIntersectionObserver() {
+        const observerOptions = {
+            threshold: [0.1, 0.3, 0.6],
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.handleElementVisible(entry.target, entry.intersectionRatio);
+                } else {
+                    this.handleElementHidden(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with stagger delays
+        const animatedElements = document.querySelectorAll(`
+            .animate-on-scroll, 
+            .slide-in-left, 
+            .slide-in-right, 
+            .scale-in, 
+            .fade-in,
+            .proof-stats, 
+            .achievement-card, 
+            .proof-stat,
+            .publication-card
+        `);
+
+        animatedElements.forEach((el, index) => {
+            observer.observe(el);
+            el.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        this.observers.set('intersection', observer);
+    }
+
+    handleElementVisible(element, ratio) {
+        // Add appropriate animation class
+        const animationClasses = ['animate-on-scroll', 'slide-in-left', 'slide-in-right', 'scale-in', 'fade-in'];
+        
+        animationClasses.forEach(className => {
+            if (element.classList.contains(className)) {
+                element.classList.add('visible');
+            }
+        });
+        
+        // Trigger specific animations
+        if (element.classList.contains('proof-stats') && ratio > 0.5) {
+            this.animateStats();
+        }
+        
+        if (element.classList.contains('achievement-card')) {
+            setTimeout(() => {
+                element.classList.add('animate-float');
+            }, Math.random() * 1000);
+        }
+        
+        if (element.classList.contains('proof-stat')) {
+            setTimeout(() => {
+                element.classList.add('animate-pulse');
+            }, 500);
+        }
+
+        // Analytics tracking
+        this.analytics.trackElementView(element);
+    }
+
+    handleElementHidden(element) {
+        // Optional: Remove animations when elements go out of view
+        // This can help with performance on long pages
+        if (element.classList.contains('animate-float')) {
+            element.classList.remove('animate-float');
+        }
+    }
+
+    setupTestimonialSlider() {
+        const track = document.querySelector('.testimonial-track');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.testimonial-nav.prev');
+        const nextBtn = document.querySelector('.testimonial-nav.next');
+        
+        if (!track || !dots.length) return;
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                this.goToTestimonial(index);
+                this.analytics.trackEvent('testimonial_navigation', 'dot_click', index);
+            });
+        });
+
+        // Button navigation
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                this.prevTestimonial();
+                this.analytics.trackEvent('testimonial_navigation', 'prev_click');
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                this.nextTestimonial();
+                this.analytics.trackEvent('testimonial_navigation', 'next_click');
+            });
+        }
+
+        // Touch/swipe support with better UX
+        this.setupTouchNavigation(track);
+
+        // Auto-pause on user interaction
+        const container = document.querySelector('.testimonials-section');
+        if (container) {
+            container.addEventListener('mouseenter', () => this.pauseAutoplay());
+            container.addEventListener('mouseleave', () => this.resumeAutoplay());
+            container.addEventListener('focusin', () => this.pauseAutoplay());
+            container.addEventListener('focusout', () => this.resumeAutoplay());
+        }
+    }
+
+    setupTouchNavigation(track) {
+        let startX = 0;
+        let currentX = 0;
+        let isDragging = false;
+        let initialTransform = 0;
+
+        const handleStart = (e) => {
+            startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+            currentX = startX;
+            isDragging = true;
+            
+            const transform = getComputedStyle(track).transform;
+            const matrix = new DOMMatrix(transform);
+            initialTransform = matrix.m41;
+            
+            track.style.transition = 'none';
+        };
+
+        const handleMove = (e) => {
+            if (!isDragging) return;
+            
+            e.preventDefault();
+            currentX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+            const deltaX = currentX - startX;
+            const newTransform = initialTransform + deltaX;
+            
+            track.style.transform = `translateX(${newTransform}px)`;
+        };
+
+        const handleEnd = () => {
+            if (!isDragging) return;
+            
+            isDragging = false;
+            track.style.transition = '';
+            
+            const deltaX = currentX - startX;
+            const threshold = track.offsetWidth * 0.2;
+            
+            if (Math.abs(deltaX) > threshold) {
+                if (deltaX > 0) {
+                    this.prevTestimonial();
+                } else {
+                    this.nextTestimonial();
+                }
+            } else {
+                this.goToTestimonial(this.currentTestimonial);
+            }
+        };
+
+        // Mouse events
+        track.addEventListener('mousedown', handleStart);
+        document.addEventListener('mousemove', handleMove);
+        document.addEventListener('mouseup', handleEnd);
+
+        // Touch events
+        track.addEventListener('touchstart', handleStart, { passive: false });
+        track.addEventListener('touchmove', handleMove, { passive: false });
+        track.addEventListener('touchend', handleEnd);
+    }
+
+    goToTestimonial(index, userTriggered = true) {
+        const track = document.querySelector('.testimonial-track');
+        const dots = document.querySelectorAll('.dot');
+        const cards = document.querySelectorAll('.testimonial-card');
+        const prevBtn = document.querySelector('.testimonial-nav.prev');
+        const nextBtn = document.querySelector('.testimonial-nav.next');
+        
+        if (!track) return;
+
+        this.currentTestimonial = index;
+        const totalTestimonials = cards.length;
+        
+        // Update transform
+        track.style.transform = `translateX(-${index * 100}%)`;
+        
+        // Update dots
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+            dot.setAttribute('aria-selected', i === index);
+        });
+        
+        // Update navigation buttons
+        if (prevBtn) prevBtn.disabled = index === 0;
+        if (nextBtn) nextBtn.disabled = index === totalTestimonials - 1;
+        
+        // Add active animation to current card
+        cards.forEach((card, i) => {
+            card.classList.toggle('active', i === index);
+            if (i === index) {
+                card.setAttribute('aria-hidden', 'false');
+            } else {
+                card.setAttribute('aria-hidden', 'true');
+            }
+        });
+
+        // Announce to screen readers
+        this.announceToScreenReader(`Showing testimonial ${index + 1} of ${totalTestimonials}`);
+
+        // Analytics tracking
+        if (userTriggered) {
+            this.analytics.trackTestimonialView(index);
+        }
+    }
+
+    nextTestimonial() {
+        const totalTestimonials = document.querySelectorAll('.testimonial-card').length;
+        const nextIndex = Math.min(this.currentTestimonial + 1, totalTestimonials - 1);
+        this.goToTestimonial(nextIndex);
+    }
+
+    prevTestimonial() {
+        const prevIndex = Math.max(this.currentTestimonial - 1, 0);
+        this.goToTestimonial(prevIndex);
+    }
+
+    pauseAutoplay() {
+        if (this.testimonialInterval) {
+            clearInterval(this.testimonialInterval);
+            this.testimonialInterval = null;
+        }
+    }
+
+    resumeAutoplay() {
+        if (!this.testimonialInterval) {
+            this.startAutoTestimonials();
+        }
+    }
+
+    startAutoTestimonials() {
+        this.testimonialInterval = setInterval(() => {
+            const totalTestimonials = document.querySelectorAll('.testimonial-card').length;
+            const nextIndex = (this.currentTestimonial + 1) % totalTestimonials;
+            this.goToTestimonial(nextIndex, false);
+        }, 8000);
+    }
+
+    setupStatsCounter() {
+        this.statsCounterExecuted = false;
+    }
+
+    animateStats() {
+        if (this.statsCounterExecuted) return;
+        this.statsCounterExecuted = true;
+
+        const stats = document.querySelectorAll('.proof-stat');
+        
+        stats.forEach((stat, index) => {
+            const target = parseInt(stat.dataset.target);
+            const numberElement = stat.querySelector('.stat-number');
+            const hasPercent = stat.querySelector('.percent');
+            
+            setTimeout(() => {
+                this.countUpAnimation(numberElement, 0, target, 2500, hasPercent);
+            }, index * 300);
+        });
+
+        this.analytics.trackEvent('stats', 'animation_triggered');
+    }
+
+    countUpAnimation(element, start, end, duration, hasPercent = false) {
+        const startTime = performance.now();
+        const range = end - start;
+
+        // Create a more sophisticated easing function
+        const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
+
+        const updateCount = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easedProgress = easeOutQuart(progress);
+            
+            const current = Math.round(start + (range * easedProgress));
+            
+            // Format number with proper localization
+            if (hasPercent) {
+                element.textContent = current;
+            } else {
+                element.textContent = current.toLocaleString();
+            }
+            
+            element.classList.add('counting');
+            
+            // Add pulsing effect during animation
+            if (progress < 1) {
+                requestAnimationFrame(updateCount);
+            } else {
+                this.finalizeStatAnimation(element, current, hasPercent);
+            }
+        };
+        
+        requestAnimationFrame(updateCount);
+    }
+
+    finalizeStatAnimation(element, finalValue, hasPercent) {
+        // Add final formatting
+        if (!hasPercent && finalValue >= 1000) {
+            element.textContent = finalValue.toLocaleString() + '+';
+        }
+        
+        // Remove counting class and add success state
+        setTimeout(() => {
+            element.classList.remove('counting');
+            element.classList.add('success-state');
+            
+            setTimeout(() => {
+                element.classList.remove('success-state');
+            }, 600);
+        }, 100);
+    }
+
+    setupMarqueeInteraction() {
+        const marquee = document.querySelector('.clients-track');
+        if (!marquee) return;
+
+        // Enhanced pause/play functionality
+        const pauseMarquee = () => {
+            marquee.style.animationPlayState = 'paused';
+        };
+
+        const playMarquee = () => {
+            marquee.style.animationPlayState = 'running';
+        };
+
+        marquee.addEventListener('mouseenter', pauseMarquee);
+        marquee.addEventListener('mouseleave', playMarquee);
+        marquee.addEventListener('focusin', pauseMarquee);
+        marquee.addEventListener('focusout', playMarquee);
+
+        // Add shimmer effect with stagger
+        const logos = document.querySelectorAll('.client-logo');
+        logos.forEach((logo, index) => {
+            setTimeout(() => {
+                logo.classList.add('shimmer');
+            }, index * 150);
+
+            // Add click analytics
+            logo.addEventListener('click', () => {
+                const company = logo.querySelector('img')?.alt || 'Unknown';
+                this.analytics.trackEvent('client_logo', 'click', company);
+            });
+        });
+
+        // Pause animation when page is not visible
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                pauseMarquee();
+            } else {
+                playMarquee();
+            }
+        });
+    }
+
+    setupPublicationCards() {
+        const cards = document.querySelectorAll('.publication-card');
+        
+        cards.forEach((card, cardIndex) => {
+            // Enhanced click interaction
+            card.addEventListener('click', (e) => {
+                if (e.target.closest('.view-articles')) return; // Let link handle it
+                
+                const link = card.querySelector('.view-articles');
+                const title = card.querySelector('h3')?.textContent || 'Unknown';
+                
+                if (link) {
+                    this.analytics.trackEvent('publication_card', 'click', title);
+                    
+                    // Add loading state
+                    card.classList.add('loading');
+                    
+                    setTimeout(() => {
+                        window.open(link.href, '_blank', 'noopener,noreferrer');
+                        card.classList.remove('loading');
+                    }, 200);
+                }
+            });
+
+            // Enhanced keyboard support
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.click();
+                }
+            });
+
+            // Stagger animation with more sophisticated timing
+            const delay = cardIndex * 150;
+            card.style.animationDelay = `${delay}ms`;
+            card.style.transitionDelay = `${delay}ms`;
+        });
+    }
+
+    setupPublicationFilter() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.publication-card');
+
+        if (!filterButtons.length) return;
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+                this.filterPublications(filter, button, cards);
+                this.analytics.trackEvent('publication_filter', '
+                this.analytics.trackEvent('publication_filter', 'apply', filter);
+            });
+        });
+    }
+
+    filterPublications(filter, activeButton, cards) {
+        // Update active button state
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-pressed', 'false');
+        });
+        
+        activeButton.classList.add('active');
+        activeButton.setAttribute('aria-pressed', 'true');
+
+        // Filter cards with enhanced animation
+        cards.forEach((card, index) => {
+            const cardCategory = card.dataset.category;
+            const shouldShow = filter === 'all' || cardCategory === filter;
+            
+            if (shouldShow) {
+                this.showCard(card, index * 100);
+            } else {
+                this.hideCard(card);
+            }
+        });
+
+        // Update results count and announce to screen readers
+        const visibleCount = Array.from(cards).filter(card => 
+            filter === 'all' || card.dataset.category === filter
+        ).length;
+        
+        this.announceToScreenReader(`Showing ${visibleCount} publications for ${filter === 'all' ? 'all categories' : filter} category`);
+    }
+
+    showCard(card, delay = 0) {
+        card.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        setTimeout(() => {
+            card.style.display = 'flex';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px) scale(0.95)';
+            
+            requestAnimationFrame(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        }, delay);
+    }
+
+    hideCard(card) {
+        card.style.transition = 'all 0.3s ease';
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(-10px) scale(0.95)';
+        
+        setTimeout(() => {
+            card.style.display = 'none';
+        }, 300);
+    }
+
+    setupKeyboardNavigation() {
+        const interactiveElements = document.querySelectorAll(`
+            .publication-card, 
+            .achievement-card, 
+            .filter-btn, 
+            .dot, 
+            .testimonial-nav,
+            .verify-link,
+            .view-articles
+        `);
+
+        // Add tab index and keyboard support
+        interactiveElements.forEach((element, index) => {
+            if (!element.hasAttribute('tabindex')) {
+                element.setAttribute('tabindex', '0');
+            }
+
+            element.addEventListener('keydown', (e) => {
+                this.handleKeyboardNavigation(e, element, interactiveElements);
+            });
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.altKey && !e.ctrlKey && !e.shiftKey) {
+                switch(e.key) {
+                    case 'ArrowLeft':
+                        e.preventDefault();
+                        this.prevTestimonial();
+                        break;
+                    case 'ArrowRight':
+                        e.preventDefault();
+                        this.nextTestimonial();
+                        break;
+                    case '1':
+                    case '2':
+                    case '3':
+                    case '4':
+                    case '5':
+                        e.preventDefault();
+                        const index = parseInt(e.key) - 1;
+                        if (index < document.querySelectorAll('.testimonial-card').length) {
+                            this.goToTestimonial(index);
+                        }
+                        break;
+                }
+            }
+        });
+    }
+
+    handleKeyboardNavigation(e, currentElement, allElements) {
+        const currentIndex = Array.from(allElements).indexOf(currentElement);
+        
+        switch(e.key) {
+            case 'Tab':
+                // Let default tab behavior work
+                break;
+                
+            case 'ArrowDown':
+            case 'ArrowRight':
+                e.preventDefault();
+                this.focusNextElement(allElements, currentIndex);
+                break;
+                
+            case 'ArrowUp':
+            case 'ArrowLeft':
+                e.preventDefault();
+                this.focusPrevElement(allElements, currentIndex);
+                break;
+                
+            case 'Home':
+                e.preventDefault();
+                allElements[0]?.focus();
+                break;
+                
+            case 'End':
+                e.preventDefault();
+                allElements[allElements.length - 1]?.focus();
+                break;
+                
+            case 'Enter':
+            case ' ':
+                if (currentElement.classList.contains('publication-card') || 
+                    currentElement.classList.contains('achievement-card')) {
+                    e.preventDefault();
+                    currentElement.click();
+                }
+                break;
+        }
+    }
+
+    focusNextElement(elements, currentIndex) {
+        const nextIndex = (currentIndex + 1) % elements.length;
+        elements[nextIndex]?.focus();
+    }
+
+    focusPrevElement(elements, currentIndex) {
+        const prevIndex = currentIndex === 0 ? elements.length - 1 : currentIndex - 1;
+        elements[prevIndex]?.focus();
+    }
+
+    setupAnalytics() {
+        // Track time spent in each section
+        const sections = document.querySelectorAll('.publications-section, .achievements-section, .testimonials-section');
+        
+        sections.forEach(section => {
+            let timeEntered = null;
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        timeEntered = Date.now();
+                    } else if (timeEntered) {
+                        const timeSpent = Date.now() - timeEntered;
+                        const sectionName = section.className.split('-')[0];
+                        this.analytics.trackTimeSpent(sectionName, timeSpent);
+                        timeEntered = null;
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(section);
+        });
+
+        // Track scroll depth
+        this.setupScrollDepthTracking();
+        
+        // Track device and browser info
+        this.analytics.trackDeviceInfo();
+    }
+
+    setupScrollDepthTracking() {
+        const depths = [25, 50, 75, 90, 100];
+        const trackedDepths = new Set();
+        
+        const trackScrollDepth = () => {
+            const scrollPercent = Math.round(
+                (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+            );
+            
+            depths.forEach(depth => {
+                if (scrollPercent >= depth && !trackedDepths.has(depth)) {
+                    trackedDepths.add(depth);
+                    this.analytics.trackEvent('scroll_depth', `${depth}%`);
+                }
+            });
+        };
+        
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(trackScrollDepth, 100);
+        }, { passive: true });
+    }
+
+    setupPerformanceOptimizations() {
+        // Lazy load images with enhanced error handling
+        this.setupAdvancedLazyLoading();
+        
+        // Prefetch links on hover
+        this.setupLinkPrefetching();
+        
+        // Optimize animations for performance
+        this.optimizeAnimations();
+        
+        // Setup resource hints
+        this.setupResourceHints();
+    }
+
+    setupAdvancedLazyLoading() {
+        if (!('IntersectionObserver' in window)) return;
+
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    this.loadImageWithFallback(img).then(() => {
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    });
+                }
+            });
+        }, {
+            rootMargin: '50px'
+        });
+
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+
+    async loadImageWithFallback(img) {
+        return new Promise((resolve) => {
+            const tempImg = new Image();
+            
+            tempImg.onload = () => {
+                img.src = tempImg.src;
+                resolve();
+            };
+            
+            tempImg.onerror = () => {
+                // Fallback to a placeholder or retry logic
+                img.src = this.generatePlaceholderImage(img.alt);
+                img.classList.add('image-error');
+                resolve();
+            };
+            
+            tempImg.src = img.dataset.src || img.src;
+        });
+    }
+
+    generatePlaceholderImage(altText) {
+        // Generate a data URL placeholder
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = 200;
+        canvas.height = 100;
+        
+        ctx.fillStyle = '#f3f4f6';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        ctx.fillStyle = '#6b7280';
+        ctx.font = '14px Inter, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(altText || 'Image unavailable', canvas.width / 2, canvas.height / 2);
+        
+        return canvas.toDataURL();
+    }
+
+    setupLinkPrefetching() {
+        const links = document.querySelectorAll('a[href^="http"]');
+        
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                this.prefetchLink(link.href);
+            }, { once: true });
+        });
+    }
+
+    prefetchLink(url) {
+        if (document.querySelector(`link[rel="prefetch"][href="${url}"]`)) return;
+        
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = url;
+        document.head.appendChild(link);
+    }
+
+    optimizeAnimations() {
+        // Reduce animations on low-power devices
+        if (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) {
+            document.documentElement.classList.add('reduced-animations');
+        }
+        
+        // Pause animations when page is hidden
+        document.addEventListener('visibilitychange', () => {
+            const animatedElements = document.querySelectorAll('.clients-track, .trust-badge');
+            
+            animatedElements.forEach(el => {
+                if (document.hidden) {
+                    el.style.animationPlayState = 'paused';
+                } else {
+                    el.style.animationPlayState = 'running';
+                }
+            });
+        });
+    }
+
+    setupResourceHints() {
+        // Preconnect to external domains
+        const domains = [
+            'https://fonts.googleapis.com',
+            'https://fonts.gstatic.com',
+            'https://images.unsplash.com',
+            'https://upload.wikimedia.org'
+        ];
+        
+        domains.forEach(domain => {
+            const link = document.createElement('link');
+            link.rel = 'preconnect';
+            link.href = domain;
+            link.crossOrigin = 'anonymous';
+            document.head.appendChild(link);
+        });
+    }
+
+    setupErrorHandling() {
+        // Global error handler for the trust section
+        window.addEventListener('error', (e) => {
+            this.analytics.trackError(e.error, 'trust_section');
+        });
+        
+        window.addEventListener('unhandledrejection', (e) => {
+            this.analytics.trackError(e.reason, 'trust_section_promise');
+        });
+    }
+
+    announceToScreenReader(message) {
+        const announcement = document.createElement('div');
+        announcement.setAttribute('aria-live', 'polite');
+        announcement.setAttribute('aria-atomic', 'true');
+        announcement.className = 'sr-only';
+        announcement.textContent = message;
+        
+        document.body.appendChild(announcement);
+        
+        setTimeout(() => {
+            document.body.removeChild(announcement);
+        }, 1000);
+    }
+
+    // Public API methods
+    goToSlide(index) {
+        this.goToTestimonial(index);
+    }
+
+    pause() {
+        this.pauseAutoplay();
+    }
+
+    resume() {
+        this.resumeAutoplay();
+    }
+
+    updateStats(newStats) {
+        newStats.forEach((value, index) => {
+            const stat = document.querySelectorAll('.proof-stat')[index];
+            if (stat) {
+                stat.dataset.target = value;
+                const numberElement = stat.querySelector('.stat-number');
+                if (numberElement) {
+                    this.countUpAnimation(numberElement, 0, value, 1000);
+                }
+            }
+        });
+    }
+
+    destroy() {
+        // Cleanup method
+        this.pauseAutoplay();
+        this.observers.forEach(observer => observer.disconnect());
+        this.observers.clear();
+    }
+}
+
+// Analytics Manager for comprehensive tracking
+class AnalyticsManager {
+    constructor() {
+        this.events = [];
+        this.startTime = Date.now();
+        this.init();
+    }
+
+    init() {
+        // Initialize analytics providers (Google Analytics, etc.)
+        this.setupGA4();
+        this.setupCustomTracking();
+    }
+
+    setupGA4() {
+        // Google Analytics 4 setup if gtag is available
+        if (typeof gtag !== 'undefined') {
+            gtag('config', 'GA_MEASUREMENT_ID', {
+                custom_map: {
+                    trust_section: 'trust_section_events'
+                }
+            });
+        }
+    }
+
+    setupCustomTracking() {
+        // Setup custom analytics tracking
+        this.sessionId = this.generateSessionId();
+        this.userId = this.getUserId();
+    }
+
+    trackEvent(category, action, label = null, value = null) {
+        const event = {
+            category,
+            action,
+            label,
+            value,
+            timestamp: Date.now(),
+            sessionId: this.sessionId,
+            userId: this.userId,
+            url: window.location.href,
+            userAgent: navigator.userAgent
+        };
+
+        this.events.push(event);
+
+        // Send to Google Analytics if available
+        if (typeof gtag !== 'undefined') {
+            gtag('event', action, {
+                event_category: category,
+                event_label: label,
+                value: value
+            });
+        }
+
+        // Send to custom analytics endpoint
+        this.sendToCustomAnalytics(event);
+    }
+
+    trackElementView(element) {
+        const elementType = element.className.split(' ')[0];
+        const elementId = element.id || 'unknown';
+        
+        this.trackEvent('element_view', elementType, elementId);
+    }
+
+    trackTestimonialView(index) {
+        this.trackEvent('testimonial', 'view', `slide_${index}`, index);
+    }
+
+    trackTimeSpent(section, milliseconds) {
+        const seconds = Math.round(milliseconds / 1000);
+        this.trackEvent('engagement', 'time_spent', section, seconds);
+    }
+
+    trackError(error, context) {
+        const errorData = {
+            message: error.message || 'Unknown error',
+            stack: error.stack || 'No stack trace',
+            context,
+            timestamp: Date.now(),
+            url: window.location.href
+        };
+
+        this.trackEvent('error', 'javascript_error', context, null);
+        
+        // Send detailed error to monitoring service
+        if (window.console && window.console.error) {
+            console.error('Trust Section Error:', errorData);
+        }
+    }
+
+    trackDeviceInfo() {
+        const deviceInfo = {
+            screen: `${screen.width}x${screen.height}`,
+            viewport: `${window.innerWidth}x${window.innerHeight}`,
+            pixelRatio: window.devicePixelRatio || 1,
+            connection: navigator.connection?.effectiveType || 'unknown',
+            platform: navigator.platform,
+            language: navigator.language,
+            cookieEnabled: navigator.cookieEnabled,
+            doNotTrack: navigator.doNotTrack
+        };
+
+        this.trackEvent('device_info', 'session_start', JSON.stringify(deviceInfo));
+    }
+
+    sendToCustomAnalytics(event) {
+        // Batch events and send periodically to reduce requests
+        if (this.events.length >= 10) {
+            this.flushEvents();
+        }
+    }
+
+    flushEvents() {
+        if (this.events.length === 0) return;
+
+        const payload = {
+            events: [...this.events],
+            session: {
+                id: this.sessionId,
+                startTime: this.startTime,
+                duration: Date.now() - this.startTime
+            }
+        };
+
+        // Send to your analytics endpoint
+        fetch('/api/analytics/trust-section', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        }).catch(error => {
+            console.warn('Analytics send failed:', error);
+        });
+
+        this.events = [];
+    }
+
+    generateSessionId() {
+        return 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    }
+
+    getUserId() {
+        // Get or generate user ID (could be from localStorage, cookie, etc.)
+        let userId = localStorage.getItem('user_id');
+        if (!userId) {
+            userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            localStorage.setItem('user_id', userId);
+        }
+        return userId;
+    }
+}
+
+// Initialize Trust Section Manager when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    window.trustSectionManager = new TrustSectionManager();
+    
+    // Add CSS for screen reader only content
+    if (!document.querySelector('#sr-only-styles')) {
+        const srStyles = document.createElement('style');
+        srStyles.id = 'sr-only-styles';
+        srStyles.textContent = `
+            .sr-only {
+                position: absolute !important;
+                width: 1px !important;
+                height: 1px !important;
+                padding: 0 !important;
+                margin: -1px !important;
+                overflow: hidden !important;
+                clip: rect(0, 0, 0, 0) !important;
+                white-space: nowrap !important;
+                border: 0 !important;
+            }
+            
+            .reduced-animations * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .image-error {
+                filter: grayscale(100%) opacity(0.7);
+            }
+            
+            .loaded {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            
+            .animate-float {
+                animation: float 6s ease-in-out infinite;
+            }
+            
+            .animate-pulse {
+                animation: pulse 2s ease-in-out infinite;
+            }
+            
+            @keyframes float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+            }
+            
+            @keyframes pulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.7; }
+            }
+            
+            .counting {
+                color: var(--primary-color);
+                font-weight: 700;
+            }
+            
+            .shimmer {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .shimmer::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+                animation: shimmer 2s ease-in-out;
+            }
+            
+            @keyframes shimmer {
+                0% { left: -100%; }
+                100% { left: 100%; }
+            }
+        `;
+        document.head.appendChild(srStyles);
+    }
+    
+    console.log('Trust & Recognition section initialized successfully');
+});
+
+// Export for module systems
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { TrustSectionManager, AnalyticsManager };
+}
+
+
         
                         // Initialize page
             document.addEventListener('DOMContentLoaded', function() {
