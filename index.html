@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/Person">
 <head>
@@ -6,9 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com;">
+
+    <!-- Security Headers (Tightened CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        img-src 'self' https: data:;
+        script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+        font-src 'self' https://fonts.gstatic.com;
+        connect-src 'self';
+        frame-src 'self';
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self';
+    ">
 
     <!-- Primary SEO Meta Tags -->
     <title>Thanatsitt Santisamranwilai - Cultural AI Innovator | AI Developer & Cross-Cultural Technology Expert</title>
@@ -35,22 +45,17 @@
     <meta name="twitter:image" content="https://pegearts.com/assets/images/twitter-image.jpg">
 
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" as="style">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" as="style" crossorigin>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style" crossorigin>
 
-    <!-- Tailwind CSS CDN -->
+    <!-- Stylesheets (Consolidated) -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin>
 
-    <!-- AOS (Animate On Scroll) CSS -->
-    <link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.3.1/dist/aos.css"/>
-
-    <!-- Sweet Alert CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Favicons -->
+    <!-- Favicons and Manifest (Consolidated) -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -63,7 +68,7 @@
     <meta name="google-site-verification" content="your-actual-google-verification-code">
     <meta name="pinterest-rich-pin" content="true">
 
-    <!-- Structured Data - JSON-LD -->
+    <!-- Structured Data - JSON-LD (Person) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -95,18 +100,9 @@
             "Digital Transformation"
         ],
         "knowsLanguage": [
-            {
-                "@type": "Language",
-                "name": "English"
-            },
-            {
-                "@type": "Language",
-                "name": "Thai"
-            },
-            {
-                "@type": "Language",
-                "name": "Japanese"
-            }
+            {"@type": "Language", "name": "English"},
+            {"@type": "Language", "name": "Thai"},
+            {"@type": "Language", "name": "Japanese"}
         ],
         "address": {
             "@type": "PostalAddress",
@@ -116,35 +112,11 @@
         "worksFor": {
             "@type": "Organization",
             "name": "PegeArts - Independent AI Consultant"
-        },
-        "hasCredential": [
-            {
-                "@type": "EducationalOccupationalCredential",
-                "name": "AI Development Specialist",
-                "description": "Expert in cultural AI development and cross-cultural technology solutions"
-            }
-        ],
-        "makesOffer": [
-            {
-                "@type": "Service",
-                "name": "Cultural AI Development",
-                "description": "Development of AI systems that understand and respect cultural nuances"
-            },
-            {
-                "@type": "Service",
-                "name": "Cross-Cultural Technology Consulting",
-                "description": "Consulting services for implementing technology solutions across different cultures"
-            },
-            {
-                "@type": "Service",
-                "name": "VTuber AI Content Creation",
-                "description": "AI-enhanced content creation for VTuber and digital entertainment"
-            }
-        ]
+        }
     }
     </script>
 
-    <!-- Additional Structured Data for Organization -->
+    <!-- Structured Data - Organization -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -164,22 +136,10 @@
         "foundingDate": "2020",
         "description": "Leading provider of cultural AI solutions and cross-cultural technology development",
         "areaServed": [
-            {
-                "@type": "Country",
-                "name": "Thailand"
-            },
-            {
-                "@type": "Country",
-                "name": "Japan"
-            },
-            {
-                "@type": "Country",
-                "name": "Singapore"
-            },
-            {
-                "@type": "Country",
-                "name": "United Kingdom"
-            }
+            {"@type": "Country", "name": "Thailand"},
+            {"@type": "Country", "name": "Japan"},
+            {"@type": "Country", "name": "Singapore"},
+            {"@type": "Country", "name": "United Kingdom"}
         ],
         "serviceType": [
             "AI Development",
@@ -191,7 +151,7 @@
     }
     </script>
 
-    <!-- Additional Structured Data for Website -->
+    <!-- Structured Data - WebSite -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -202,20 +162,19 @@
         "inLanguage": ["en", "th", "ja"],
         "author": {
             "@type": "Person",
-            "name": "Thanatsitt
-    
-    <!-- Tailwind CSS -->
+            "name": "Thanatsitt Santisamranwilai"
+        }
+    }
+    </script>
+
+    <!-- Scripts (Consolidated at the end of head for performance) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MorphSVGPlugin.min.js"></script>
-    
-    <!-- Three.js for 3D -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MorphSVGPlugin.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" crossorigin></script>
+
     <!-- Tailwind Config -->
     <script>
         tailwind.config = {
@@ -223,22 +182,9 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: {
-                            50: '#f0f9ff',
-                            500: '#0891b2',
-                            600: '#0e7490',
-                            700: '#0c5f6b'
-                        },
-                        coral: {
-                            400: '#f87171',
-                            500: '#dc2626',
-                            600: '#b91c1c'
-                        },
-                        mint: {
-                            400: '#4ade80',
-                            500: '#059669',
-                            600: '#047857'
-                        }
+                        primary: { 50: '#f0f9ff', 500: '#0891b2', 600: '#0e7490', 700: '#0c5f6b' },
+                        coral: { 400: '#f87171', 500: '#dc2626', 600: '#b91c1c' },
+                        mint: { 400: '#4ade80', 500: '#059669', 600: '#047857' }
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
@@ -247,7 +193,7 @@
                         'bounce-slow': 'bounce 3s ease-in-out infinite',
                         'pulse-slow': 'pulse 3s ease-in-out infinite',
                         'spin-slow': 'spin 8s linear infinite',
-                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite'
                     },
                     keyframes: {
                         float: {
@@ -266,33 +212,15 @@
                             '0%, 100%': { transform: 'rotate(-3deg)' },
                             '50%': { transform: 'rotate(3deg)' }
                         }
-                    },
-                    perspective: {
-                        '1000': '1000px',
-                        '1500': '1500px',
-                        '2000': '2000px'
-                    },
-                    transform: {
-                        'preserve-3d': 'preserve-3d',
-                        'backface-hidden': 'backface-visibility: hidden'
                     }
                 }
             },
             plugins: [
                 function({ addUtilities }) {
                     const newUtilities = {
-                        '.transform-style-3d': {
-                            'transform-style': 'preserve-3d'
-                        },
-                        '.backface-hidden': {
-                            'backface-visibility': 'hidden'
-                        },
-                        '.perspective-1000': {
-                            'perspective': '1000px'
-                        },
-                        '.perspective-1500': {
-                            'perspective': '1500px'
-                        },
+                        '.transform-style-3d': { 'transform-style': 'preserve-3d' },
+                        '.backface-hidden': { 'backface-visibility': 'hidden' },
+                        '.perspective-1000': { 'perspective': '1000px' },
                         '.glass': {
                             'background': 'rgba(255, 255, 255, 0.25)',
                             'backdrop-filter': 'blur(20px) saturate(180%)',
@@ -309,94 +237,29 @@
                     addUtilities(newUtilities)
                 }
             ]
-        }
+        };
     </script>
-    
-    <!-- Your existing meta tags and links -->
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Custom Styles (Updated for Shorter Cards) -->
     <style>
-        /* Custom CSS for 3D effects and GSAP integration */
         body {
             font-family: 'Inter', sans-serif;
         }
-        
         .perspective-container {
             perspective: 1000px;
             transform-style: preserve-3d;
         }
-        
         .card-3d {
             transform-style: preserve-3d;
             transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
         }
-        
         .card-3d:hover {
             transform: rotateY(15deg) rotateX(10deg) translateZ(20px);
         }
-        
         .floating-3d {
             animation: float 6s ease-in-out infinite;
             will-change: transform;
         }
-        
-        /* 3D Moon Enhancement */
-        .moon-3d {
-            position: relative;
-            width: 280px;
-            height: 280px;
-            margin: 0 auto;
-            transform-style: preserve-3d;
-            animation: spin-slow 20s linear infinite;
-        }
-        
-        .moon-sphere {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: conic-gradient(from 0deg, 
-                #0ea5e9, #06b6d4, #8b5cf6, #ec4899, 
-                #f97316, #84cc16, #06b6d4, #0ea5e9);
-            position: relative;
-            transform-style: preserve-3d;
-        }
-        
-        .moon-sphere::before {
-            content: '';
-            position: absolute;
-            top: 10%;
-            left: 10%;
-            width: 80%;
-            height: 80%;
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, 
-                rgba(255, 255, 255, 0.8) 0%,
-                rgba(255, 255, 255, 0.3) 40%,
-                transparent 70%);
-            transform: translateZ(10px);
-        }
-        
-        .moon-sphere::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: linear-gradient(135deg,
-                rgba(255, 255, 255, 0.1) 0%,
-                transparent 50%,
-                rgba(0, 0, 0, 0.1) 100%);
-            transform: translateZ(5px);
-        }
-        
-        /* WebGL Canvas Styles */
         .webgl-canvas {
             position: fixed;
             top: 0;
@@ -407,111 +270,113 @@
             z-index: 1;
             opacity: 0.7;
         }
-        
-        /* GSAP Animation Classes */
-        .gsap-fade-in {
-            opacity: 0;
-            transform: translateY(50px);
-        }
-        
-        .gsap-slide-left {
-            opacity: 0;
-            transform: translateX(-100px);
-        }
-        
-        .gsap-slide-right {
-            opacity: 0;
-            transform: translateX(100px);
-        }
-        
-        .gsap-scale-in {
-            opacity: 0;
-            transform: scale(0.8);
-        }
-        
-        .gsap-rotate-in {
-            opacity: 0;
-            transform: rotate(45deg) scale(0.8);
-        }
-        
-        /* Enhanced Process Steps with 3D */
-        .process-3d {
-            transform-style: preserve-3d;
-            perspective: 1000px;
-        }
-        
-        .step-3d {
-            transform-style: preserve-3d;
-            transition: all 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-        }
-        
-        .step-3d:hover {
-            transform: translateZ(30px) rotateX(5deg);
-        }
-        
-        .step-3d::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1));
-            border-radius: inherit;
-            transform: translateZ(-1px);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .step-3d:hover::before {
-            opacity: 1;
-        }
-        
-        /* Parallax Scrolling Elements */
-        .parallax-slow {
-            will-change: transform;
-        }
-        
-        .parallax-medium {
-            will-change: transform;
-        }
-        
-        .parallax-fast {
-            will-change: transform;
-        }
-        
-        /* Morphing SVG Paths */
-        .morph-svg {
-            will-change: d;
-        }
-        
-        /* Loading Animation with GSAP */
-        .loading-gsap {
-            opacity: 0;
-        }
-        
-        /* Custom Scroll Indicator */
-        .scroll-indicator-3d {
-            transform-style: preserve-3d;
-            animation: bounce-slow 3s ease-in-out infinite;
-        }
-        
-        /* Interactive Hover States */
         .interactive-3d {
             transform-style: preserve-3d;
             transition: all 0.4s cubic-bezier(0.4, 0.2, 0.2, 1);
             cursor: pointer;
         }
-        
         .interactive-3d:hover {
             transform: translateY(-10px) translateZ(20px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
-        
-        /* Staggered Animations */
         .stagger-item {
             opacity: 0;
             transform: translateY(30px);
+        }
+        /* Updated Card Styles for Shorter Layout */
+        .short-card {
+            height: auto;
+            min-height: 180px; /* Reduced from taller default */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+        .short-card .text-4xl {
+            font-size: 2rem; /* Reduced icon size */
+            margin-bottom: 0.5rem;
+        }
+        .short-card h3 {
+            font-size: 1rem; /* Smaller heading */
+            margin-bottom: 0.5rem;
+        }
+        .short-card p {
+            font-size: 0.875rem; /* Smaller text */
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Limit to 2 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .short-card .flex-wrap {
+            gap: 0.25rem; /* Smaller gap for tags */
+        }
+        .short-card .skill-tag {
+            font-size: 0.75rem; /* Smaller tags */
+            padding: 0.25rem 0.5rem;
+        }
+        /* Project Card Specific Adjustments */
+        .project-card {
+            height: auto;
+            min-height: 250px; /* Reduced from taller layout */
+        }
+        .project-card .h-48 {
+            height: 120px; /* Reduced image/preview height */
+        }
+        .project-card .text-6xl {
+            font-size: 3rem; /* Smaller icon */
+        }
+        .project-card h3 {
+            font-size: 1.125rem; /* Smaller title */
+            margin-bottom: 0.5rem;
+        }
+        .project-card p {
+            font-size: 0.875rem;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Limit to 3 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .project-card button {
+            padding: 0.5rem 1rem; /* Smaller button */
+            font-size: 0.875rem;
+        }
+        /* Process Step Cards */
+        .step-3d {
+            transform-style: preserve-3d;
+            transition: all 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+            height: auto;
+            min-height: 200px; /* Reduced height */
+            padding: 1.5rem;
+        }
+        .step-3d:hover {
+            transform: translateZ(30px) rotateX(5deg);
+        }
+        .step-3d .w-16 {
+            width: 2.5rem; /* Smaller icon container */
+            height: 2.5rem;
+        }
+        .step-3d .text-2xl {
+            font-size: 1.25rem; /* Smaller icon */
+        }
+        .step-3d h3 {
+            font-size: 1rem; /* Smaller heading */
+            margin-bottom: 0.5rem;
+        }
+        .step-3d p {
+            font-size: 0.875rem;
+            line-height: 1.4;
+        }
+        /* Contact Info Cards */
+        .contact-card {
+            padding: 0.75rem; /* Reduced padding */
+            min-height: 80px; /* Smaller height */
+        }
+        .contact-card .w-12 {
+            width: 2.25rem;
+            height: 2.25rem;
         }
     </style>
 </head>
@@ -545,7 +410,6 @@
                 <div class="logo text-2xl font-bold bg-gradient-to-r from-primary-500 to-coral-500 bg-clip-text text-transparent font-serif">
                     PegeArts
                 </div>
-                
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link interactive-3d px-4 py-2 text-gray-700 hover:text-primary-500 transition-all duration-300 rounded-lg hover:bg-white/50">Home</a>
                     <a href="#about" class="nav-link interactive-3d px-4 py-2 text-gray-700 hover:text-primary-500 transition-all duration-300 rounded-lg hover:bg-white/50">About</a>
@@ -553,8 +417,6 @@
                     <a href="#work" class="nav-link interactive-3d px-4 py-2 text-gray-700 hover:text-primary-500 transition-all duration-300 rounded-lg hover:bg-white/50">Work</a>
                     <a href="#contact" class="nav-link interactive-3d px-4 py-2 text-gray-700 hover:text-primary-500 transition-all duration-300 rounded-lg hover:bg-white/50">Contact</a>
                 </div>
-                
-                <!-- Mobile menu button -->
                 <button id="mobileToggle" class="md:hidden interactive-3d p-2 rounded-lg hover:bg-white/50">
                     <div class="w-6 h-6 flex flex-col justify-center items-center space-y-1">
                         <span class="w-5 h-0.5 bg-gray-700 transition-all duration-300"></span>
@@ -568,15 +430,12 @@
 
     <!-- Hero Section with Enhanced 3D -->
     <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden perspective-1000">
-        <!-- Parallax Background Elements -->
         <div class="parallax-slow absolute inset-0 opacity-30">
             <div class="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-primary-400/20 to-coral-400/20 rounded-full blur-xl"></div>
             <div class="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-mint-400/20 to-blue-400/20 rounded-full blur-xl"></div>
             <div class="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-xl"></div>
         </div>
-        
         <div class="container mx-auto px-4 text-center relative z-10">
-            <!-- Enhanced 3D Moon -->
             <div class="moon-3d gsap-scale-in mb-12">
                 <div class="moon-sphere perspective-container interactive-3d">
                     <div class="floating-elements absolute inset-0">
@@ -586,16 +445,12 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Hero Content with Staggered Animations -->
             <div class="space-y-6">
                 <div class="gsap-fade-in text-lg md:text-xl text-gray-600 font-light">Hello, I'm</div>
                 <div class="gsap-slide-left text-xl md:text-2xl text-gray-800 font-semibold">Thanattsitt Santisamranwilai</div>
                 <h1 class="gsap-slide-right text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-primary-500 via-coral-500 to-mint-500 bg-clip-text text-transparent font-serif leading-tight">
                     AI Creative Designer
                 </h1>
-                
-                <!-- Social Links with 3D Effects -->
                 <div class="gsap-fade-in flex justify-center space-x-6 mt-8">
                     <a href="https://linkedin.com/in/thanatsitts" class="interactive-3d w-12 h-12 glass rounded-full flex items-center justify-center text-primary-500 hover:text-white hover:bg-primary-500 transition-all duration-300" target="_blank">
                         <i class="fab fa-linkedin-in"></i>
@@ -607,8 +462,6 @@
                         <i class="fab fa-twitter"></i>
                     </a>
                 </div>
-                
-                <!-- Hero Summary with Glass Morphism -->
                 <div class="gsap-scale-in mt-12 max-w-4xl mx-auto">
                     <div class="card-3d glass p-8 rounded-3xl backdrop-blur-xl border border-white/30 shadow-2xl">
                         <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
@@ -619,8 +472,6 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Scroll Indicator with 3D -->
         <div class="scroll-indicator-3d absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400">
             <div class="text-sm mb-2">Scroll to explore</div>
             <div class="animate-bounce">
@@ -635,8 +486,6 @@
             <h2 class="gsap-fade-in text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent font-serif">
                 About Me
             </h2>
-            
-            <!-- Education Badge with 3D -->
             <div class="gsap-scale-in max-w-2xl mx-auto mb-12">
                 <div class="card-3d glass p-8 rounded-2xl text-center interactive-3d">
                     <div class="flex items-center justify-center space-x-6">
@@ -650,8 +499,6 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Credentials with Parallax -->
             <div class="gsap-slide-left max-w-4xl mx-auto space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p class="parallax-medium">
                     As an AI Creative Designer, Researcher, and Scriptwriter, I combine technical expertise with creative vision to solve complex problems. 
@@ -665,164 +512,152 @@
         </div>
     </section>
 
-    <!-- Skills Section with 3D Grid -->
-    <section id="skills" class="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+    <!-- Skills Section with Shortened 3D Cards -->
+    <section id="skills" class="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div class="container mx-auto px-4">
-            <h2 class="gsap-fade-in text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent font-serif">
+            <h2 class="gsap-fade-in text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent font-serif">
                 Skills & Expertise
             </h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 perspective-1000">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 perspective-1000">
                 <!-- AI & Machine Learning -->
-                <div class="stagger-item card-3d glass p-6 rounded-2xl interactive-3d">
-                    <div class="text-4xl text-primary-500 mb-4">
+                <div class="stagger-item card-3d glass rounded-2xl interactive-3d short-card">
+                    <div class="text-4xl text-primary-500 mb-2">
                         <i class="fas fa-brain"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 font-serif">AI & Machine Learning</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Machine Learning</span>
-                        <span class="skill-tag px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Deep Learning</span>
-                        <span class="skill-tag px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">NLP</span>
-                        <span class="skill-tag px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Computer Vision</span>
-                        <span class="skill-tag px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">AI Ethics</span>
+                    <h3 class="text-lg font-bold mb-2 font-serif">AI & Machine Learning</h3>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="skill-tag px-2 py-0.5 bg-primary-100 text-primary-700 rounded-full text-xs">Machine Learning</span>
+                        <span class="skill-tag px-2 py-0.5 bg-primary-100 text-primary-700 rounded-full text-xs">Deep Learning</span>
+                        <span class="skill-tag px-2 py-0.5 bg-primary-100 text-primary-700 rounded-full text-xs">NLP</span>
+                        <span class="skill-tag px-2 py-0.5 bg-primary-100 text-primary-700 rounded-full text-xs">Computer Vision</span>
+                        <span class="skill-tag px-2 py-0.5 bg-primary-100 text-primary-700 rounded-full text-xs">AI Ethics</span>
                     </div>
                 </div>
-                
                 <!-- Design & UX -->
-                <div class="stagger-item card-3d glass p-6 rounded-2xl interactive-3d">
-                    <div class="text-4xl text-coral-500 mb-4">
+                <div class="stagger-item card-3d glass rounded-2xl interactive-3d short-card">
+                    <div class="text-4xl text-coral-500 mb-2">
                         <i class="fas fa-palette"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 font-serif">Design & UX</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag px-3 py-1 bg-coral-100 text-coral-700 rounded-full text-sm">UI/UX Design</span>
-                        <span class="skill-tag px-3 py-1 bg-coral-100 text-coral-700 rounded-full text-sm">User Research</span>
-                        <span class="skill-tag px-3 py-1 bg-coral-100 text-coral-700 rounded-full text-sm">Prototyping</span>
-                        <span class="skill-tag px-3 py-1 bg-coral-100 text-coral-700 rounded-full text-sm">Design Systems</span>
-                        <span class="skill-tag px-3 py-1 bg-coral-100 text-coral-700 rounded-full text-sm">Figma</span>
+                    <h3 class="text-lg font-bold mb-2 font-serif">Design & UX</h3>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="skill-tag px-2 py-0.5 bg-coral-100 text-coral-700 rounded-full text-xs">UI/UX Design</span>
+                        <span class="skill-tag px-2 py-0.5 bg-coral-100 text-coral-700 rounded-full text-xs">User Research</span>
+                        <span class="skill-tag px-2 py-0.5 bg-coral-100 text-coral-700 rounded-full text-xs">Prototyping</span>
+                        <span class="skill-tag px-2 py-0.5 bg-coral-100 text-coral-700 rounded-full text-xs">Design Systems</span>
+                        <span class="skill-tag px-2 py-0.5 bg-coral-100 text-coral-700 rounded-full text-xs">Figma</span>
                     </div>
                 </div>
-                
                 <!-- Development -->
-                <div class="stagger-item card-3d glass p-6 rounded-2xl interactive-3d">
-                    <div class="text-4xl text-mint-500 mb-4">
+                <div class="stagger-item card-3d glass rounded-2xl interactive-3d short-card">
+                    <div class="text-4xl text-mint-500 mb-2">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 font-serif">Development</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag px-3 py-1 bg-mint-100 text-mint-700 rounded-full text-sm">Python</span>
-                        <span class="skill-tag px-3 py-1 bg-mint-100 text-mint-700 rounded-full text-sm">JavaScript</span>
-                        <span class="skill-tag px-3 py-1 bg-mint-100 text-mint-700 rounded-full text-sm">React</span>
-                        <span class="skill-tag px-3 py-1 bg-mint-100 text-mint-700 rounded-full text-sm">Node.js</span>
-                        <span class="skill-tag px-3 py-1 bg-mint-100 text-mint-700 rounded-full text-sm">TensorFlow</span>
+                    <h3 class="text-lg font-bold mb-2 font-serif">Development</h3>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="skill-tag px-2 py-0.5 bg-mint-100 text-mint-700 rounded-full text-xs">Python</span>
+                        <span class="skill-tag px-2 py-0.5 bg-mint-100 text-mint-700 rounded-full text-xs">JavaScript</span>
+                        <span class="skill-tag px-2 py-0.5 bg-mint-100 text-mint-700 rounded-full text-xs">React</span>
+                        <span class="skill-tag px-2 py-0.5 bg-mint-100 text-mint-700 rounded-full text-xs">Node.js</span>
+                        <span class="skill-tag px-2 py-0.5 bg-mint-100 text-mint-700 rounded-full text-xs">TensorFlow</span>
                     </div>
                 </div>
-                
                 <!-- Creative Writing -->
-                <div class="stagger-item card-3d glass p-6 rounded-2xl interactive-3d">
-                    <div class="text-4xl text-purple-500 mb-4">
+                <div class="stagger-item card-3d glass rounded-2xl interactive-3d short-card">
+                    <div class="text-4xl text-purple-500 mb-2">
                         <i class="fas fa-pen-nib"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 font-serif">Creative Writing</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Scriptwriting</span>
-                        <span class="skill-tag px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Content Strategy</span>
-                        <span class="skill-tag px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Storytelling</span>
-                        <span class="skill-tag px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Thai Literature</span>
+                    <h3 class="text-lg font-bold mb-2 font-serif">Creative Writing</h3>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="skill-tag px-2 py-0.5 bg-purple-100 text-purple-700 rounded-full text-xs">Scriptwriting</span>
+                        <span class="skill-tag px-2 py-0.5 bg-purple-100 text-purple-700 rounded-full text-xs">Content Strategy</span>
+                        <span class="skill-tag px-2 py-0.5 bg-purple-100 text-purple-700 rounded-full text-xs">Storytelling</span>
+                        <span class="skill-tag px-2 py-0.5 bg-purple-100 text-purple-700 rounded-full text-xs">Thai Literature</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced Process Section with 3D Flip Cards -->
-    <section id="cultural-process" class="py-20 bg-gradient-to-br from-indigo-50 to-purple-50">
+    <!-- Enhanced Process Section with Shortened 3D Cards -->
+    <section id="cultural-process" class="py-16 bg-gradient-to-br from-indigo-50 to-purple-50">
         <div class="container mx-auto px-4">
-            <h2 class="gsap-fade-in text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary-500 via-coral-500 to-mint-500 bg-clip-text text-transparent font-serif">
+            <h2 class="gsap-fade-in text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-primary-500 via-coral-500 to-mint-500 bg-clip-text text-transparent font-serif">
                 My Cultural-Psychological SEO Approach
             </h2>
-            
-            <!-- Mode Toggle Button with 3D -->
-            <div class="text-center mb-12">
-                                <button id="modeToggle" class="interactive-3d glass px-6 py-3 rounded-full text-primary-500 hover:bg-primary-500 hover:text-white transition-all duration-300">
+            <div class="text-center mb-10">
+                <button id="modeToggle" class="interactive-3d glass px-6 py-3 rounded-full text-primary-500 hover:bg-primary-500 hover:text-white transition-all duration-300">
                     <i class="fas fa-language mr-2"></i>
                     Switch to Thai Mode
                 </button>
             </div>
-            
-            <div class="process-3d grid md:grid-cols-2 lg:grid-cols-3 gap-8 perspective-1000">
+            <div class="process-3d grid md:grid-cols-2 lg:grid-cols-3 gap-6 perspective-1000">
                 <!-- Step 1: Cultural Understanding -->
-                <div class="step-3d glass p-8 rounded-2xl interactive-3d stagger-item">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white text-2xl">
+                <div class="step-3d glass rounded-2xl interactive-3d stagger-item">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white text-2xl">
                             <i class="fas fa-globe-asia"></i>
                         </div>
-                        <h3 class="text-xl font-bold font-serif">Cultural Understanding</h3>
+                        <h3 class="text-lg font-bold font-serif">Cultural Understanding</h3>
                     </div>
                     <p class="text-gray-600 leading-relaxed">
                         Deep dive into Thai cultural nuances, local behaviors, and digital consumption patterns to create authentic connections.
                     </p>
                 </div>
-                
                 <!-- Step 2: Psychological Insights -->
-                <div class="step-3d glass p-8 rounded-2xl interactive-3d stagger-item">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-coral-500 to-coral-600 rounded-full flex items-center justify-center text-white text-2xl">
+                <div class="step-3d glass rounded-2xl interactive-3d stagger-item">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-coral-500 to-coral-600 rounded-full flex items-center justify-center text-white text-2xl">
                             <i class="fas fa-brain"></i>
                         </div>
-                        <h3 class="text-xl font-bold font-serif">Psychological Insights</h3>
+                        <h3 class="text-lg font-bold font-serif">Psychological Insights</h3>
                     </div>
                     <p class="text-gray-600 leading-relaxed">
                         Apply behavioral psychology and cognitive science to understand user motivations and decision-making processes.
                     </p>
                 </div>
-                
                 <!-- Step 3: SEO Strategy -->
-                <div class="step-3d glass p-8 rounded-2xl interactive-3d stagger-item">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-mint-500 to-mint-600 rounded-full flex items-center justify-center text-white text-2xl">
+                <div class="step-3d glass rounded-2xl interactive-3d stagger-item">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-mint-500 to-mint-600 rounded-full flex items-center justify-center text-white text-2xl">
                             <i class="fas fa-search"></i>
                         </div>
-                        <h3 class="text-xl font-bold font-serif">SEO Strategy</h3>
+                        <h3 class="text-lg font-bold font-serif">SEO Strategy</h3>
                     </div>
                     <p class="text-gray-600 leading-relaxed">
                         Implement data-driven SEO techniques tailored to Thai search behaviors and Google's algorithm preferences.
                     </p>
                 </div>
-                
                 <!-- Step 4: Content Creation -->
-                <div class="step-3d glass p-8 rounded-2xl interactive-3d stagger-item">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl">
+                <div class="step-3d glass rounded-2xl interactive-3d stagger-item">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl">
                             <i class="fas fa-pen-fancy"></i>
                         </div>
-                        <h3 class="text-xl font-bold font-serif">Content Creation</h3>
+                        <h3 class="text-lg font-bold font-serif">Content Creation</h3>
                     </div>
                     <p class="text-gray-600 leading-relaxed">
                         Craft compelling, culturally relevant content that resonates with Thai audiences while maintaining SEO effectiveness.
                     </p>
                 </div>
-                
                 <!-- Step 5: Performance Analysis -->
-                <div class="step-3d glass p-8 rounded-2xl interactive-3d stagger-item">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-2xl">
+                <div class="step-3d glass rounded-2xl interactive-3d stagger-item">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-2xl">
                             <i class="fas fa-chart-line"></i>
                         </div>
-                        <h3 class="text-xl font-bold font-serif">Performance Analysis</h3>
+                        <h3 class="text-lg font-bold font-serif">Performance Analysis</h3>
                     </div>
                     <p class="text-gray-600 leading-relaxed">
                         Monitor and analyze performance metrics to continuously optimize the cultural-psychological approach.
                     </p>
                 </div>
-                
                 <!-- Step 6: Continuous Optimization -->
-                <div class="step-3d glass p-8 rounded-2xl interactive-3d stagger-item">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center text-white text-2xl">
+                <div class="step-3d glass rounded-2xl interactive-3d stagger-item">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center text-white text-2xl">
                             <i class="fas fa-sync-alt"></i>
                         </div>
-                        <h3 class="text-xl font-bold font-serif">Continuous Optimization</h3>
+                        <h3 class="text-lg font-bold font-serif">Continuous Optimization</h3>
                     </div>
                     <p class="text-gray-600 leading-relaxed">
                         Iteratively refine strategies based on cultural shifts, psychological insights, and SEO performance data.
@@ -832,16 +667,15 @@
         </div>
     </section>
 
-    <!-- Featured Work Section with 3D Portfolio Cards -->
-    <section id="work" class="py-20 bg-white/50 backdrop-blur-sm">
+    <!-- Featured Work Section with Shortened 3D Cards -->
+    <section id="work" class="py-16 bg-white/50 backdrop-blur-sm">
         <div class="container mx-auto px-4">
-            <h2 class="gsap-fade-in text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent font-serif">
+            <h2 class="gsap-fade-in text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent font-serif">
                 Featured Work
             </h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 perspective-1000">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 perspective-1000">
                 <!-- Project 1: AI Design System -->
-                <div class="stagger-item card-3d glass rounded-2xl overflow-hidden interactive-3d">
+                <div class="stagger-item card-3d glass rounded-2xl overflow-hidden interactive-3d project-card">
                     <div class="h-48 bg-gradient-to-br from-primary-500 to-primary-600 relative overflow-hidden">
                         <div class="absolute inset-0 bg-black/20"></div>
                         <div class="absolute inset-0 flex items-center justify-center">
@@ -849,28 +683,27 @@
                                 <i class="fas fa-robot"></i>
                             </div>
                         </div>
-                        <div class="absolute top-4 right-4 glass px-3 py-1 rounded-full text-white text-sm">
+                        <div class="absolute top-3 right-3 glass px-2 py-0.5 rounded-full text-white text-xs">
                             AI Design
                         </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 font-serif">AI-Powered Design System</h3>
-                        <p class="text-gray-600 mb-4">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold mb-2 font-serif">AI-Powered Design System</h3>
+                        <p class="text-gray-600 mb-3 text-sm">
                             Developed an intelligent design system that uses machine learning to generate contextually appropriate design components.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Machine Learning</span>
-                            <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">Design Systems</span>
-                            <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm">React</span>
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            <span class="px-2 py-0.5 bg-primary-100 text-primary-700 rounded-full text-xs">Machine Learning</span>
+                            <span class="px-2 py-0.5 bg-primary-100 text-primary-700 rounded-full text-xs">Design Systems</span>
+                            <span class="px-2 py-0.5 bg-primary-100 text-primary-700 rounded-full text-xs">React</span>
                         </div>
-                        <button class="interactive-3d w-full bg-primary-500 text-white py-3 rounded-lg hover:bg-primary-600 transition-all duration-300">
+                        <button class="interactive-3d w-full bg-primary-500 text-white py-2 rounded-lg hover:bg-primary-600 transition-all duration-300 text-sm">
                             View Project
                         </button>
                     </div>
                 </div>
-                
                 <!-- Project 2: Thai Cultural UX Research -->
-                <div class="stagger-item card-3d glass rounded-2xl overflow-hidden interactive-3d">
+                <div class="stagger-item card-3d glass rounded-2xl overflow-hidden interactive-3d project-card">
                     <div class="h-48 bg-gradient-to-br from-coral-500 to-coral-600 relative overflow-hidden">
                         <div class="absolute inset-0 bg-black/20"></div>
                         <div class="absolute inset-0 flex items-center justify-center">
@@ -878,28 +711,27 @@
                                 <i class="fas fa-users"></i>
                             </div>
                         </div>
-                        <div class="absolute top-4 right-4 glass px-3 py-1 rounded-full text-white text-sm">
+                        <div class="absolute top-3 right-3 glass px-2 py-0.5 rounded-full text-white text-xs">
                             UX Research
                         </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 font-serif">Thai Cultural UX Research</h3>
-                        <p class="text-gray-600 mb-4">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold mb-2 font-serif">Thai Cultural UX Research</h3>
+                        <p class="text-gray-600 mb-3 text-sm">
                             Comprehensive study on Thai user behavior patterns and cultural preferences in digital product design.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-coral-100 text-coral-700 rounded-full text-sm">User Research</span>
-                            <span class="px-3 py-1 bg-coral-100 text-coral-700 rounded-full text-sm">Cultural Analysis</span>
-                            <span class="px-3 py-1 bg-coral-100 text-coral-700 rounded-full text-sm">Data Visualization</span>
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            <span class="px-2 py-0.5 bg-coral-100 text-coral-700 rounded-full text-xs">User Research</span>
+                            <span class="px-2 py-0.5 bg-coral-100 text-coral-700 rounded-full text-xs">Cultural Analysis</span>
+                            <span class="px-2 py-0.5 bg-coral-100 text-coral-700 rounded-full text-xs">Data Visualization</span>
                         </div>
-                        <button class="interactive-3d w-full bg-coral-500 text-white py-3 rounded-lg hover:bg-coral-600 transition-all duration-300">
+                        <button class="interactive-3d w-full bg-coral-500 text-white py-2 rounded-lg hover:bg-coral-600 transition-all duration-300 text-sm">
                             View Research
                         </button>
                     </div>
                 </div>
-                
                 <!-- Project 3: Interactive Storytelling Platform -->
-                <div class="stagger-item card-3d glass rounded-2xl overflow-hidden interactive-3d">
+                <div class="stagger-item card-3d glass rounded-2xl overflow-hidden interactive-3d project-card">
                     <div class="h-48 bg-gradient-to-br from-mint-500 to-mint-600 relative overflow-hidden">
                         <div class="absolute inset-0 bg-black/20"></div>
                         <div class="absolute inset-0 flex items-center justify-center">
@@ -907,21 +739,21 @@
                                 <i class="fas fa-book-open"></i>
                             </div>
                         </div>
-                        <div class="absolute top-4 right-4 glass px-3 py-1 rounded-full text-white text-sm">
+                        <div class="absolute top-3 right-3 glass px-2 py-0.5 rounded-full text-white text-xs">
                             Interactive
                         </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 font-serif">Interactive Storytelling Platform</h3>
-                        <p class="text-gray-600 mb-4">
+                                            </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold mb-2 font-serif">Interactive Storytelling Platform</h3>
+                        <p class="text-gray-600 mb-3 text-sm">
                             AI-enhanced platform for creating immersive, culturally-rich storytelling experiences in Thai literature.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-mint-100 text-mint-700 rounded-full text-sm">Storytelling</span>
-                            <span class="px-3 py-1 bg-mint-100 text-mint-700 rounded-full text-sm">AI Integration</span>
-                            <span class="px-3 py-1 bg-mint-100 text-mint-700 rounded-full text-sm">Web Development</span>
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            <span class="px-2 py-0.5 bg-mint-100 text-mint-700 rounded-full text-xs">Storytelling</span>
+                            <span class="px-2 py-0.5 bg-mint-100 text-mint-700 rounded-full text-xs">AI Integration</span>
+                            <span class="px-2 py-0.5 bg-mint-100 text-mint-700 rounded-full text-xs">Web Development</span>
                         </div>
-                        <button class="interactive-3d w-full bg-mint-500 text-white py-3 rounded-lg hover:bg-mint-600 transition-all duration-300">
+                        <button class="interactive-3d w-full bg-mint-500 text-white py-2 rounded-lg hover:bg-mint-600 transition-all duration-300 text-sm">
                             Explore Platform
                         </button>
                     </div>
@@ -930,90 +762,82 @@
         </div>
     </section>
 
-    <!-- Contact Section with 3D Form -->
-    <section id="contact" class="py-20 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
+    <!-- Contact Section with Shortened 3D Cards -->
+    <section id="contact" class="py-16 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
         <div class="container mx-auto px-4">
-            <h2 class="gsap-fade-in text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent font-serif">
+            <h2 class="gsap-fade-in text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent font-serif">
                 Let's Create Together
             </h2>
-            
             <div class="max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <!-- Contact Info with 3D Cards -->
-                    <div class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <!-- Contact Info with Shortened 3D Cards -->
+                    <div class="space-y-5">
                         <div class="gsap-slide-left">
-                            <h3 class="text-2xl font-bold mb-6 font-serif">Get In Touch</h3>
-                            <p class="text-gray-300 mb-8 leading-relaxed">
+                            <h3 class="text-2xl font-bold mb-5 font-serif">Get In Touch</h3>
+                            <p class="text-gray-300 mb-6 leading-relaxed">
                                 Ready to explore the intersection of AI, creativity, and cultural intelligence? 
                                 Let's discuss how we can bring your vision to life through innovative design and technology.
                             </p>
                         </div>
-                        
-                        <div class="space-y-4">
-                            <div class="stagger-item card-3d glass-dark p-4 rounded-xl interactive-3d">
-                                <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center">
+                        <div class="space-y-3">
+                            <div class="stagger-item card-3d glass-dark rounded-xl interactive-3d contact-card">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center">
                                         <i class="fas fa-envelope text-white"></i>
                                     </div>
                                     <div>
-                                        <div class="font-medium">Email</div>
-                                        <div class="text-gray-300">thanatsitts@gmail.com</div>
+                                        <div class="font-medium text-sm">Email</div>
+                                        <div class="text-gray-300 text-sm">thanatsitts@gmail.com</div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="stagger-item card-3d glass-dark p-4 rounded-xl interactive-3d">
-                                <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-coral-500 rounded-full flex items-center justify-center">
+                            <div class="stagger-item card-3d glass-dark rounded-xl interactive-3d contact-card">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-coral-500 rounded-full flex items-center justify-center">
                                         <i class="fas fa-phone text-white"></i>
                                     </div>
                                     <div>
-                                        <div class="font-medium">Phone</div>
-                                        <div class="text-gray-300">+66 (0) 89-xxx-xxxx</div>
+                                        <div class="font-medium text-sm">Phone</div>
+                                        <div class="text-gray-300 text-sm">+66 (0) 89-xxx-xxxx</div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="stagger-item card-3d glass-dark p-4 rounded-xl interactive-3d">
-                                <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-mint-500 rounded-full flex items-center justify-center">
+                            <div class="stagger-item card-3d glass-dark rounded-xl interactive-3d contact-card">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-mint-500 rounded-full flex items-center justify-center">
                                         <i class="fas fa-map-marker-alt text-white"></i>
                                     </div>
                                     <div>
-                                        <div class="font-medium">Location</div>
-                                        <div class="text-gray-300">Bangkok, Thailand</div>
+                                        <div class="font-medium text-sm">Location</div>
+                                        <div class="text-gray-300 text-sm">Bangkok, Thailand</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
                     <!-- Contact Form with 3D Effects -->
                     <div class="gsap-slide-right">
-                        <form class="card-3d glass-dark p-8 rounded-2xl backdrop-blur-xl">
-                            <div class="space-y-6">
-                                <div class="grid md:grid-cols-2 gap-4">
+                        <form class="card-3d glass-dark p-6 rounded-2xl backdrop-blur-xl">
+                            <div class="space-y-4">
+                                <div class="grid md:grid-cols-2 gap-3">
                                     <div class="form-group">
-                                        <label class="block text-sm font-medium mb-2">Name</label>
-                                        <input type="text" class="interactive-3d w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300" placeholder="Your Name">
+                                        <label class="block text-sm font-medium mb-1">Name</label>
+                                        <input type="text" class="interactive-3d w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300" placeholder="Your Name">
                                     </div>
                                     <div class="form-group">
-                                        <label class="block text-sm font-medium mb-2">Email</label>
-                                        <input type="email" class="interactive-3d w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300" placeholder="your@email.com">
+                                        <label class="block text-sm font-medium mb-1">Email</label>
+                                        <input type="email" class="interactive-3d w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300" placeholder="your@email.com">
                                     </div>
                                 </div>
-                                
                                 <div class="form-group">
-                                    <label class="block text-sm font-medium mb-2">Subject</label>
-                                    <input type="text" class="interactive-3d w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300" placeholder="Project Discussion">
+                                    <label class="block text-sm font-medium mb-1">Subject</label>
+                                    <input type="text" class="interactive-3d w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300" placeholder="Project Discussion">
                                 </div>
-                                
                                 <div class="form-group">
-                                    <label class="block text-sm font-medium mb-2">Message</label>
-                                    <textarea rows="4" class="interactive-3d w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300" placeholder="Tell me about your project..."></textarea>
+                                    <label class="block text-sm font-medium mb-1">Message</label>
+                                    <textarea rows="3" class="interactive-3d w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300" placeholder="Tell me about your project..."></textarea>
                                 </div>
-                                
-                                <button type="submit" class="interactive-3d w-full bg-gradient-to-r from-primary-500 to-coral-500 text-white py-4 rounded-lg font-medium hover:from-primary-600 hover:to-coral-600 transition-all duration-300 transform hover:scale-105">
+                                <button type="submit" class="interactive-3d w-full bg-gradient-to-r from-primary-500 to-coral-500 text-white py-3 rounded-lg font-medium hover:from-primary-600 hover:to-coral-600 transition-all duration-300 transform hover:scale-105">
                                     Send Message
                                     <i class="fas fa-paper-plane ml-2"></i>
                                 </button>
@@ -1026,29 +850,26 @@
     </section>
 
     <!-- Footer with 3D Elements -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gray-900 text-white py-10">
         <div class="container mx-auto px-4">
             <div class="text-center">
-                <div class="gsap-fade-in text-3xl font-bold mb-4 bg-gradient-to-r from-primary-400 to-coral-400 bg-clip-text text-transparent font-serif">
+                <div class="gsap-fade-in text-3xl font-bold mb-3 bg-gradient-to-r from-primary-400 to-coral-400 bg-clip-text text-transparent font-serif">
                     Thanattsitt Santisamranwilai
                 </div>
-                <p class="gsap-fade-in text-gray-400 mb-8">
+                <p class="gsap-fade-in text-gray-400 mb-6">
                     AI Creative Designer, Researcher & Scriptwriter
                 </p>
-                
-                <!-- Social Links with 3D Hover -->
-                <div class="gsap-scale-in flex justify-center space-x-6 mb-8">
-                    <a href="https://linkedin.com/in/thanatsitts" class="interactive-3d w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-blue-400 hover:text-white hover:bg-blue-400 transition-all duration-300" target="_blank">
+                <div class="gsap-scale-in flex justify-center space-x-5 mb-6">
+                    <a href="https://linkedin.com/in/thanatsitts" class="interactive-3d w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-blue-400 hover:text-white hover:bg-blue-400 transition-all duration-300" target="_blank">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://github.com/Pigletpeakkung" class="interactive-3d w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition-all duration-300" target="_blank">
+                    <a href="https://github.com/Pigletpeakkung" class="interactive-3d w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition-all duration-300" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://twitter.com/thanatsitts" class="interactive-3d w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-blue-400 hover:text-white hover:bg-blue-400 transition-all duration-300" target="_blank">
+                    <a href="https://twitter.com/thanatsitts" class="interactive-3d w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-blue-400 hover:text-white hover:bg-blue-400 transition-all duration-300" target="_blank">
                         <i class="fab fa-twitter"></i>
                     </a>
                 </div>
-                
                 <div class="gsap-fade-in text-gray-500 text-sm">
                     © 2024 Thanattsitt Santisamranwilai. All rights reserved.
                 </div>
@@ -1056,7 +877,7 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Scripts (Consolidated from Provided Versions) -->
     <script>
         // GSAP Animations & 3D Effects
         gsap.registerPlugin(ScrollTrigger, TextPlugin);
@@ -1065,35 +886,55 @@
         window.addEventListener('load', () => {
             const loadingScreen = document.getElementById('loadingScreen');
             const loadingBar = document.getElementById('loadingBar');
+            const loadingSteps = [
+                { progress: 20, message: 'Loading WebGL components...' },
+                { progress: 40, message: 'Initializing 3D particles...' },
+                { progress: 60, message: 'Setting up neural networks...' },
+                { progress: 80, message: 'Applying visual effects...' },
+                { progress: 100, message: 'Ready to explore!' }
+            ];
+            let currentStep = 0;
             
-            // Animate loading bar
-            gsap.to(loadingBar, {
-                width: '100%',
-                duration: 2,
-                ease: 'power2.out',
-                onComplete: () => {
-                    // Hide loading screen
-                    gsap.to(loadingScreen, {
-                        opacity: 0,
+            function updateLoading() {
+                if (currentStep < loadingSteps.length) {
+                    const step = loadingSteps[currentStep];
+                    gsap.to(loadingBar, {
+                        width: `${step.progress}%`,
                         duration: 0.5,
-                        onComplete: () => {
-                            loadingScreen.style.display = 'none';
-                            initAnimations();
-                        }
+                        ease: 'power2.out'
                     });
+                    const messageEl = loadingScreen.querySelector('.text-lg');
+                    if (messageEl) messageEl.textContent = step.message;
+                    currentStep++;
+                    if (currentStep < loadingSteps.length) {
+                        setTimeout(updateLoading, 400);
+                    } else {
+                        setTimeout(() => {
+                            gsap.to(loadingScreen, {
+                                opacity: 0,
+                                duration: 1,
+                                ease: 'power2.out',
+                                onComplete: () => {
+                                    loadingScreen.style.display = 'none';
+                                    initAnimations();
+                                    const webglControls = init3DBackground();
+                                    initSectionBasedEffects(webglControls);
+                                }
+                            });
+                        }, 500);
+                    }
                 }
-            });
+            }
+            updateLoading();
         });
         
         function initAnimations() {
-            // Hero Section Animations
             gsap.timeline()
                 .from('.gsap-scale-in', { scale: 0.8, opacity: 0, duration: 1, ease: 'back.out(1.7)' })
                 .from('.gsap-fade-in', { y: 50, opacity: 0, duration: 0.8, stagger: 0.2 }, '-=0.5')
                 .from('.gsap-slide-left', { x: -100, opacity: 0, duration: 0.8 }, '-=0.6')
                 .from('.gsap-slide-right', { x: 100, opacity: 0, duration: 0.8 }, '-=0.6');
             
-            // Stagger animations for cards
             gsap.from('.stagger-item', {
                 scrollTrigger: {
                     trigger: '.stagger-item',
@@ -1107,7 +948,6 @@
                 ease: 'power2.out'
             });
             
-            // Parallax effects
             gsap.utils.toArray('.parallax-slow').forEach(el => {
                 gsap.to(el, {
                     yPercent: -50,
@@ -1134,7 +974,6 @@
                 });
             });
             
-            // Navbar animation
             ScrollTrigger.create({
                 trigger: 'body',
                 start: 'top -50',
@@ -1155,7 +994,6 @@
                 }
             });
             
-            // Smooth scrolling for navigation
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -1171,82 +1009,322 @@
             });
         }
         
-        // 3D WebGL Background
+        // 3D WebGL Background (Enhanced Version)
         function init3DBackground() {
             const canvas = document.getElementById('webgl-canvas');
             const scene = new THREE.Scene();
             const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
-            
+            const renderer = new THREE.WebGLRenderer({ 
+                canvas: canvas, 
+                alpha: true, 
+                antialias: true,
+                powerPreference: "high-performance"
+            });
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setClearColor(0x000000, 0);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
             
-            // Create floating particles
-            const particleCount = 100;
-            const particles = new THREE.BufferGeometry();
-            const positions = new Float32Array(particleCount * 3);
-            const colors = new Float32Array(particleCount * 3);
+            const mouse = new THREE.Vector2();
+            const mouseTarget = new THREE.Vector2();
             
-            for (let i = 0; i < particleCount * 3; i += 3) {
-                positions[i] = (Math.random() - 0.5) * 20;
-                positions[i + 1] = (Math.random() - 0.5) * 20;
-                positions[i + 2] = (Math.random() - 0.5) * 20;
-                
-                colors[i] = Math.random();
-                colors[i + 1] = Math.random();
-                colors[i + 2] = Math.random();
+            const particleSystems = [];
+            function createFloatingParticles() {
+                const particleCount = 150;
+                const particles = new THREE.BufferGeometry();
+                const positions = new Float32Array(particleCount * 3);
+                const colors = new Float32Array(particleCount * 3);
+                const sizes = new Float32Array(particleCount);
+                const colorPalette = [
+                    new THREE.Color(0x0ea5e9),
+                    new THREE.Color(0xdc2626),
+                    new THREE.Color(0x059669),
+                    new THREE.Color(0x8b5cf6),
+                    new THREE.Color(0xf97316)
+                ];
+                for (let i = 0; i < particleCount; i++) {
+                    const i3 = i * 3;
+                    positions[i3] = (Math.random() - 0.5) * 25;
+                    positions[i3 + 1] = (Math.random() - 0.5) * 25;
+                    positions[i3 + 2] = (Math.random() - 0.5) * 25;
+                    const color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
+                    colors[i3] = color.r;
+                    colors[i3 + 1] = color.g;
+                    colors[i3 + 2] = color.b;
+                    sizes[i] = Math.random() * 3 + 1;
+                }
+                particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+                particles.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+                particles.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+                const particleMaterial = new THREE.PointsMaterial({
+                    size: 0.05,
+                    vertexColors: true,
+                    transparent: true,
+                    opacity: 0.8,
+                    blending: THREE.AdditiveBlending,
+                    sizeAttenuation: true
+                });
+                const particleSystem = new THREE.Points(particles, particleMaterial);
+                particleSystem.userData = { 
+                    originalPositions: positions.slice(),
+                    speed: 0.001,
+                    mouseInfluence: 0.02
+                };
+                return particleSystem;
             }
+            function createNeuralNetwork() {
+                const nodeCount = 50;
+                const nodes = [];
+                const connections = new THREE.BufferGeometry();
+                const connectionPositions = [];
+                for (let i = 0; i < nodeCount; i++) {
+                    nodes.push({
+                        x: (Math.random() - 0.5) * 20,
+                        y: (Math.random() - 0.5) * 20,
+                        z: (Math.random() - 0.5) * 20,
+                        connections: []
+                    });
+                }
+                for (let i = 0; i < nodeCount; i++) {
+                    for (let j = i + 1; j < nodeCount; j++) {
+                        const distance = Math.sqrt(
+                            Math.pow(nodes[i].x - nodes[j].x, 2) +
+                            Math.pow(nodes[i].y - nodes[j].y, 2) +
+                            Math.pow(nodes[i].z - nodes[j].z, 2)
+                        );
+                        if (distance < 5 && Math.random() > 0.7) {
+                            connectionPositions.push(nodes[i].x, nodes[i].y, nodes[i].z);
+                            connectionPositions.push(nodes[j].x, nodes[j].y, nodes[j].z);
+                            nodes[i].connections.push(j);
+                        }
+                    }
+                }
+                connections.setAttribute('position', new THREE.Float32BufferAttribute(connectionPositions, 3));
+                const connectionMaterial = new THREE.LineBasicMaterial({ 
+                    color: 0x0ea5e9, 
+                    transparent: true, 
+                    opacity: 0.3 
+                });
+                const networkLines = new THREE.LineSegments(connections, connectionMaterial);
+                networkLines.userData = { nodes, rotationSpeed: 0.0005 };
+                return networkLines;
+            }
+            function createFloatingGeometry() {
+                const group = new THREE.Group();
+                const geometries = [
+                    new THREE.IcosahedronGeometry(0.5, 1),
+                    new THREE.OctahedronGeometry(0.4),
+                    new THREE.TetrahedronGeometry(0.6),
+                    new THREE.BoxGeometry(0.4, 0.4, 0.4)
+                ];
+                for (let i = 0; i < 20; i++) {
+                    const geometry = geometries[Math.floor(Math.random() * geometries.length)];
+                    const material = new THREE.MeshLambertMaterial({
+                        color: new THREE.Color().setHSL(Math.random(), 0.7, 0.6),
+                        transparent: true,
+                        opacity: 0.6,
+                        wireframe: Math.random() > 0.5
+                    });
+                    const mesh = new THREE.Mesh(geometry, material);
+                    mesh.position.set(
+                        (Math.random() - 0.5) * 30,
+                        (Math.random() - 0.5) * 30,
+                        (Math.random() - 0.5) * 30
+                    );
+                    mesh.userData = {
+                        rotationSpeed: {
+                            x: (Math.random() - 0.5) * 0.02,
+                            y: (Math.random() - 0.5) * 0.02,
+                            z: (Math.random() - 0.5) * 0.02
+                        },
+                        floatSpeed: Math.random() * 0.01 + 0.005,
+                        originalY: mesh.position.y
+                    };
+                    group.add(mesh);
+                }
+                return group;
+            }
+            function createDataSpheres() {
+                const group = new THREE.Group();
+                const sphereCount = 30;
+                for (let i = 0; i < sphereCount; i++) {
+                    const radius = Math.random() * 0.3 + 0.1;
+                    const geometry = new THREE.SphereGeometry(radius, 16, 16);
+                    const material = new THREE.MeshPhongMaterial({
+                        color: new THREE.Color().setHSL(i / sphereCount, 1, 0.5),
+                        transparent: true,
+                        opacity: 0.7,
+                        shininess: 100
+                    });
+                    const sphere = new THREE.Mesh(geometry, material);
+                    const angle = (i / sphereCount) * Math.PI * 4;
+                    const distance = 8 + Math.sin(i * 0.5) * 3;
+                    sphere.position.set(
+                        Math.cos(angle) * distance,
+                        Math.sin(i * 0.3) * 5,
+                        Math.sin(angle) * distance
+                    );
+                    sphere.userData = {
+                        originalPosition: sphere.position.clone(),
+                        phase: i * 0.1,
+                        amplitude: Math.random() * 2 + 1
+                    };
+                    group.add(sphere);
+                }
+                return group;
+            }
+            const floatingParticles = createFloatingParticles();
+            const neuralNetwork = createNeuralNetwork();
+            const floatingGeometry = createFloatingGeometry();
+            const dataSpheres = createDataSpheres();
+            scene.add(floatingParticles);
+            scene.add(neuralNetwork);
+            scene.add(floatingGeometry);
+            scene.add(dataSpheres);
             
-            particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-            particles.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+            const ambientLight = new THREE.AmbientLight(0x404040, 0.3);
+            scene.add(ambientLight);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+            directionalLight.position.set(5, 5, 5);
+            scene.add(directionalLight);
+            const pointLight1 = new THREE.PointLight(0x0ea5e9, 1, 10);
+            pointLight1.position.set(5, 0, 0);
+            scene.add(pointLight1);
+            const pointLight2 = new THREE.PointLight(0xdc2626, 1, 10);
+            pointLight2.position.set(-5, 0, 0);
+            scene.add(pointLight2);
             
-            const particleMaterial = new THREE.PointsMaterial({
-                size: 0.02,
-                vertexColors: true,
-                transparent: true,
-                opacity: 0.6
+            camera.position.z = 8;
+            window.addEventListener('mousemove', (event) => {
+                mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+                mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
             });
-            
-            const particleSystem = new THREE.Points(particles, particleMaterial);
-            scene.add(particleSystem);
-            
-            camera.position.z = 5;
-            
+            let scrollY = window.scrollY;
+            window.addEventListener('scroll', () => {
+                scrollY = window.scrollY;
+            });
+            const clock = new THREE.Clock();
             function animate() {
                 requestAnimationFrame(animate);
-                
-                particleSystem.rotation.x += 0.001;
-                particleSystem.rotation.y += 0.002;
-                
+                const elapsedTime = clock.getElapsedTime();
+                mouseTarget.x += (mouse.x - mouseTarget.x) * 0.02;
+                mouseTarget.y += (mouse.y - mouseTarget.y) * 0.02;
+                const positions = floatingParticles.geometry.attributes.position.array;
+                const originalPositions = floatingParticles.userData.originalPositions;
+                for (let i = 0; i < positions.length; i += 3) {
+                    const mouseInfluence = 0.5;
+                    positions[i] = originalPositions[i] + Math.sin(elapsedTime + i) * 0.3 + mouseTarget.x * mouseInfluence;
+                    positions[i + 1] = originalPositions[i + 1] + Math.cos(elapsedTime + i) * 0.3 + mouseTarget.y * mouseInfluence;
+                    positions[i + 2] = originalPositions[i + 2] + Math.sin(elapsedTime * 0.5 + i) * 0.2;
+                }
+                floatingParticles.geometry.attributes.position.needsUpdate = true;
+                floatingParticles.rotation.x += 0.001;
+                floatingParticles.rotation.y += 0.002;
+                neuralNetwork.rotation.x += 0.0005;
+                neuralNetwork.rotation.y += 0.001;
+                floatingGeometry.children.forEach((mesh, index) => {
+                    mesh.rotation.x += mesh.userData.rotationSpeed.x;
+                    mesh.rotation.y += mesh.userData.rotationSpeed.y;
+                    mesh.rotation.z += mesh.userData.rotationSpeed.z;
+                    mesh.position.y = mesh.userData.originalY + Math.sin(elapsedTime * mesh.userData.floatSpeed + index) * 2;
+                });
+                dataSpheres.children.forEach((sphere, index) => {
+                    const userData = sphere.userData;
+                    const time = elapsedTime + userData.phase;
+                    sphere.position.y = userData.originalPosition.y + Math.sin(time) * userData.amplitude;
+                    sphere.rotation.x += 0.01;
+                    sphere.rotation.y += 0.015;
+                    const scale = 1 + Math.sin(time * 2) * 0.2;
+                    sphere.scale.setScalar(scale);
+                });
+                camera.position.x += (mouseTarget.x * 2 - camera.position.x) * 0.02;
+                camera.position.y += (mouseTarget.y * 2 - camera.position.y) * 0.02;
+                const scrollFactor = scrollY * 0.001;
+                camera.position.z = 8 + Math.sin(scrollFactor) * 2;
+                pointLight1.position.x = Math.sin(elapsedTime) * 8;
+                pointLight1.position.z = Math.cos(elapsedTime) * 8;
+                pointLight2.position.x = Math.cos(elapsedTime * 0.7) * 6;
+                pointLight2.position.y = Math.sin(elapsedTime * 0.7) * 6;
+                camera.lookAt(scene.position);
                 renderer.render(scene, camera);
             }
-            
             animate();
-            
-            // Handle window resize
             window.addEventListener('resize', () => {
                 camera.aspect = window.innerWidth / window.innerHeight;
                 camera.updateProjectionMatrix();
                 renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            });
+            const handleVisibilityChange = () => {
+                if (document.hidden) {
+                    renderer.setAnimationLoop(null);
+                } else {
+                    renderer.setAnimationLoop(animate);
+                }
+            };
+            document.addEventListener('visibilitychange', handleVisibilityChange);
+            return {
+                scene,
+                camera,
+                renderer,
+                particleSystems: {
+                    floatingParticles,
+                    neuralNetwork,
+                    floatingGeometry,
+                    dataSpheres
+                }
+            };
+        }
+        
+        function initSectionBasedEffects(webglControls) {
+            const { particleSystems } = webglControls;
+            const sectionEffects = {
+                'home': () => {
+                    gsap.to(particleSystems.floatingParticles.material, {
+                        opacity: 0.8,
+                        duration: 1
+                    });
+                },
+                'about': () => {
+                    gsap.to(particleSystems.neuralNetwork.material, {
+                        opacity: 0.6,
+                        duration: 1
+                    });
+                },
+                'skills': () => {
+                    gsap.to(particleSystems.dataSpheres.rotation, {
+                        y: '+=6.28',
+                        duration: 3,
+                        ease: 'power2.inOut'
+                    });
+                },
+                'work': () => {
+                    particleSystems.floatingGeometry.children.forEach((mesh, index) => {
+                        gsap.to(mesh.rotation, {
+                            x: '+=6.28',
+                            y: '+=6.28',
+                            duration: 2 + index * 0.1,
+                            ease: 'elastic.out(1, 0.3)'
+                        });
+                    });
+                }
+            };
+            Object.keys(sectionEffects).forEach(sectionId => {
+                ScrollTrigger.create({
+                    trigger: `#${sectionId}`,
+                    start: 'top center',
+                    end: 'bottom center',
+                    onEnter: sectionEffects[sectionId],
+                    onEnterBack: sectionEffects[sectionId]
+                });
             });
         }
         
-        // Initialize 3D background
-        init3DBackground();
-        
-        // Mobile menu toggle
         document.getElementById('mobileToggle').addEventListener('click', function() {
-            // Add mobile menu logic here
             console.log('Mobile menu toggled');
         });
-        
-        // Mode toggle functionality
         document.getElementById('modeToggle').addEventListener('click', function() {
-            // Add language/mode toggle logic here
             console.log('Mode toggled');
         });
-        
-        // Interactive 3D hover effects
         document.querySelectorAll('.interactive-3d').forEach(el => {
             el.addEventListener('mouseenter', function() {
                 gsap.to(this, {
@@ -1257,7 +1335,6 @@
                     ease: 'power2.out'
                 });
             });
-            
             el.addEventListener('mouseleave', function() {
                 gsap.to(this, {
                     duration: 0.3,
@@ -1268,8 +1345,6 @@
                 });
             });
         });
-        
-        // Skill tag animations
         document.querySelectorAll('.skill-tag').forEach(tag => {
             tag.addEventListener('mouseenter', function() {
                 gsap.to(this, {
@@ -1278,7 +1353,6 @@
                     ease: 'power2.out'
                 });
             });
-            
             tag.addEventListener('mouseleave', function() {
                 gsap.to(this, {
                     duration: 0.2,
@@ -1287,19 +1361,14 @@
                 });
             });
         });
-        
-        // Form submission with animation
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Animate form submission
             gsap.to(this, {
                 duration: 0.5,
                 scale: 0.98,
                 opacity: 0.8,
                 ease: 'power2.out',
                 onComplete: () => {
-                    // Reset form
                     this.reset();
                     gsap.to(this, {
                         duration: 0.5,
@@ -1307,21 +1376,12 @@
                         opacity: 1,
                         ease: 'power2.out'
                     });
-                    
-                    // Show success message
-                    gsap.fromTo('.success-message', 
-                        { opacity: 0, y: 20 },
-                        { opacity: 1, y: 0, duration: 0.5 }
-                    );
                 }
             });
         });
-        
-        // Cursor trail effect
         const cursor = document.createElement('div');
         cursor.className = 'fixed w-6 h-6 bg-primary-500 rounded-full pointer-events-none z-50 opacity-50 transform -translate-x-1/2 -translate-y-1/2';
         document.body.appendChild(cursor);
-        
         document.addEventListener('mousemove', (e) => {
             gsap.to(cursor, {
                 duration: 0.2,
@@ -1330,8 +1390,6 @@
                 ease: 'power2.out'
             });
         });
-        
-        // Hide cursor on mobile
         if (window.innerWidth <= 768) {
             cursor.style.display = 'none';
         }
@@ -1339,509 +1397,3 @@
 </body>
 </html>
 
-                <!-- Replace your existing script section with this enhanced version -->
-<script>
-    // GSAP Animations & Enhanced 3D WebGL Effects
-    gsap.registerPlugin(ScrollTrigger, TextPlugin);
-    
-    // Enhanced 3D WebGL Background with Interactive Elements
-    function init3DBackground() {
-        const canvas = document.getElementById('webgl-canvas');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ 
-            canvas: canvas, 
-            alpha: true, 
-            antialias: true,
-            powerPreference: "high-performance"
-        });
-        
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setClearColor(0x000000, 0);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        
-        // Mouse interaction variables
-        const mouse = new THREE.Vector2();
-        const mouseTarget = new THREE.Vector2();
-        
-        // Create multiple particle systems with different behaviors
-        const particleSystems = [];
-        
-        // 1. Floating Particles (Your existing ones, enhanced)
-        function createFloatingParticles() {
-            const particleCount = 150;
-            const particles = new THREE.BufferGeometry();
-            const positions = new Float32Array(particleCount * 3);
-            const colors = new Float32Array(particleCount * 3);
-            const sizes = new Float32Array(particleCount);
-            
-            const colorPalette = [
-                new THREE.Color(0x0ea5e9), // Primary blue
-                new THREE.Color(0xdc2626), // Coral
-                new THREE.Color(0x059669), // Mint
-                new THREE.Color(0x8b5cf6), // Purple
-                new THREE.Color(0xf97316), // Orange
-            ];
-            
-            for (let i = 0; i < particleCount; i++) {
-                const i3 = i * 3;
-                
-                // Positions
-                positions[i3] = (Math.random() - 0.5) * 25;
-                positions[i3 + 1] = (Math.random() - 0.5) * 25;
-                positions[i3 + 2] = (Math.random() - 0.5) * 25;
-                
-                // Colors from palette
-                const color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
-                colors[i3] = color.r;
-                colors[i3 + 1] = color.g;
-                colors[i3 + 2] = color.b;
-                
-                // Random sizes
-                sizes[i] = Math.random() * 3 + 1;
-            }
-            
-            particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-            particles.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-            particles.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
-            
-            const particleMaterial = new THREE.PointsMaterial({
-                size: 0.05,
-                vertexColors: true,
-                transparent: true,
-                opacity: 0.8,
-                blending: THREE.AdditiveBlending,
-                sizeAttenuation: true
-            });
-            
-            const particleSystem = new THREE.Points(particles, particleMaterial);
-            particleSystem.userData = { 
-                originalPositions: positions.slice(),
-                speed: 0.001,
-                mouseInfluence: 0.02
-            };
-            
-            return particleSystem;
-        }
-        
-        // 2. Neural Network Connections
-        function createNeuralNetwork() {
-            const nodeCount = 50;
-            const nodes = [];
-            const connections = new THREE.BufferGeometry();
-            const connectionPositions = [];
-            
-            // Create nodes
-            for (let i = 0; i < nodeCount; i++) {
-                nodes.push({
-                    x: (Math.random() - 0.5) * 20,
-                    y: (Math.random() - 0.5) * 20,
-                    z: (Math.random() - 0.5) * 20,
-                    connections: []
-                });
-            }
-            
-            // Create connections between nearby nodes
-            for (let i = 0; i < nodeCount; i++) {
-                for (let j = i + 1; j < nodeCount; j++) {
-                    const distance = Math.sqrt(
-                        Math.pow(nodes[i].x - nodes[j].x, 2) +
-                        Math.pow(nodes[i].y - nodes[j].y, 2) +
-                        Math.pow(nodes[i].z - nodes[j].z, 2)
-                    );
-                    
-                    if (distance < 5 && Math.random() > 0.7) {
-                        connectionPositions.push(nodes[i].x, nodes[i].y, nodes[i].z);
-                        connectionPositions.push(nodes[j].x, nodes[j].y, nodes[j].z);
-                        nodes[i].connections.push(j);
-                    }
-                }
-            }
-            
-            connections.setAttribute('position', new THREE.Float32BufferAttribute(connectionPositions, 3));
-            
-            const connectionMaterial = new THREE.LineBasicMaterial({ 
-                color: 0x0ea5e9, 
-                transparent: true, 
-                opacity: 0.3 
-            });
-            
-            const networkLines = new THREE.LineSegments(connections, connectionMaterial);
-            networkLines.userData = { nodes, rotationSpeed: 0.0005 };
-            
-            return networkLines;
-        }
-        
-        // 3. Geometric Shapes floating around
-        function createFloatingGeometry() {
-            const group = new THREE.Group();
-            const geometries = [
-                new THREE.IcosahedronGeometry(0.5, 1),
-                new THREE.OctahedronGeometry(0.4),
-                new THREE.TetrahedronGeometry(0.6),
-                new THREE.BoxGeometry(0.4, 0.4, 0.4),
-            ];
-            
-            for (let i = 0; i < 20; i++) {
-                const geometry = geometries[Math.floor(Math.random() * geometries.length)];
-                const material = new THREE.MeshLambertMaterial({
-                    color: new THREE.Color().setHSL(Math.random(), 0.7, 0.6),
-                    transparent: true,
-                    opacity: 0.6,
-                    wireframe: Math.random() > 0.5
-                });
-                
-                const mesh = new THREE.Mesh(geometry, material);
-                mesh.position.set(
-                    (Math.random() - 0.5) * 30,
-                    (Math.random() - 0.5) * 30,
-                    (Math.random() - 0.5) * 30
-                );
-                
-                mesh.userData = {
-                    rotationSpeed: {
-                        x: (Math.random() - 0.5) * 0.02,
-                        y: (Math.random() - 0.5) * 0.02,
-                        z: (Math.random() - 0.5) * 0.02
-                    },
-                    floatSpeed: Math.random() * 0.01 + 0.005,
-                    originalY: mesh.position.y
-                };
-                
-                group.add(mesh);
-            }
-            
-            return group;
-        }
-        
-        // 4. Data Visualization Spheres
-        function createDataSpheres() {
-            const group = new THREE.Group();
-            const sphereCount = 30;
-            
-            for (let i = 0; i < sphereCount; i++) {
-                const radius = Math.random() * 0.3 + 0.1;
-                const geometry = new THREE.SphereGeometry(radius, 16, 16);
-                
-                // Create animated material
-                const material = new THREE.MeshPhongMaterial({
-                    color: new THREE.Color().setHSL(i / sphereCount, 1, 0.5),
-                    transparent: true,
-                    opacity: 0.7,
-                    shininess: 100
-                });
-                
-                const sphere = new THREE.Mesh(geometry, material);
-                
-                // Position in a spiral
-                const angle = (i / sphereCount) * Math.PI * 4;
-                const distance = 8 + Math.sin(i * 0.5) * 3;
-                sphere.position.set(
-                    Math.cos(angle) * distance,
-                    Math.sin(i * 0.3) * 5,
-                    Math.sin(angle) * distance
-                );
-                
-                sphere.userData = {
-                    originalPosition: sphere.position.clone(),
-                    phase: i * 0.1,
-                    amplitude: Math.random() * 2 + 1
-                };
-                
-                group.add(sphere);
-            }
-            
-            return group;
-        }
-        
-        // Initialize all particle systems
-        const floatingParticles = createFloatingParticles();
-        const neuralNetwork = createNeuralNetwork();
-        const floatingGeometry = createFloatingGeometry();
-        const dataSpheres = createDataSpheres();
-        
-        scene.add(floatingParticles);
-        scene.add(neuralNetwork);
-        scene.add(floatingGeometry);
-        scene.add(dataSpheres);
-        
-        // Add ambient lighting
-        const ambientLight = new THREE.AmbientLight(0x404040, 0.3);
-        scene.add(ambientLight);
-        
-        // Add directional light
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-        directionalLight.position.set(5, 5, 5);
-        scene.add(directionalLight);
-        
-        // Add point lights for dynamic lighting
-        const pointLight1 = new THREE.PointLight(0x0ea5e9, 1, 10);
-        pointLight1.position.set(5, 0, 0);
-        scene.add(pointLight1);
-        
-        const pointLight2 = new THREE.PointLight(0xdc2626, 1, 10);
-        pointLight2.position.set(-5, 0, 0);
-        scene.add(pointLight2);
-        
-        camera.position.z = 8;
-        
-        // Mouse interaction
-        window.addEventListener('mousemove', (event) => {
-            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-        });
-        
-        // Scroll interaction
-        let scrollY = window.scrollY;
-        window.addEventListener('scroll', () => {
-            scrollY = window.scrollY;
-        });
-        
-        // Animation loop with enhanced effects
-        const clock = new THREE.Clock();
-        
-        function animate() {
-            requestAnimationFrame(animate);
-            const elapsedTime = clock.getElapsedTime();
-            
-            // Smooth mouse following
-            mouseTarget.x += (mouse.x - mouseTarget.x) * 0.02;
-            mouseTarget.y += (mouse.y - mouseTarget.y) * 0.02;
-            
-            // Animate floating particles with mouse interaction
-            const positions = floatingParticles.geometry.attributes.position.array;
-            const originalPositions = floatingParticles.userData.originalPositions;
-            
-            for (let i = 0; i < positions.length; i += 3) {
-                // Mouse influence
-                const mouseInfluence = 0.5;
-                positions[i] = originalPositions[i] + Math.sin(elapsedTime + i) * 0.3 + mouseTarget.x * mouseInfluence;
-                positions[i + 1] = originalPositions[i + 1] + Math.cos(elapsedTime + i) * 0.3 + mouseTarget.y * mouseInfluence;
-                positions[i + 2] = originalPositions[i + 2] + Math.sin(elapsedTime * 0.5 + i) * 0.2;
-            }
-            floatingParticles.geometry.attributes.position.needsUpdate = true;
-            
-            // Rotate particle system
-            floatingParticles.rotation.x += 0.001;
-            floatingParticles.rotation.y += 0.002;
-            
-            // Animate neural network
-            neuralNetwork.rotation.x += 0.0005;
-            neuralNetwork.rotation.y += 0.001;
-            
-            // Animate floating geometry
-            floatingGeometry.children.forEach((mesh, index) => {
-                mesh.rotation.x += mesh.userData.rotationSpeed.x;
-                mesh.rotation.y += mesh.userData.rotationSpeed.y;
-                mesh.rotation.z += mesh.userData.rotationSpeed.z;
-                
-                // Floating motion
-                mesh.position.y = mesh.userData.originalY + Math.sin(elapsedTime * mesh.userData.floatSpeed + index) * 2;
-            });
-            
-            // Animate data spheres
-            dataSpheres.children.forEach((sphere, index) => {
-                const userData = sphere.userData;
-                const time = elapsedTime + userData.phase;
-                
-                sphere.position.y = userData.originalPosition.y + Math.sin(time) * userData.amplitude;
-                sphere.rotation.x += 0.01;
-                sphere.rotation.y += 0.015;
-                
-                // Pulsing effect
-                const scale = 1 + Math.sin(time * 2) * 0.2;
-                sphere.scale.setScalar(scale);
-            });
-            
-            // Camera movement based on mouse and scroll
-            camera.position.x += (mouseTarget.x * 2 - camera.position.x) * 0.02;
-            camera.position.y += (mouseTarget.y * 2 - camera.position.y) * 0.02;
-            
-            // Scroll-based camera movement
-            const scrollFactor = scrollY * 0.001;
-            camera.position.z = 8 + Math.sin(scrollFactor) * 2;
-            
-            // Dynamic lighting
-            pointLight1.position.x = Math.sin(elapsedTime) * 8;
-            pointLight1.position.z = Math.cos(elapsedTime) * 8;
-            
-            pointLight2.position.x = Math.cos(elapsedTime * 0.7) * 6;
-            pointLight2.position.y = Math.sin(elapsedTime * 0.7) * 6;
-            
-            camera.lookAt(scene.position);
-            renderer.render(scene, camera);
-        }
-        
-        animate();
-        
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        });
-        
-        // Performance optimization
-        const handleVisibilityChange = () => {
-            if (document.hidden) {
-                renderer.setAnimationLoop(null);
-            } else {
-                renderer.setAnimationLoop(animate);
-            }
-        };
-        
-        document.addEventListener('visibilitychange', handleVisibilityChange);
-        
-        // Return controls for external manipulation
-        return {
-            scene,
-            camera,
-            renderer,
-            particleSystems: {
-                floatingParticles,
-                neuralNetwork,
-                floatingGeometry,
-                dataSpheres
-            }
-        };
-    }
-    
-    // Enhanced Loading Screen Animation
-    window.addEventListener('load', () => {
-        const loadingScreen = document.getElementById('loadingScreen');
-        const loadingBar = document.getElementById('loadingBar');
-        
-        // Simulate realistic loading progression
-        const loadingSteps = [
-            { progress: 20, message: 'Loading WebGL components...' },
-            { progress: 40, message: 'Initializing 3D particles...' },
-            { progress: 60, message: 'Setting up neural networks...' },
-            { progress: 80, message: 'Applying visual effects...' },
-            { progress: 100, message: 'Ready to explore!' }
-        ];
-        
-        let currentStep = 0;
-        
-        function updateLoading() {
-            if (currentStep < loadingSteps.length) {
-                const step = loadingSteps[currentStep];
-                
-                gsap.to(loadingBar, {
-                    width: `${step.progress}%`,
-                    duration: 0.5,
-                    ease: 'power2.out'
-                });
-                
-                // Update loading message
-                const messageEl = loadingScreen.querySelector('.text-lg');
-                if (messageEl) {
-                    messageEl.textContent = step.message;
-                }
-                
-                currentStep++;
-                
-                if (currentStep < loadingSteps.length) {
-                    setTimeout(updateLoading, 400);
-                } else {
-                    setTimeout(() => {
-                        gsap.to(loadingScreen, {
-                            opacity: 0,
-                            duration: 1,
-                            ease: 'power2.out',
-                            onComplete: () => {
-                                loadingScreen.style.display = 'none';
-                                initAnimations();
-                                
-                                // Initialize enhanced WebGL
-                                const webglControls = init3DBackground();
-                                
-                                // Add section-based particle effects
-                                initSectionBasedEffects(webglControls);
-                            }
-                        });
-                    }, 500);
-                }
-            }
-        }
-        
-        updateLoading();
-    });
-    
-    // Section-based WebGL effects
-    function initSectionBasedEffects(webglControls) {
-        const { particleSystems } = webglControls;
-        
-        // Different effects for each section
-        const sectionEffects = {
-            'home': () => {
-                gsap.to(particleSystems.floatingParticles.material, {
-                    opacity: 0.8,
-                    duration: 1
-                });
-            },
-            'about': () => {
-                gsap.to(particleSystems.neuralNetwork.material, {
-                    opacity: 0.6,
-                    duration: 1
-                });
-            },
-            'skills': () => {
-                gsap.to(particleSystems.dataSpheres.rotation, {
-                    y: '+=6.28',
-                    duration: 3,
-                    ease: 'power2.inOut'
-                });
-            },
-            'work': () => {
-                particleSystems.floatingGeometry.children.forEach((mesh, index) => {
-                    gsap.to(mesh.rotation, {
-                        x: '+=6.28',
-                        y: '+=6.28',
-                        duration: 2 + index * 0.1,
-                        ease: 'elastic.out(1, 0.3)'
-                    });
-                });
-            }
-        };
-        
-        // Set up scroll triggers for section effects
-        Object.keys(sectionEffects).forEach(sectionId => {
-            ScrollTrigger.create({
-                trigger: `#${sectionId}`,
-                start: 'top center',
-                end: 'bottom center',
-                onEnter: sectionEffects[sectionId],
-                onEnterBack: sectionEffects[sectionId]
-            });
-        });
-    }
-    
-    // Rest of your existing animation code...
-    function initAnimations() {
-        // Your existing GSAP animations
-        gsap.timeline()
-            .from('.gsap-scale-in', { scale: 0.8, opacity: 0, duration: 1, ease: 'back.out(1.7)' })
-            .from('.gsap-fade-in', { y: 50, opacity: 0, duration: 0.8, stagger: 0.2 }, '-=0.5')
-            .from('.gsap-slide-left', { x: -100, opacity: 0, duration: 0.8 }, '-=0.6')
-            .from('.gsap-slide-right', { x: 100, opacity: 0, duration: 0.8 }, '-=0.6');
-        
-        // Continue with your existing animations...
-        gsap.from('.stagger-item', {
-            scrollTrigger: {
-                trigger: '.stagger-item',
-                start: 'top 80%',
-                toggleActions: 'play none none reverse'
-            },
-            y: 60,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: 'power2.out'
-        });
-        
-        // Your existing parallax and other animations...
-    }
-    
-    // Your existing interactive effects and other code...
-</script>
