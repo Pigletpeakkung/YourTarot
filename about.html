@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/Person">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>About Thanatsitt Santisamranwilai - Cultural AI Innovator | PegeArts</title>
+    <meta name="description" content="Meet Thanatsitt Santisamranwilai, a Cultural AI Innovator bridging technology and cultural understanding through collaborative AI development. Expert in cross-cultural technology solutions.">
+    <meta name="keywords" content="Thanatsitt Santisamranwilai, Cultural AI, AI Developer, Cross-Cultural Technology, VTuber AI, Thai AI Expert, AI Innovation">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Thanatsitt Santisamranwilai - Cultural AI Innovator">
+    <meta property="og:description" content="Meet the Cultural AI Innovator bridging technology and cultural understanding through collaborative AI development.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=630&fit=crop&crop=face">
+    <meta property="og:url" content="https://pegearts.com/about">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://pegearts.com/about">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js" integrity="sha512-fk3XTlGdqGJvgtjqjp1DV8Pc81A2R3xEFIDzg/Zv8PWfYI/3e6J8SrK6t3u8OJw9+rTtfVFSDbH9zBCqIlm3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0891B2;
+            --secondary-color: #06B6D4;
+            --accent-color: #F59E0B;
+            --text-primary: #1F2937;
+            --text-secondary: #6B7280;
+            --background: #F8F9FA;
+            --white: #FFFFFF;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --success-color: #10B981;
+            --warning-color: #F59E0B;
+            
+            /* Dark theme */
+            --dark-bg: #0F172A;
+            --dark-surface: #1E293B;
+            --dark-card: #334155;
+            --dark-text: #F1F5F9;
+            --dark-text-secondary: #CBD5E1;
+            --dark-border: #475569;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-theme {
+            background: var(--dark-bg);
+            color: var(--dark-text);
+        }
+
+        /* Particles Background */
+        #particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Header Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+
+        .dark-theme .header {
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom-color: var(--dark-border);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .dark-theme .nav-links a {
+            color: var(--dark-text);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dark-theme .theme-toggle {
+            color: var(--dark-text);
+        }
+
+        /* Main Content */
+        .main-content {
+            position: relative;
+            z-index: 10;
+            padding-top: 5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 0.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .dark-theme .hero-subtitle {
+            color: var(--dark-text-secondary);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            text-align: center;
+            position: relative;
+        }
+
+        .dark-theme .section-title {
+            color: var(--dark-text);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .section-description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .dark-theme .section-description {
+            color: var(--dark-text-secondary);
+        }
+
+        /* About Content */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .dark-theme .about-text {
+            color: var(--dark-text-secondary);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .dark-theme .stat-card {
+            background: var(--dark-surface);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .dark-theme .stat-label {
+            color: var(--dark-text-secondary);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .skill-category {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .dark-theme .skill-category {
+            background: var(--dark-surface);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .skill-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .dark-theme .skill-title {
+            color: var(--dark-text);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-item {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .dark-theme .skill-item {
+            color: var(--dark-text-secondary);
+            border-bottom-color: var(--dark-border);
+        }
+
+        .skill-item:last-child {
+            border-bottom: none;
+        }
+
+        .skill-item i {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .portfolio-card {
+            background: var(--white);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .dark-theme .portfolio-card {
+            background: var(--dark-surface);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(8, 145, 178, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-content {
+            padding: 2rem;
+        }
+
+        .portfolio-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .dark-theme .portfolio-title {
+            color: var(--dark-text);
+        }
+
+        .portfolio-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .dark-theme .portfolio-description {
+            color: var(--dark-text-secondary);
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .portfolio-tag {
+            background: var(--gray-100);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .dark-theme .portfolio-tag {
+            background: var(--dark-card);
+            color: var(--dark-text-secondary);
+        }
+
+        /* Journey Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-color);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 2rem 0;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: 50%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: 50%;
+            text-align: left;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .dark-theme .timeline-content {
+            background: var(--dark-surface);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -20px;
+            border-left-color: var(--white);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -20px;
+            border-right-color: var(--white);
+        }
+
+        .dark-theme .timeline-item:nth-child(odd) .timeline-content::before {
+            border-left-color: var(--dark-surface);
+        }
+
+        .dark-theme .timeline-item:nth-child(even) .timeline-content::before {
+            border-right-color: var(--dark-surface);
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .dark-theme .timeline-title {
+            color: var(--dark-text);
+        }
+
+        .timeline-description {
+            color: var(--text-secondary);
+        }
+
+        .dark-theme .timeline-description {
+            color: var(--dark-text-secondary);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            z-index: 10;
+        }
+
+        .dark-theme .timeline-dot {
+            border-color: var(--dark-bg);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 0;
+            margin: 4rem 0;
+            border-radius: 2rem;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 2rem;
+            }
+            
+            .timeline-item {
+                padding-left: 4rem !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+            
+            .timeline-content::before {
+                left: -20px !important;
+                right: auto !important;
+                border-right-color: var(--white) !important;
+                border-left-color: transparent !important;
+            }
+            
+            .dark-theme .timeline-content::before {
+                border-right-color: var(--dark-surface) !important;
+                border-left-color: transparent !important;
+            }
+            
+            .timeline-dot {
+                left: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Animation Classes */
+        .element-animate {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .element-animate.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-container"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">PegeArts</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about" class="active">About</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Thanatsitt Santisamranwilai">
+                </div>
+                <h1 class="hero-title">Thanatsitt Santisamranwilai</h1>
+                <p class="hero-subtitle">Cultural AI Innovator bridging technology and human understanding</p>
+            </section>
+
+            <!-- About Introduction -->
+            <section class="section">
+                <div class="about-content element-animate">
+                    <div class="about-text">
+                        <p>
+                            Hello! I'm <strong>Thanatsitt Santisamranwilai</strong>, a passionate Cultural AI Innovator dedicated to bridging the gap between cutting-edge technology and deep cultural understanding. My journey began with a fascination for how artificial intelligence can be designed to respect and enhance human diversity rather than diminish it.
+                        </p>
+                        <p>
+                            With expertise spanning <strong>AI development, cross-cultural design, and VTuber technology</strong>, I specialize in creating solutions that adapt to different cultural contexts while maintaining technological excellence. My work focuses on developing AI systems that understand not just language, but the cultural nuances that make communication truly meaningful.
+                        </p>
+                        <p>
+                            Based in Bangkok, Thailand, I've had the privilege of working with diverse teams across Thailand, Japan, Singapore, and the UK, gaining insights into how technology can serve as a bridge between cultures rather than a barrier.
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop" alt="Cultural AI Development">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="section">
+                <div class="stats-grid element-animate">
+                    <div class="stat-card">
+                        <div class="stat-number">500K+</div>
+                        <div class="stat-label">Project Views</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">AI Projects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Languages</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Countries</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="section">
+                <h2 class="section-title element-animate">Expertise & Skills</h2>
+                <div class="skills-grid element-animate">
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="skill-title">AI & Machine Learning</h3>
+                        <ul class="skill-list">
+                            <li class="skill-item"><i class="fas fa-check"></i> Natural Language Processing</li>
+                            <li class="skill-item"><i class="fas fa-check"></i> Computer Vision</li>
+                            <li class="skill-item"><i class="fas fa-check"></i> Deep Learning (TensorFlow, PyTorch)</li>
+                            <li class="skill-item"><i class="fas fa-check"></i> Cultural AI Ethics</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="skill-title">Cross-Cultural Technology</h3>
+                        <ul class="skill-list">
+                            <li class="skill-item"><i class="fas fa-check"></i> Cultural UX Design</li>
+                            <li class="skill-item"><i class="fas fa-check"></i> Multilingual AI Systems</li>
+                            <li class="skill-item"><i class="fas fa-check"></i> Localization Strategy</li>
+                            <li class="skill-item"><i class="fas fa-check"></i> Cultural Sensitivity Training</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="skill-title">Development</h3>
+                        <ul class="skill-list">
+                            <li class="skill-item"><i class="fas fa-check"></i> Python, JavaScript, React</li>
+                            <li class="skill-item"><i class="fas fa-check"></i> Node.js, FastAPI</li>
+                            <li class="skill-item"><i class="fas fa-check"></i> Blockchain & Solidity</li>
+                            <li class="skill-item"><i class="fas fa-check"></i> Cloud Platforms (AWS, GCP)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="skill-title">VTuber & Content Creation</h3>
+                        <ul class="skill-list">
+                            <li class="skill-item"><i class="fas fa-check"></i> Live2D Animation</li>
+                            <li class="skill-item"><i class="fas fa-check"></i> Voice Acting (EN/TH/JA)</li>
+                            <li class="skill-item"><i class="fas fa-check"></i> AI-Powered Character Design</li>
+                            <li class="skill-item"><i class="fas fa-check"></i> Interactive Streaming Tech</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Section -->
+            <section class="section" id="portfolio">
+                <div class="section-content">
+                    <h2 class="section-title element-animate">Featured Projects</h2>
+                    <p class="section-description element-animate">
+                        A showcase of innovative projects that demonstrate the power of AI-driven creativity 
+                        and cultural-psychological design thinking.
+                    </p>
+                    <div class="portfolio-grid element-animate">
+                        <article class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Cultural AI Interface">
+                                <div class="portfolio-overlay">
+                                    <i class="fas fa-external-link-alt" style="color: white; font-size: 2rem;"></i>
+                                </div>
+                            </div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Cultural AI Interface Design</h3>
+                                <p class="portfolio-description">
+                                    Designing interfaces that adapt to cultural contexts and user psychological profiles, 
+                                    creating more inclusive and intuitive digital experiences.
+                                </p>
+                                <div class="portfolio-tags">
+                                    <span class="portfolio-tag">Cultural Design</span>
+                                    <span class="portfolio-tag">Psychology</span>
+                                    <span class="portfolio-tag">Interface</span>
+                                    <span class="portfolio-tag">UX Research</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop" alt="VTuber AI Technology">
+                                <div class="portfolio-overlay">
+                                    <i class="fas fa-external-link-alt" style="color: white; font-size: 2rem;"></i>
+                                </div>
+                            </div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">VTuber AI Ecosystem</h3>
+                                <p class="portfolio-description">
+                                    Revolutionary AI-powered VTuber technology that enables real-time emotional 
+                                    expression and cultural adaptation for global audiences.
+                                </p>
+                                <div class="portfolio-tags">
+                                    <span class="portfolio-tag">VTuber</span>
+                                    <span class="portfolio-tag">AI Animation</span>
+                                    <span class="portfolio-tag">Live2D</span>
+                                    <span class="portfolio-tag">Real-time</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="https://images.unsplash.com/photo-1639322537504-6427a16b0a28?w=600&h=400&fit=crop" alt="Blockchain Integration">
+                                <div class="portfolio-overlay">
+                                    <i class="fas fa-external-link-alt" style="color: white; font-size: 2rem;"></i>
+                                </div>
+                            </div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Cross-Cultural Blockchain Solutions</h3>
+                                <p class="portfolio-description">
+                                    Developing blockchain applications that respect cultural values while 
+                                    providing transparent and secure digital transactions.
+                                </p>
+                                <div class="portfolio-tags">
+                                    <span class="portfolio-tag">Blockchain</span>
+                                    <span class="portfolio-tag">Solidity</span>
+                                    <span class="portfolio-tag">Web3</span>
+                                    <span class="portfolio-tag">Cultural Finance</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?w=600&h=400&fit=crop" alt="E-commerce AI">
+                                <div class="portfolio-overlay">
+                                    <i class="fas fa-external-link-alt" style="color: white; font-size: 2rem;"></i>
+                                </div>
+                            </div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Culturally-Aware E-commerce AI</h3>
+                                <p class="portfolio-description">
+                                    AI-powered e-commerce solutions that understand cultural preferences, 
+                                    seasonal patterns, and local market dynamics.
+                                </p>
+                                <div class="portfolio-tags">
+                                    <span class="portfolio-tag">E-commerce</span>
+                                    <span class="portfolio-tag">Recommendation AI</span>
+                                    <span class="portfolio-tag">Cultural Analytics</span>
+                                    <span class="portfolio-tag">Market Intelligence</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Journey Timeline -->
+            <section class="section">
+                <h2 class="section-title element-animate">My Journey</h2>
+                <div class="timeline element-animate">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2024</div>
+                            <h3 class="timeline-title">Cultural AI Innovation Focus</h3>
+                            <p class="timeline-description">
+                                Launched PegeArts as a platform for cultural AI innovation, focusing on 
+                                cross-cultural technology solutions and VTuber AI development.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2023</div>
+                            <h3 class="timeline-title">VTuber Technology Breakthrough</h3>
+                            <p class="timeline-description">
+                                Developed advanced VTuber AI systems with real-time emotional expression 
+                                and cultural adaptation capabilities, serving global audiences.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2022</div>
+                            <h3 class="timeline-title">Cross-Cultural Design Specialization</h3>
+                            <p class="timeline-description">
+                                Expanded expertise in cultural UX design and multilingual AI systems, 
+                                working with teams across Thailand, Japan, and Singapore.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2021</div>
+                            <h3 class="timeline-title">AI Development Foundation</h3>
+                            <p class="timeline-description">
+                                Established strong foundations in AI development, focusing on 
+                                natural language processing and computer vision applications.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">2020</div>
+                            <h3 class="timeline-title">Technology & Culture Integration</h3>
+                            <p class="timeline-description">
+                                Began exploring the intersection of technology and cultural understanding, 
+                                recognizing the need for culturally-sensitive AI solutions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Philosophy Section -->
+            <section class="section">
+                <h2 class="section-title element-animate">My Philosophy</h2>
+                <div class="about-content element-animate">
+                    <div class="about-text">
+                        <p>
+                            <strong>Technology should enhance human connection, not replace it.</strong> 
+                            My approach to AI development is rooted in the belief that artificial intelligence 
+                            should serve as a bridge between cultures, facilitating understanding and collaboration 
+                            rather than creating barriers.
+                        </p>
+                        <p>
+                            I believe that <strong>cultural sensitivity is not optional in AI development</strong> 
+                            – it's essential. Every algorithm, every interface, every interaction should be 
+                            designed with respect for the diverse ways humans think, communicate, and express themselves.
+                        </p>
+                        <p>
+                            Through my work, I strive to create AI systems that don't just understand language, 
+                            but comprehend context, respect cultural nuances, and adapt to the unique needs of 
+                            different communities while maintaining universal accessibility.
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&h=400&fit=crop" alt="Cultural Technology Philosophy">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Values Section -->
+            <section class="section">
+                <h2 class="section-title element-animate">Core Values</h2>
+                <div class="skills-grid element-animate">
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="skill-title">Cultural Empathy</h3>
+                        <p class="about-text">
+                            Understanding and respecting the diverse ways people interact with technology 
+                            across different cultural contexts.
+                        </p>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="skill-title">Innovation with Purpose</h3>
+                        <p class="about-text">
+                            Creating technological solutions that address real human needs while 
+                            pushing the boundaries of what's possible.
+                        </p>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="skill-title">Collaborative Growth</h3>
+                        <p class="about-text">
+                            Believing that the best innovations come from diverse teams working 
+                            together towards common goals.
+                        </p>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="skill-title">Ethical AI</h3>
+                        <p class="about-text">
+                            Ensuring that AI development prioritizes human welfare, privacy, 
+                            and cultural sensitivity above all else.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Languages & Cultural Expertise -->
+            <section class="section">
+                <h2 class="section-title element-animate">Languages & Cultural Expertise</h2>
+                <div class="skills-grid element-animate">
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-flag-usa"></i>
+                        </div>
+                        <h3 class="skill-title">English</h3>
+                        <p class="about-text">
+                            <strong>Native Proficiency:</strong> Extensive experience in technical communication, 
+                            content creation, and voice acting for international audiences.
+                        </p>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-flag" style="color: #FF0000;"></i>
+                        </div>
+                        <h3 class="skill-title">Thai</h3>
+                        <p class="about-text">
+                            <strong>Native Speaker:</strong> Deep understanding of Thai culture, business practices, 
+                            and technological landscape in Southeast Asia.
+                        </p>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-torii-gate"></i>
+                        </div>
+                        <h3 class="skill-title">Japanese</h3>
+                        <p class="about-text">
+                            <strong>Intermediate Level:</strong> Specialized in VTuber culture, gaming industry, 
+                            and Japanese AI development methodologies.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="cta-section element-animate">
+                <h2 class="cta-title">Let's Build the Future Together</h2>
+                <p class="cta-description">
+                    Interested in collaborating on cultural AI projects or discussing how technology 
+                    can better serve diverse communities? I'd love to hear from you.
+                </p>
+                <div class="cta-buttons">
+                    <a href="/contact" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        Get in Touch
+                    </a>
+                    <a href="/projects" class="btn btn-secondary">
+                        <i class="fas fa-code"></i>
+                        View Projects
+                    </a>
+                    <a href="https://github.com/Pigletpeakkung" class="btn btn-secondary" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub Profile
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Theme Management
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.classList.toggle('dark-theme', savedTheme === 'dark');
+            updateThemeIcon();
+        } else {
+            // Check system preference
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            body.classList.toggle('dark-theme', prefersDark);
+            updateThemeIcon();
+        }
+
+        function updateThemeIcon() {
+            if (body.classList.contains('dark-theme')) {
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+            }
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            const isDark = body.classList.contains('dark-theme');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeIcon();
+        });
+
+        // Particles Configuration
+        async function loadParticles() {
+            await tsParticles.load("particles-container", {
+                fullScreen: false,
+                particles: {
+                    number: {
+                        value: 50,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: ["#0891B2", "#06B6D4", "#F59E0B"]
+                    },
+                    shape: {
+                        type: ["circle", "triangle"]
+                    },
+                    opacity: {
+                        value: 0.3,
+                        random: true,
+                        anim: {
+                            enable: true,
+                            speed: 1,
+                            opacity_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    size: {
+                        value: 3,
+                        random: true,
+                        anim: {
+                            enable: true,
+                            speed: 2,
+                            size_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: "#0891B2",
+                        opacity: 0.2,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 1,
+                        direction: "none",
+                        random: false,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: "grab"
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: "push"
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 140,
+                            line_linked: {
+                                opacity: 0.5
+                            }
+                        },
+                        push: {
+                            particles_nb: 4
+                        }
+                    }
+                },
+                retina_detect: true
+            });
+        }
+
+        // GSAP Animations
+        function initAnimations() {
+            // Register ScrollTrigger
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Hero animations
+            const heroTl = gsap.timeline();
+            heroTl.to('.hero-image', {
+                opacity: 1,
+                scale: 1,
+                duration: 1,
+                ease: 'power3.out'
+            })
+            .to('.hero-title', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            }, '-=0.5')
+            .to('.hero-subtitle', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            }, '-=0.4');
+
+            // Scroll-triggered animations
+            gsap.utils.toArray('.element-animate').forEach(element => {
+                gsap.to(element, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 80%',
+                        end: 'bottom 20%',
+                        toggleActions: 'play none none reverse'
+                    }
+                });
+            });
+
+            // Timeline animations
+            gsap.utils.toArray('.timeline-item').forEach((item, index) => {
+                gsap.to(item, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'top 80%',
+                        end: 'bottom 20%',
+                        toggleActions: 'play none none reverse'
+                    },
+                    delay: index * 0.1
+                });
+            });
+
+            // Portfolio card hover effects
+            gsap.utils.toArray('.portfolio-card').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, {
+                        y: -10,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        y: 0,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                });
+            });
+
+            // Stats counter animation
+            gsap.utils.toArray('.stat-number').forEach(stat => {
+                const finalValue = stat.textContent;
+                const numericValue = parseInt(finalValue.replace(/[^0-9]/g, ''));
+                const suffix = finalValue.replace(/[0-9]/g, '');
+                
+                gsap.set(stat, { textContent: '0' });
+                
+                ScrollTrigger.create({
+                    trigger: stat,
+                    start: 'top 80%',
+                    onEnter: () => {
+                        gsap.to(stat, {
+                            textContent: numericValue,
+                            duration: 2,
+                            snap: { textContent: 1 },
+                            ease: 'power2.out',
+                            onUpdate: function() {
+                                const currentValue = Math.ceil(this.targets()[0].textContent);
+                                if (suffix.includes('K')) {
+                                    stat.textContent = currentValue + 'K+';
+                                } else if (suffix.includes('+')) {
+                                    stat.textContent = currentValue + '+';
+                                } else {
+                                    stat.textContent = currentValue;
+                                }
+                            }
+                        });
+                    }
+                });
+            });
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            loadParticles();
+            initAnimations();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = body.classList.contains('dark-theme') 
+                    ? 'rgba(15, 23, 42, 0.98)' 
+                    : 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = body.classList.contains('dark-theme') 
+                    ? 'rgba(15, 23, 42, 0.95)' 
+                    : 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Analytics tracking (if available)
+        if (typeof gtag !== 'undefined') {
+            gtag('config', 'GA_MEASUREMENT_ID', {
+                page_title: 'About - Thanatsitt Santisamranwilai',
+                page_location: window.location.href
+            });
+        }
+    </script>
+</body>
+</html>
+
