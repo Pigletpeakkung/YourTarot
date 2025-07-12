@@ -3,1139 +3,641 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Page not found - Thanattsitt Santisamranwilai Portfolio">
     <meta name="robots" content="noindex, nofollow">
-    <title>404 - Page Not Found | Thanattsitt</title>
+    <title>404 - Page Not Found | PegeArts</title>
+    <meta name="description" content="Oops! The page you're looking for seems to have wandered off into the digital cosmos. Let's get you back on track.">
     
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Meta Tags for PWA -->
-    <meta name="theme-color" content="#0891B2">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Thanattsitt">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="404 - Page Not Found | Thanattsitt Santisamranwilai">
-    <meta property="og:description" content="The requested page could not be found on Thanattsitt Santisamranwilai's portfolio website.">
-    <meta property="og:url" content="https://thanattsitt.dev/404.html">
-    <meta property="og:site_name" content="Thanattsitt Portfolio">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
-    <!-- Preload Critical Resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* ===== CSS CUSTOM PROPERTIES ===== */
-        :root {
-            /* Colors - Enhanced Pastel Harmony */
-            --primary-bg: #F8F9FA;
-            --secondary-bg: #FFFFFF;
-            --accent-bg: #F0F4F8;
-            --text-primary: #1F2937;
-            --text-secondary: #4B5563;
-            --text-muted: #6B7280;
-            --border-light: #E5E7EB;
-            --border-medium: #D1D5DB;
-            
-            /* Accent Colors */
-            --accent-cyan: #0891B2;
-            --accent-coral: #DC2626;
-            --accent-mint: #059669;
-            --accent-gold: #D97706;
-            --accent-purple: #7C3AED;
-            
-            /* Pastel Variants */
-            --pastel-pink: #FFE4E1;
-            --pastel-blue: #E6F3FF;
-            --pastel-mint: #E8F5E8;
-            --pastel-lavender: #F0E6FF;
-            --pastel-peach: #FFE5CC;
-            --pastel-sky: #E0F2FE;
-            --pastel-sage: #F0F9F0;
-            --pastel-coral: #FFE8E8;
-            
-            /* Glassmorphism */
-            --glass-bg: rgba(255, 255, 255, 0.25);
-            --glass-border: rgba(255, 255, 255, 0.18);
-            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            --glass-backdrop: blur(20px) saturate(180%);
-            
-            /* Shadows */
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            
-            /* Transitions */
-            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            
-            /* Z-index Hierarchy */
-            --z-background: 1;
-            --z-content: 10;
-            --z-header: 100;
-        }
+    <!-- tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js" integrity="sha512-fk3XTlGdqGJvgtjqjp1DV8Pc81A2R3xEFIDzg/Zv8PWfYI/3e6J8SrK6t3u8OJw9+rTtfVFSDbH9zBCqIlm3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-        /* ===== RESET & BASE STYLES ===== */
+    <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --primary-color: #0891B2;
+            --secondary-color: #06B6D4;
+            --accent-color: #F59E0B;
+            --text-primary: #1F2937;
+            --text-secondary: #6B7280;
+            --background: #F8F9FA;
+            --white: #FFFFFF;
+            --error-color: #EF4444;
+            --success-color: #10B981;
+            
+            /* Dark theme */
+            --dark-bg: #0F172A;
+            --dark-surface: #1E293B;
+            --dark-text: #F1F5F9;
+            --dark-text-secondary: #CBD5E1;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, var(--primary-bg) 0%, var(--accent-bg) 100%);
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
             color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
             min-height: 100vh;
+            overflow-x: hidden;
+            transition: all 0.3s ease;
         }
 
-        /* ===== ACCESSIBILITY ===== */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
+        body.dark-theme {
+            background: var(--dark-bg);
+            color: var(--dark-text);
         }
 
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        /* ===== BACKGROUND EFFECTS ===== */
-        .stars-container {
+        /* Particles Background */
+        #particles-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            z-index: 1;
             pointer-events: none;
-            z-index: var(--z-background);
-            overflow: hidden;
         }
 
-        .star {
-            position: absolute;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: twinkle 3s ease-in-out infinite;
-        }
-
-        .star.small { width: 2px; height: 2px; animation-duration: 2s; }
-        .star.medium { width: 3px; height: 3px; animation-duration: 3s; }
-        .star.large { width: 4px; height: 4px; animation-duration: 4s; }
-
-        .sparkle {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: linear-gradient(45deg, #FFD700, #FFA500, #FF69B4, #87CEEB);
-            border-radius: 50%;
-            animation: sparkle 2s ease-in-out infinite;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
-
-        @keyframes sparkle {
-            0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
-            50% { opacity: 1; transform: scale(1) rotate(180deg); }
-        }
-
-        /* ===== PARTICLE CANVAS ===== */
-        .particle-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: var(--z-background);
-            opacity: 0.3;
-        }
-
-        /* ===== NAVIGATION ===== */
-        .nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: var(--z-header);
-            background: rgba(248, 249, 250, 0.95);
-            backdrop-filter: blur(25px) saturate(180%);
-            -webkit-backdrop-filter: blur(25px) saturate(180%);
-            border-bottom: 1px solid var(--border-light);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-coral));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            transition: transform var(--transition-smooth);
-            text-decoration: none;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            margin: 0;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.8rem 1.5rem;
-            border-radius: 12px;
-            transition: all var(--transition-smooth);
-            background: rgba(255, 255, 255, 0.5);
-            border: 1px solid var(--border-light);
-        }
-
-        .nav-links a:hover,
-        .nav-links a:focus {
-            color: var(--text-primary);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
-            background: rgba(255, 255, 255, 0.9);
-            border-color: var(--accent-cyan);
-        }
-
-        /* ===== 404 MAIN CONTENT ===== */
+        /* Main Container */
         .error-container {
+            position: relative;
+            z-index: 10;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            position: relative;
-            z-index: var(--z-content);
+            justify-content: center;
             padding: 2rem;
-            padding-top: 6rem; /* Account for fixed nav */
+            text-align: center;
         }
 
-        .error-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(8, 145, 178, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(5, 150, 105, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .error-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            width: 100%;
-        }
-
-        /* ===== 404 ICON ===== */
-        .error-icon-container {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 2rem;
-        }
-
-        .error-icon {
-            width: 100%;
-            height: 100%;
-            position: relative;
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 100;
+            background: var(--white);
+            border: none;
             border-radius: 50%;
-            background: linear-gradient(135deg, 
-                var(--pastel-sky) 0%, 
-                var(--pastel-blue) 30%, 
-                var(--pastel-lavender) 70%, 
-                var(--pastel-mint) 100%);
-            border: 2px solid var(--border-medium);
-            box-shadow: 
-                var(--shadow-xl),
-                inset 0 0 30px rgba(255, 255, 255, 0.3),
-                0 0 60px rgba(8, 145, 178, 0.2);
-            animation: float 6s ease-in-out infinite;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: var(--accent-coral);
-            overflow: hidden;
+            width: 3rem;
+            height: 3rem;
             cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        .error-icon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, 
-                transparent 0%, 
-                rgba(255, 255, 255, 0.1) 25%, 
-                rgba(8, 145, 178, 0.1) 50%, 
-                transparent 75%);
-            border-radius: 50%;
-            animation: shimmer 4s ease-in-out infinite;
+        .dark-theme .theme-toggle {
+            background: var(--dark-surface);
+            color: var(--dark-text);
         }
 
-        .floating-number {
-            position: absolute;
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            color: rgba(8, 145, 178, 0.3);
-            animation: floatNumber 8s ease-in-out infinite;
-            pointer-events: none;
+        .theme-toggle:hover {
+            transform: scale(1.1);
         }
 
-        .floating-number:nth-child(1) {
-            top: 10%;
-            left: -20%;
-            font-size: 3rem;
-            animation-delay: 0s;
-        }
-
-        .floating-number:nth-child(2) {
-            top: 60%;
-            right: -20%;
-            font-size: 2.5rem;
-            animation-delay: 2s;
-        }
-
-        .floating-number:nth-child(3) {
-            bottom: 10%;
-            left: -15%;
-            font-size: 2rem;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-20px) rotate(2deg); }
-            66% { transform: translateY(-10px) rotate(-1deg); }
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        @keyframes floatNumber {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
-            25% { transform: translateY(-30px) rotate(5deg); opacity: 0.6; }
-            50% { transform: translateY(-15px) rotate(-3deg); opacity: 0.8; }
-            75% { transform: translateY(-25px) rotate(2deg); opacity: 0.4; }
-        }
-
-        /* ===== ERROR TEXT ===== */
+        /* 404 Number Animation */
         .error-code {
             font-family: 'Playfair Display', serif;
-            font-size: 8rem;
+            font-size: clamp(8rem, 15vw, 12rem);
             font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-coral), var(--accent-mint));
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 1rem;
-            line-height: 1;
-            animation: pulse 3s ease-in-out infinite;
-            cursor: pointer;
+            margin-bottom: 2rem;
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .error-code::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(8, 145, 178, 0.1) 0%, transparent 70%);
+            z-index: -1;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.1; }
+        }
+
+        /* Error Message */
+        .error-message {
+            max-width: 600px;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
         }
 
         .error-title {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .error-description {
-            color: var(--text-secondary);
-            font-size: 1.3rem;
-            line-height: 1.6;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        /* ===== GLASSMORPHISM CARD ===== */
-        .error-card {
-            background: var(--glass-bg);
-            backdrop-filter: var(--glass-backdrop);
-            -webkit-backdrop-filter: var(--glass-backdrop);
-            border: 1px solid var(--glass-border);
-            border-radius: 30px;
-            padding: 3rem;
-            position: relative;
-            box-shadow: var(--glass-shadow);
-            margin-bottom: 3rem;
-            overflow: hidden;
-        }
-
-        .error-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, 
-                var(--pastel-pink) 0%, 
-                var(--pastel-blue) 25%, 
-                var(--pastel-mint) 50%, 
-                var(--pastel-lavender) 75%, 
-                var(--pastel-peach) 100%);
-            opacity: 0.1;
-            border-radius: 30px;
-            pointer-events: none;
-        }
-
-        .error-card-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* ===== ACTION BUTTONS ===== */
-        .error-actions {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-
-        .action-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 1rem 2rem;
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid var(--border-medium);
-            border-radius: 15px;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            transition: all var(--transition-smooth);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .action-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent-cyan);
-            background: rgba(255, 255, 255, 1);
-        }
-
-        .action-button.primary {
-            background: var(--accent-cyan);
-            color: white;
-            border-color: var(--accent-cyan);
-        }
-
-        .action-button.primary:hover {
-            background: var(--accent-mint);
-            border-color: var(--accent-mint);
-        }
-
-        .action-icon {
-            font-size: 1.2rem;
-        }
-
-        /* ===== SEARCH SUGGESTION ===== */
-        .search-suggestion {
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid var(--border-light);
-            border-radius: 20px;
-            padding: 2rem;
-            margin-top: 2rem;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .search-suggestion h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
             color: var(--text-primary);
             margin-bottom: 1rem;
         }
 
-        .search-links {
+        .dark-theme .error-title {
+            color: var(--dark-text);
+        }
+
+        .error-description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .dark-theme .error-description {
+            color: var(--dark-text-secondary);
+        }
+
+        /* Action Buttons */
+        .action-buttons {
             display: flex;
-            flex-wrap: wrap;
             gap: 1rem;
+            flex-wrap: wrap;
             justify-content: center;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
         }
 
-        .search-link {
-            color: var(--accent-cyan);
+        .btn {
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 10px;
-            background: rgba(8, 145, 178, 0.1);
-            border: 1px solid rgba(8, 145, 178, 0.2);
-            transition: all var(--transition-smooth);
-            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-size: 1rem;
         }
 
-        .search-link:hover {
-            background: rgba(8, 145, 178, 0.2);
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--text-primary);
+            border: 2px solid var(--primary-color);
+        }
+
+        .dark-theme .btn-secondary {
+            background: var(--dark-surface);
+            color: var(--dark-text);
+        }
+
+        .btn:hover {
             transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
-        /* ===== RESPONSIVE DESIGN ===== */
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        }
+
+        /* Search Box */
+        .search-container {
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            background: var(--white);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .dark-theme .search-input {
+            background: var(--dark-surface);
+            color: var(--dark-text);
+            border-color: #374151;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Helpful Links */
+        .helpful-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .link-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            border: 1px solid #E5E7EB;
+        }
+
+        .dark-theme .link-card {
+            background: var(--dark-surface);
+            color: var(--dark-text);
+            border-color: #374151;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .link-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .link-card p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .dark-theme .link-card p {
+            color: var(--dark-text-secondary);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .error-container {
+                padding: 1rem;
             }
-
-            .error-code {
-                font-size: 5rem;
-            }
-
-            .error-title {
-                font-size: 2rem;
-            }
-
-            .error-description {
-                font-size: 1.1rem;
-            }
-
-            .error-icon-container {
-                width: 150px;
-                height: 150px;
-            }
-
-            .error-icon {
-                font-size: 3rem;
-            }
-
-            .error-card {
-                padding: 2rem;
-            }
-
-            .error-actions {
+            
+            .action-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-
-            .action-button {
+            
+            .btn {
                 width: 100%;
                 max-width: 300px;
-                justify-content: center;
+            }
+            
+            .helpful-links {
+                grid-template-columns: 1fr;
             }
         }
 
-        @media (max-width: 480px) {
-            .error-container {
-                padding: 1rem;
-                padding-top: 5rem;
-            }
-
-            .error-code {
-                font-size: 4rem;
-            }
-
-            .error-title {
-                font-size: 1.5rem;
-            }
-
-            .error-card {
-                padding: 1.5rem;
-            }
-
-            .floating-number {
-                display: none;
-            }
+        /* Loading Animation */
+        .loading {
+            opacity: 0;
+            transform: translateY(20px);
         }
 
-        /* ===== ANIMATIONS ===== */
         .animate-in {
-            animation: slideInUp 0.8s ease-out forwards;
-        }
-
-        .animate-delay-1 {
-            animation-delay: 0.2s;
-            opacity: 0;
-        }
-
-        .animate-delay-2 {
-            animation-delay: 0.4s;
-            opacity: 0;
-        }
-
-        .animate-delay-3 {
-            animation-delay: 0.6s;
-            opacity: 0;
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ===== KEYBOARD NAVIGATION STYLES ===== */
-        .keyboard-nav *:focus {
-            outline: 2px solid var(--accent-cyan) !important;
-            outline-offset: 2px !important;
-        }
-        
-        .reduced-motion * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-        }
-        
-        .dark-theme {
-            filter: invert(1) hue-rotate(180deg);
-        }
-        
-        .dark-theme canvas {
-            filter: invert(1) hue-rotate(180deg);
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Background Effects -->
-    <div class="stars-container" id="starsContainer"></div>
-    <canvas class="particle-canvas" id="particleCanvas"></canvas>
+    <!-- Particles Background -->
+    <div id="particles-container"></div>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <a href="/" class="logo">Thanattsitt</a>
-        <ul class="nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/#about">About</a></li>
-            <li><a href="/#skills">Skills</a></li>
-            <li><a href="/#work">Work</a></li>
-            <li><a href="/#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
 
-    <!-- Error Container -->
+    <!-- Main Error Container -->
     <div class="error-container">
-        <div class="error-content">
-            <!-- Floating 404 Icon -->
-            <div class="error-icon-container animate-in">
-                <div class="error-icon" id="errorIcon">
-                    <i class="fas fa-question-circle"></i>
-                    <div class="floating-number">4</div>
-                    <div class="floating-number">0</div>
-                    <div class="floating-number">4</div>
-                </div>
-            </div>
+        <!-- 404 Code -->
+        <div class="error-code loading">404</div>
 
-            <!-- Error Code -->
-            <div class="error-code animate-in animate-delay-1" id="errorCode">404</div>
+        <!-- Error Message -->
+        <div class="error-message loading">
+            <h1 class="error-title">Lost in the Digital Cosmos</h1>
+            <p class="error-description">
+                Oops! The page you're looking for seems to have wandered off into the digital cosmos. 
+                Don't worry though - even the best AI models sometimes take unexpected paths. 
+                Let's get you back on track to explore some amazing cultural AI innovations!
+            </p>
+        </div>
 
-            <!-- Error Content Card -->
-            <div class="error-card animate-in animate-delay-2">
-                <div class="error-card-content">
-                    <h1 class="error-title">Oops! Lost in the Digital Space</h1>
-                    <p class="error-description">
-                        It seems like the page you're looking for has wandered off into the digital void. 
-                        Don't worry though – even the best navigators sometimes take unexpected detours 
-                        in the vast landscape of creativity and technology.
-                    </p>
-                </div>
-            </div>
+        <!-- Action Buttons -->
+        <div class="action-buttons loading">
+            <a href="/" class="btn btn-primary">
+                <i class="fas fa-home"></i> Return Home
+            </a>
+            <button onclick="history.back()" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Go Back
+            </button>
+        </div>
 
-            <!-- Action Buttons -->
-            <div class="error-actions animate-in animate-delay-3">
-                <a href="/" class="action-button primary">
-                    <i class="fas fa-home action-icon"></i>
-                    Return Home
-                </a>
-                <a href="javascript:history.back()" class="action-button">
-                    <i class="fas fa-arrow-left action-icon"></i>
-                    Go Back
-                </a>
-                <a href="/#contact" class="action-button">
-                    <i class="fas fa-envelope action-icon"></i>
-                    Contact Me
-                </a>
-            </div>
+        <!-- Search Box -->
+        <div class="search-container loading">
+            <input type="text" class="search-input" placeholder="Search for projects, skills, or content..." id="searchInput">
+            <button class="search-btn" id="searchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
 
-            <!-- Search Suggestions -->
-            <div class="search-suggestion animate-in animate-delay-3">
-                <h3>Maybe you were looking for:</h3>
-                <div class="search-links">
-                    <a href="/#about" class="search-link">About Me</a>
-                    <a href="/#skills" class="search-link">My Skills</a>
-                    <a href="/#work" class="search-link">Creative Work</a>
-                    <a href="/#contact" class="search-link">Contact</a>
-                    <a href="https://linkedin.com/in/thanatsitt-nareenapa" class="search-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://github.com/thanatsittn" class="search-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                </div>
-            </div>
+        <!-- Helpful Links -->
+        <div class="helpful-links loading">
+            <a href="/" class="link-card">
+                <i class="fas fa-user"></i>
+                <h3>About Me</h3>
+                <p>Learn about my journey as a Cultural AI Innovator</p>
+            </a>
+            
+            <a href="/projects" class="link-card">
+                <i class="fas fa-code"></i>
+                <h3>Projects</h3>
+                <p>Explore my AI and blockchain projects</p>
+            </a>
+            
+            <a href="/contact" class="link-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Contact</h3>
+                <p>Get in touch for collaborations</p>
+            </a>
+            
+            <a href="https://github.com/Pigletpeakkung" class="link-card" target="_blank">
+                <i class="fab fa-github"></i>
+                <h3>GitHub</h3>
+                <p>Check out my open source contributions</p>
+            </a>
         </div>
     </div>
 
     <script>
-        // ===== BACKGROUND EFFECTS =====
-        function createStars() {
-            const starsContainer = document.getElementById('starsContainer');
-            const numberOfStars = 30;
-            
-            for (let i = 0; i < numberOfStars; i++) {
-                const star = document.createElement('div');
-                const size = Math.random() < 0.5 ? 'small' : Math.random() < 0.8 ? 'medium' : 'large';
-                star.className = `star ${size}`;
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.animationDelay = Math.random() * 3 + 's';
-                starsContainer.appendChild(star);
-            }
-            
-            // Add sparkles
-            const numberOfSparkles = 15;
-            for (let i = 0; i < numberOfSparkles; i++) {
-                const sparkle = document.createElement('div');
-                sparkle.className = 'sparkle';
-                sparkle.style.left = Math.random() * 100 + '%';
-                sparkle.style.top = Math.random() * 100 + '%';
-                sparkle.style.animationDelay = Math.random() * 2 + 's';
-                starsContainer.appendChild(sparkle);
+        // Theme Management
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.classList.toggle('dark-theme', savedTheme === 'dark');
+            updateThemeIcon();
+        } else {
+            // Check system preference
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            body.classList.toggle('dark-theme', prefersDark);
+            updateThemeIcon();
+        }
+
+        function updateThemeIcon() {
+            if (body.classList.contains('dark-theme')) {
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
             }
         }
 
-        // ===== PARTICLE SYSTEM =====
-        function initializeParticles() {
-            const canvas = document.getElementById('particleCanvas');
-            const ctx = canvas.getContext('2d');
-            
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            
-            const particles = [];
-            const numberOfParticles = 40;
-            
-            class Particle {
-                constructor() {
-                    this.x = Math.random() * canvas.width;
-                    this.y = Math.random() * canvas.height;
-                    this.vx = (Math.random() - 0.5) * 0.3;
-                    this.vy = (Math.random() - 0.5) * 0.3;
-                    this.size = Math.random() * 2 + 1;
-                    this.opacity = Math.random() * 0.3 + 0.1;
-                    this.color = `hsl(${Math.random() * 60 + 180}, 60%, 70%)`;
-                }
-                
-                update() {
-                    this.x += this.vx;
-                    this.y += this.vy;
-                    
-                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-                }
-                
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fillStyle = this.color;
-                    ctx.globalAlpha = this.opacity;
-                    ctx.fill();
-                }
-            }
-            
-            // Create particles
-            for (let i = 0; i < numberOfParticles; i++) {
-                particles.push(new Particle());
-            }
-            
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                
-                particles.forEach(particle => {
-                    particle.update();
-                    particle.draw();
-                });
-                
-                requestAnimationFrame(animate);
-            }
-            
-            animate();
-            
-            // Handle resize
-            window.addEventListener('resize', () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            });
-        }
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            const isDark = body.classList.contains('dark-theme');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeIcon();
+        });
 
-        // ===== ERROR ICON INTERACTION =====
-        function initializeErrorInteraction() {
-            const errorIcon = document.getElementById('errorIcon');
-            
-            errorIcon.addEventListener('click', () => {
-                errorIcon.style.animation = 'none';
-                errorIcon.style.transform = 'scale(1.2) rotate(360deg)';
-                
-                setTimeout(() => {
-                    errorIcon.style.animation = 'float 6s ease-in-out infinite';
-                    errorIcon.style.transform = '';
-                }, 1000);
-            });
-        }
-
-        // ===== SMOOTH SCROLLING =====
-        function initializeSmoothScrolling() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        }
-
-        // ===== KEYBOARD NAVIGATION =====
-        function initializeKeyboardNavigation() {
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' && e.target.tagName === 'A') {
-                    e.target.click();
-                }
-                
-                // Easter egg for 404
-                if (e.key === 'Escape') {
-                    window.location.href = '/';
-                }
-            });
-        }
-
-        // ===== MOUSE PARALLAX EFFECT =====
-        function initializeMouseParallax() {
-            document.addEventListener('mousemove', (e) => {
-                const mouseX = e.clientX / window.innerWidth;
-                const mouseY = e.clientY / window.innerHeight;
-                
-                const floatingNumbers = document.querySelectorAll('.floating-number');
-                floatingNumbers.forEach((element, index) => {
-                    const speed = (index + 1) * 0.015;
-                    const x = (mouseX - 0.5) * 30 * speed;
-                    const y = (mouseY - 0.5) * 30 * speed;
-                    
-                    element.style.transform = `translate(${x}px, ${y}px) rotate(${x * 0.5}deg)`;
-                });
-                
-                // Parallax for error icon
-                const errorIcon = document.getElementById('errorIcon');
-                const iconX = (mouseX - 0.5) * 10;
-                const iconY = (mouseY - 0.5) * 10;
-                errorIcon.style.transform = `translate(${iconX}px, ${iconY}px)`;
-            });
-        }
-
-        // ===== SEARCH FUNCTIONALITY =====
-        function initializeSearch() {
-            // Add search on keypress
-            document.addEventListener('keydown', (e) => {
-                if (e.ctrlKey && e.key === 'k') {
-                    e.preventDefault();
-                    const searchQuery = prompt('What are you looking for?');
-                    if (searchQuery) {
-                        // Simple search logic
-                        const query = searchQuery.toLowerCase();
-                        if (query.includes('about') || query.includes('bio')) {
-                            window.location.href = '/#about';
-                        } else if (query.includes('skill') || query.includes('tech')) {
-                            window.location.href = '/#skills';
-                        } else if (query.includes('work') || query.includes('project') || query.includes('writing')) {
-                            window.location.href = '/#work';
-                        } else if (query.includes('contact') || query.includes('email')) {
-                            window.location.href = '/#contact';
-                        } else {
-                            window.location.href = '/';
+        // Particles Configuration
+        async function loadParticles() {
+            await tsParticles.load("particles-container", {
+                fullScreen: false,
+                particles: {
+                    number: {
+                        value: 30,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: ["#0891B2", "#06B6D4", "#F59E0B"]
+                    },
+                    shape: {
+                        type: "circle"
+                    },
+                    opacity: {
+                        value: 0.3,
+                        random: true,
+                        anim: {
+                            enable: true,
+                            speed: 1,
+                            opacity_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    size: {
+                        value: 3,
+                        random: true,
+                        anim: {
+                            enable: true,
+                            speed: 2,
+                            size_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: "#0891B2",
+                        opacity: 0.2,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        direction: "none",
+                        random: false,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false,
+                        attract: {
+                            enable: false,
+                            rotateX: 600,
+                            rotateY: 1200
                         }
                     }
-                }
-            });
-        }
-
-        // ===== ACCESSIBILITY ENHANCEMENTS =====
-        function initializeAccessibility() {
-            // Focus management
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Tab') {
-                    document.body.classList.add('keyboard-nav');
-                }
-            });
-
-            document.addEventListener('mousedown', () => {
-                document.body.classList.remove('keyboard-nav');
-            });
-
-            // Screen reader announcements
-            const announceError = () => {
-                const announcement = document.createElement('div');
-                announcement.setAttribute('aria-live', 'polite');
-                announcement.setAttribute('aria-atomic', 'true');
-                announcement.className = 'sr-only';
-                announcement.textContent = 'Page not found. Error 404. Navigation options are available below.';
-                document.body.appendChild(announcement);
-                
-                setTimeout(() => {
-                    document.body.removeChild(announcement);
-                }, 3000);
-            };
-
-            // Announce after page loads
-            setTimeout(announceError, 1000);
-        }
-
-        // ===== THEME DETECTION =====
-        function initializeThemeDetection() {
-            // Check for dark mode preference
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.body.classList.add('dark-theme');
-            }
-
-            // Listen for theme changes
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-                if (e.matches) {
-                    document.body.classList.add('dark-theme');
-                } else {
-                    document.body.classList.remove('dark-theme');
-                }
-            });
-        }
-
-        // ===== FUN EASTER EGG =====
-        let clickCount = 0;
-        function initializeEasterEgg() {
-            document.getElementById('errorCode').addEventListener('click', () => {
-                clickCount++;
-                if (clickCount >= 5) {
-                    const messages = [
-                        "Still clicking? You're persistent! 🎯",
-                        "The 404 appreciates your attention! ✨",
-                        "Maybe try the home button instead? 🏠",
-                        "You've discovered the secret click counter! 🎉",
-                        "Okay, I'll take you home now... 🚀"
-                    ];
-                    
-                    alert(messages[Math.min(clickCount - 5, messages.length - 1)]);
-                    
-                    if (clickCount >= 10) {
-                        // Auto-redirect to home after 10 clicks
-                        window.location.href = '/';
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: "repulse"
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: "push"
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 140,
+                            line_linked: {
+                                opacity: 1
+                            }
+                        },
+                        bubble: {
+                            distance: 400,
+                            size: 40,
+                            duration: 2,
+                            opacity: 8,
+                            speed: 3
+                        },
+                        repulse: {
+                            distance: 100,
+                            duration: 0.4
+                        },
+                        push: {
+                            particles_nb: 4
+                        },
+                        remove: {
+                            particles_nb: 2
+                        }
                     }
+                },
+                retina_detect: true
+            });
+        }
+
+        // Search Functionality
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+
+        function performSearch() {
+            const query = searchInput.value.trim();
+            if (query) {
+                // Redirect to home page with search parameter
+                window.location.href = `/?search=${encodeURIComponent(query)}`;
+            }
+        }
+
+        searchBtn.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Animation Timeline
+        function initAnimations() {
+            const tl = gsap.timeline();
+
+            tl.to('.error-code', {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: 'power3.out'
+            })
+            .to('.error-message', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            }, '-=0.5')
+            .to('.action-buttons', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            }, '-=0.4')
+            .to('.search-container', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            }, '-=0.4')
+            .to('.helpful-links', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            }, '-=0.4');
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            loadParticles();
+            initAnimations();
+        });
+
+        // Analytics (if GA is available)
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', {
+                page_title: '404 Error',
+                page_location: window.location.href,
+                custom_map: {
+                    'custom_parameter_1': 'error_page'
                 }
             });
         }
-
-        // ===== PERFORMANCE TRACKING =====
-        function trackErrorPageMetrics() {
-            // Track 404 page metrics
-            if ('performance' in window) {
-                window.addEventListener('load', () => {
-                    const loadTime = performance.now();
-                    console.log(`404 Page loaded in ${loadTime.toFixed(2)}ms`);
-                    // Track user actions
-                    document.querySelectorAll('.action-button').forEach(button => {
-                        button.addEventListener('click', (e) => {
-                            console.log(`404 Action: ${e.target.textContent.trim()}`);
-                        });
-                    });
-                });
-            }
-        }
-
-        // ===== CUSTOM 404 ANALYTICS =====
-        function track404Event() {
-            // Track 404 events (replace with your analytics)
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'page_view', {
-                    page_title: '404 - Page Not Found',
-                    page_location: window.location.href,
-                    custom_parameter: 'error_page'
-                });
-            }
-            
-            // Console analytics for development
-            console.log('📊 404 Event Tracked:', {
-                url: window.location.href,
-                referrer: document.referrer,
-                timestamp: new Date().toISOString(),
-                userAgent: navigator.userAgent
-            });
-        }
-
-        // ===== PRELOAD MAIN SITE =====
-        function preloadMainSite() {
-            // Preload main site resources for faster navigation
-            const link = document.createElement('link');
-            link.rel = 'prefetch';
-            link.href = '/';
-            document.head.appendChild(link);
-            
-            // Preload critical CSS
-            const cssLink = document.createElement('link');
-            cssLink.rel = 'preload';
-            cssLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap';
-            cssLink.as = 'style';
-            document.head.appendChild(cssLink);
-        }
-
-        // ===== INITIALIZE ON LOAD =====
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize all features
-            createStars();
-            initializeParticles();
-            initializeErrorInteraction();
-            initializeSmoothScrolling();
-            initializeKeyboardNavigation();
-            initializeMouseParallax();
-            initializeSearch();
-            initializeAccessibility();
-            initializeThemeDetection();
-            initializeEasterEgg();
-            trackErrorPageMetrics();
-            preloadMainSite();
-            
-            // Trigger animations with stagger
-            setTimeout(() => {
-                document.querySelectorAll('.animate-in').forEach((element, index) => {
-                    setTimeout(() => {
-                        element.style.opacity = '1';
-                        element.style.transform = 'translateY(0)';
-                    }, index * 150);
-                });
-            }, 200);
-            
-            console.log('🚫 404 Page Loaded - Creative Error Experience');
-            console.log('✨ Press ESC to return home quickly!');
-            console.log('🔍 Press Ctrl+K to search');
-            console.log('🎯 Click the 404 number multiple times for a surprise!');
-        });
-
-        // ===== SERVICE WORKER FOR OFFLINE SUPPORT =====
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(registration => {
-                        console.log('ServiceWorker registered for 404 page');
-                    })
-                    .catch(error => {
-                        console.log('ServiceWorker registration failed');
-                    });
-            });
-        }
-
-        // Track the 404 event
-        track404Event();
-
-        // ===== FINAL ERROR RECOVERY =====
-        window.addEventListener('error', (e) => {
-            console.error('404 Page Error:', e.error);
-            // Graceful fallback - ensure basic navigation works
-            document.querySelectorAll('a[href="/"]').forEach(link => {
-                link.style.display = 'inline-block';
-                link.style.padding = '1rem 2rem';
-                link.style.background = 'var(--accent-cyan)';
-                link.style.color = 'white';
-                link.style.borderRadius = '10px';
-                link.style.textDecoration = 'none';
-            });
-        });
-
-        // ===== REDUCED MOTION SUPPORT =====
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            document.body.classList.add('reduced-motion');
-        }
-    </script>
-
-    <!-- Schema.org Structured Data for 404 -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "404 - Page Not Found",
-        "description": "The requested page could not be found on Thanattsitt Santisamranwilai's portfolio website.",
-        "url": "https://thanattsitt.dev/404.html",
-        "isPartOf": {
-            "@type": "WebSite",
-            "name": "Thanattsitt Santisamranwilai Portfolio",
-            "url": "https://thanattsitt.dev"
-        },
-        "author": {
-            "@type": "Person",
-            "name": "Thanattsitt Santisamranwilai",
-            "url": "https://thanattsitt.dev"
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://thanattsitt.dev/#search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
-    }
     </script>
 </body>
 </html>
