@@ -785,4 +785,1395 @@
             width: 80px;
             height: 3px;
             background: linear-gradient(135deg, var(--accent-cyan), var(--accent-coral));
-            border-
+                        border-radius: 2px;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        /* ===== GRID LAYOUTS ===== */
+        .grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+        /* ===== CARD COMPONENTS ===== */
+        .card {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all var(--transition-smooth);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-coral));
+            transform: scaleX(0);
+            transition: transform var(--transition-smooth);
+            transform-origin: left;
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-cyan);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-coral));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .card-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ===== GLASSMORPHISM CARDS ===== */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-backdrop);
+            -webkit-backdrop-filter: var(--glass-backdrop);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: var(--glass-shadow);
+            transition: all var(--transition-smooth);
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                var(--pastel-pink) 0%, 
+                var(--pastel-blue) 25%, 
+                var(--pastel-mint) 50%, 
+                var(--pastel-lavender) 75%, 
+                var(--pastel-peach) 100%);
+            opacity: 0.1;
+            border-radius: 25px;
+            pointer-events: none;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                var(--glass-shadow),
+                0 20px 40px rgba(8, 145, 178, 0.15);
+            border-color: rgba(8, 145, 178, 0.3);
+        }
+
+        .glass-card-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: var(--z-content);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-coral));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .footer-social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all var(--transition-smooth);
+            text-decoration: none;
+        }
+
+        .footer-social-link:hover,
+        .footer-social-link:focus {
+            background: rgba(8, 145, 178, 0.3);
+            border-color: var(--accent-cyan);
+            transform: translateY(-3px);
+        }
+
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .nav {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--secondary-bg);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow-md);
+                border-radius: 0 0 20px 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .mobile-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .mobile-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+
+            .hero {
+                padding: 6rem 1rem 2rem;
+            }
+
+            .moon-container {
+                width: 200px;
+                height: 200px;
+            }
+
+            .moon {
+                min-width: 200px;
+                min-height: 200px;
+            }
+
+            .tagline {
+                font-size: 2.5rem;
+            }
+
+            .hero-summary-card {
+                padding: 2rem;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .grid {
+                gap: 1.5rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .glass-card {
+                padding: 2rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-summary-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            .hero-summary-content {
+                font-size: 1.1rem;
+            }
+
+            .card {
+                padding: 1.25rem;
+            }
+
+            .glass-card {
+                padding: 1.5rem;
+            }
+
+            .tagline {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.2s; }
+        .fade-in-delay-2 { animation-delay: 0.4s; }
+        .fade-in-delay-3 { animation-delay: 0.6s; }
+        .fade-in-delay-4 { animation-delay: 0.8s; }
+        .fade-in-delay-5 { animation-delay: 1.0s; }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-animate.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== UTILITY CLASSES ===== */
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+
+        .mb-1 { margin-bottom: 0.5rem; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+        .mb-4 { margin-bottom: 2rem; }
+
+        .mt-1 { margin-top: 0.5rem; }
+        .mt-2 { margin-top: 1rem; }
+        .mt-3 { margin-top: 1.5rem; }
+        .mt-4 { margin-top: 2rem; }
+
+        .p-1 { padding: 0.5rem; }
+        .p-2 { padding: 1rem; }
+        .p-3 { padding: 1.5rem; }
+        .p-4 { padding: 2rem; }
+
+        .w-full { width: 100%; }
+        .h-full { height: 100%; }
+
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .flex-center { justify-content: center; align-items: center; }
+        .flex-between { justify-content: space-between; }
+        .flex-wrap { flex-wrap: wrap; }
+
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .fixed { position: fixed; }
+
+        .z-10 { z-index: 10; }
+        .z-20 { z-index: 20; }
+        .z-30 { z-index: 30; }
+
+        .rounded { border-radius: 0.5rem; }
+        .rounded-lg { border-radius: 1rem; }
+        .rounded-xl { border-radius: 1.5rem; }
+        .rounded-full { border-radius: 50%; }
+
+        .shadow-sm { box-shadow: var(--shadow-sm); }
+        .shadow-md { box-shadow: var(--shadow-md); }
+        .shadow-lg { box-shadow: var(--shadow-lg); }
+        .shadow-xl { box-shadow: var(--shadow-xl); }
+
+        .transition { transition: all var(--transition-smooth); }
+        .transition-fast { transition: all var(--transition-fast); }
+        .transition-slow { transition: all var(--transition-slow); }
+
+        .opacity-0 { opacity: 0; }
+        .opacity-50 { opacity: 0.5; }
+        .opacity-100 { opacity: 1; }
+
+        .scale-95 { transform: scale(0.95); }
+        .scale-100 { transform: scale(1); }
+        .scale-105 { transform: scale(1.05); }
+
+        .hover\:scale-105:hover { transform: scale(1.05); }
+        .hover\:opacity-80:hover { opacity: 0.8; }
+        .hover\:shadow-lg:hover { box-shadow: var(--shadow-lg); }
+
+        /* ===== DARK MODE SUPPORT ===== */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-bg: #0F172A;
+                --secondary-bg: #1E293B;
+                --accent-bg: #334155;
+                --text-primary: #F8FAFC;
+                --text-secondary: #CBD5E1;
+                --text-muted: #94A3B8;
+                --border-light: #334155;
+                --border-medium: #475569;
+            }
+
+            .loading-screen {
+                background: var(--primary-bg);
+            }
+
+            .nav {
+                background: rgba(15, 23, 42, 0.95);
+            }
+
+            .nav.scrolled {
+                background: rgba(30, 41, 59, 0.98);
+            }
+
+            .card {
+                background: var(--secondary-bg);
+            }
+
+            .moon {
+                background: linear-gradient(135deg, 
+                    #1E293B 0%, 
+                    #334155 30%, 
+                    #475569 70%, 
+                    #64748B 100%);
+                box-shadow: 
+                    var(--shadow-xl),
+                    inset 0 0 30px rgba(248, 250, 252, 0.1),
+                    0 0 60px rgba(8, 145, 178, 0.3);
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            .nav,
+            .loading-screen,
+            .stars-container,
+            .particle-canvas,
+            .social-links,
+            .footer-social {
+                display: none !important;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">Thanattsitt</div>
+            <div class="loading-text">Bridging creativity with AI innovation</div>
+            <div class="loading-bar-container">
+                <div class="loading-bar" id="loadingBar"></div>
+            </div>
+            <div class="loading-dots">
+                <div class="loading-dot"></div>
+                <div class="loading-dot"></div>
+                <div class="loading-dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Effects -->
+    <div class="stars-container" id="starsContainer"></div>
+    <canvas class="particle-canvas" id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="logo">Thanattsitt</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="moon-container">
+                    <div class="moon" id="moon">
+                        <div class="floating-element"></div>
+                        <div class="floating-element"></div>
+                        <div class="floating-element"></div>
+                    </div>
+                </div>
+                
+                <div class="intro-text">Hello, I'm</div>
+                <div class="identity-text">Thanattsitt Santisamranwilai</div>
+                <h1 class="tagline">AI Creative Designer</h1>
+                
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/thanattsitt" 
+                       class="social-link" 
+                       aria-label="LinkedIn Profile"
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/thanattsitt" 
+                       class="social-link" 
+                       aria-label="GitHub Profile"
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com/thanatsittn" 
+                       class="social-link" 
+                       aria-label="Twitter Profile"
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="mailto:contact@pegearts.com" 
+                       class="social-link" 
+                       aria-label="Email Contact">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <div class="hero-summary">
+                    <div class="hero-summary-card">
+                        <div class="hero-summary-content">
+                            <strong>Researcher, Designer & Creative Storyteller</strong><br>
+                            Bridging human creativity with artificial intelligence through innovative design, 
+                            research, and compelling narratives that shape the future of digital experiences.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section" id="about">
+            <div class="section-content">
+                <h2 class="section-title scroll-animate">About Me</h2>
+                <p class="section-description scroll-animate">
+                    I'm a multidisciplinary creator passionate about exploring the intersection of 
+                    artificial intelligence and human creativity. My work spans research, design, 
+                    and storytelling to create meaningful digital experiences.
+                </p>
+                
+                <div class="grid grid-3">
+                    <div class="glass-card scroll-animate">
+                        <div class="glass-card-content">
+                            <div class="card-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3 class="card-title">AI Research</h3>
+                            <p class="card-description">
+                                Exploring machine learning applications in creative processes 
+                                and developing innovative AI-powered design tools.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card scroll-animate">
+                        <div class="glass-card-content">
+                            <div class="card-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3 class="card-title">Creative Design</h3>
+                            <p class="card-description">
+                                Crafting visually stunning and user-centric designs that 
+                                blend aesthetic appeal with functional excellence.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card scroll-animate">
+                        <div class="glass-card-content">
+                            <div class="card-icon">
+                                <i class="fas fa-pen-fancy"></i>
+                            </div>
+                            <h3 class="card-title">Scriptwriting</h3>
+                            <p class="card-description">
+                                Creating compelling narratives and scripts that engage 
+                                audiences and communicate complex ideas effectively.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section class="section" id="work">
+            <div class="section-content">
+                <h2 class="section-title scroll-animate">My Work</h2>
+                <p class="section-description scroll-animate">
+                    A showcase of projects that demonstrate my expertise in AI research, 
+                    creative design, and innovative storytelling.
+                </p>
+                
+                <div class="grid grid-2">
+                    <div class="card scroll-animate">
+                        <div class="card-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="card-title">AI Design Assistant</h3>
+                        <p class="card-description">
+                            Developed an intelligent design assistant that helps creators 
+                            generate ideas and optimize their creative workflows using 
+                            machine learning algorithms.
+                        </p>
+                    </div>
+                    
+                    <div class="card scroll-animate">
+                        <div class="card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="card-title">Interactive UX Research</h3>
+                        <p class="card-description">
+                            Conducted comprehensive user experience research for mobile 
+                            applications, resulting in 40% improvement in user engagement 
+                            and satisfaction rates.
+                        </p>
+                    </div>
+                    
+                    <div class="card scroll-animate">
+                        <div class="card-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="card-title">Digital Storytelling</h3>
+                        <p class="card-description">
+                            Created immersive digital narratives and interactive stories 
+                            that combine traditional storytelling with modern technology 
+                            for enhanced audience engagement.
+                        </p>
+                    </div>
+                    
+                    <div class="card scroll-animate">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="card-title">Data Visualization</h3>
+                        <p class="card-description">
+                            Designed intuitive data visualization tools that make complex 
+                            information accessible and actionable for decision-makers 
+                            across various industries.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <div class="section-content">
+                <h2 class="section-title scroll-animate">Let's Connect</h2>
+                <p class="section-description scroll-animate">
+                    Ready to collaborate on innovative projects? Let's discuss how we can 
+                    bridge creativity and technology to create something extraordinary.
+                </p>
+                
+                <div class="glass-card scroll-animate" style="max-width: 600px; margin: 0 auto;">
+                    <div class="glass-card-content">
+                        <div class="card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="card-title">Get in Touch</h3>
+                        <p class="card-description mb-3">
+                            I'm always open to discussing new opportunities, collaborations, 
+                            or just having a conversation about the future of AI and creativity.
+                        </p>
+                        <a href="mailto:contact@pegearts.com" 
+                           class="social-link" 
+                           style="display: inline-flex; width: auto; height: auto; padding: 1rem 2rem; border-radius: 12px; font-size: 1rem; text-decoration: none; background: var(--accent-cyan); color: white; font-weight: 600;">
+                            <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
+                            Send Message
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-title">Thanattsitt</div>
+            <p>AI Creative Designer, Researcher & Scriptwriter</p>
+            
+            <div class="footer-social">
+                <a href="https://linkedin.com/in/thanattsitt" 
+                   class="footer-social-link" 
+                   aria-label="LinkedIn Profile"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/thanattsitt" 
+                   class="footer-social-link" 
+                   aria-label="GitHub Profile"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://twitter.com/thanatsittn" 
+                   class="footer-social-link" 
+                   aria-label="Twitter Profile"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="mailto:contact@pegearts.com" 
+                   class="footer-social-link" 
+                   aria-label="Email Contact">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>&copy; 2024 Thanattsitt Santisamranwilai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // ===== CONFIGURATION =====
+        const CONFIG = {
+            LOADING_DURATION: 3000,
+            STAR_COUNT: 100,
+            SPARKLE_COUNT: 20,
+            PARTICLE_COUNT: 50,
+            SCROLL_THRESHOLD: 0.1,
+            ANIMATION_DELAY: 100
+        };
+
+        // ===== LOADING SCREEN =====
+        class LoadingManager {
+            constructor() {
+                this.loadingScreen = document.getElementById('loadingScreen');
+                this.loadingBar = document.getElementById('loadingBar');
+                this.progress = 0;
+                this.init();
+            }
+
+            init() {
+                this.simulateProgress();
+                setTimeout(() => this.hideLoading(), CONFIG.LOADING_DURATION);
+            }
+
+            simulateProgress() {
+                const progressInterval = setInterval(() => {
+                    this.progress += Math.random() * 15;
+                    if (this.progress >= 100) {
+                        this.progress = 100;
+                        clearInterval(progressInterval);
+                    }
+                    this.loadingBar.style.width = `${this.progress}%`;
+                }, 100);
+            }
+
+            hideLoading() {
+                this.loadingScreen.classList.add('hidden');
+                setTimeout(() => {
+                    this.loadingScreen.style.display = 'none';
+                    this.startAnimations();
+                }, 600);
+            }
+
+            startAnimations() {
+                this.animateHeroElements();
+                new ScrollAnimations();
+                new ParticleSystem();
+                new StarField();
+            }
+
+            animateHeroElements() {
+                const elements = [
+                    '.intro-text',
+                    '.identity-text', 
+                    '.tagline',
+                    '.social-links',
+                    '.hero-summary'
+                ];
+
+                elements.forEach((selector, index) => {
+                    const element = document.querySelector(selector);
+                    if (element) {
+                        setTimeout(() => {
+                            element.classList.add('fade-in');
+                        }, index * CONFIG.ANIMATION_DELAY);
+                    }
+                });
+            }
+        }
+
+        // ===== NAVIGATION =====
+        class Navigation {
+            constructor() {
+                this.nav = document.getElementById('nav');
+                this.navLinks = document.getElementById('navLinks');
+                this.mobileToggle = document.getElementById('mobileToggle');
+                this.init();
+            }
+
+            init() {
+                this.setupScrollEffect();
+                this.setupMobileToggle();
+                this.setupSmoothScroll();
+            }
+
+            setupScrollEffect() {
+                let lastScrollY = window.scrollY;
+                
+                window.addEventListener('scroll', () => {
+                    const currentScrollY = window.scrollY;
+                    
+                    if (currentScrollY > 50) {
+                        this.nav.classList.add('scrolled');
+                    } else {
+                        this.nav.classList.remove('scrolled');
+                    }
+                    
+                    lastScrollY = currentScrollY;
+                });
+            }
+
+            setupMobileToggle() {
+                this.mobileToggle.addEventListener('click', () => {
+                    this.navLinks.classList.toggle('active');
+                    this.mobileToggle.classList.toggle('active');
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!this.nav.contains(e.target)) {
+                        this.navLinks.classList.remove('active');
+                        this.mobileToggle.classList.remove('active');
+                    }
+                });
+            }
+
+            setupSmoothScroll() {
+                const navLinks = this.navLinks.querySelectorAll('a[href^="#"]');
+                
+                navLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetId = link.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            const offsetTop = targetElement.offsetTop - 80;
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }
+                        
+                        // Close mobile menu
+                        this.navLinks.classList.remove('active');
+                        this.mobileToggle.classList.remove('active');
+                    });
+                });
+            }
+        }
+
+        // ===== SCROLL ANIMATIONS =====
+        class ScrollAnimations {
+            constructor() {
+                this.elements = document.querySelectorAll('.scroll-animate');
+                this.observer = null;
+                this.init();
+            }
+
+            init() {
+                this.setupIntersectionObserver();
+                this.observeElements();
+            }
+
+            setupIntersectionObserver() {
+                const options = {
+                    threshold: CONFIG.SCROLL_THRESHOLD,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                            this.observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate');
+                            this.observer.unobserve(entry.target);
+                        }
+                    });
+                }, options);
+            }
+
+            observeElements() {
+                this.elements.forEach(element => {
+                    this.observer.observe(element);
+                });
+            }
+        }
+
+        // ===== PARTICLE SYSTEM =====
+        class ParticleSystem {
+            constructor() {
+                this.canvas = document.getElementById('particleCanvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.animationId = null;
+                this.init();
+            }
+
+            init() {
+                this.setupCanvas();
+                this.createParticles();
+                this.animate();
+                this.setupResizeHandler();
+            }
+
+            setupCanvas() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+
+            createParticles() {
+                this.particles = [];
+                for (let i = 0; i < CONFIG.PARTICLE_COUNT; i++) {
+                    this.particles.push(this.createParticle());
+                }
+            }
+
+            createParticle() {
+                return {
+                    x: Math.random() * this.canvas.width,
+                    y: Math.random() * this.canvas.height,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    size: Math.random() * 2 + 1,
+                    opacity: Math.random() * 0.5 + 0.2,
+                    hue: Math.random() * 360
+                };
+            }
+
+            updateParticle(particle) {
+                particle.x += particle.vx;
+                particle.y += particle.vy;
+
+                // Wrap around screen edges
+                if (particle.x < 0) particle.x = this.canvas.width;
+                if (particle.x > this.canvas.width) particle.x = 0;
+                if (particle.y < 0) particle.y = this.canvas.height;
+                if (particle.y > this.canvas.height) particle.y = 0;
+
+                // Pulse opacity
+                particle.opacity += Math.sin(Date.now() * 0.001) * 0.01;
+                particle.opacity = Math.max(0.1, Math.min(0.7, particle.opacity));
+            }
+
+            drawParticle(particle) {
+                this.ctx.save();
+                this.ctx.globalAlpha = particle.opacity;
+                this.ctx.fillStyle = `hsl(${particle.hue}, 70%, 60%)`;
+                this.ctx.beginPath();
+                this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                this.ctx.fill();
+                this.ctx.restore();
+            }
+
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+                this.particles.forEach(particle => {
+                    this.updateParticle(particle);
+                    this.drawParticle(particle);
+                });
+
+                this.animationId = requestAnimationFrame(() => this.animate());
+            }
+
+            setupResizeHandler() {
+                window.addEventListener('resize', () => {
+                    this.setupCanvas();
+                    this.createParticles();
+                });
+            }
+
+            destroy() {
+                if (this.animationId) {
+                    cancelAnimationFrame(this.animationId);
+                }
+            }
+        }
+
+        // ===== STAR FIELD =====
+        class StarField {
+            constructor() {
+                this.container = document.getElementById('starsContainer');
+                this.init();
+            }
+
+            init() {
+                this.createStars();
+                this.createSparkles();
+            }
+
+            createStars() {
+                for (let i = 0; i < CONFIG.STAR_COUNT; i++) {
+                    const star = document.createElement('div');
+                    star.className = `star ${this.getRandomSize()}`;
+                    star.style.left = `${Math.random() * 100}%`;
+                    star.style.top = `${Math.random() * 100}%`;
+                    star.style.animationDelay = `${Math.random() * 3}s`;
+                    this.container.appendChild(star);
+                }
+            }
+
+            createSparkles() {
+                for (let i = 0; i < CONFIG.SPARKLE_COUNT; i++) {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'sparkle';
+                    sparkle.style.left = `${Math.random() * 100}%`;
+                    sparkle.style.top = `${Math.random() * 100}%`;
+                    sparkle.style.animationDelay = `${Math.random() * 2}s`;
+                    this.container.appendChild(sparkle);
+                }
+            }
+
+            getRandomSize() {
+                const sizes = ['small', 'medium', 'large'];
+                return sizes[Math.floor(Math.random() * sizes.length)];
+            }
+        }
+
+        // ===== MOON INTERACTION =====
+        class MoonInteraction {
+            constructor() {
+                this.moon = document.getElementById('moon');
+                this.init();
+            }
+
+            init() {
+                this.setupClickEffect();
+                this.setupHoverEffect();
+            }
+
+            setupClickEffect() {
+                this.moon.addEventListener('click', () => {
+                    this.moon.style.animation = 'none';
+                    setTimeout(() => {
+                        this.moon.style.animation = 'moonPhase 8s ease-in-out infinite';
+                    }, 50);
+                    
+                    this.createClickRipple();
+                });
+            }
+
+            setupHoverEffect() {
+                this.moon.addEventListener('mouseenter', () => {
+                    this.moon.style.animationPlayState = 'paused';
+                });
+
+                this.moon.addEventListener('mouseleave', () => {
+                    this.moon.style.animationPlayState = 'running';
+                });
+            }
+
+            createClickRipple() {
+                const ripple = document.createElement('div');
+                ripple.style.cssText = `
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 0;
+                    height: 0;
+                    border-radius: 50%;
+                    background: radial-gradient(circle, rgba(8,145,178,0.3) 0%, transparent 70%);
+                    transform: translate(-50%, -50%);
+                    animation: ripple 0.6s ease-out;
+                    pointer-events: none;
+                    z-index: 100;
+                `;
+
+                this.moon.appendChild(ripple);
+
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            }
+        }
+
+        // ===== PERFORMANCE MONITOR =====
+        class PerformanceMonitor {
+            constructor() {
+                this.fps = 0;
+                this.lastTime = performance.now();
+                this.frameCount = 0;
+                this.init();
+            }
+
+            init() {
+                this.startMonitoring();
+            }
+
+            startMonitoring() {
+                const monitor = () => {
+                    const now = performance.now();
+                    this.frameCount++;
+
+                    if (now - this.lastTime >= 1000) {
+                        this.fps = this.frameCount;
+                        this.frameCount = 0;
+                        this.lastTime = now;
+                        this.optimizePerformance();
+                    }
+
+                    requestAnimationFrame(monitor);
+                };
+
+                monitor();
+            }
+
+            optimizePerformance() {
+                if (this.fps < 30) {
+                    // Reduce particle count for better performance
+                    CONFIG.PARTICLE_COUNT = Math.max(20, CONFIG.PARTICLE_COUNT - 5);
+                    CONFIG.STAR_COUNT = Math.max(50, CONFIG.STAR_COUNT - 10);
+                    console.log('Performance optimization: Reduced particle count');
+                }
+            }
+        }
+
+        // ===== ACCESSIBILITY MANAGER =====
+        class AccessibilityManager {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.setupKeyboardNavigation();
+                this.setupFocusManagement();
+                this.setupReducedMotion();
+            }
+
+            setupKeyboardNavigation() {
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Tab') {
+                        document.body.classList.add('keyboard-navigation');
+                    }
+                });
+
+                document.addEventListener('mousedown', () => {
+                    document.body.classList.remove('keyboard-navigation');
+                });
+            }
+
+            setupFocusManagement() {
+                const focusableElements = document.querySelectorAll(
+                    'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                );
+
+                focusableElements.forEach(element => {
+                    element.addEventListener('focus', () => {
+                        element.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'center' 
+                        });
+                    });
+                });
+            }
+
+            setupReducedMotion() {
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    document.documentElement.style.setProperty('--transition-fast', '0.01ms');
+                    document.documentElement.style.setProperty('--transition-smooth', '0.01ms');
+                    document.documentElement.style.setProperty('--transition-slow', '0.01ms');
+                }
+            }
+        }
+
+        // ===== ERROR HANDLER =====
+        class ErrorHandler {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.setupGlobalErrorHandler();
+                this.setupUnhandledRejectionHandler();
+            }
+
+            setupGlobalErrorHandler() {
+                window.addEventListener('error', (e) => {
+                    console.error('Global error:', e.error);
+                    this.handleError(e.error);
+                });
+            }
+
+            setupUnhandledRejectionHandler() {
+                window.addEventListener('unhandledrejection', (e) => {
+                    console.error('Unhandled promise rejection:', e.reason);
+                    this.handleError(e.reason);
+                });
+            }
+
+            handleError(error) {
+                // In production, you might want to send errors to a logging service
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'exception', {
+                        description: error.message,
+                        fatal: false
+                    });
+                }
+            }
+        }
+
+        // ===== SERVICE WORKER REGISTRATION =====
+        class ServiceWorkerManager {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                if ('serviceWorker' in navigator) {
+                    this.registerServiceWorker();
+                }
+            }
+
+            async registerServiceWorker() {
+                try {
+                    const registration = await navigator.serviceWorker.register('/sw.js');
+                    console.log('Service Worker registered:', registration);
+                } catch (error) {
+                    console.error('Service Worker registration failed:', error);
+                }
+            }
+        }
+
+        // ===== ANALYTICS MANAGER =====
+        class AnalyticsManager {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.setupPageTracking();
+                this.setupInteractionTracking();
+            }
+
+            setupPageTracking() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('config', 'GA_MEASUREMENT_ID', {
+                        page_title: document.title,
+                        page_location: window.location.href
+                    });
+                }
+            }
+
+            setupInteractionTracking() {
+                // Track moon clicks
+                document.getElementById('moon')?.addEventListener('click', () => {
+                    this.trackEvent('interaction', 'moon_click');
+                });
+
+                // Track social link clicks
+                document.querySelectorAll('.social-link, .footer-social-link').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const platform = this.getSocialPlatform(link.href);
+                        this.trackEvent('social_click', platform);
+                    });
+                });
+            }
+
+            trackEvent(action, label) {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', action, {
+                        event_category: 'engagement',
+                        event_label: label
+                    });
+                }
+            }
+
+            getSocialPlatform(url) {
+                if (url.includes('linkedin')) return 'linkedin';
+                if (url.includes('github')) return 'github';
+                if (url.includes('twitter')) return 'twitter';
+                if (url.includes('mailto')) return 'email';
+                return 'unknown';
+            }
+        }
+
+        // ===== MAIN APPLICATION =====
+        class App {
+            constructor() {
+                this.components = [];
+                this.init();
+            }
+
+            init() {
+                document.addEventListener('DOMContentLoaded', () => {
+                    this.initializeComponents();
+                });
+            }
+
+            initializeComponents() {
+                try {
+                    this.components.push(new LoadingManager());
+                    this.components.push(new Navigation());
+                    this.components.push(new MoonInteraction());
+                    this.components.push(new PerformanceMonitor());
+                    this.components.push(new AccessibilityManager());
+                    this.components.push(new ErrorHandler());
+                    this.components.push(new ServiceWorkerManager());
+                    this.components.push(new AnalyticsManager());
+                } catch (error) {
+                    console.error('Failed to initialize components:', error);
+                }
+            }
+
+            destroy() {
+                this.components.forEach(component => {
+                    if (component.destroy) {
+                        component.destroy();
+                    }
+                });
+            }
+        }
+
+        // ===== INITIALIZE APPLICATION =====
+        const app = new App();
+
+        // ===== ADDITIONAL CSS ANIMATIONS =====
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                0% {
+                    width: 0;
+                    height: 0;
+                    opacity: 1;
+                }
+                100% {
+                    width: 300px;
+                    height: 300px;
+                    opacity: 0;
+                }
+            }
+
+            .keyboard-navigation *:focus {
+                outline: 3px solid var(--accent-cyan) !important;
+                outline-offset: 2px !important;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                .moon {
+                    animation: none !important;
+                }
+                
+                .star,
+                .sparkle,
+                .floating-element {
+                    animation: none !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // ===== CLEANUP ON PAGE UNLOAD =====
+        window.addEventListener('beforeunload', () => {
+            app.destroy();
+        });
+    </script>
+</body>
+</html>
+
