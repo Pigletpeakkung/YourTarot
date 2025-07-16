@@ -1,33 +1,848 @@
-      "@type": "ContactPoint",
-      "email": "thanattsitt.info@yahoo.co.uk",
-      "contactType": "customer service",
-      "availableLanguage": ["English", "Thai", "Japanese"]
-    }
-  }
-  </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thanattsitt Santisamranwilai - AI Creative Designer, Researcher & Scriptwriter. Bridging human creativity with artificial intelligence through innovative design, research, and storytelling.">
+    <meta name="keywords" content="AI Designer, Creative Researcher, UX/UI Design, Machine Learning, Digital Innovation, Scriptwriting, Thai Content Creator">
+    <meta name="author" content="Thanattsitt Santisamranwilai">
+    <title>Thanattsitt - AI Creative Designer, Researcher & Scriptwriter</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#0891B2">
+    
+    <!-- Meta Tags for PWA -->
+    <meta name="theme-color" content="#0891B2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Thanattsitt">
+    <meta name="msapplication-TileColor" content="#0891B2">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    
+    <!-- Open Graph Meta Tags - FIXED: Removed duplicates -->
+    <meta property="og:title" content="Thanattsitt Santisamranwilai - AI Creative Designer & Researcher">
+    <meta property="og:description" content="Bridging human creativity with artificial intelligence through innovative design, research, and storytelling.">
+    <meta property="og:url" content="https://pegearts.com">
+    <meta property="og:site_name" content="Pegearts Portfolio">
+    <meta property="og:image" content="https://pegearts.com/assets/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://pegearts.com">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@thanatsittn">
+    <meta name="twitter:creator" content="@thanatsittn">
+    <meta name="twitter:title" content="Thanattsitt Santisamranwilai - AI Creative Designer & Researcher">
+    <meta name="twitter:description" content="Bridging human creativity with artificial intelligence through innovative design, research, and storytelling.">
+    <meta name="twitter:image" content="https://pegearts.com/assets/images/twitter-card.png">
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Enhanced Structured Data - WebSite -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "PegeArts - Thanatsitt Santisamranwilai Portfolio",
-    "url": "https://pegearts.com",
-    "description": "Portfolio showcasing cultural AI innovation and cross-cultural technology solutions.",
-    "inLanguage": ["en", "th", "ja"],
-    "author": {
-      "@type": "Person",
-      "name": "Thanatsitt Santisamranwilai"
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://pegearts.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
+    <style>
+        /* ===== CSS CUSTOM PROPERTIES ===== */
+        :root {
+            /* Colors - Enhanced Pastel Harmony */
+            --primary-bg: #F8F9FA;
+            --secondary-bg: #FFFFFF;
+            --accent-bg: #F0F4F8;
+            --text-primary: #1F2937;
+            --text-secondary: #4B5563;
+            --text-muted: #6B7280;
+            --border-light: #E5E7EB;
+            --border-medium: #D1D5DB;
+            
+            /* Accent Colors */
+            --accent-cyan: #0891B2;
+            --accent-coral: #DC2626;
+            --accent-mint: #059669;
+            --accent-gold: #D97706;
+            --accent-purple: #7C3AED;
+            
+            /* Pastel Variants */
+            --pastel-pink: #FFE4E1;
+            --pastel-blue: #E6F3FF;
+            --pastel-mint: #E8F5E8;
+            --pastel-lavender: #F0E6FF;
+            --pastel-peach: #FFE5CC;
+            --pastel-sky: #E0F2FE;
+            --pastel-sage: #F0F9F0;
+            --pastel-coral: #FFE8E8;
+            
+            /* Glassmorphism */
+            --glass-bg: rgba(255, 255, 255, 0.25);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            --glass-backdrop: blur(20px) saturate(180%);
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            
+            /* Transitions */
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* Z-index Hierarchy */
+            --z-background: 1;
+            --z-content: 10;
+            --z-header: 100;
+            --z-modal: 1000;
+            --z-loading: 10000;
+        }
 
-  <!-- Custom CSS with Enhanced Liquid Morphs -->
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--primary-bg) 0%, var(--accent-bg) 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== ACCESSIBILITY ===== */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--text-primary);
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 10000;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+            outline: 2px solid var(--accent-cyan);
+            outline-offset: 2px;
+        }
+
+        .visually-hidden {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            margin: -1px !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+            white-space: nowrap !important;
+            border: 0 !important;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        *:focus {
+            outline: 2px solid var(--accent-cyan);
+            outline-offset: 2px;
+        }
+
+        /* ===== LOADING SCREEN ===== */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: var(--z-loading);
+            transition: opacity var(--transition-slow);
+        }
+
+        .loading-content {
+            text-align: center;
+            max-width: 400px;
+            padding: 0 2rem;
+        }
+
+        .loading-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-coral));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+        }
+
+        .loading-text {
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .loading-bar-container {
+            width: 100%;
+            height: 4px;
+            background: var(--border-light);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .loading-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-coral));
+            border-radius: 2px;
+            transition: width var(--transition-smooth);
+            width: 0%;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .loading-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-cyan);
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .loading-dot:nth-child(2) { animation-delay: 0.3s; }
+        .loading-dot:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes pulse {
+            0%, 60%, 100% { transform: scale(1); opacity: 0.7; }
+            30% { transform: scale(1.2); opacity: 1; }
+        }
+
+        /* ===== BACKGROUND EFFECTS ===== */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: var(--z-background);
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        .star.small { width: 2px; height: 2px; animation-duration: 2s; }
+        .star.medium { width: 3px; height: 3px; animation-duration: 3s; }
+        .star.large { width: 4px; height: 4px; animation-duration: 4s; }
+
+        .sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FF69B4, #87CEEB);
+            border-radius: 50%;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        .sparkle::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1) rotate(180deg); }
+        }
+
+        /* ===== PARTICLE CANVAS ===== */
+        .particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: var(--z-background);
+            opacity: 0.3;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: var(--z-header);
+            background: rgba(248, 249, 250, 0.95);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border-bottom: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-smooth);
+        }
+
+        .nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-md);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-coral));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: transform var(--transition-smooth);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            transition: all var(--transition-smooth);
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid var(--border-light);
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--text-primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            background: rgba(255, 255, 255, 0.9);
+            border-color: var(--accent-cyan);
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+            background: none;
+            border: none;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--accent-cyan);
+            margin: 3px 0;
+            transition: var(--transition-smooth);
+            border-radius: 2px;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: var(--z-content);
+            padding: 8rem 2rem 2rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(8, 145, 178, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(5, 150, 105, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* ===== ENHANCED MOON COMPONENT ===== */
+        .moon-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 2rem;
+            z-index: 10;
+        }
+
+        .moon {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            border-radius: 50%;
+            background: linear-gradient(135deg, 
+                var(--pastel-sky) 0%, 
+                var(--pastel-blue) 30%, 
+                var(--pastel-lavender) 70%, 
+                var(--pastel-mint) 100%);
+            border: 2px solid var(--border-medium);
+            box-shadow: 
+                var(--shadow-xl),
+                inset 0 0 30px rgba(255, 255, 255, 0.3),
+                0 0 60px rgba(8, 145, 178, 0.2);
+            transition: all var(--transition-smooth);
+            animation: moonPhase 8s ease-in-out infinite;
+            overflow: hidden;
+            cursor: pointer;
+            display: block;
+            min-height: 280px;
+            min-width: 280px;
+        }
+
+        .moon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.1) 25%, 
+                rgba(8, 145, 178, 0.1) 50%, 
+                transparent 75%);
+            border-radius: 50%;
+            animation: moonGlow 6s ease-in-out infinite;
+        }
+
+        .moon::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle at 30% 30%, 
+                rgba(255, 255, 255, 0.2) 0%, 
+                rgba(8, 145, 178, 0.1) 40%, 
+                transparent 70%);
+            border-radius: 50%;
+            animation: moonSurface 10s linear infinite;
+        }
+
+        @keyframes moonPhase {
+            0% { 
+                transform: rotate(0deg) scale(1);
+                box-shadow: 
+                    var(--shadow-xl),
+                    inset 0 0 30px rgba(255, 255, 255, 0.3),
+                    0 0 60px rgba(8, 145, 178, 0.2);
+            }
+            25% { 
+                transform: rotate(90deg) scale(1.02);
+                box-shadow: 
+                    var(--shadow-xl),
+                    inset 0 0 35px rgba(255, 255, 255, 0.4),
+                    0 0 70px rgba(8, 145, 178, 0.3);
+            }
+            50% { 
+                transform: rotate(180deg) scale(1.05);
+                box-shadow: 
+                    var(--shadow-xl),
+                    inset 0 0 40px rgba(255, 255, 255, 0.5),
+                    0 0 80px rgba(8, 145, 178, 0.4);
+            }
+            75% { 
+                transform: rotate(270deg) scale(1.02);
+                box-shadow: 
+                    var(--shadow-xl),
+                    inset 0 0 35px rgba(255, 255, 255, 0.4),
+                    0 0 70px rgba(8, 145, 178, 0.3);
+            }
+            100% { 
+                transform: rotate(360deg) scale(1);
+                box-shadow: 
+                    var(--shadow-xl),
+                    inset 0 0 30px rgba(255, 255, 255, 0.3),
+                    0 0 60px rgba(8, 145, 178, 0.2);
+            }
+        }
+
+        @keyframes moonGlow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        @keyframes moonSurface {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .moon:hover {
+            transform: scale(1.1);
+            box-shadow: 
+                var(--shadow-xl),
+                inset 0 0 40px rgba(255, 255, 255, 0.4),
+                0 0 80px rgba(8, 145, 178, 0.3);
+        }
+
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, 
+                var(--pastel-pink), 
+                var(--pastel-blue), 
+                var(--pastel-mint));
+            opacity: 0.3;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 20px;
+            height: 20px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 15px;
+            height: 15px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 25px;
+            height: 25px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(120deg); }
+            66% { transform: translateY(-10px) rotate(240deg); }
+        }
+
+        /* ===== HERO TEXT ===== */
+        .intro-text {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            font-weight: 400;
+        }
+
+        .identity-text {
+            font-size: 1.6rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            font-weight: 600;
+        }
+
+        .tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-coral), var(--accent-mint));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--border-medium);
+            border-radius: 50%;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            transition: all var(--transition-smooth);
+            box-shadow: var(--shadow-sm);
+            text-decoration: none;
+        }
+
+        .social-link:hover,
+        .social-link:focus {
+            background: rgba(8, 145, 178, 0.1);
+            border-color: var(--accent-cyan);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ===== GLASSMORPHISM HERO SUMMARY ===== */
+        .hero-summary {
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-summary-card {
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-backdrop);
+            -webkit-backdrop-filter: var(--glass-backdrop);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 3rem;
+            position: relative;
+            box-shadow: var(--glass-shadow);
+            transition: all var(--transition-smooth);
+            overflow: hidden;
+        }
+
+        .hero-summary-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.1) 25%, 
+                transparent 50%, 
+                rgba(8, 145, 178, 0.1) 75%, 
+                transparent 100%);
+            animation: shimmer 4s ease-in-out infinite;
+        }
+
+        .hero-summary-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                var(--pastel-pink) 0%, 
+                var(--pastel-blue) 25%, 
+                var(--pastel-mint) 50%, 
+                var(--pastel-lavender) 75%, 
+                var(--pastel-peach) 100%);
+            opacity: 0.1;
+            border-radius: 30px;
+            pointer-events: none;
+        }
+
+        .hero-summary-content {
+            position: relative;
+            z-index: 2;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .hero-summary-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 
+                var(--glass-shadow),
+                0 25px 50px rgba(8, 145, 178, 0.15);
+            border-color: rgba(8, 145, 178, 0.3);
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        /* ===== SECTION STYLES ===== */
+        .section {
+            padding: 6rem 2rem;
+            position: relative;
+            z-index: var(--z-content);
+        }
+
+        .section:nth-child(even) {
+            background: var(--secondary-bg);
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-coral));
+            border-<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thanattsitt Santisamranwilai - AI Creative Designer, Researcher & Scriptwriter. Bridging human creativity with artificial intelligence through innovative design, research, and storytelling.">
+    <meta name="keywords" content="AI Designer, Creative Researcher, UX/UI Design, Machine Learning, Digital Innovation, Scriptwriting, Thai Content Creator">
+    <meta name="author" content="Thanattsitt Santisamranwilai">
+    <title>Thanattsitt - AI Creative Designer, Researcher & Scriptwriter</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#0891B2">
+    
+    <!-- Meta Tags for PWA -->
+    <meta name="theme-color" content="#0891B2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Thanattsitt">
+    <meta name="msapplication-TileColor" content="#0891B2">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    
+    <!-- Open Graph Meta Tags - FIXED: Removed duplicates -->
+    <meta property="og:title" content="Thanattsitt Santisamranwilai - AI Creative Designer & Researcher">
+    <meta property="og:description" content="Bridging human creativity with artificial intelligence through innovative design, research, and storytelling.">
+    <meta property="og:url" content="https://pegearts.com">
+    <meta property="og:site_name" content="Pegearts Portfolio">
+    <meta property="og:image" content="https://pegearts.com/assets/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://pegearts.com">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@thanatsittn">
+    <meta name="twitter:creator" content="@thanatsittn">
+    <meta name="twitter:title" content="Thanattsitt Santisamranwilai - AI Creative Designer & Researcher">
+    <meta name="twitter:description" content="Bridging human creativity with artificial intelligence through innovative design, research, and storytelling.">
+    <meta name="twitter:image" content="https://pegearts.com/assets/images/twitter-card.png">
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         /* ===== CSS CUSTOM PROPERTIES ===== */
         :root {
