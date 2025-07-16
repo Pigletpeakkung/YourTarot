@@ -1,0 +1,2468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanatsitt - Where AI, Art, and Archetypes Meet</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gold: #FFD700;
+            --secondary-gold: #D4AF37;
+            --primary-purple: #1A1A2E;
+            --secondary-purple: #0F0F23;
+            --accent-purple: #2C2C54;
+            --text-light: #E6E6FA;
+            --glass-bg: rgba(26, 26, 46, 0.8);
+            --glass-border: rgba(212, 175, 55, 0.3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--secondary-purple) 0%, var(--primary-purple) 50%, #16213E 100%);
+            color: white;
+            overflow-x: hidden;
+            position: relative;
+            cursor: none;
+        }
+        
+        /* ===== CUSTOM CURSOR ===== */
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            mix-blend-mode: difference;
+            transition: transform 0.1s ease;
+        }
+        
+        .cursor-trail {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.7;
+        }
+        
+        /* ===== ENHANCED NIGHT SKY ===== */
+        .night-sky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .constellation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .constellation-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform-origin: left center;
+            opacity: 0;
+            animation: drawConstellation 8s ease-in-out infinite;
+        }
+        
+        @keyframes drawConstellation {
+            0%, 90%, 100% { opacity: 0; transform: scaleX(0); }
+            10%, 80% { opacity: 0.6; transform: scaleX(1); }
+        }
+        
+        .stars-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(2px 2px at 160px 30px, #fff, transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: sparkle 12s linear infinite;
+        }
+        
+        .stars-layer:nth-child(1) {
+            animation-duration: 15s;
+            opacity: 0.9;
+        }
+        
+        .stars-layer:nth-child(2) {
+            animation-duration: 20s;
+            animation-direction: reverse;
+            opacity: 0.7;
+            background-size: 300px 150px;
+        }
+        
+        .stars-layer:nth-child(3) {
+            animation-duration: 25s;
+            opacity: 0.5;
+            background-size: 400px 200px;
+        }
+        
+        @keyframes sparkle {
+            0% { transform: translateX(0) translateY(0) rotate(0deg); }
+            100% { transform: translateX(-200px) translateY(-100px) rotate(360deg); }
+        }
+        
+        /* Enhanced Shooting Stars */
+        .shooting-star {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, #fff, rgba(255,215,0,0.8), transparent);
+            animation: shooting 4s linear infinite;
+            opacity: 0;
+            box-shadow: 0 0 10px rgba(255,255,255,0.8);
+        }
+        
+        .shooting-star:nth-child(1) {
+            top: 15%;
+            left: 5%;
+            width: 120px;
+            animation-delay: 2s;
+            animation-duration: 5s;
+        }
+        
+        .shooting-star:nth-child(2) {
+            top: 65%;
+            left: 75%;
+            width: 180px;
+            animation-delay: 7s;
+            animation-duration: 4s;
+        }
+        
+        .shooting-star:nth-child(3) {
+            top: 35%;
+            left: 45%;
+            width: 100px;
+            animation-delay: 12s;
+            animation-duration: 6s;
+        }
+        
+        @keyframes shooting {
+            0% {
+                opacity: 0;
+                transform: translateX(0) translateY(0) rotate(-45deg) scale(0);
+            }
+            10% {
+                opacity: 1;
+                transform: translateX(20px) translateY(20px) rotate(-45deg) scale(1);
+            }
+            90% {
+                opacity: 1;
+                transform: translateX(280px) translateY(280px) rotate(-45deg) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(320px) translateY(320px) rotate(-45deg) scale(0);
+            }
+        }
+        
+        /* Enhanced Nebula */
+        .nebula {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(ellipse at 25% 25%, rgba(138, 43, 226, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 75% 75%, rgba(255, 215, 0, 0.1) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 20%, rgba(75, 0, 130, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 40%, rgba(255, 105, 180, 0.08) 0%, transparent 70%);
+            animation: nebula-drift 40s linear infinite;
+            filter: blur(1px);
+        }
+        
+        @keyframes nebula-drift {
+            0% { transform: rotate(0deg) translateX(0) scale(1); }
+            50% { transform: rotate(180deg) translateX(30px) scale(1.1); }
+            100% { transform: rotate(360deg) translateX(0) scale(1); }
+        }
+        
+        /* Floating Particles Enhanced */
+        .particle {
+            position: absolute;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.8) 0%, rgba(255, 215, 0, 0.3) 50%, transparent 100%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 8s ease-in-out infinite;
+            filter: blur(0.5px);
+        }
+        
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 0.6;
+            }
+            25% { 
+                transform: translateY(-30px) rotate(90deg) scale(1.1);
+                opacity: 1;
+            }
+            50% { 
+                transform: translateY(-20px) rotate(180deg) scale(0.9);
+                opacity: 0.8;
+            }
+            75% { 
+                transform: translateY(-40px) rotate(270deg) scale(1.2);
+                opacity: 1;
+            }
+        }
+        
+        /* Content Layer */
+        .content-layer {
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* ===== ENHANCED NAVBAR ===== */
+        .navbar {
+            background: rgba(26, 26, 46, 0.05) !important;
+            backdrop-filter: blur(20px);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 1.2rem 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .navbar.scrolled {
+            background: rgba(26, 26, 46, 0.95) !important;
+            backdrop-filter: blur(30px);
+            padding: 0.8rem 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-gold) !important;
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+        }
+        
+        .nav-link {
+            color: white !important;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-weight: 500;
+            position: relative;
+            padding: 0.8rem 1.2rem !important;
+            border-radius: 15px;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+            transition: all 0.4s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-gold) !important;
+            background: rgba(255, 215, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 80%;
+        }
+        
+        /* ===== SPECTACULAR MOON ANIMATION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 1000px;
+            z-index: 10;
+        }
+        
+        .moon-container {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 3rem;
+            position: relative;
+            perspective: 1000px;
+        }
+        
+        .moon {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0.6));
+        }
+        
+        /* Enhanced Moon Aura Effects */
+        .moon::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            left: -60px;
+            right: -60px;
+            bottom: -60px;
+            background: radial-gradient(
+                circle,
+                rgba(255, 255, 255, 0.2) 0%,
+                rgba(255, 255, 255, 0.15) 20%,
+                rgba(255, 215, 0, 0.1) 40%,
+                rgba(255, 215, 0, 0.05) 60%,
+                rgba(255, 215, 0, 0.02) 80%,
+                transparent 100%
+            );
+            border-radius: 50%;
+            animation: aura-pulse 6s ease-in-out infinite;
+            z-index: -1;
+        }
+        
+        .moon::after {
+            content: '';
+            position: absolute;
+            top: -90px;
+            left: -90px;
+            right: -90px;
+            bottom: -90px;
+            background: radial-gradient(
+                circle,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 215, 0, 0.08) 30%,
+                rgba(255, 215, 0, 0.04) 50%,
+                rgba(255, 215, 0, 0.02) 70%,
+                transparent 100%
+            );
+            border-radius: 50%;
+            animation: aura-pulse 8s ease-in-out infinite reverse;
+            z-index: -2;
+        }
+        
+        @keyframes aura-pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+        
+        /* Moon Phase Animations */
+        .moon-phase {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 2;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .moon-phase.new-moon {
+            background: linear-gradient(135deg, #1A1A2E 0%, #2C2C54 50%, #E6E6FA 100%);
+            box-shadow: 
+                inset 20px 0 40px rgba(26, 26, 46, 0.8),
+                0 0 40px rgba(255, 255, 255, 0.3),
+                0 0 80px rgba(255, 255, 255, 0.1);
+        }
+        
+        .moon-phase.waxing {
+            background: linear-gradient(90deg, #1A1A2E 40%, #E6E6FA 40%);
+            box-shadow: 
+                inset 15px 0 30px rgba(26, 26, 46, 0.6),
+                0 0 50px rgba(255, 255, 255, 0.4),
+                0 0 100px rgba(255, 255, 255, 0.2);
+        }
+        
+        .moon-phase.full-moon {
+            background: radial-gradient(circle at 30% 30%, #FFFFFF 0%, #F0F0F0 30%, #E6E6FA 80%, #D0D0D0 100%);
+            box-shadow: 
+                inset -10px -10px 20px rgba(0, 0, 0, 0.1),
+                inset 10px 10px 20px rgba(255, 255, 255, 0.3),
+                0 0 60px rgba(255, 255, 255, 0.8),
+                0 0 120px rgba(255, 255, 255, 0.4),
+                0 0 180px rgba(255, 215, 0, 0.3);
+        }
+        
+        /* Enhanced Orbiting Elements */
+        .moon-orbit-system {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            z-index: 3;
+        }
+        
+        .orbit-ring {
+            position: absolute;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .orbit-1 {
+            width: 340px;
+            height: 340px;
+            animation: rotate 12s linear infinite;
+        }
+        
+        .orbit-2 {
+            width: 380px;
+            height: 380px;
+            animation: rotate 18s linear infinite reverse;
+        }
+        
+        .orbit-3 {
+            width: 420px;
+            height: 420px;
+            animation: rotate 25s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        /* Celestial Bodies */
+        .celestial-body {
+            position: absolute;
+            border-radius: 50%;
+            animation: celestial-float 4s ease-in-out infinite;
+        }
+        
+        .star {
+            width: 12px;
+            height: 12px;
+            background: radial-gradient(circle, #FFD700 0%, #FFA500 100%);
+            top: 0;
+            left: 50%;
+            margin-left: -6px;
+            box-shadow: 
+                0 0 15px #FFD700,
+                0 0 30px #FFD700,
+                0 0 45px #FFD700;
+            animation: star-pulse 3s ease-in-out infinite;
+        }
+        
+        .satellite {
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, #87CEEB 0%, #4682B4 100%);
+            top: 0;
+            left: 50%;
+            margin-left: -4px;
+            box-shadow: 0 0 10px #87CEEB;
+            animation: satellite-blink 2s ease-in-out infinite;
+        }
+        
+        .comet {
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, #FF69B4 0%, #8A2BE2 100%);
+            top: 0;
+            left: 50%;
+            margin-left: -3px;
+            box-shadow: 0 0 12px #FF69B4;
+        }
+        
+        @keyframes celestial-float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-5px) scale(1.1); }
+        }
+        
+        @keyframes star-pulse {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 15px #FFD700,
+                    0 0 30px #FFD700,
+                    0 0 45px #FFD700;
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 
+                    0 0 25px #FFD700,
+                    0 0 50px #FFD700,
+                    0 0 75px #FFD700;
+                transform: scale(1.3);
+            }
+        }
+        
+        @keyframes satellite-blink {
+            0%, 80%, 100% { opacity: 1; }
+            85%, 95% { opacity: 0.3; }
+        }
+        
+        /* Moon Surface Details */
+        .moon-crater {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, transparent 70%);
+            z-index: 4;
+        }
+        
+        .crater-1 {
+            width: 20px;
+            height: 20px;
+            top: 30%;
+            left: 25%;
+            animation: crater-shadow 8s ease-in-out infinite;
+        }
+        
+        .crater-2 {
+            width: 15px;
+            height: 15px;
+            top: 60%;
+            right: 30%;
+            animation: crater-shadow 8s ease-in-out infinite 2s;
+        }
+        
+        .crater-3 {
+            width: 12px;
+            height: 12px;
+            top: 45%;
+            left: 60%;
+            animation: crater-shadow 8s ease-in-out infinite 4s;
+        }
+        
+        @keyframes crater-shadow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* ===== ENHANCED TYPOGRAPHY ===== */
+        .intro-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            background: linear-gradient(135deg, var(--primary-gold) 0%, #FFF 50%, var(--secondary-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            position: relative;
+        }
+        
+        .intro-text::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+            animation: underline-grow 2s ease-out 3s forwards;
+        }
+        
+        @keyframes underline-grow {
+            0% { width: 0; }
+            100% { width: 200px; }
+        }
+        
+        .identity-text {
+            font-size: 1.4rem;
+            color: var(--secondary-gold);
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+        
+        .tagline {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+            opacity: 0;
+            transform: translateY(20px);
+            margin-bottom: 3rem;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+            font-weight: 400;
+        }
+        
+        /* ===== ENHANCED HERO SUMMARY ===== */
+        .hero-summary {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            opacity: 0;
+            transform: translateY(40px);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .summary-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .growth-mindset {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--secondary-gold);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .growth-mindset::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 3rem;
+            color: var(--primary-gold);
+            opacity: 0.6;
+        }
+        
+        /* ===== ENHANCED SKILL CARDS ===== */
+        .credentials-section {
+            padding: 6rem 0;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        
+        .skill-category {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            height: 100%;
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transition: all 0.6s ease;
+        }
+        
+        .skill-category:hover::before {
+            left: 100%;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--primary-gold);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                0 0 40px rgba(255, 215, 0, 0.2);
+        }
+        
+        .skill-category h4 {
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .skill-tag {
+            background: rgba(255, 215, 0, 0.15);
+            color: var(--text-light);
+            padding: 0.8rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .skill-tag:hover {
+            background: rgba(255, 215, 0, 0.3);
+            border-color: var(--primary-gold);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        /* ===== ENHANCED CARDS ===== */
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            backdrop-filter: blur(20px);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--secondary-gold), var(--primary-gold));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .card:hover::before {
+            opacity: 1;
+        }
+        
+        .card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                0 0 50px rgba(255, 215, 0, 0.3);
+            border-color: var(--primary-gold);
+        }
+        
+        /* ===== ENHANCED CTA BUTTONS ===== */
+        .cta-btn {
+            padding: 2rem 2.5rem;
+            border: none;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            min-height: 120px;
+        }
+        
+        .cta-btn.primary {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-gold) 50%, var(--primary-gold) 100%);
+            color: var(--primary-purple);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+        }
+        
+        .cta-btn.primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: all 0.6s ease;
+        }
+        
+        .cta-btn.primary:hover::before {
+            left: 100%;
+        }
+        
+        .cta-btn.primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.5);
+            color: var(--primary-purple);
+            text-decoration: none;
+        }
+        
+        /* ===== SCROLL INDICATOR ===== */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 215, 0, 0.2);
+            z-index: 1000;
+        }
+        
+        .scroll-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-gold), var(--secondary-gold));
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+        
+        /* ===== FLOATING ACTION BUTTON ===== */
+        .floating-menu {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+        }
+        
+        .fab {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            color: var(--primary-purple);
+            font-size: 1.5rem;
+        }
+        
+        .fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5);
+        }
+        
+        /* ===== RESPONSIVE ENHANCEMENTS ===== */
+        @media (max-width: 768px) {
+            .moon-container {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .orbit-1 { width: 240px; height: 240px; }
+            .orbit-2 { width: 270px; height: 270px; }
+            .orbit-3 { width: 300px; height: 300px; }
+            
+            .intro-text {
+                font-size: 2.2rem;
+            }
+            
+            .hero-summary {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .custom-cursor,
+            .cursor-trail {
+                display: none;
+            }
+            
+            body {
+                cursor: auto;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .moon-container {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .intro-text {
+                font-size: 1.8rem;
+            }
+            
+            .cta-btn {
+                min-height: 80px;
+                padding: 1.5rem;
+            }
+        }
+        
+        /* ===== LOADING ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* ===== ACCESSIBILITY ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .custom-cursor,
+            .cursor-trail {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress"></div>
+    </div>
+
+    <!-- Enhanced Night Sky Background -->
+    <div class="night-sky">
+        <!-- Constellation Layer -->
+        <div class="constellation" id="constellation"></div>
+        
+        <!-- Nebula Layer -->
+        <div class="nebula"></div>
+        
+        <!-- Star Layers -->
+        <div class="stars-layer"></div>
+        <div class="stars-layer"></div>
+        <div class="stars-layer"></div>
+        
+        <!-- Shooting Stars -->
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        
+        <!-- Dynamic Elements Container -->
+        <div id="twinkle-container"></div>
+        <div id="particles-container"></div>
+    </div>
+
+    <!-- Content Layer -->
+    <div class="content-layer">
+        <!-- Enhanced Navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="#home">✨ Thanatsitt</a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">🏠 Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">👤 About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portfolio">💫 Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#stories">📖 Stories</a>
+                        </li>
+                        <li class="nav-item">
+                                                        <a class="nav-link" href="#contact">📧 Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Enhanced Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="hero-content">
+                            <!-- Spectacular Moon Animation -->
+                            <div class="moon-container">
+                                <div class="moon">
+                                    <!-- Moon Phases -->
+                                    <div class="moon-phase new-moon" id="newMoon">
+                                        <div class="moon-crater crater-1"></div>
+                                        <div class="moon-crater crater-2"></div>
+                                        <div class="moon-crater crater-3"></div>
+                                    </div>
+                                    <div class="moon-phase waxing" id="waxingMoon">
+                                        <div class="moon-crater crater-1"></div>
+                                        <div class="moon-crater crater-2"></div>
+                                        <div class="moon-crater crater-3"></div>
+                                    </div>
+                                    <div class="moon-phase full-moon" id="fullMoon">
+                                        <div class="moon-crater crater-1"></div>
+                                        <div class="moon-crater crater-2"></div>
+                                        <div class="moon-crater crater-3"></div>
+                                    </div>
+                                    
+                                    <!-- Orbiting System -->
+                                    <div class="moon-orbit-system">
+                                        <div class="orbit-ring orbit-1">
+                                            <div class="celestial-body star"></div>
+                                        </div>
+                                        <div class="orbit-ring orbit-2">
+                                            <div class="celestial-body satellite"></div>
+                                        </div>
+                                        <div class="orbit-ring orbit-3">
+                                            <div class="celestial-body comet"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Enhanced Text Content -->
+                            <h1 class="intro-text" id="introText">Hello, I'm Thanatsitt</h1>
+                            <p class="identity-text" id="identityText">✨ Designer • 📝 Writer • 🔬 Researcher • 🤖 AI Innovator</p>
+                            <p class="tagline" id="tagline">"Where AI, Art, and Archetypes Meet"</p>
+                            
+                            <!-- Enhanced Summary -->
+                            <div class="hero-summary" id="heroSummary">
+                                <p class="summary-text">
+                                    Born in Bangkok, educated in London. From fashion design graduate to self-taught coder, 
+                                    I bridge ancient Thai wisdom with cutting-edge AI technology, creating human-centered experiences 
+                                    that honor both innovation and tradition.
+                                </p>
+                                <p class="growth-mindset">
+                                    When traditional paths close, we discover abilities we never knew we had. 
+                                    Coding became my unexpected language for human connection and cultural preservation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Skills & Credentials Section -->
+        <section class="credentials-section" id="about">
+            <div class="container">
+                <!-- Education Badge -->
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8">
+                        <div class="education-badge d-flex align-items-center justify-content-center flex-column flex-md-row">
+                            <span class="credential-icon mb-2 mb-md-0 me-md-3">🎓</span>
+                            <div class="credential-text text-center text-md-start">
+                                <strong>BA Fashion Design with Honors</strong>
+                                <span>London College of Fashion, University of the Arts London</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Skills Grid -->
+                <div class="row g-4 mb-5">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="skill-category">
+                            <h4>🎨 Design & Creative</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">UI/UX Design</span>
+                                <span class="skill-tag">Visual Identity</span>
+                                <span class="skill-tag">Figma Advanced</span>
+                                <span class="skill-tag">Adobe Creative Suite</span>
+                                <span class="skill-tag">Design Systems</span>
+                                <span class="skill-tag">Prototyping</span>
+                                <span class="skill-tag">Motion Graphics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <div class="skill-category">
+                            <h4>💻 Technical Excellence</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">JavaScript ES6+</span>
+                                <span class="skill-tag">React.js</span>
+                                <span class="skill-tag">HTML5/CSS3</span>
+                                <span class="skill-tag">GSAP Animation</span>
+                                <span class="skill-tag">Webflow Expert</span>
+                                <span class="skill-tag">AI/ML Integration</span>
+                                <span class="skill-tag">API Development</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <div class="skill-category">
+                            <h4>🧠 Research & Strategy</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Jungian Psychology</span>
+                                <span class="skill-tag">Cultural Analysis</span>
+                                <span class="skill-tag">User Research</span>
+                                <span class="skill-tag">AI Ethics</span>
+                                <span class="skill-tag">Cross-Cultural Design</span>
+                                <span class="skill-tag">Data Visualization</span>
+                                <span class="skill-tag">Strategic Planning</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <div class="skill-category">
+                            <h4>✍️ Communication & Leadership</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Creative Writing</span>
+                                <span class="skill-tag">Technical Documentation</span>
+                                <span class="skill-tag">Thai/English Fluent</span>
+                                <span class="skill-tag">Storytelling</span>
+                                <span class="skill-tag">Community Building</span>
+                                <span class="skill-tag">Workshop Facilitation</span>
+                                <span class="skill-tag">Public Speaking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Achievements -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="achievements">
+                            <div class="achievement-item d-flex align-items-center">
+                                <span class="achievement-icon me-3">🚀</span>
+                                <div class="achievement-text">
+                                    <strong>Co-founded ThannxAI</strong> - Human-centered AI platform focusing on ethical technology and cultural sensitivity
+                                </div>
+                            </div>
+                            <div class="achievement-item d-flex align-items-center">
+                                <span class="achievement-icon me-3">🎨</span>
+                                <div class="achievement-text">
+                                    <strong>Created Pegearts</strong> - AI art exploring cultural archetypes, featured in digital art exhibitions
+                                </div>
+                            </div>
+                            <div class="achievement-item d-flex align-items-center">
+                                <span class="achievement-icon me-3">🌉</span>
+                                <div class="achievement-text">
+                                    <strong>Self-taught Developer</strong> - Mastered coding while maintaining creative practice, bridging art and technology
+                                </div>
+                            </div>
+                            <div class="achievement-item d-flex align-items-center">
+                                <span class="achievement-icon me-3">📚</span>
+                                <div class="achievement-text">
+                                    <strong>Published Author</strong> - Cultural identity stories and AI ethics research, contributing to academic discussions
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Featured Work Section -->
+        <section class="featured" id="portfolio">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <h2>✨ Latest Creation</h2>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="card h-100">
+                            <div class="work-image-placeholder position-relative">
+                                <div class="image-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                    <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#projectModal">
+                                        <span class="view-icon">👁️</span> Explore Project
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="work-category mb-3">🎭 AI Art & Cultural Research</div>
+                                <h3 class="card-title mb-3">Lament of the Twilight Goddess</h3>
+                                <p class="card-text mb-4">A divine figure weeps golden tears at the edge of dreams, exploring the archetype of the grieving goddess through AI-generated visuals and Thai mythology. This piece represents my journey of transforming personal pain into universal beauty, combining ancient wisdom with modern technology.</p>
+                                <div class="work-meta">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <span class="me-2">🎨</span>
+                                        <small><strong>Tools:</strong> Midjourney, Photoshop, Cultural Research, Jungian Analysis</small>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <span class="me-2">📅</span>
+                                        <small><strong>Completed:</strong> December 2024</small>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <span class="me-2">🌍</span>
+                                        <small><strong>Inspiration:</strong> Thai Buddhist concepts of suffering and compassion</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-2">🏆</span>
+                                        <small><strong>Recognition:</strong> Featured in Digital Art Collective Exhibition</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="card recent-works h-100">
+                            <div class="card-body p-4">
+                                <h4 class="card-title mb-4">🌟 Recent Explorations</h4>
+                                <div class="mini-works">
+                                    <div class="mini-work">
+                                        <span class="mini-icon me-3">📖</span>
+                                        <div class="mini-info">
+                                            <strong>Shadows of Chiang Mai</strong>
+                                            <small class="text-muted d-block">Interactive Short Story • Cultural Identity</small>
+                                            <small class="text-success">Recently Published</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mini-work">
+                                        <span class="mini-icon me-3">🤖</span>
+                                        <div class="mini-info">
+                                            <strong>ThannxAI Chat Interface</strong>
+                                            <small class="text-muted d-block">UI Design • Human-Centered AI</small>
+                                            <small class="text-info">In Development</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mini-work">
+                                        <span class="mini-icon me-3">🧠</span>
+                                        <div class="mini-info">
+                                            <strong>AI as Modern Oracle</strong>
+                                            <small class="text-muted d-block">Research Paper • Psychology & Technology</small>
+                                            <small class="text-warning">Peer Review</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mini-work">
+                                        <span class="mini-icon me-3">🎭</span>
+                                        <div class="mini-info">
+                                            <strong>Digital Mandala Series</strong>
+                                            <small class="text-muted d-block">Generative Art • Sacred Geometry</small>
+                                            <small class="text-primary">Collection Complete</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mini-work">
+                                        <span class="mini-icon me-3">🌸</span>
+                                        <div class="mini-info">
+                                            <strong>Bangkok Memory Palace</strong>
+                                            <small class="text-muted d-block">VR Experience • Cultural Preservation</small>
+                                            <small class="text-danger">Concept Phase</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Call to Actions Section -->
+        <section class="ctas" id="contact">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="text-center">
+                            <h2>🌌 Explore My Universe</h2>
+                            <p class="cta-description">
+                                Dive deeper into the intersection of technology, creativity, and cultural wisdom. 
+                                Each path offers a different lens into how ancient insights can guide modern innovation 
+                                and create meaningful human connections.
+                            </p>
+                            
+                            <!-- Enhanced CTA Grid -->
+                            <div class="row g-4 mb-5">
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#portfolio" class="cta-btn primary text-decoration-none">
+                                        <span class="cta-icon">🎨</span>
+                                        <div class="cta-text">
+                                            <strong>Design Portfolio</strong>
+                                            <span>Creative projects & collaborations</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#stories" class="cta-btn primary text-decoration-none">
+                                        <span class="cta-icon">📚</span>
+                                        <div class="cta-text">
+                                            <strong>Stories & Research</strong>
+                                            <span>Fiction rooted in cultural identity</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="col-lg-4 col-md-12">
+                                    <a href="#ai-projects" class="cta-btn primary text-decoration-none">
+                                        <span class="cta-icon">🤖</span>
+                                        <div class="cta-text">
+                                            <strong>AI Innovations</strong>
+                                            <span>Technology with human soul</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Secondary CTAs -->
+                            <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+                                <a href="#about" class="secondary-btn">🌟 Discover My Journey</a>
+                                <a href="#" class="secondary-btn" data-bs-toggle="modal" data-bs-target="#contactModal">💌 Start a Conversation</a>
+                                <a href="#blog" class="secondary-btn">📝 Read My Thoughts</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="floating-menu">
+        <div class="fab" id="fabButton" title="Quick Actions">
+            ⚡
+        </div>
+    </div>
+
+    <!-- Enhanced Modals -->
+    <div class="modal fade" id="projectModal" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">🎭 Lament of the Twilight Goddess</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="work-image-placeholder" style="height: 400px; border-radius: 15px;">
+                                <div class="position-absolute top-50 start-50 translate-middle text-center">
+                                    <span style="font-size: 4rem; opacity: 0.6;">🌙</span>
+                                    <p class="mt-3 text-muted">Interactive Preview</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Project Gallery -->
+                            <div class="mt-4">
+                                <h6 style="color: var(--primary-gold);">🖼️ Project Gallery</h6>
+                                <div class="row g-2">
+                                    <div class="col-4">
+                                        <div class="work-image-placeholder" style="height: 80px; border-radius: 8px; cursor: pointer;">
+                                            <span style="font-size: 1.5rem;">🌅</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="work-image-placeholder" style="height: 80px; border-radius: 8px; cursor: pointer;">
+                                            <span style="font-size: 1.5rem;">🌙</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="work-image-placeholder" style="height: 80px; border-radius: 8px; cursor: pointer;">
+                                            <span style="font-size: 1.5rem;">🌟</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <span class="work-category">🎭 AI Art & Cultural Research</span>
+                            </div>
+                            
+                            <p class="mb-4">A divine figure weeps golden tears at the edge of dreams, exploring the archetype of the grieving goddess through AI-generated visuals and Thai mythology. This immersive piece represents my journey of transforming personal pain into universal beauty.</p>
+                            
+                            <h6 class="mb-3" style="color: var(--primary-gold);">🔍 Project Deep Dive:</h6>
+                            <div class="row g-3 mb-4">
+                                <div class="col-12">
+                                    <div class="p-3" style="background: rgba(255, 215, 0, 0.1); border-radius: 10px;">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <span class="me-2">🛠️</span>
+                                            <strong>Technical Stack:</strong>
+                                        </div>
+                                        <span class="text-muted">Midjourney AI, Adobe Photoshop, After Effects, Cultural Research Database</span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="p-3" style="background: rgba(255, 215, 0, 0.1); border-radius: 10px;">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <span class="me-2">⏱️</span>
+                                            <strong>Development Time:</strong>
+                                        </div>
+                                        <span class="text-muted">3 months (Research: 1 month, Creation: 2 months)</span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="p-3" style="background: rgba(255, 215, 0, 0.1); border-radius: 10px;">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <span class="me-2">🎯</span>
+                                            <strong>Core Concept:</strong>
+                                        </div>
+                                        <span class="text-muted">Merging Jungian archetypes with Thai Buddhist philosophy through AI art</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4" style="background: rgba(255, 215, 0, 0.08); border-radius: 15px; border-left: 4px solid var(--primary-gold);">
+                                <h6 style="color: var(--primary-gold); margin-bottom: 0.8rem;">💭 Artist's Reflection:</h6>
+                                <p class="mb-0" style="font-style: italic; color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">
+                                    "This piece emerged from a deeply personal meditation on loss and transformation. 
+                                    Using AI as a collaborator, I explored how ancient Thai concepts of divine suffering 
+                                    can speak to modern experiences of grief and renewal. The goddess weeps not in despair, 
+                                    but in the profound recognition of beauty within pain."
+                                </p>
+                            </div>
+                            
+                            <!-- Impact Metrics -->
+                            <div class="mt-4">
+                                <h6 style="color: var(--primary-gold);">📊 Impact & Recognition:</h6>
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <div class="text-center p-2" style="background: rgba(255, 215, 0, 0.1); border-radius: 8px;">
+                                            <div style="color: var(--primary-gold); font-weight: bold;">2.5K</div>
+                                            <small>Views</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="text-center p-2" style="background: rgba(255, 215, 0, 0.1); border-radius: 8px;">
+                                            <div style="color: var(--primary-gold); font-weight: bold;">15</div>
+                                            <small>Awards</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="#portfolio" class="btn btn-primary">🎨 View Full Portfolio</a>
+                    <a href="#contact" class="btn btn-outline-light">💬 Discuss Collaboration</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">💌 Start a Meaningful Conversation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label for="contactName" class="form-label">✨ Your Name</label>
+                                    <input type="text" class="form-control" id="contactName" required 
+                                           placeholder="How should I address you?">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactEmail" class="form-label">📧 Email Address</label>
+                                    <input type="email" class="form-control" id="contactEmail" required 
+                                           placeholder="your@email.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactSubject" class="form-label">🎯 What brings you here?</label>
+                                    <select class="form-select" id="contactSubject" required>
+                                        <option value="">Choose your adventure...</option>
+                                        <option value="collaboration">🤝 Collaboration Opportunity</option>
+                                        <option value="design">🎨 Design Project</option>
+                                        <option value="ai">🤖 AI & Technology Discussion</option>
+                                        <option value="writing">📖 Writing & Stories</option>
+                                        <option value="consultation">💡 Consultation</option>
+                                        <option value="speaking">🎤 Speaking Engagement</option>
+                                        <option value="other">💭 Something Else Amazing</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactMessage" class="form-label">💬 Your Message</label>
+                                    <textarea class="form-control" id="contactMessage" rows="5" required 
+                                              placeholder="Tell me about your project, idea, vision, or what you'd like to explore together. I'm excited to hear your story!"></textarea>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="newsletterCheck">
+                                    <label class="form-check-label" for="newsletterCheck">
+                                        📬 Keep me updated on your latest projects and insights
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3" style="background: rgba(255, 215, 0, 0.1); border-radius: 15px; height: 100%;">
+                                <h6 style="color: var(--primary-gold);">🌟 Let's Create Together</h6>
+                                <p class="small mb-3">I believe in the power of meaningful connections and collaborative creativity. Whether you're looking to:</p>
+                                
+                                <div class="mb-3">
+                                    <div class="d-flex align-items-start mb-2">
+                                        <span class="me-2">🎨</span>
+                                        <small>Bring a design vision to life</small>
+                                    </div>
+                                    <div class="d-flex align-items-start mb-2">
+                                        <span class="me-2">🤖</span>
+                                        <small>Explore AI's creative potential</small>
+                                    </div>
+                                    <div class="d-flex align-items-start mb-2">
+                                        <span class="me-2">📚</span>
+                                        <small>Collaborate on storytelling</small>
+                                    </div>
+                                    <div class="d-flex align-items-start mb-2">
+                                        <span class="me-2">🌍</span>
+                                        <small>Discuss cultural archotypes</small>
+                                    </div>
+                                </div>
+                                
+                                <p class="small text-muted">I'm here to listen, learn, and create something beautiful together.</p>
+                                
+                                <div class="mt-3 pt-3" style="border-top: 1px solid rgba(255, 215, 0, 0.2);">
+                                    <small class="text-muted">
+                                        <strong>Response time:</strong> Usually within 24 hours<br>
+                                        <strong>Time zone:</strong> GMT+7 (Bangkok)
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Maybe Later</button>
+                    <button type="submit" form="contactForm" class="btn btn-primary">
+                        ✨ Send Message
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Enhanced JavaScript -->
+    <script>
+        // Register GSAP plugins
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // ===== CUSTOM CURSOR SYSTEM =====
+        class CustomCursor {
+            constructor() {
+                this.cursor = document.querySelector('.custom-cursor');
+                this.trails = [];
+                this.init();
+            }
+            
+            init() {
+                if (window.innerWidth <= 768) return; // Disable on mobile
+                
+                // Create cursor trails
+                for (let i = 0; i < 10; i++) {
+                    const trail = document.createElement('div');
+                    trail.className = 'cursor-trail';
+                    trail.style.animationDelay = `${i * 0.05}s`;
+                    document.body.appendChild(trail);
+                    this.trails.push({element: trail, x: 0, y: 0});
+                }
+                
+                this.addEventListeners();
+            }
+            
+            addEventListeners() {
+                let mouseX = 0, mouseY = 0;
+                
+                document.addEventListener('mousemove', (e) => {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                    
+                    gsap.to(this.cursor, {
+                        x: mouseX - 10,
+                        y: mouseY - 10,
+                        duration: 0.1
+                    });
+                    
+                    this.updateTrails(mouseX, mouseY);
+                });
+                
+                // Cursor interactions
+                const interactiveElements = document.querySelectorAll('a, button, .card, .skill-tag');
+                interactiveElements.forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        gsap.to(this.cursor, { scale: 1.5, duration: 0.3 });
+                    });
+                    el.addEventListener('mouseleave', () => {
+                        gsap.to(this.cursor, { scale: 1, duration: 0.3 });
+                    });
+                });
+            }
+            
+            updateTrails(x, y) {
+                this.trails.forEach((trail, index) => {
+                    gsap.to(trail.element, {
+                        x: x - 3 - (index * 2),
+                        y: y - 3 - (index * 2),
+                        duration: 0.3 + (index * 0.02),
+                        ease: "power2.out"
+                    });
+                });
+            }
+        }
+        
+        // ===== ENHANCED NIGHT SKY =====
+        function createEnhancedNightSky() {
+            const twinkleContainer = document.getElementById('twinkle-container');
+            const particlesContainer = document.getElementById('particles-container');
+            const constellationContainer = document.getElementById('constellation');
+            
+            // Create constellation lines
+            for (let i = 0; i < 8; i++) {
+                const line = document.createElement('div');
+                line.className = 'constellation-line';
+                line.style.left = Math.random() * 80 + '%';
+                line.style.top = Math.random() * 80 + '%';
+                line.style.width = Math.random() * 150 + 50 + 'px';
+                line.style.transform = `rotate(${Math.random() * 360}deg)`;
+                line.style.animationDelay = Math.random() * 8 + 's';
+                constellationContainer.appendChild(line);
+            }
+            
+            // Enhanced twinkling stars
+            for (let i = 0; i < 80; i++) {
+                const star = document.createElement('div');
+                star.className = 'twinkle-star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = Math.random() * 4 + 1 + 'px';
+                star.style.height = star.style.width;
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.animationDuration = (Math.random() * 4 + 2) + 's';
+                
+                // Random colors for some stars
+                if (Math.random() > 0.8) {
+                    const colors = ['#FFD700', '#87CEEB', '#FF69B4', '#98FB98'];
+                    star.style.background = colors[Math.floor(Math.random() * colors.length)];
+                }
+                
+                twinkleContainer.appendChild(star);
+            }
+            
+            // Enhanced floating particles
+            for (let i = 0; i < 25; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.width = Math.random() * 6 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 6 + 4) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // ===== SCROLL PROGRESS INDICATOR =====
+        function initScrollProgress() {
+            const progressBar = document.querySelector('.scroll-progress');
+            
+            window.addEventListener('scroll', () => {
+                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (window.scrollY / windowHeight) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+        }
+        
+        // ===== ENHANCED NAVBAR =====
+        function initEnhancedNavbar() {
+            const navbar = document.getElementById('navbar');
+            let lastScrollY = window.scrollY;
+            
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+                
+                if (currentScrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                
+                // Hide/show navbar based on scroll direction
+                if (currentScrollY > lastScrollY && currentScrollY > 300) {
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    navbar.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollY = currentScrollY;
+            });
+        }
+        
+        // ===== SPECTACULAR MOON ANIMATION SYSTEM =====
+        function initMoonAnimation() {
+            const timeline = gsap.timeline({ delay: 0.8 });
+            
+            // Enhanced moon phase transitions with more dramatic effects
+            timeline
+                // New Moon Phase
+                .to("#newMoon", { 
+                    opacity: 1, 
+                    scale: 1.1,
+                    rotation: 5,
+                    duration: 1.5,
+                    ease: "power2.inOut"
+                })
+                .to("#introText", { 
+                    opacity: 1, 
+                    y: 0, 
+                    scale: 1.05,
+                    duration: 1.2,
+                    ease: "back.out(1.7)"
+                }, "-=0.8")
+                
+                // Transition to Waxing
+                .to("#newMoon", { 
+                    opacity: 0, 
+                    scale: 0.9,
+                    rotation: -5,
+                    duration: 0.8 
+                }, "+=1")
+                .to("#waxingMoon", { 
+                    opacity: 1, 
+                    scale: 1.1,
+                    rotation: 10,
+                    duration: 1.5,
+                    ease: "elastic.out(1, 0.5)"
+                })
+                .to("#identityText", { 
+                    opacity: 1, 
+                    y: 0,
+                    letterSpacing: "3px",
+                    duration: 1.3,
+                    ease: "power2.out"
+                }, "-=0.8")
+                
+                // Transition to Full Moon
+                .to("#waxingMoon", { 
+                    opacity: 0, 
+                    scale: 0.8,
+                    rotation: -10,
+                                       duration: 0.8 
+                }, "+=1.2")
+                .to("#fullMoon", { 
+                    opacity: 1, 
+                    scale: 1.2,
+                    rotation: 360,
+                    duration: 2,
+                    ease: "power2.inOut"
+                })
+                .to("#tagline", { 
+                    opacity: 1, 
+                    y: 0,
+                    scale: 1.02,
+                    duration: 1.5,
+                    ease: "back.out(1.7)"
+                }, "-=1")
+                
+                // Hero summary with enhanced entrance
+                .to("#heroSummary", { 
+                    opacity: 1, 
+                    y: 0,
+                    scale: 1,
+                    duration: 1.8,
+                    ease: "power2.out"
+                }, "+=0.5")
+                
+                // Final moon stabilization with gentle pulse
+                .to("#fullMoon", {
+                    scale: 1,
+                    rotation: 360,
+                    duration: 1.5,
+                    ease: "elastic.out(1, 0.3)"
+                })
+                
+                // Credentials section entrance
+                .to("#about", { 
+                    opacity: 1, 
+                    y: 0, 
+                    duration: 2,
+                    ease: "power2.out"
+                }, "+=0.8");
+                
+            // Continuous moon glow animation
+            gsap.to("#fullMoon", {
+                filter: "drop-shadow(0 0 60px rgba(255, 215, 0, 0.8))",
+                duration: 3,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                delay: 8
+            });
+            
+            // Orbiting elements enhanced animation
+            gsap.to(".orbit-1", {
+                rotation: 360,
+                duration: 12,
+                repeat: -1,
+                ease: "none"
+            });
+            
+            gsap.to(".orbit-2", {
+                rotation: -360,
+                duration: 18,
+                repeat: -1,
+                ease: "none"
+            });
+            
+            gsap.to(".orbit-3", {
+                rotation: 360,
+                duration: 25,
+                repeat: -1,
+                ease: "none"
+            });
+        }
+        
+        // ===== ENHANCED SCROLL ANIMATIONS =====
+        function initScrollAnimations() {
+            // Skill categories with staggered entrance
+            gsap.from(".skill-category", {
+                scrollTrigger: {
+                    trigger: ".credentials-section",
+                    start: "top 75%",
+                    end: "bottom 25%",
+                    toggleActions: "play none none reverse"
+                },
+                y: 60,
+                opacity: 0,
+                scale: 0.9,
+                rotation: 5,
+                duration: 1,
+                stagger: {
+                    amount: 0.8,
+                    grid: [2, 2],
+                    from: "start"
+                },
+                ease: "back.out(1.7)"
+            });
+            
+            // Skill tags individual animation
+            gsap.from(".skill-tag", {
+                scrollTrigger: {
+                    trigger: ".skill-tags",
+                    start: "top 80%"
+                },
+                y: 20,
+                opacity: 0,
+                scale: 0.8,
+                duration: 0.6,
+                stagger: {
+                    amount: 1.2,
+                    from: "random"
+                },
+                ease: "elastic.out(1, 0.5)"
+            });
+            
+            // Achievement items with slide effect
+            gsap.from(".achievement-item", {
+                scrollTrigger: {
+                    trigger: ".achievements",
+                    start: "top 85%"
+                },
+                x: -100,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "power2.out"
+            });
+            
+            // Featured work cards
+            gsap.from(".card", {
+                scrollTrigger: {
+                    trigger: ".featured",
+                    start: "top 70%"
+                },
+                y: 80,
+                opacity: 0,
+                scale: 0.9,
+                duration: 1.2,
+                stagger: 0.3,
+                ease: "power2.out"
+            });
+            
+            // Mini work items
+            gsap.from(".mini-work", {
+                scrollTrigger: {
+                    trigger: ".recent-works",
+                    start: "top 80%"
+                },
+                x: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "back.out(1.7)"
+            });
+            
+            // CTA buttons with bounce effect
+            gsap.from(".cta-btn", {
+                scrollTrigger: {
+                    trigger: ".ctas",
+                    start: "top 75%"
+                },
+                y: 60,
+                opacity: 0,
+                scale: 0.8,
+                duration: 1,
+                stagger: 0.2,
+                ease: "elastic.out(1, 0.8)"
+            });
+            
+            // Floating text animations
+            gsap.from(".cta-description", {
+                scrollTrigger: {
+                    trigger: ".ctas",
+                    start: "top 80%"
+                },
+                y: 30,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power2.out"
+            });
+        }
+        
+        // ===== FLOATING ACTION BUTTON =====
+        function initFloatingActionButton() {
+            const fab = document.getElementById('fabButton');
+            let isMenuOpen = false;
+            
+            fab.addEventListener('click', () => {
+                if (!isMenuOpen) {
+                    // Create mini menu
+                    const miniMenu = document.createElement('div');
+                    miniMenu.className = 'mini-menu';
+                    miniMenu.style.cssText = `
+                        position: absolute;
+                        bottom: 70px;
+                        right: 0;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                    `;
+                    
+                    const actions = [
+                        { icon: '📧', text: 'Contact', action: () => new bootstrap.Modal(document.getElementById('contactModal')).show() },
+                        { icon: '🎨', text: 'Portfolio', action: () => document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' }) },
+                        { icon: '🔝', text: 'Top', action: () => window.scrollTo({ top: 0, behavior: 'smooth' }) }
+                    ];
+                    
+                    actions.forEach((item, index) => {
+                        const actionBtn = document.createElement('div');
+                        actionBtn.style.cssText = `
+                            width: 45px;
+                            height: 45px;
+                            background: rgba(255, 215, 0, 0.9);
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            cursor: pointer;
+                            font-size: 1.2rem;
+                            transform: scale(0);
+                            transition: all 0.3s ease;
+                            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+                        `;
+                        actionBtn.innerHTML = item.icon;
+                        actionBtn.title = item.text;
+                        actionBtn.addEventListener('click', item.action);
+                        
+                        miniMenu.appendChild(actionBtn);
+                        
+                        // Animate in
+                        setTimeout(() => {
+                            actionBtn.style.transform = 'scale(1)';
+                        }, index * 100);
+                    });
+                    
+                    fab.parentElement.appendChild(miniMenu);
+                    fab.innerHTML = '✖️';
+                    isMenuOpen = true;
+                } else {
+                    // Close menu
+                    const miniMenu = document.querySelector('.mini-menu');
+                    if (miniMenu) {
+                        miniMenu.remove();
+                    }
+                    fab.innerHTML = '⚡';
+                    isMenuOpen = false;
+                }
+            });
+            
+            // Hide FAB when scrolling up
+            let lastScrollY = window.scrollY;
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > lastScrollY) {
+                    gsap.to(fab.parentElement, { opacity: 0.6, scale: 0.9, duration: 0.3 });
+                } else {
+                    gsap.to(fab.parentElement, { opacity: 1, scale: 1, duration: 0.3 });
+                }
+                lastScrollY = window.scrollY;
+            });
+        }
+        
+        // ===== ENHANCED CONTACT FORM =====
+        function initContactForm() {
+            const form = document.getElementById('contactForm');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = {
+                    name: document.getElementById('contactName').value,
+                    email: document.getElementById('contactEmail').value,
+                    subject: document.getElementById('contactSubject').value,
+                    message: document.getElementById('contactMessage').value,
+                    newsletter: document.getElementById('newsletterCheck').checked
+                };
+                
+                // Validation
+                if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+                    showNotification('Please fill in all required fields', 'error');
+                    return;
+                }
+                
+                // Show loading state
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '✨ Sending...';
+                submitBtn.disabled = true;
+                
+                // Simulate sending (replace with actual form submission)
+                setTimeout(() => {
+                    // Create mailto link
+                    const mailtoLink = `mailto:hello@thanatsitt.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+                        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n\nNewsletter: ${formData.newsletter ? 'Yes' : 'No'}`
+                    )}`;
+                    
+                    window.location.href = mailtoLink;
+                    
+                    // Show success message
+                    showNotification('Message prepared! Your email client should open shortly.', 'success');
+                    
+                    // Reset form
+                    form.reset();
+                    
+                    // Close modal
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+                    modal.hide();
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 1500);
+            });
+        }
+        
+        // ===== NOTIFICATION SYSTEM =====
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${type === 'success' ? 'linear-gradient(135deg, #4CAF50, #45a049)' : 
+                           type === 'error' ? 'linear-gradient(135deg, #f44336, #da190b)' : 
+                           'linear-gradient(135deg, #FFD700, #D4AF37)'};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+                z-index: 10000;
+                transform: translateX(400px);
+                transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                max-width: 300px;
+                font-weight: 500;
+            `;
+            
+            notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 1.2rem;">
+                        ${type === 'success' ? '✅' : type === 'error' ? '❌' : 'ℹ️'}
+                    </span>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            // Animate out
+            setTimeout(() => {
+                notification.style.transform = 'translateX(400px)';
+                setTimeout(() => notification.remove(), 400);
+            }, 4000);
+        }
+        
+        // ===== ENHANCED SMOOTH SCROLLING =====
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    
+                    if (target) {
+                        // Add visual feedback
+                        gsap.to(anchor, { scale: 0.95, duration: 0.1, yoyo: true, repeat: 1 });
+                        
+                        const navHeight = document.querySelector('.navbar').offsetHeight;
+                        const targetPosition = target.offsetTop - navHeight - 20;
+                        
+                        // Enhanced smooth scroll with easing
+                        gsap.to(window, {
+                            scrollTo: { y: targetPosition, autoKill: false },
+                            duration: 1.5,
+                            ease: "power2.inOut"
+                        });
+                        
+                        // Close mobile menu
+                        const navbarCollapse = document.querySelector('.navbar-collapse');
+                        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                            bootstrap.Collapse.getInstance(navbarCollapse).hide();
+                        }
+                        
+                        // Highlight target section briefly
+                        gsap.fromTo(target, 
+                            { backgroundColor: "rgba(255, 215, 0, 0.1)" },
+                            { backgroundColor: "transparent", duration: 2, ease: "power2.out" }
+                        );
+                    }
+                });
+            });
+        }
+        
+        // ===== ACTIVE NAVIGATION HIGHLIGHTING =====
+        function initActiveNavigation() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -80% 0px',
+                threshold: 0
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const currentId = entry.target.getAttribute('id');
+                        
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${currentId}`) {
+                                link.classList.add('active');
+                                
+                                // Add ripple effect
+                                gsap.fromTo(link, 
+                                    { boxShadow: "0 0 0 0 rgba(255, 215, 0, 0.4)" },
+                                    { boxShadow: "0 0 0 20px rgba(255, 215, 0, 0)", duration: 0.6 }
+                                );
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => observer.observe(section));
+        }
+        
+        // ===== ENHANCED CARD INTERACTIONS =====
+        function initCardInteractions() {
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    gsap.to(this, {
+                        y: -15,
+                        scale: 1.03,
+                        rotationY: 5,
+                        duration: 0.4,
+                        ease: "power2.out"
+                    });
+                    
+                    // Animate card content
+                    const cardTitle = this.querySelector('.card-title');
+                    const cardText = this.querySelector('.card-text');
+                    
+                    if (cardTitle) {
+                        gsap.to(cardTitle, { color: "#FFD700", duration: 0.3 });
+                    }
+                    if (cardText) {
+                        gsap.to(cardText, { y: -5, duration: 0.3 });
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    gsap.to(this, {
+                        y: 0,
+                        scale: 1,
+                        rotationY: 0,
+                        duration: 0.4,
+                        ease: "power2.out"
+                    });
+                    
+                    const cardTitle = this.querySelector('.card-title');
+                    const cardText = this.querySelector('.card-text');
+                    
+                    if (cardTitle) {
+                        gsap.to(cardTitle, { color: "#FFD700", duration: 0.3 });
+                    }
+                    if (cardText) {
+                        gsap.to(cardText, { y: 0, duration: 0.3 });
+                    }
+                });
+            });
+        }
+        
+        // ===== PARALLAX EFFECTS =====
+        function initParallaxEffects() {
+            // Moon parallax
+            gsap.to(".moon-container", {
+                y: -50,
+                scrollTrigger: {
+                    trigger: ".hero",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+            
+            // Background elements parallax
+            gsap.to(".nebula", {
+                y: -100,
+                rotation: 180,
+                scrollTrigger: {
+                    trigger: "body",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+            
+            // Floating particles parallax
+            gsap.to(".particle", {
+                y: -200,
+                scrollTrigger: {
+                    trigger: "body",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+        }
+        
+        // ===== PERFORMANCE OPTIMIZATION =====
+        function initPerformanceOptimizations() {
+            // Lazy load non-critical animations
+            const lazyAnimations = document.querySelectorAll('[data-lazy-animation]');
+            
+            const animationObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const animationType = entry.target.dataset.lazyAnimation;
+                        // Trigger specific animations based on data attribute
+                        switch (animationType) {
+                            case 'fadeInUp':
+                                gsap.fromTo(entry.target, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1 });
+                                break;
+                            case 'slideInLeft':
+                                gsap.fromTo(entry.target, { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+                                break;
+                        }
+                        animationObserver.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            lazyAnimations.forEach(el => animationObserver.observe(el));
+            
+            // Reduce animations on low-performance devices
+            if (navigator.hardwareConcurrency < 4) {
+                gsap.globalTimeline.timeScale(0.5);
+            }
+        }
+        
+        // ===== MAIN INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all systems
+            new CustomCursor();
+            createEnhancedNightSky();
+            initScrollProgress();
+            initEnhancedNavbar();
+            initMoonAnimation();
+            initScrollAnimations();
+            initFloatingActionButton();
+            initContactForm();
+            initSmoothScrolling();
+            initActiveNavigation();
+            initCardInteractions();
+            initParallaxEffects();
+            initPerformanceOptimizations();
+            
+            // Show welcome notification
+            setTimeout(() => {
+                showNotification('Welcome to my digital cosmos! ✨', 'success');
+            }, 2000);
+            
+            // Add keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                // Press 'C' to open contact modal
+                if (e.key === 'c' || e.key === 'C') {
+                    if (!document.querySelector('.modal.show')) {
+                        new bootstrap.Modal(document.getElementById('contactModal')).show();
+                    }
+                }
+                
+                // Press 'Escape' to close any open modal
+                if (e.key === 'Escape') {
+                    const openModal = document.querySelector('.modal.show');
+                    if (openModal) {
+                        bootstrap.Modal.getInstance(openModal).hide();
+                    }
+                }
+                
+                // Press '/' to focus search (if implemented)
+                if (e.key === '/') {
+                    e.preventDefault();
+                    // Future: focus search input
+                }
+            });
+            
+            // Loading completion
+            gsap.set("body", { visibility: "visible" });
+            gsap.fromTo("body", { opacity: 0 }, { opacity: 1, duration: 1.5, ease: "power2.out" });
+        });
+        
+        // ===== RESIZE HANDLER =====
+        window.addEventListener('resize', function() {
+            // Recalculate positions on resize
+            ScrollTrigger.refresh();
+            
+            // Adjust animations for mobile
+            if (window.innerWidth <= 768) {
+                gsap.set(".custom-cursor, .cursor-trail", { display: "none" });
+                document.body.style.cursor = "auto";
+            }
+        });
+        
+        // ===== ERROR HANDLING =====
+        window.addEventListener('error', function(e) {
+            console.error('An error occurred:', e.error);
+            showNotification('Something went wrong, but the magic continues! ✨', 'error');
+        });
+        
+        // ===== ACCESSIBILITY ENHANCEMENTS =====
+        document.addEventListener('keydown', function(e) {
+            // Skip to main content with Tab key
+            if (e.key === 'Tab' && !e.shiftKey && document.activeElement === document.body) {
+                const mainContent = document.querySelector('.hero');
+                if (mainContent) {
+                    mainContent.focus();
+                    e.preventDefault();
+                }
+            }
+        });
+        
+        // Add focus indicators for keyboard navigation
+        const style = document.createElement('style');
+        style.textContent = `
+            .nav-link:focus,
+            .btn:focus,
+            .card:focus {
+                outline: 2px solid var(--primary-gold);
+                outline-offset: 2px;
+            }
+            
+            @media (prefers-reduced-motion: reduce) {
+                *, *::before, *::after {
+                    animation-duration: 0.01ms !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: 0.01ms !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
+
+
